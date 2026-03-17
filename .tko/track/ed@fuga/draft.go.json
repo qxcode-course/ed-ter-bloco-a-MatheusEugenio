@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_22-16-55",
+            "content": "@@ -60,282 +60,100 @@\n int%0A\n-%09caminho := make(%5B%5Dbool, 0, 15)%0A%0A%09fmt.Scan(&h, &p, &f, &d)%0A%0A%09caminho%5Bh-1%5D = %0A%09caminho%5Bp-1%5D = p%0A%09caminho%5Bf-1%5D = f%0A%0A%09if d == -1 %7B%0A%09%09//horario ----%3E %22diminuir posi%C3%A7%C3%B5es no caminho%22%0A%0A%09%09for %7B%0A%0A%09%09%7D%0A%0A%09%7D else if d == 1 %7B%0A%09%09//anti horario ----%3E %22aumentar posi%C3%A7%C3%B5es no caminho%22%0A%0A%09%7D%0A%0A%09/*\n+%0A%09fmt.Scan(&h, &p, &f, &d)%0A%0A%09if d == -1 %7B%0A%09%09//horario ----%3E %22diminuir posi%C3%A7%C3%B5es na pista%22%0A%0A%09%09\n enco\n@@ -168,16 +168,17 @@\n = false%0A\n+%09\n %09for enc\n@@ -198,16 +198,17 @@\n lse %7B%0A%09%09\n+%09\n if f != \n@@ -221,16 +221,17 @@\n  != p %7B%0A\n+%09\n %09%09%09f--%0A%09\n@@ -231,16 +231,17 @@\n %09%09f--%0A%09%09\n+%09\n %7D else i\n@@ -251,16 +251,17 @@\n  == p %7B%0A\n+%09\n %09%09%09break\n@@ -263,16 +263,17 @@\n break%0A%09%09\n+%09\n %7D else i\n@@ -283,16 +283,17 @@\n  == h %7B%0A\n+%09\n %09%09%09encon\n@@ -311,14 +311,17 @@\n e%0A%09%09\n+%09\n %7D%0A\n+%09\n %09%7D%0A%0A\n+%09\n %09if \n@@ -331,24 +331,25 @@\n ontrouH %7B%0A%09%09\n+%09\n fmt.Print(%22S\n@@ -349,24 +349,25 @@\n rint(%22S%5Cn%22)%0A\n+%09\n %09%09return%0A%09%7D \n@@ -363,16 +363,17 @@\n %09return%0A\n+%09\n %09%7D else \n@@ -374,16 +374,17 @@\n  else %7B%0A\n+%09\n %09%09fmt.Pr\n@@ -400,18 +400,95 @@\n )%0A%09%09\n+%09\n return%0A\n+%09\n %09%7D\n-*/\n+%0A%0A%09%7D else if d == 1 %7B%0A%09%09//anti horario ----%3E %22aumentar posi%C3%A7%C3%B5es na pista%22%0A%0A%09%7D\n %0A%7D%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-13_10-50-12",
+            "content": "@@ -60,34 +60,120 @@\n int%0A\n-%0A%09fmt.Scan(&h, &p, &f, &d)\n+%09caminho := make(%5B%5Dbool, 0, 15)%0A%0A%09fmt.Scan(&h, &p, &f, &d)%0A%0A%09caminho%5Bh-1%5D = %0A%09caminho%5Bp-1%5D = p%0A%09caminho%5Bf-1%5D = f\n %0A%0A%09i\n@@ -183,17 +183,19 @@\n  == -1 %7B\n- \n+%0A%09%09\n //horari\n@@ -246,107 +246,14 @@\n r %7B%0A\n-%09%09%09if f == p %7B%0A%09%09%09%09fmt.Print(%22N%22)%0A%09%09%09%09return%0A%09%09%09%7D else if f == h %7B%0A%09%09%09%09fmt.Print(%22S%22)%0A%09%09%09%09return\n %0A%09%09\n+%7D%0A%0A\n %09%7D e\n@@ -263,210 +263,254 @@\n  if \n-f\n+d\n  == \n--\n 1 %7B%0A%09%09\n-%09%09f = 15%0A%09%09%09%7D else %7B%0A%09%09%09%09f--%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%7D else if d == 1 %7B //anti horario ----%3E %22aumentar posi%C3%A7%C3%B5es no caminho%22%0A%0A%09%09for %7B%0A%0A%09%09%09if f =\n+//anti horario ----%3E %22aumentar posi%C3%A7%C3%B5es no caminho%22%0A%0A%09%7D%0A%0A%09/*encontrouH := false%0A%09for encontrouH == false %7B%0A%09%09if f != h && f !\n = p %7B%0A\n-%09\n %09%09%09f\n-mt.Print(%22N%22)%0A%09%09%09%09return%0A%09%09%09%7D else if f == h %7B%0A%09%09\n+--%0A%09%09%7D else if f == p %7B%0A%09%09%09break%0A%09%09%7D else if f == h %7B%0A%09%09%09encontrouH = true%0A%09%09%7D%0A%09%7D%0A%0A%09if encontrouH %7B%0A\n %09%09fm\n@@ -523,13 +523,13 @@\n t(%22S\n+%5Cn\n %22)%0A\n-%09%09\n %09%09re\n@@ -533,26 +533,24 @@\n %09return%0A\n-%09%09\n %09%7D else \n if f == \n@@ -545,62 +545,41 @@\n lse \n-if f == 16 \n %7B%0A%09%09\n-%09\n-%09f = 15%0A%09%09%09%7D else %7B%0A%09%09%09%09f++%0A%09%09%09%7D%0A%09%09%7D\n+fmt.Print(%22N%5Cn%22)%0A%09%09return\n %0A%09%7D\n+*/\n %0A%7D%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-13_19-32-08",
+            "content": "@@ -177,34 +177,32 @@\n %09%09%09%09fmt.Print(%22N\n-%5Cn\n %22)%0A%09%09%09%09return%0A%09%09\n@@ -229,34 +229,32 @@\n %09%09%09%09fmt.Print(%22S\n-%5Cn\n %22)%0A%09%09%09%09return%0A%09%09\n@@ -428,18 +428,16 @@\n Print(%22N\n-%5Cn\n %22)%0A%09%09%09%09r\n@@ -484,10 +484,8 @@\n t(%22S\n-%5Cn\n %22)%0A%09\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-03-13_19-32-41",
+            "content": "@@ -537,9 +537,10 @@\n f = \n-0\n+15\n %0A%09%09%09\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-03-13_19-34-35",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\n\tvar h, p, f, d int\n\n\tfmt.Scan(&h, &p, &f, &d)\n\n\tif d == -1 { //horario ----> \"diminuir posi\u00e7\u00f5es no caminho\"\n\n\t\tfor {\n\t\t\tif f == p {\n\t\t\t\tfmt.Print(\"N\\n\")\n\t\t\t\treturn\n\t\t\t} else if f == h {\n\t\t\t\tfmt.Print(\"S\\n\")\n\t\t\t\treturn\n\t\t\t} else if f == -1 {\n\t\t\t\tf = 15\n\t\t\t} else {\n\t\t\t\tf--\n\t\t\t}\n\t\t}\n\n\t} else if d == 1 { //anti horario ----> \"aumentar posi\u00e7\u00f5es no caminho\"\n\n\t\tfor {\n\n\t\t\tif f == p {\n\t\t\t\tfmt.Print(\"N\\n\")\n\t\t\t\treturn\n\t\t\t} else if f == h {\n\t\t\t\tfmt.Print(\"S\\n\")\n\t\t\t\treturn\n\t\t\t} else if f == 16 {\n\t\t\t\tf = 0\n\t\t\t} else {\n\t\t\t\tf++\n\t\t\t}\n\t\t}\n\t}\n}\n",
+            "lines": "44"
+        }
+    ]
+}

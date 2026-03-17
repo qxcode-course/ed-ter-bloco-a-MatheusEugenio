@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-13_20-30-32",
+            "content": "@@ -691,16 +691,18 @@\n ganhador\n+%5Cn\n %22)%0A%09%7D el\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-13_20-30-52",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\n\tvar nCompetidores int\n\n\tfmt.Scan(&nCompetidores)\n\n\tvar distancia_a, distancia_b, difDistancia int\n\n\tindiceMenorDistancia := -1\n\n\tmenorDiferenca := 99999999999999\n\n\tfor i := 0; i < nCompetidores; i++ {\n\t\tfmt.Scan(&distancia_a, &distancia_b)\n\n\t\tif distancia_a < 10 || distancia_b < 10 {\n\t\t\tcontinue\n\t\t}\n\n\t\tif (distancia_a > 100 || distancia_a < 1) || (distancia_b > 100 || distancia_b < 1) {\n\t\t\tcontinue\n\t\t}\n\n\t\tdifDistancia = int(math.Abs(float64(distancia_a - distancia_b)))\n\n\t\tif difDistancia < menorDiferenca {\n\t\t\tmenorDiferenca = difDistancia\n\t\t\tindiceMenorDistancia = i\n\t\t}\n\t}\n\n\tif indiceMenorDistancia == -1 {\n\t\tfmt.Println(\"sem ganhador\")\n\t} else {\n\t\tfmt.Println(indiceMenorDistancia)\n\t}\n\n}\n",
+            "lines": "45"
+        }
+    ]
+}
