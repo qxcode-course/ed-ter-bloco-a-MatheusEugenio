@@ -12,8 +12,53 @@
         },
         {
             "label": "2026-03-24_14-15-08",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n\tfmt.Println(\"hello word!\")\n}\n",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,331 +37,34 @@\n ) %7B%0A\n-%0A%09var n int%0A%09fmt.Scan(&n)%0A%0A%09idPessoasDafila := make(%5B%5Dint, n)%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09fmt.Scan(&idPessoasDafila%5Bi%5D)%0A%09%7D%0A%0A%09var quantDeixaramFila int%0A%09fmt.Scan(&quantDeixaramFila)%0A%0A%09idPessoasDeixaramFila := make(%5B%5Dint, quantDeixaramFila)%0A%0A%09for i := 0; i %3C quantDeixaramFila; i++ %7B%0A%09%09fmt.Scan(&idPessoasDeixaramFila%5Bi%5D)%0A%09%7D%0A\n+%09fmt.Println(%22hello word!%22)\n %0A%7D%0A\n",
             "lines": "5"
+        },
+        {
+            "label": "2026-03-29_23-04-03",
+            "content": "@@ -46,27 +46,8 @@\n ar n\n-, quantDeixaramFila\n  int\n@@ -156,24 +156,51 @@\n ila%5Bi%5D)%0A%09%7D%0A%0A\n+%09var quantDeixaramFila int%0A\n %09fmt.Scan(&q\n@@ -253,40 +253,33 @@\n ake(\n-map%5Bint%5Dint) // K: %5Bint%5D; V: int\n+%5B%5Dint, quantDeixaramFila)\n %0A%0A%09f\n@@ -322,21 +322,8 @@\n + %7B%0A\n-%09%09var id int%0A\n %09%09fm\n@@ -330,22 +330,16 @@\n t.Scan(&\n-id)%0A%09%09\n idPessoa\n@@ -357,248 +357,13 @@\n la%5Bi\n-d%5D = 1%0A%09%7D%0A%0A%09pessoasQueFicaramNaFila := make(%5B%5Dint, 0)%0A%0A%09for _, id := range idPessoasDafila %7B%0A%09%09if id != idPessoasDeixaramFila%5Bid%5D %7B%0A%09%09%09pessoasQueFicaramNaFila = append(pessoasQueFicaramNaFila, id)%0A%09%09%7D%0A%09%7D%0A%0A%09fmt.Print(pessoasQueFicaramNaFila)\n+%5D)%0A%09%7D\n %0A%0A%7D%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-30_14-57-18",
+            "content": "@@ -470,19 +470,15 @@\n %7B%0A%09%09\n-_, existe :\n+if id !\n = id\n@@ -504,22 +504,8 @@\n %5Bid%5D\n-%0A%0A%09%09if !existe\n  %7B%0A%09\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-30_15-01-12",
+            "content": "@@ -18,29 +18,13 @@\n ort \n-(%0A%09\n %22fmt%22\n-%0A%09%22strings%22%0A)\n %0A%0Afu\n@@ -608,34 +608,8 @@\n rint\n-ln(strings.Trim(fmt.Sprint\n (pes\n@@ -633,16 +633,8 @@\n ila)\n-, %22%5B%5D%22))\n %0A%0A%7D%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-30_15-02-41",
+            "content": "@@ -620,17 +620,18 @@\n mt.Print\n-f\n+ln\n (strings\n@@ -683,26 +683,8 @@\n %5D%22))\n-%0A%09fmt.Printf(%22%5Cn%22)\n %0A%0A%7D%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-30_15-04-27",
+            "content": "@@ -620,16 +620,17 @@\n mt.Print\n+f\n (strings\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-30_15-04-44",
+            "content": "@@ -680,21 +680,11 @@\n %5B%5D%22)\n- + %22%5Cn%22)%0A%09// \n+)%0A%09\n fmt.\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-30_15-05-41",
+            "content": "@@ -614,93 +614,8 @@\n %09%7D%0A%0A\n-%09// for _, value := range pessoasQueFicaramNaFila %7B%0A%09// %09fmt.Print(value, %22 %22)%0A%09// %7D%0A\n %09fmt\n@@ -676,18 +676,40 @@\n ), %22%5B%5D%22)\n-,\n  \n++ %22%5Cn%22)%0A%09// fmt.Printf(\n %22%5Cn%22)%0A%0A%7D\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-30_15-07-07",
+            "content": "@@ -606,24 +606,109 @@\n id)%0A%09%09%7D%0A%09%7D%0A%0A\n+%09// for _, value := range pessoasQueFicaramNaFila %7B%0A%09// %09fmt.Print(value, %22 %22)%0A%09// %7D%0A\n %09fmt.Print(s\n@@ -764,17 +764,16 @@\n %22%5B%5D%22), %22\n- \n %5Cn%22)%0A%0A%7D%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-03-30_15-07-36",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strings\"\n)\n\nfunc main() {\n\n\tvar n, quantDeixaramFila int\n\tfmt.Scan(&n)\n\n\tidPessoasDafila := make([]int, n)\n\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&idPessoasDafila[i])\n\t}\n\n\tfmt.Scan(&quantDeixaramFila)\n\n\tidPessoasDeixaramFila := make(map[int]int) // K: [int]; V: int\n\n\tfor i := 0; i < quantDeixaramFila; i++ {\n\t\tvar id int\n\t\tfmt.Scan(&id)\n\t\tidPessoasDeixaramFila[id] = 1\n\t}\n\n\tpessoasQueFicaramNaFila := make([]int, 0)\n\n\tfor _, id := range idPessoasDafila {\n\t\t_, existe := idPessoasDeixaramFila[id]\n\n\t\tif !existe {\n\t\t\tpessoasQueFicaramNaFila = append(pessoasQueFicaramNaFila, id)\n\t\t}\n\t}\n\n\tfmt.Print(strings.Trim(fmt.Sprint(pessoasQueFicaramNaFila), \"[]\"), \" \\n\")\n\n}\n",
+            "lines": "41"
         }
     ]
 }
