@@ -28,7 +28,7 @@ tasks:
   ed@princesa: '{self:1, rate:100, friend:ia, problem:1, code:1, debug:1, refactor:1}'
   ed@apagando: '{self:1, rate:100, study:30, friend:ia me guiou oara  conmce, concept:1}'
   ed@manipulacao: '{self:1, rate:100, concept:1, code:1}'
-  ed@especiais: '{}'
+  ed@especiais: '{rate:12}'
   ed@buscas: '{}'
   ed@rotacoes: '{}'
   ed@alternando: '{}'
@@ -110,10 +110,10 @@ tasks:
   ed@detonate: '{}'
   ed@escapeSpread: '{}'
 flags:
-  inbox: inbox
+  inbox: all
   panel: help
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@princesa
+selected: ed@especiais
