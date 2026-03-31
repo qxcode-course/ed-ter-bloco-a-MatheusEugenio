@@ -4,43 +4,117 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"slices"
 	"strconv"
 	"strings"
 )
 
 func getMen(vet []int) []int {
-	_ = vet
-	return nil
+
+	copiaVet := make([]int, 0)
+
+	for _, val := range vet {
+		if val >= 0 {
+			copiaVet = append(copiaVet, val)
+		}
+	}
+	return copiaVet
 }
 
 func getCalmWomen(vet []int) []int {
-	_ = vet
-	return nil
+
+	copiaVetMulheres := make([]int, 0)
+
+	for _, val := range vet {
+		if val < 0 && val > -10 {
+			copiaVetMulheres = append(copiaVetMulheres, val)
+		}
+	}
+	return copiaVetMulheres
 }
 
 func sortVet(vet []int) []int {
-	_ = vet
-	return nil
+
+	copiaVet := slices.Clone(vet)
+	slices.Sort(copiaVet)
+	return copiaVet
 }
 
 func sortStress(vet []int) []int {
-	_ = vet
-	return nil
+
+	copiaValorAbsoluto := make([]int, len(vet))
+	numeroGuardaSinal := make(map[int]bool) //Key: valor absoluto, Value: se tinha sinal
+
+	for i, val := range vet {
+		if val < 0 {
+			copiaValorAbsoluto[i] = -val
+			numeroGuardaSinal[-val] = true
+		} else {
+			copiaValorAbsoluto[i] = val
+			numeroGuardaSinal[val] = false
+		}
+	}
+
+	slices.Sort(copiaValorAbsoluto)
+	vetRetorno := make([]int, 0)
+
+	for _, val := range copiaValorAbsoluto {
+		if numeroGuardaSinal[val] {
+			vetRetorno = append(vetRetorno, -val)
+		} else {
+			vetRetorno = append(vetRetorno, val)
+		}
+	}
+
+	return vetRetorno
 }
 
 func reverse(vet []int) []int {
-	_ = vet
-	return nil
+
+	copiaVet := make([]int, len(vet))
+
+	for i := len(vet) - 1; i >= 0; i-- {
+		copiaVet[len(vet)-1-i] = vet[i]
+	}
+
+	return copiaVet
 }
 
 func unique(vet []int) []int {
-	_ = vet
-	return nil
+
+	copiaVet := slices.Clone(vet)
+
+	numerosVistos := make(map[int]bool)
+	vetResultado := make([]int, 0)
+
+	for _, val := range copiaVet {
+		_, existe := numerosVistos[val]
+		if !existe {
+			numerosVistos[val] = true
+			vetResultado = append(vetResultado, val)
+		}
+	}
+
+	return vetResultado
 }
 
 func repeated(vet []int) []int {
-	_ = vet
-	return nil
+
+	copiaVet := slices.Clone(vet)
+
+	numerosVistos := make(map[int]bool)
+	vetResultadosRepetidos := make([]int, 0)
+
+	for _, val := range copiaVet {
+		_, existe := numerosVistos[val]
+		if !existe {
+			numerosVistos[val] = true
+		} else {
+			vetResultadosRepetidos = append(vetResultadosRepetidos, val)
+		}
+	}
+
+	return vetResultadosRepetidos
 }
 
 func main() {
@@ -103,4 +177,3 @@ func str2vet(s string) []int {
 	}
 	return vet
 }
-
