@@ -52,8 +52,47 @@ func occurr(vet []int) []Pair {
 }
 
 func teams(vet []int) []Pair {
-	_ = vet
-	return nil
+
+	contagemPares := make(map[int]int)
+
+	count := 0
+	// for i, val := range vet {
+	// 	_, exists := contagemPares[val]
+	// 	if !exists {
+	// 		contagemPares[val] = 1
+	// 	} else {
+	// 		if val != vet[i-1] {
+	// 		contagemPares[val] = 1 //criar um novo elemento no map
+	// 		} else {
+	// 			count++
+	// 			contagemPares[val]++
+	// 		}
+	// 	}
+	// }
+
+	for i := 1; i <= len(vet); i++ {
+
+		if len(vet) < 2 {
+			contagemPares[vet[i-1]] = 1
+		} else {
+			if vet[i-1] == vet[i] {
+				count++
+				contagemPares[vet[i]] = count
+			} else {
+				count = 0
+				contagemPares[vet[i]] = 1
+			}
+		}
+	}
+
+	//transformar o map em um slice de Pair
+	pares := make([]Pair, 0)
+
+	for val, repeticao := range contagemPares {
+		pares = append(pares, Pair{One: val, Two: repeticao})
+	}
+
+	return pares
 }
 
 func mnext(vet []int) []int {

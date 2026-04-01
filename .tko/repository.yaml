@@ -16,6 +16,7 @@ sources:
   tasks: null
 expanded:
 - ed@map_set
+- ed@rec
 tasks:
   ed@pintando: '{self:1, rate:100}'
   ed@mumia: '{self:1, rate:100, problem:1}'
@@ -29,6 +30,7 @@ tasks:
   ed@apagando: '{self:1, rate:100, study:30, friend:ia me guiou oara  conmce, concept:1}'
   ed@manipulacao: '{self:1, rate:100, concept:1, code:1}'
   ed@especiais: '{rate:12}'
+  ed@mdc: '{rate:100}'
   ed@buscas: '{}'
   ed@rotacoes: '{}'
   ed@alternando: '{}'
@@ -38,7 +40,6 @@ tasks:
   ed@triangulo: '{}'
   ed@treinando: '{}'
   ed@resto: '{}'
-  ed@mdc: '{}'
   ed@queimada: '{}'
   ed@labirinto: '{}'
   ed@eh_primo: '{}'
@@ -116,4 +117,4 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@especiais
+selected: ed@mdc
