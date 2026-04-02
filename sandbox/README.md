@@ -1,12 +1,11 @@
 # Sandbox
 
-Cada vez que criar um rascunho, ele ser· salvo na pasta `00_rascunhos` dentro do sandbox.
-
-VocÍ pode criar quantos rascunhos quiser. Eles ser„o rastreados pela chave key no pre‚mbulo do rascunho.
-
+Cada vez que criar um rascunho, ele ser√° salvo na pasta `00_rascunhos` dentro do sandbox.
+Voc√™ pode criar quantos rascunhos quiser. Eles ser√£o rastreados pela chave key no pre√¢mbulo do rascunho.
 Renomeie o nome da pasta para renomear o rascunho. Exclua a pasta para excluir o rascunho.
-
-Sinta-se ‡ vontade para organizar seus rascunhos em subpastas dentro do sandbox, se desejar.
+Sinta-se √† vontade para organizar seus rascunhos em subpastas dentro do sandbox, se desejar.
 
 ## sandbox
+
 <!--autoload_cluster=.-->
+
