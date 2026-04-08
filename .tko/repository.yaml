@@ -18,9 +18,9 @@ expanded:
 - ed@rec
 flags:
   inbox: all
-  panel: help
-  show_panel: 'true'
+  panel: graph
+  show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@eh_primo
+selected: ed@rec
