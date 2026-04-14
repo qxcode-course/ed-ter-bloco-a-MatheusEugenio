@@ -12,16 +12,15 @@ func main() {
 		fmt.Scan(&animais[i])
 	}
 
-	par := make(map[int]bool)
+	par := make(map[int]int)
 	qtdPares := 0
 
 	for _, val := range animais {
-		_, existe := par[-val]
-		if existe {
-			par[-val] = false
+		if par[-val] > 0 {
+			par[-val]--
 			qtdPares++
 		} else {
-			par[val] = true
+			par[val]++
 		}
 	}
 
