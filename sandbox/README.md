@@ -8,4 +8,5 @@ Sinta-se à vontade para organizar seus rascunhos em subpastas dentro do sandbox
 ## sandbox
 
 <!--autoload_cluster=.-->
+- [ ]`@logica_pratica `[Atividades Incompletas de Lógica de Programação em Go](logica_pratica\README.md)
 
