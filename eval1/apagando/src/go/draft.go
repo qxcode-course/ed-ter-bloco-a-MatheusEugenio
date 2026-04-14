@@ -7,37 +7,33 @@ func main() {
 	var n int
 	fmt.Scan(&n)
 
-	valoresPessoas := make([]int, n)
+	pessoas := make([]int, n)
 
 	for i := 0; i < n; i++ {
-		fmt.Scan(&valoresPessoas[i])
+		fmt.Scan(&pessoas[i])
 	}
 
 	var qtdDeixaramFila int
 	fmt.Scan(&qtdDeixaramFila)
 
-	posicoesDeixadas := make([]int, qtdDeixaramFila)
+	posicoesDeixadas := make(map[int]bool)
 
 	for i := 0; i < qtdDeixaramFila; i++ {
-		fmt.Scan(&posicoesDeixadas[i])
+		var saiu int
+		fmt.Scan(&saiu)
+		posicoesDeixadas[saiu] = true
 	}
 
 	novoArrayPessoas := make([]int, 0)
-	for i := 0; i < len(valoresPessoas); i++ {
-		if valoresPessoas[i] == posicoesDeixadas[i] {
-			continue
-		} else {
-			novoArrayPessoas = append(novoArrayPessoas, valoresPessoas[i])
+	for _, pessoa := range pessoas {
+		if !posicoesDeixadas[pessoa] {
+			novoArrayPessoas = append(novoArrayPessoas, pessoa)
 		}
 	}
 
-	for i, val := range novoArrayPessoas {
-		if i == len(novoArrayPessoas)-1 {
-			fmt.Printf("%d", val)
-			fmt.Println()
-		} else {
-			fmt.Printf("%d ", val)
-		}
+	for _, val := range novoArrayPessoas {
+		fmt.Printf("%d ", val)
 	}
+	fmt.Println()
 
 }
