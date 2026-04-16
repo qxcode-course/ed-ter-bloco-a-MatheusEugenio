@@ -22,13 +22,34 @@ func NewVector(capacity int) *Vector {
 	}
 }
 
+func (v *Vector) PushBack(value int) {
+
+	if v.size < v.capacity {
+		v.data[v.size] = value
+		v.size++
+		return
+	}
+
+	v.capacity *= 2
+	newData := make([]int, v.capacity)
+	
+	for _, val := range v.data {
+		newData = append(newData, val)
+	}
+
+	v.data = newData
+
+	v.data[v.size] = value
+	v.size++
+}
+
 func (v *Vector) String() string { //MÉTODO e não function
 	return "[" + Join(v.data[0:v.size], ", ") + "]"
 }
 
-// func (v*Vector)Status() string {
-// 	return
-// }
+func (v *Vector) Status() string {
+	return "size:" + strconv.Itoa(v.size) + " capacity:" + strconv.Itoa(v.capacity)
+}
 
 func Join(slice []int, sep string) string {
 	if len(slice) == 0 {
@@ -67,14 +88,14 @@ func main() {
 			value, _ := strconv.Atoi(parts[1])
 			v = NewVector(value)
 		case "push":
-			// for _, part := range parts[1:] {
-			// 	value, _ := strconv.Atoi(part)
-			// 	v.PushBack(value)
-			// }
+			for _, part := range parts[1:] {
+				value, _ := strconv.Atoi(part)
+				v.PushBack(value)
+			}
 		case "show":
 			fmt.Println(v)
 		case "status":
-			// fmt.Println(v.Status())
+			fmt.Println(v.Status())
 		case "pop":
 			// err := v.PopBack()
 			// if err != nil {
