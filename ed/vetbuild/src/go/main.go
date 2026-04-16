@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"errors"
 	"fmt"
 	"os"
 	"strconv"
@@ -22,6 +23,34 @@ func NewVector(capacity int) *Vector {
 	}
 }
 
+func (v *Vector) Insert(index int, value int) error {
+
+	if index > v.capacity || index < 0 {
+		return errors.New("vector is empty")
+	}
+
+	if index >= v.size {
+		v.data[index] = value
+		v.size++
+		return nil
+	}
+
+	//fazer a lógica de inserir no meio do vetor e no início, ou seja, deslocar os elementos para a direita
+	return nil
+}
+
+func (v *Vector) PopBack() (int, error) {
+
+	if v.size == 0 {
+		return 0, errors.New("vector is empty")
+	}
+
+	indexUltimoVal := v.size - 1
+	v.size--
+
+	return v.data[indexUltimoVal], nil
+}
+
 func (v *Vector) PushBack(value int) {
 
 	if v.size < v.capacity {
@@ -32,13 +61,12 @@ func (v *Vector) PushBack(value int) {
 
 	v.capacity *= 2
 	newData := make([]int, v.capacity)
-	
-	for _, val := range v.data {
-		newData = append(newData, val)
+
+	for i, val := range v.data {
+		newData[i] = val
 	}
 
 	v.data = newData
-
 	v.data[v.size] = value
 	v.size++
 }
@@ -97,17 +125,17 @@ func main() {
 		case "status":
 			fmt.Println(v.Status())
 		case "pop":
-			// err := v.PopBack()
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
+			_, err := v.PopBack()
+			if err != nil {
+				fmt.Println(err)
+			}
 		case "insert":
-			// index, _ := strconv.Atoi(parts[1])
-			// value, _ := strconv.Atoi(parts[2])
-			// err := v.Insert(index, value)
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
+			index, _ := strconv.Atoi(parts[1])
+			value, _ := strconv.Atoi(parts[2])
+			err := v.Insert(index, value)
+			if err != nil {
+				fmt.Println(err)
+			}
 		case "erase":
 			// index, _ := strconv.Atoi(parts[1])
 			// err := v.Erase(index)
