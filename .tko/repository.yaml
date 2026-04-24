@@ -26,8 +26,9 @@ expanded:
 flags:
   inbox: all
   panel: graph
-  show_panel: 'true'
+  show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
 selected: ed@vetbuild
+selected_index: 5

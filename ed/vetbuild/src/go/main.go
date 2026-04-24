@@ -23,6 +23,45 @@ func NewVector(capacity int) *Vector {
 	}
 }
 
+func (v *Vector) Reserve(newCapacity int) {
+	if newCapacity <= v.capacity {
+		return
+	}
+
+	v.capacity = newCapacity
+}
+
+// func (v *Vector) Slice(start int, end int) *Vector {
+
+// }
+
+func (v *Vector) Capacity() int {
+	return v.capacity
+}
+
+func (v *Vector) Clear() {
+	v.size = 0
+}
+
+func (v *Vector) Contains(value int) bool {
+	for _, val := range v.data {
+		if val == value {
+			return true
+		}
+	}
+	return false
+}
+
+func (v *Vector) IndexOf(value int) int {
+
+	for i, val := range v.data {
+		if val == value {
+			return i
+		}
+	}
+	return -1
+}
+
 func (v *Vector) Insert(index int, value int) error {
 
 	if index > v.capacity || index < 0 {
@@ -143,20 +182,20 @@ func main() {
 			// 	fmt.Println(err)
 			// }
 		case "indexOf":
-			// value, _ := strconv.Atoi(parts[1])
-			// index := v.IndexOf(value)
-			// fmt.Println(index)
+			value, _ := strconv.Atoi(parts[1])
+			index := v.IndexOf(value)
+			fmt.Println(index)
 		case "contains":
-			// value, _ := strconv.Atoi(parts[1])
-			// if v.Contains(value) {
-			// 	fmt.Println("true")
-			// } else {
-			// 	fmt.Println("false")
-			// }
+			value, _ := strconv.Atoi(parts[1])
+			if v.Contains(value) {
+				fmt.Println("true")
+			} else {
+				fmt.Println("false")
+			}
 		case "clear":
-			// v.Clear()
+			v.Clear()
 		case "capacity":
-			// fmt.Println(v.Capacity())
+			fmt.Println(v.Capacity())
 		case "get":
 			// index, _ := strconv.Atoi(parts[1])
 			// value, err := v.At(index)
@@ -174,8 +213,8 @@ func main() {
 			// }
 			//
 		case "reserve":
-			// newCapacity, _ := strconv.Atoi(parts[1])
-			// v.Reserve(newCapacity)
+			newCapacity, _ := strconv.Atoi(parts[1])
+			v.Reserve(newCapacity)
 		case "slice":
 			// start, _ := strconv.Atoi(parts[1])
 			// end, _ := strconv.Atoi(parts[2])
