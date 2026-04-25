@@ -135,7 +135,7 @@ func (v *Vector) PushBack(value int) {
 	v.size++
 }
 
-func (v *Vector) String() string { //MÉTODO e não function
+func (v *Vector) String() string {
 	return "[" + Join(v.data[0:v.size], ", ") + "]"
 }
 
