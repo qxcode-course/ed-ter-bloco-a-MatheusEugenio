@@ -25,8 +25,8 @@ expanded:
 - ed@vector
 flags:
   inbox: all
-  panel: graph
-  show_panel: 'false'
+  panel: help
+  show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
