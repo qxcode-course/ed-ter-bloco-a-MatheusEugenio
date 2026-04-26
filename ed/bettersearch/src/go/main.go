@@ -9,11 +9,33 @@ import (
 )
 
 func BetterSearch(slice []int, value int) (bool, int) {
-	_, _ = slice, value
-	return false, 0
+
+	tam := len(slice)
+
+	if tam == 0 {
+		return false, 0
+	}
+
+	low, high := 0, tam-1
+
+	for low <= high {
+
+		meio := (low + high) / 2
+
+		if slice[meio] < value {
+			low = meio + 1
+		} else if slice[meio] > value {
+			high = meio - 1
+		} else {
+			return true, meio
+		} 
+	}
+
+	return false, low
 }
 
 func main() {
+
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
 	parts := strings.Split(scanner.Text(), " ")
@@ -22,6 +44,7 @@ func main() {
 		value, _ := strconv.Atoi(elem)
 		slice = append(slice, value)
 	}
+
 	scanner.Scan()
 	value, _ := strconv.Atoi(scanner.Text())
 	found, result := BetterSearch(slice, value)
