@@ -48,12 +48,6 @@ func (v *Set) binarySearch(value int) int { //retorna o indice do numero, se exi
 
 	inicio, final := 0, v.size-1
 
-	if value == v.data[0] {
-		return 0
-	} else if value == v.data[v.size-1] {
-		return v.size - 1
-	}
-
 	for inicio <= final {
 
 		indexMeio := (inicio + final) / 2
