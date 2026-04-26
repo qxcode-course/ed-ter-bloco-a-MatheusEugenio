@@ -162,7 +162,8 @@ func (v *Set) Erase(value int) bool {
 	}
 }
 
-func (v *Set) Contains(value int) bool { //usa busca binaria para saber se o elemento existe
+func (v *Set) Contains(value int) bool {
+
 	existe := v.binarySearch(value)
 	if existe != -1 {
 		return true
