@@ -8,7 +8,7 @@ class Set {
   --
   + NewSet(): *Set                          ' Cria uma nova lista ordenada com capacidade inicial padrão
   - reserve(newCapacity: int): void         ' Redimensiona a capacidade da lista se necessário (interno)
-  - binarySearch(value: int): int           ' Realiza busca binária e retorna o índice do valor, ou -1 se não for encontrado
+  - binarySearch(value: int): int           ' Realiza busca binária e retorna o índice do valor, ou -1 se não for encontrado  
   - insert(value: int, index: int): error   ' Insere value no índice indicado, deslocando os elementos à direita
   - erase(index: int): error                ' Remove o elemento na posição index, deslocando os demais
   --
