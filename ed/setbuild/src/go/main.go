@@ -92,21 +92,11 @@ func (v *Set) insert(value int, index int) error {
 
 func (v *Set) Insert(value int) { //usa busca binaria para saber se o elemento já existe
 
-	if v.size == 0 {
-		v.size++
-		v.data[0] = value
-		return
-	}
+	// 
 
 	indice := v.binarySearch(value)
 	if indice != -1 {
 		return //então o valor existe
-	}
-
-	if v.size == 0 {
-		v.size++
-		v.data[0] = value
-		return
 	}
 
 	index := 0

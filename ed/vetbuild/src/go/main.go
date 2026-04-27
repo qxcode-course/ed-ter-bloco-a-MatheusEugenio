@@ -89,12 +89,6 @@ func (v *Vector) Insert(index int, value int) error {
 		return errors.New("vector is empty")
 	}
 
-	if index >= v.size {
-		v.size++
-		v.data[index] = value
-		return nil
-	}
-
 	for i := v.size - 1; i >= index; i-- {
 		v.data[i+1] = v.data[i]
 	}
