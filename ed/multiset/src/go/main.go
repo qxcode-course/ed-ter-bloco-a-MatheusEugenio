@@ -110,12 +110,41 @@ func (ms *MultiSet) Contains(value int) bool {
 
 func (ms *MultiSet) Count(value int) int {
 
-	return 0
+	count := 0
+	existe, _ := ms.Search(value)
+	if existe {
+		for _, val := range ms.data {
+			if val == value {
+				count++
+			}
+		}
+	} else {
+		return 0
+	}
+
+	return count
 }
 
 func (ms *MultiSet) Unique() int {
 
-	return 0
+	if ms.size == 0 {
+		return 0
+	}
+
+	countDif := 0
+	element := 0
+	for i := 0; i < ms.size-1; i++ {
+		if element != ms.data[i] {
+			element = ms.data[i]
+			countDif++
+		}
+	}
+	
+	if countDif == 0 {
+		return 0
+	} else {
+		return countDif
+	}
 }
 
 func (ms *MultiSet) String() string {
