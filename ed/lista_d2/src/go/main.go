@@ -20,13 +20,22 @@ type LList struct {
 	size int
 }
 
-func (l *LList) Next() *Node {
+func (n *Node) Next() *Node {
 
-	if l.Front() == l.End() || l.Front().next == l.End() {
+	if n.next == nil {
 		return nil
 	}
 
-	return l.Front().next
+	return n.next
+}
+
+func (n *Node) Prev() *Node {
+
+	if n.prev == nil {
+		return nil
+	}
+
+	return n.next
 }
 
 func (l *LList) Front() *Node {
@@ -57,8 +66,9 @@ func (l *LList) Size() int {
 
 func (l *LList) Clear() {
 
-	l.head.next = nil
-	l.head.prev = nil
+	l.head.next = l.head
+	l.head.prev = l.head
+	l.head.root = l.head
 	l.size = 0
 }
 
@@ -83,7 +93,7 @@ func (l *LList) Search(value int) *Node {
 		return nil
 	}
 
-	for node := l.Front(); node != l.End(); node = l.Next() {
+	for node := l.Front(); node != l.End(); node = node.next {
 		if node.value == value {
 			return node
 		}
@@ -104,53 +114,42 @@ func (l *LList) Insert(nodePosterior *Node, value int) {
 
 	nodeAnterior.next = newNode
 	nodePosterior.prev = newNode
+	l.size++
 }
 
 func (l *LList) Remove(nodeRemove *Node) *Node {
 
-	if nodeRemove == nil {
+	if nodeRemove == nil || nodeRemove == l.head {
 		return nil
 	}
 
-	valueNodeRef := nodeRemove.value
-
-	nodeAchado := l.Search(valueNodeRef)
-	if nodeAchado == nil {
-		return nil
-	}
-
-	nodeAnterior := nodeAchado.prev
-	nodePosterior := nodeAchado.next
+	nodeAnterior := nodeRemove.prev
+	nodePosterior := nodeRemove.next
 
 	nodeAnterior.next = nodePosterior
 	nodePosterior.prev = nodeAnterior
-	nodeAchado.next = nil
-	nodeAchado.prev = nil
+
+	nodeRemove.next = nil
+	nodeRemove.prev = nil
+
+	l.size--
 	return nodePosterior
 }
 
 func (l *LList) PushBack(value int) {
 	l.Insert(l.head, value)
-	l.size++
 }
 
 func (l *LList) PushFront(value int) {
 	l.Insert(l.Front(), value)
-	l.size++
 }
 
 func (l *LList) PopFront() {
-
-	if l.Remove(l.Front()) != nil {
-		l.size--
-	}
+	l.Remove(l.Front())
 }
 
 func (l *LList) PopBack() {
-
-	if l.Remove(l.Back()) != nil {
-		l.size--
-	}
+	l.Remove(l.Back())
 }
 
 func (l *LList) String() string {
@@ -221,11 +220,11 @@ func main() {
 			l.Clear()
 		case "walk":
 			fmt.Print("[ ")
-			for node := l.Front(); node != nil; node = node.next {
+			for node := l.Front(); node != nil; node = node.Next() {
 				fmt.Printf("%v ", node.value)
 			}
 			fmt.Print("]\n[ ")
-			for node := l.Back(); node != nil; node = node.prev {
+			for node := l.Back(); node != nil; node = node.Prev() {
 				fmt.Printf("%v ", node.value)
 			}
 			fmt.Println("]")
