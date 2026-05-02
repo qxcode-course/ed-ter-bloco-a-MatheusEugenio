@@ -35,7 +35,7 @@ func (n *Node) Prev() *Node {
 		return nil
 	}
 
-	return n.next
+	return n.prev
 }
 
 func (l *LList) Front() *Node {
@@ -220,11 +220,11 @@ func main() {
 			l.Clear()
 		case "walk":
 			fmt.Print("[ ")
-			for node := l.Front(); node != nil; node = node.Next() {
+			for node := l.Front(); node != nil && node != l.End(); node = node.Next() {
 				fmt.Printf("%v ", node.value)
 			}
 			fmt.Print("]\n[ ")
-			for node := l.Back(); node != nil; node = node.Prev() {
+			for node := l.Back(); node != nil && node != l.End(); node = node.Prev() {
 				fmt.Printf("%v ", node.value)
 			}
 			fmt.Println("]")
