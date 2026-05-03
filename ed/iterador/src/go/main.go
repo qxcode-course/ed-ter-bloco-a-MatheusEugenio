@@ -32,73 +32,57 @@ func NewMyList(values []int) *MyList {
 }
 
 func (l *MyList) Iterator() *Iterator {
-	return &Iterator{data: l.data, index: -1}
-}
-
-func (l *MyList) newReverseIterator() *ReverseIterator {
-
-	if len(l.Iterator().data) == 0 {
-		return &ReverseIterator{data: l.data}
-	}
-
-	newReversI := make([]int, 0)
-	ultimoIndex := len(l.data) - 1
-	for i := len(l.data) - 1; i > 0; i-- {
-		newReversI = append(newReversI, l.data[i])
-	}
-
-	return &ReverseIterator{
-		data:  newReversI,
-		index: ultimoIndex, //indice temp
-		//implementar
-	}
-}
-
-func newCyclicIterator() *CyclicIterator {
-	return &CyclicIterator{
-		//implementar
-	}
-}
-
-func (ri *ReverseIterator) HasNext() bool {
-	return ri.index < len(ri.data)-1
-}
-
-func (ri *ReverseIterator) Next() int {
-	if ri.index == len(ri.data) {
-		panic(fmt.Errorf("No more elements"))
-	}
-	ri.index += 1
-	return ri.data[ri.index]
+	return &Iterator{data: l.data, index: 0}
 }
 
 func (i *Iterator) HasNext() bool {
-	return i.index < len(i.data)-1
+	return i.index < len(i.data)
 }
 
 func (i *Iterator) Next() int {
-	if i.index == len(i.data) {
-		panic(fmt.Errorf("No more elements"))
+	val := i.data[i.index]
+	i.index++
+	return val
+}
+
+func (l *MyList) ReverseIterator() *ReverseIterator {
+	return &ReverseIterator{data: l.data, index: len(l.data) - 1}
+}
+
+func (ri *ReverseIterator) HasNext() bool {
+	return ri.index >= 0
+}
+
+func (ri *ReverseIterator) Next() int {
+
+	val := ri.data[ri.index]
+	ri.index--
+	return val
+}
+
+func (l *MyList) CyclicIterator() *CyclicIterator {
+	return &CyclicIterator{
+		data:  l.data,
+		index: 0,
 	}
-	i.index += 1
-	return i.data[i.index]
 }
 
 func (c *CyclicIterator) HasNext() bool {
-	return c.index < len(c.data)-1
+	return len(c.data) > 0
 }
 
 func (c *CyclicIterator) Next() int {
-	if c.index == len(c.data) {
-		panic(fmt.Errorf("No more elements"))
-	}
-	c.index += 1
-	return c.data[c.index]
+
+	val := c.data[c.index]
+	c.index = (c.index + 1) % len(c.data)
+	return val
 }
 
 func main() {
+
 	scanner := bufio.NewScanner(os.Stdin)
 	mylist := NewMyList([]int{})
+
 	for scanner.Scan() {
 		line := scanner.Text()
 		args := strings.Fields(line)
@@ -106,7 +90,7 @@ func main() {
 
 		switch args[0] {
 		case "end":
-			break
+			return
 		case "read":
 			for i := 1; i < len(args); i++ {
 				slice := make([]int, len(args)-1)
@@ -122,19 +106,21 @@ func main() {
 			}
 			fmt.Println("]")
 		case "reverse":
-			// fmt.Print("[ ")
-			// for it := mylist.ReverseIterator(); it.HasNext(); {
-			// 	fmt.Printf("%v ", it.Next())
-			// }
-			// fmt.Println("]")
+			fmt.Print("[ ")
+			for it := mylist.ReverseIterator(); it.HasNext(); {
+				fmt.Printf("%v ", it.Next())
+			}
+			fmt.Println("]")
 		case "cyclic":
-			// qtd, _ := strconv.Atoi(args[1])
-			// fmt.Print("[ ")
-			// it := mylist.CyclicIterator()
-			// for range qtd {
-			// 	fmt.Printf("%v ", it.Next())
-			// }
-			// fmt.Println("]")
+			qtd, _ := strconv.Atoi(args[1])
+			fmt.Print("[ ")
+			it := mylist.CyclicIterator()
+			if len(mylist.data) > 0 {
+				for i := 0; i < qtd; i++ {
+					fmt.Printf("%v ", it.Next())
+				}
+			}
+			fmt.Println("]")
 		}
 	}
 
