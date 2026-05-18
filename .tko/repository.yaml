@@ -18,13 +18,14 @@ sources:
   type: git
   writeable: false
   quests: null
-expanded: []
+expanded:
+- ed@rec
 flags:
-  inbox: all
-  panel: graph
-  show_panel: 'false'
+  inbox: inbox
+  panel: skills
+  show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@vector
-selected_index: 4
+selected: ed@enesimo
+selected_index: 12
