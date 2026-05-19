@@ -52,87 +52,140 @@ func occurr(vet []int) []Pair {
 }
 
 func teams(vet []int) []Pair {
+	if len(vet) == 0 {
+		return nil
+	}
 
-	contagemPares := make(map[int]int)
+	pares := make([]Pair, 0)
+	currentVal := vet[0]
+	currentCount := 1
 
-	count := 0
-	// for i, val := range vet {
-	// 	_, exists := contagemPares[val]
-	// 	if !exists {
-	// 		contagemPares[val] = 1
-	// 	} else {
-	// 		if val != vet[i-1] {
-	// 		contagemPares[val] = 1 //criar um novo elemento no map
-	// 		} else {
-	// 			count++
-	// 			contagemPares[val]++
-	// 		}
-	// 	}
-	// }
-
-	for i := 1; i <= len(vet); i++ {
-
-		if len(vet) < 2 {
-			contagemPares[vet[i-1]] = 1
+	for i := 1; i < len(vet); i++ {
+		if vet[i] == currentVal {
+			currentCount++
 		} else {
-			if vet[i-1] == vet[i] {
-				count++
-				contagemPares[vet[i]] = count
-			} else {
-				count = 0
-				contagemPares[vet[i]] = 1
-			}
+			pares = append(pares, Pair{One: currentVal, Two: currentCount})
+			currentVal = vet[i]
+			currentCount = 1
 		}
 	}
-
-	//transformar o map em um slice de Pair
-	pares := make([]Pair, 0)
-
-	for val, repeticao := range contagemPares {
-		pares = append(pares, Pair{One: val, Two: repeticao})
-	}
+	pares = append(pares, Pair{One: currentVal, Two: currentCount})
 
 	return pares
 }
 
 func mnext(vet []int) []int {
-	_ = vet
-	return nil
+	res := make([]int, len(vet))
+	for i, val := range vet {
+		if val > 0 { // Se for homem
+			hasWomanNeighbor := false
+			// Verifica vizinho da esquerda
+			if i > 0 && vet[i-1] < 0 {
+				hasWomanNeighbor = true
+			}
+			// Verifica vizinho da direita
+			if i < len(vet)-1 && vet[i+1] < 0 {
+				hasWomanNeighbor = true
+			}
+			if hasWomanNeighbor {
+				res[i] = 1
+			}
+		}
+	}
+	return res
 }
 
 func alone(vet []int) []int {
-	_ = vet
-	return nil
+	res := make([]int, len(vet))
+	for i, val := range vet {
+		if val > 0 { // Se for homem
+			hasWomanNeighbor := false
+			if i > 0 && vet[i-1] < 0 {
+				hasWomanNeighbor = true
+			}
+			if i < len(vet)-1 && vet[i+1] < 0 {
+				hasWomanNeighbor = true
+			}
+			if !hasWomanNeighbor {
+				res[i] = 1
+			}
+		}
+	}
+	return res
 }
 
 func couple(vet []int) int {
-	_ = vet
-	return 0
+	men := make(map[int]int)
+	women := make(map[int]int)
+
+	for _, val := range vet {
+		if val > 0 {
+			men[val]++
+		} else if val < 0 {
+			women[-val]++
+		}
+	}
+
+	couples := 0
+	for stress, countMen := range men {
+		if countWomen, exists := women[stress]; exists {
+			if countMen < countWomen {
+				couples += countMen
+			} else {
+				couples += countWomen
+			}
+		}
+	}
+	return couples
 }
 
 func hasSubseq(vet []int, seq []int, pos int) bool {
-	_ = vet
-	_ = seq
-	_ = pos
-	return false
+	if pos+len(seq) > len(vet) {
+		return false
+	}
+	for i := 0; i < len(seq); i++ {
+		if vet[pos+i] != seq[i] {
+			return false
+		}
+	}
+	return true
 }
 
 func subseq(vet []int, seq []int) int {
-	_ = vet
-	_ = seq
+	if len(seq) == 0 {
+		return 0
+	}
+	for i := 0; i <= len(vet)-len(seq); i++ {
+		if hasSubseq(vet, seq, i) {
+			return i
+		}
+	}
 	return -1
 }
 
 func erase(vet []int, posList []int) []int {
-	_ = vet
-	_ = posList
-	return nil
+	toRemove := make(map[int]bool)
+	for _, pos := range posList {
+		toRemove[pos] = true
+	}
+
+	res := make([]int, 0)
+	for i, val := range vet {
+		if !toRemove[i] {
+			res = append(res, val)
+		}
+	}
+	return res
 }
 
 func clear(vet []int, value int) []int {
-	_ = vet
-	_ = value
-	return nil
+	res := make([]int, 0)
+	for _, val := range vet {
+		if val != value {
+			res = append(res, val)
+		}
+	}
+	return res
 }
 
 func main() {

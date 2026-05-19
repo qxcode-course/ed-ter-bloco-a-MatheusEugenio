@@ -21,11 +21,11 @@ sources:
 expanded:
 - ed@rec
 flags:
-  inbox: inbox
+  inbox: all
   panel: skills
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@enesimo
-selected_index: 12
+selected: ed@labirinto
+selected_index: 9
