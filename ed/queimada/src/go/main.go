@@ -6,6 +6,10 @@ import (
 	"os"
 )
 
+type Pos struct {
+	l, c int
+}
+
 func burnTrees(grid [][]rune, l, c int) {
 	// se estiver fora da matriz, retorne
 	// se o elemento atual não for uma arvore, retorne
@@ -21,7 +25,7 @@ func burnTrees(grid [][]rune, l, c int) {
 	}
 
 	grid[l][c] = 'o'
-
+	
 	burnTrees(grid, l-1, c)
 	burnTrees(grid, l+1, c)
 

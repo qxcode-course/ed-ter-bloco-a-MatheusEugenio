@@ -37,7 +37,7 @@ Você deve implementar a função `processa` no arquivo `lib.cpp`.
 [ 8 ]
 [ 3 5 ]
 [ 1 2 3 ]
-<<<<<<<<
+<<<<<<< <
 
 >>>>>>>> 02
 3 2 1
