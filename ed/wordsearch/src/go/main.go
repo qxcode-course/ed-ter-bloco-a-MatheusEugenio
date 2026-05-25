@@ -4,51 +4,64 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	"structs"
 )
 
-type Pos struct{
+type Pos struct {
 	l, c int
 }
 
-func exist_letra(grid[][]byte, word string, l, c int) bool{
-	
+func dfs(grid [][]byte, word string, l, c int, visited map[Pos]bool, index int) bool {
 
-}
+	if l < 0 || l >= len(grid) || c < 0 || c >= len(grid[0]) {
+		return false
+	}
 
-// Não mude a assinatura desta função, ela é a função chamada pelo LeetCode
-func exist(grid [][]byte, word string, visited map[Pos]bool) bool {
+	posAtual := Pos{l, c}
 
-	if len(visited) == word{
+	if visited[posAtual] {
+		return false
+	}
+
+	if grid[l][c] != word[index] {
+		return false
+	}
+
+	if index == len(word)-1 {
 		return true
 	}
 
-	num_linhas := len(grid) - 1
+	visited[posAtual] = true
+
+	if dfs(grid, word, l, c+1, visited, index+1) ||
+		dfs(grid, word, l, c-1, visited, index+1) ||
+		dfs(grid, word, l-1, c, visited, index+1) ||
+		dfs(grid, word, l+1, c, visited, index+1) {
+		return true
+	}
+
+	delete(visited, posAtual)
+
+	return false
+}
+
+// Não mude a assinatura desta função, ela é a função chamada pelo LeetCode
+func exist(grid [][]byte, word string) bool {
+
+	num_linhas := len(grid)
 	num_colums := len(grid[0])
 
-	if num_linhas < 0 || num_colums < 0 || num_linhas >= len(grid) || num_colums >= len(grid[0]){
-		return false
-	}
-	
-	for i := 0; i < num_linhas; i++{
+	for i := 0; i < num_linhas; i++ {
 		for j := 0; j < num_colums; j++ {
-			
-			pos := Pos(i,j)
-			_, exist := visited[pos]
 
-			if exist && {
+			visited := make(map[Pos]bool)
 
+			if dfs(grid, word, i, j, visited, 0) {
+				return true
 			}
-			
-			if grid[num_linhas][num_colums] == visited[]{
-				
-			}
+
 		}
 	}
 
-	if grid[num_linhas][num_colums] != "esperado"{
-
-	}
 	return false
 }
 
@@ -62,8 +75,7 @@ func main() {
 		grid = append(grid, []byte(scanner.Text()))
 	}
 
-	visited := make(map[rune]bool)
-	if exist(grid, word, visited) {
+	if exist(grid, word) {
 		fmt.Println("true")
 	} else {
 		fmt.Println("false")
