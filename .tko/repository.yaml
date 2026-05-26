@@ -22,10 +22,10 @@ expanded:
 - ed@backtrack
 flags:
   inbox: all
-  panel: skills
+  panel: help
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@wordsearch
-selected_index: 4
+selected: ed@backtrack
+selected_index: 3
