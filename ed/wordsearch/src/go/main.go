@@ -10,7 +10,7 @@ type Pos struct {
 	l, c int
 }
 
-func dfs(grid [][]byte, word string, l, c int, visited map[Pos]bool, index int) bool {
+func dfs(grid [][]byte, word string, l, c int, visited map[Pos]bool, index int) 	bool {
 
 	if l < 0 || l >= len(grid) || c < 0 || c >= len(grid[0]) {
 		return false
@@ -58,7 +58,6 @@ func exist(grid [][]byte, word string) bool {
 			if dfs(grid, word, i, j, visited, 0) {
 				return true
 			}
-
 		}
 	}
 
