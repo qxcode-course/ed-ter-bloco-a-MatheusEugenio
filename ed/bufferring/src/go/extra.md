@@ -15,7 +15,7 @@ class Deque {
     PopBack()            // remove valor do fim
     PopFront()           // remove valor do início
     Front() (int, error) // retorna o valor do início
-    Back() (int, error)  // retorna o valor do fim
+    Backs() (int, error)  // retorna o valor do fim
     Clear()              // limpa todos os elementos
     Len() int            // retorna o número de elementos
     String() string      // representação no formato [1, 2, 3]

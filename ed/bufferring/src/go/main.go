@@ -14,15 +14,6 @@ type Deque struct {
 	capacity int
 }
 
-func (b *Deque) String() string {
-	result := []string{}
-	for i := range b.size {
-		val := b.data[(b.front+i)%b.capacity]
-		result = append(result, fmt.Sprint(val))
-	}
-	return "[" + strings.Join(result, ", ") + "]"
-}
-
 func (b *Deque) Debug() string {
 	result := make([]string, b.capacity)
 	for i, _ := range result {
@@ -41,6 +32,40 @@ func (b *Deque) Debug() string {
 		result[index] = fmt.Sprintf("%s%d", prefix, val)
 	}
 	return strings.Join(result, " |")
+}
+
+func (d *Deque) resize(newCapacity int) {
+
+	if newCapacity <= d.size ||
+		newCapacity <= len(d.data) {
+		return
+	}
+
+	copyArray := make([]int, newCapacity)
+
+	for _, val := range d.data {
+		copyArray = append(copyArray, val)
+	}
+
+	d.capacity = newCapacity
+	d.data = copyArray
+}
+
+func (d *Deque) Clear() {
+	d.size = 0
+}
+
+func (d *Deque) Len() int {
+	return d.size
+}
+
+func (b *Deque) String() string {
+	result := []string{}
+	for i := range b.size {
+		val := b.data[(b.front+i)%b.capacity]
+		result = append(result, fmt.Sprint(val))
+	}
+	return "[" + strings.Join(result, ", ") + "]"
 }
 
 func main() {
@@ -68,7 +93,7 @@ func main() {
 		case "debug":
 			fmt.Println(buf.Debug())
 		case "size":
-			// fmt.Println(buf.Len())
+			fmt.Println(buf.Len())
 		case "push_back":
 			// for _, v := range args[1:] {
 			// 	num, _ := strconv.Atoi(v)
@@ -100,7 +125,7 @@ func main() {
 			// 	fmt.Println(val)
 			// }
 		case "clear":
-			// buf.Clear()
+			buf.Clear()
 		case "end":
 			return
 		default:

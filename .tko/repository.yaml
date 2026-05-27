@@ -19,7 +19,7 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@backtrack
+- ed@linear
 flags:
   inbox: all
   panel: help
@@ -27,5 +27,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@backtrack
-selected_index: 3
+selected: ed@bufferring
+selected_index: 7
