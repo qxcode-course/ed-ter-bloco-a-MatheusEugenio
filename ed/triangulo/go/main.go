@@ -19,9 +19,9 @@ func processa(vet []int) {
 	}
 
 	// 2. monte o vetor auxiliar com os resultados das somas
-	guardaSoma := make([]int, 0)
+	guardaSoma := make([]int, tamVet-1)
 	for i := 0; i < tamVet-1; i++ {
-		guardaSoma = append(guardaSoma, vet[i]+vet[i+1])
+    	guardaSoma[i] = vet[i] + vet[i+1]	
 	}
 
 	// 3. chame recursivamente a função processa para o vetor auxiliar

@@ -36,8 +36,7 @@ func main() {
 		fmt.Scan(&vet[i])
 	}
 
-	somatemp := 0
-	if somatorio(vet, valSoma, somatemp, 0) {
+	if somatorio(vet, valSoma, 0, 0) {
 		fmt.Println("true")
 	} else {
 		fmt.Println("false")
