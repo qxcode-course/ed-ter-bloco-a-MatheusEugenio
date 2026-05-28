@@ -26,5 +26,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: eval1@eval1
-selected_index: 10
+selected: ed@map_set
+selected_index: 1
