@@ -18,13 +18,14 @@ sources:
   type: git
   writeable: false
   quests: null
-expanded: []
+expanded:
+- ed@rec
 flags:
-  inbox: all
+  inbox: inbox
   panel: skills
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@map_set
-selected_index: 1
+selected: ed@escada
+selected_index: 4
