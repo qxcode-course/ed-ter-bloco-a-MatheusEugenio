@@ -2,8 +2,10 @@ package main
 
 import (
 	"bufio"
+	"errors"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -11,26 +13,67 @@ type Stack[T any] struct {
 	data []T
 }
 
-// func (s *Stack[T]) String() string {
-// 	output := ""
-// 	for i := range cap(s.data) {
-// 		if i != 0 {
-// 			output += ", "
-// 		}
-// 		if i < len(s.data) {
-// 			output += fmt.Sprintf("%v", s.data[i])
-// 		} else {
-// 			output += "_"
-// 		}
-// 	}
-// 	return output
-// }
-// 
+func NewStack[T any](cap int) *Stack[T] {
+	newData := make([]T, 0, cap)
+	return &Stack[T]{
+		data: newData,
+	}
+}
+
+func (s *Stack[T]) Push(value T) {
+	s.data = append(s.data, value)
+}
+
+func (s *Stack[T]) Peek() (T, error) {
+
+	if len(s.data) == 0 {
+		var null T
+		return null, errors.New("stack is empty")
+	}
+
+	return s.data[len(s.data)-1], nil
+}
+
+func (s *Stack[T]) String() string {
+	output := ""
+	for i := range cap(s.data) {
+		if i != 0 {
+			output += ", "
+		}
+		if i < len(s.data) {
+			output += fmt.Sprintf("%v", s.data[i])
+		} else {
+			output += "_"
+		}
+	}
+	return output
+}
+
+func (s *Stack[T]) Pop() error {
+
+	if len(s.data) == 0 {
+		return errors.New("stack is empty")
+	}
+
+	s.data = s.data[:len(s.data)-1]
+	return nil
+}
+
+func (s *Stack[T]) Clear() {
+
+	newData := make([]T, 0,cap(s.data))
+	s.data = newData
+}
+
+func (s *Stack[T]) Size() int {
+	return len(s.data)
+}
+
 func main() {
 	var line, cmd string
 	scanner := bufio.NewScanner(os.Stdin)
 
-	// v := NewStack[int](10)
+	v := NewStack[int](10)
 	for {
 		fmt.Print("$")
 		if !scanner.Scan() {
@@ -48,31 +91,31 @@ func main() {
 		case "end":
 			return
 		case "init":
-			// cap, _ := strconv.Atoi(parts[1])
-			// v = NewStack[int](cap)
+			cap, _ := strconv.Atoi(parts[1])
+			v = NewStack[int](cap)
 		case "push":
-			// for _, part := range parts[1:] {
-			// 	value, _ := strconv.Atoi(part)
-			// 	v.Push(value)
-			// }
+			for _, part := range parts[1:] {
+				value, _ := strconv.Atoi(part)
+				v.Push(value)
+			}
 		case "debug":
-			// fmt.Println(v)
+			fmt.Println(v)
 		case "top":
-			// top, err := v.Peek()
-			// if err != nil {
-			// 	fmt.Println(err)
-			// } else {
-			// 	fmt.Println(top)
-			// }
+			top, err := v.Peek()
+			if err != nil {
+				fmt.Println(err)
+			} else {
+				fmt.Println(top)
+			}
 		case "size":
-			// fmt.Println(v.Size())
+			fmt.Println(v.Size())
 		case "pop":
-			// err := v.Pop()
-			// if err != nil {
-			// 	fmt.Println(err)
-			// }
+			err := v.Pop()
+			if err != nil {
+				fmt.Println(err)
+			}
 		case "clear":
-			// v.Clear()
+			v.Clear()
 		default:
 			fmt.Println("fail: comando invalido")
 		}
