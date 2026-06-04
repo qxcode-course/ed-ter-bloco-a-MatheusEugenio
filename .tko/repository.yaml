@@ -18,8 +18,7 @@ sources:
   type: git
   writeable: false
   quests: null
-expanded:
-- ed@map_set
+expanded: []
 flags:
   inbox: all
   panel: skills
@@ -27,5 +26,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@rotacoes
-selected_index: 8
+selected: ed@map_set
+selected_index: 1
