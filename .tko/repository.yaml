@@ -20,11 +20,11 @@ sources:
   quests: null
 expanded: []
 flags:
-  inbox: all
+  inbox: inbox
   panel: skills
-  show_panel: 'true'
+  show_panel: 'false'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@map_set
+selected: ed@linear
 selected_index: 1
