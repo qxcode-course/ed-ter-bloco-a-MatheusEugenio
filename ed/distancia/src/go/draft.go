@@ -1,46 +1,83 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func temProximo(str string, indexAtual int, numAlvo int, limite int) bool{
+func buscaParaEsquerda(limite, value int, runes []rune, indexAtual int) bool {
 
-    if str[indexAtual] == byte(numAlvo){
-        return true
-    }
+	cont := 1
+	for i := indexAtual; i >= 0; i-- {
 
-    if temProximo(str, indexAtual+1, numAlvo, limite) ||
-       temProximo(str, indexAtual-1, numAlvo, limite) {
+		if cont > limite {
+			return false
+		}
 
-    }
+		if runes[i] == rune('0'+value) {
+			return true
+		}
 
-    return false
+		cont++
+	}
+
+	return false
 }
 
-func formatStr (str string, limite int){
+func buscaParaDireita(limite, value int, runes []rune, indexAtual int) bool {
 
-    numAlvo := 0
-    for i, r := range str{
+	cont := 1
+	for i := indexAtual; i < len(runes); i++ {
 
-        if r != '.'{
-            continue
-        }
+		if cont > limite {
+			return false
+		}
 
-        if !temProximo(str, i, numAlvo+1, limite){
-            str = str[:i] + fmt.Sprintf("%d", numAlvo) + str[i+1:]
-        }
+		if runes[i] == rune('0'+value) {
+			return true
+		}
 
-    }
+		cont++
+	}
+
+	return false
 }
 
+func preencher(valoresL []int, str string, limite int) string {
+
+	runes := []rune(str)
+
+	for i := range runes {
+
+		if runes[i] == '.' {
+
+			j := 0
+			for j < len(valoresL) {
+
+				if !buscaParaDireita(limite, valoresL[j], runes, i) && !buscaParaEsquerda(limite, valoresL[j], runes, i) {
+					runes[i] = rune('0' + valoresL[j])
+					break
+				}
+				j++
+			}
+		}
+	}
+
+	return string(runes)
+}
 
 func main() {
 
-    var str string
-    fmt.Scan(&str)
-    
-    var limite int
-    fmt.Scan(&limite)
+	var str string
+	fmt.Scan(&str)
 
-    formatStr(str, limite)
-    fmt.Println(str)
+	var limite int
+	fmt.Scan(&limite)
+
+	var valoresL []int
+
+	for i := 0; i <= limite; i++ {
+		valoresL = append(valoresL, i)
+	}
+
+	fmt.Println(preencher(valoresL, str, limite))
 }

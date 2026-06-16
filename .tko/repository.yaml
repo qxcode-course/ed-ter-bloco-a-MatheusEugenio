@@ -18,13 +18,18 @@ sources:
   type: git
   writeable: false
   quests: null
-expanded: []
+expanded:
+- ed@backtrack
 flags:
-  inbox: inbox
-  panel: skills
-  show_panel: 'false'
+  inbox: all
+  panel: logs
   task_graph_mode: executions
   show_time: 'true'
+audit:
+  enabled: true
+  interval_seconds: null
+audit_enabled: true
+audit_interval_seconds: null
 lang: go
-selected: ed@linear
-selected_index: 1
+selected: ed@distancia
+selected_index: 8
