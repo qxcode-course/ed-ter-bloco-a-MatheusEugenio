@@ -19,17 +19,15 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@backtrack
+- ed@dfs
 flags:
   inbox: all
-  panel: logs
+  panel: skills
   task_graph_mode: executions
   show_time: 'true'
 audit:
   enabled: true
   interval_seconds: null
-audit_enabled: true
-audit_interval_seconds: null
 lang: go
-selected: ed@distancia
-selected_index: 8
+selected: ed@longest
+selected_index: 13

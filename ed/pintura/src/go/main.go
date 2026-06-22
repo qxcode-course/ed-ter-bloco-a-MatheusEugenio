@@ -8,11 +8,43 @@ import (
 	"strings"
 )
 
+type Pos struct {
+	l, c int
+}
+
+func pintar(image [][]int, i, j int, color int, visitados map[Pos]bool, colorAtual int) bool {
+
+	if i < 0 || j < 0 || i >= len(image) || j >= len(image[0]) {
+		return false
+	}
+
+	pos := Pos{i, j}
+	if visitados[pos] || image[i][j] != colorAtual {
+		return false
+	}
+
+	visitados[pos] = true
+	image[i][j] = color
+
+	if pintar(image, i, j+1, color, visitados, colorAtual) ||
+		pintar(image, i, j-1, color, visitados, colorAtual) ||
+		pintar(image, i-1, j, color, visitados, colorAtual) ||
+		pintar(image, i+1, j, color, visitados, colorAtual) {
+		return true
+	}
+
+	return false
+}
+
 // Não modifique a assinatura da função floodFill
 func floodFill(image [][]int, sr int, sc int, color int) [][]int {
-	//
-	_ := image
-	return 0
+
+	pos := Pos{sr, sc}
+	corAtual := image[pos.l][pos.c]
+	visitados := make(map[Pos]bool)
+
+	pintar(image, pos.l, pos.c, color, visitados, corAtual)
+	return image
 }
 
 // Não modifique a função main

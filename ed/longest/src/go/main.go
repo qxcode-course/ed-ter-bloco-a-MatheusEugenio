@@ -8,10 +8,57 @@ import (
 	"strings"
 )
 
+type Pos struct {
+	l, c int
+}
+
+func buscaCaminho(matrix [][]int, i, j int) int {
+
+	melhorCaminho := 1
+
+	direcoes := [][2]int{{0, 1}, {0, -1}, {-1, 0}, {1, 0}}
+
+	for _, dir := range direcoes {
+
+		vizI := i + dir[0]
+		vizJ := j + dir[1]
+
+		if vizI < 0 || vizJ < 0 || vizI >= len(matrix) || vizJ >= len(matrix[0]) {
+			continue
+		}
+
+		vizinho := matrix[vizI][vizJ]
+		atual := matrix[i][j]
+
+		if vizinho > atual {
+
+			caminhoVizinho := buscaCaminho(matrix, vizI, vizJ)
+
+			if caminhoVizinho+1 > melhorCaminho {
+				melhorCaminho = caminhoVizinho + 1
+			}
+		}
+	}
+
+	return melhorCaminho
+}
+
 func longestIncreasingPath(matrix [][]int) int {
-	//
-	_ := matrix
-	return 0
+
+	num_l := len(matrix)
+	num_c := len(matrix[0])
+
+	melhor := 0
+	for i := 0; i < num_l; i++ {
+		for j := 0; j < num_c; j++ {
+
+			resultado := buscaCaminho(matrix, i, j)
+
+			melhor = max(melhor, resultado)
+		}
+	}
+
+	return melhor
 }
 
 // Não modifique a função main

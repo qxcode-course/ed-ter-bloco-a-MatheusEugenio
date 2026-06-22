@@ -42,28 +42,79 @@ func buscaParaDireita(limite, value int, runes []rune, indexAtual int) bool {
 	return false
 }
 
+func ehValido(runes []rune, pos, limite int, valores []int) bool {
+
+	if pos == len(runes) {
+		return false
+	}
+
+	if runes[pos] != '.' {
+		return ehValido(runes, pos+1, limite, valores)
+	}
+
+	if !buscaParaDireita(limite, valores[i], runes, pos) && !buscaParaEsquerda(limite, valores[i], runes, pos) {
+		runes[pos] = rune('0' + valores[i])
+	}
+
+	i := 0
+	for i < len(valores) {
+
+		if ehValido(runes, pos, limite, valores) {
+
+		}
+
+		i++
+	}
+
+}
+
 func preencher(valoresL []int, str string, limite int) string {
 
 	runes := []rune(str)
 
 	for i := range runes {
-
 		if runes[i] == '.' {
 
 			j := 0
 			for j < len(valoresL) {
 
 				if !buscaParaDireita(limite, valoresL[j], runes, i) && !buscaParaEsquerda(limite, valoresL[j], runes, i) {
+
 					runes[i] = rune('0' + valoresL[j])
 					break
 				}
 				j++
 			}
+			//volta e tenta outro caminho
 		}
 	}
 
 	return string(runes)
 }
+
+// func preencher(valoresL []int, str string, limite int) string {
+
+// 	runes := []rune(str)
+
+// 	for i := range runes {
+// 		if runes[i] == '.' {
+
+// 			j := 0
+// 			for j < len(valoresL) {
+
+// 				if !buscaParaDireita(limite, valoresL[j], runes, i) && !buscaParaEsquerda(limite, valoresL[j], runes, i) {
+
+// 					runes[i] = rune('0' + valoresL[j])
+// 					break
+// 				}
+// 				j++
+// 			}
+// 			//volta e tenta outro caminho
+// 		}
+// 	}
+
+// 	return string(runes)
+// }
 
 func main() {
 
