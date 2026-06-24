@@ -19,7 +19,7 @@ sources:
   writeable: false
   quests: null
 expanded:
-- ed@dfs
+- ed@bfs
 flags:
   inbox: all
   panel: skills
@@ -29,5 +29,5 @@ audit:
   enabled: true
   interval_seconds: null
 lang: go
-selected: ed@battleship
-selected_index: 14
+selected: ed@caminho
+selected_index: 10
