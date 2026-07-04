@@ -8,17 +8,17 @@ type Pos struct {
 	l, c int
 }
 
-func contagemMinutos(grid [][]int, podres []Pos, quantFrescas int, minutos *int) int {
+func contagemMinutos(grid [][]int, podres []Pos, quantFrescas int, minutos int) (int, int) {
 
 	if quantFrescas == 0 {
-		return 0
+		return 0, 0
 	}
 
 	direcoes := []Pos{{-1, 0}, {1, 0}, {0, -1}, {0, 1}}
 
 	for len(podres) > 0 && quantFrescas > 0 {
 
-		*minutos++
+		minutos++
 
 		for _, podreAtual := range podres {
 			podres = podres[1:]
@@ -31,6 +31,7 @@ func contagemMinutos(grid [][]int, podres []Pos, quantFrescas int, minutos *int)
 				if nl < len(grid) && nl >= 0 && nc < len(grid[0]) && nc >= 0 && grid[nl][nc] == 1 {
 
 					grid[nl][nc] = 2
+					podres = append(podres, Pos{nl, nc})
 					quantFrescas--
 				}
 			}
@@ -38,28 +39,31 @@ func contagemMinutos(grid [][]int, podres []Pos, quantFrescas int, minutos *int)
 
 	}
 
-	return quantFrescas
+	return quantFrescas, minutos
 }
 
 func apodrecedor(grid [][]int) int {
 
-	frescas := 0
+	qtdfrescas := 0
 	var filaPodres = []Pos{}
 
 	for i := 0; i < len(grid); i++ {
 		for j := 0; j < len(grid[0]); j++ {
+
 			if grid[i][j] == 1 {
-				frescas++
-			} else if grid[i][j] == 2 {
+				qtdfrescas++
+			}
+
+			if grid[i][j] == 2 {
 				filaPodres = append(filaPodres, Pos{i, j})
 			}
 		}
 	}
 
 	minutos := 0
-	frescas = contagemMinutos(grid, filaPodres, frescas, &minutos)
+	qtdfrescas, minutos = contagemMinutos(grid, filaPodres, qtdfrescas, minutos)
 
-	if frescas > 0 {
+	if qtdfrescas > 0 {
 		return -1
 	}
 

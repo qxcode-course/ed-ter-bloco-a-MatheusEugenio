@@ -11,7 +11,11 @@ type Pos struct {
 }
 
 func (p Pos) getNeig() []Pos {
-	return nil
+	return []Pos{{p.l, p.c + 1},
+		{p.l, p.c - 1},
+		{p.l + 1, p.c},
+		{p.l - 1, p.c},
+	}
 }
 
 // está na posição adequada
@@ -21,42 +25,36 @@ func inside(grid [][]rune, pos Pos) bool {
 	return pos.l >= 0 && pos.l < nrows && pos.c >= 0 && pos.c < ncols
 }
 
-// verifica se é o caractere referido
+// verifica se É o caractere referido
 func match(grid [][]rune, pos Pos, char rune) bool {
 	return inside(grid, pos) && grid[pos.l][pos.c] == char
 }
 
 // method principal
-func search(grid [][]rune, startPos Pos, endPos Pos, visitados map[Pos]bool, caminho map[Pos]Pos, fila Queue[Pos]) bool {
-
-	if !inside(grid, startPos) {
-		return false
-	}
-
-	if match(grid, startPos, '#') || visitados[startPos] {
-		return false
-	}
-
-	if match(grid, startPos, 'F') && startPos == endPos {
-		return true
-	}
+func search(grid [][]rune, startPos Pos, endPos Pos, visitados map[Pos]bool, caminho map[Pos]Pos, queue Queue[Pos]) bool {
 
 	visitados[startPos] = true
-	
-	fila.Enqueue(startPos)
-	caminho[startPos] =  
-	// registrar o nó atual como anterior do vizinho no mapa caminho
-	grid[startPos.l][startPos.c] = '.'
 
-	if search(grid, startPos, endPos, visitados, caminho) ||
-		search(grid, startPos, endPos, visitados, caminho) ||
-		search(grid, startPos, endPos, visitados, caminho) ||
-		search(grid, startPos, endPos, visitados, caminho) {
-		return true
+	queue.Enqueue(startPos)
+
+	for !queue.IsEmpty() {
+
+		pos_front, _ := queue.Dequeue()
+
+		if pos_front == endPos {
+			return true
+		}
+
+		for _, vizinho := range pos_front.getNeig() {
+
+			if inside(grid, vizinho) && !match(grid, vizinho, '#') && !visitados[vizinho] {
+
+				visitados[vizinho] = true
+				queue.Enqueue(vizinho)
+				caminho[vizinho] = pos_front
+			}
+		}
 	}
-
-	visitados[startPos] = false
-	grid[startPos.l][startPos.c] = ' '
 
 	return false
 }
@@ -98,6 +96,14 @@ func main() {
 	caminho := make(map[Pos]Pos)
 
 	search(mat, inicio, fim, visitados, caminho, queue)
+
+	p := fim
+	for p != inicio {
+		
+		mat[p.l][p.c] = '.'
+		p = caminho[p]
+	}
+	mat[p.l][p.c] = '.'
 
 	for _, line := range mat {
 		fmt.Println(string(line)) // Converte o slice de runes de volta para string para imprimir
