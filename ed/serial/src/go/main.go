@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -20,8 +21,25 @@ type Node struct {
 // Você pode fazer um "push_front" no array usando '*parts = (*parts)[1:]
 // Se o elemento for "#", significa que o nó é nulo.
 func create(parts *[]string) *Node {
-	_ = parts
-	return nil
+
+	if len(*parts) == 0 {
+		return nil
+	}
+
+	element := (*parts)[0]
+	*parts = (*parts)[1:]
+
+	if element == "#" {
+		return nil
+	}
+
+	value, _ := strconv.Atoi(element)
+
+	return &Node{
+		Value: value,
+		Left:  create(parts),
+		Right: create(parts),
+	}
 }
 
 // BShow é uma função auxiliar para imprimir a árvore binária.
