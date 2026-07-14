@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-18_10-56-39",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\n\tvar l1, l2, l3 float64\n\n\tfmt.Scan(&l1, &l2, &l3)\n\n\tvar p = (l1 + l2 + l3) / 2.0\n\tvar area = math.Sqrt(p * (p - l1) * (p - l2) * (p - l3))\n\n\tfmt.Printf(\"%.2f\\n\", area)\n}\n",
+            "lines": "18"
+        }
+    ]
+}

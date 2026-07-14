@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-07_10-06-31",
+            "content": "package main\n\nimport \"fmt\"\n\ntype ParQR struct {\n\tquociente, resto int\n}\n\nfunc imprimir_invertido(pares []ParQR) { // func recursiva\n\n\tif len(pares) == 0 {\n\t\treturn\n\t}\n\n\tpos := len(pares) - 1\n\n\tquo := pares[pos].quociente\n\trest := pares[pos].resto\n\tfmt.Printf(\"%d %d\\n\", quo, rest)\n\n\timprimir_invertido(pares[:len(pares)-1])\n\t// atualiza o tamanho do slice (cria um sub-slice), diminuindo um elemento da posi\u00e7\u00e3o \"len(pares)-1\", at\u00e9 chegar no caso base\n}\n\nfunc formaParQR(num int) []ParQR {\n\n\tparesSlice := make([]ParQR, 0)\n\tresto := 0\n\n\tfor {\n\t\tif num == 0 && resto == 1 {\n\t\t\tbreak\n\t\t}\n\n\t\tnum, resto = num/2, num%2\n\n\t\tparesSlice = append(paresSlice, ParQR{num, resto})\n\t}\n\n\treturn paresSlice\n}\n\nfunc main() {\n\n\tvar num int\n\tfmt.Scan(&num)\n\n\tparesRQ := formaParQR(num) //map[quociente]resto\n\n\timprimir_invertido(paresRQ)\n\n}\n",
+            "lines": "52"
+        }
+    ]
+}

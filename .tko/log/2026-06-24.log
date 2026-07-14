@@ -1,0 +1,24 @@
+2026-06-24 00:01:45, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-06-24 00:06:52, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-06-24 00:11:52, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-06-24 00:17:11, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-06-24 00:19:08, EXEC, v:1, k:ed@caminho, mode:FULL, size:148, fail:COMP
+2026-06-24 00:19:09, EXEC, v:1, k:ed@caminho, mode:FULL, fail:COMP
+2026-06-24 00:19:09, EXEC, v:1, k:ed@caminho, mode:FULL, fail:COMP
+2026-06-24 00:19:10, EXEC, v:1, k:ed@caminho, mode:FULL, fail:COMP
+2026-06-24 00:19:10, EXEC, v:1, k:ed@caminho, mode:FULL, fail:COMP
+2026-06-24 00:19:24, EXEC, v:1, k:ed@caminho, mode:FULL, size:144, fail:COMP
+2026-06-24 00:19:30, EXEC, v:1, k:ed@caminho, mode:FULL, fail:COMP
+2026-06-24 00:19:30, MOVE, v:1, k:ed@caminho, mode:BACK
+2026-06-24 00:19:22, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-06-24 00:19:08, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-06-24 00:19:08, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-06-24 00:29:51, MOVE, v:1, k:ed@caminho, mode:PICK
+2026-06-24 00:29:52, EXEC, v:1, k:ed@caminho, mode:FULL, fail:COMP
+2026-06-24 00:30:45, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-06-24 00:37:16, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-06-24 00:34:38, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-06-24 00:42:16, EXEC, v:1, k:ed@caminho, mode:FULL, size:146, fail:COMP
+2026-06-24 00:42:17, EXEC, v:1, k:ed@caminho, mode:FULL, fail:COMP
+2026-06-24 00:42:14, MOVE, v:1, k:ed@caminho, mode:EDIT
+2026-06-24 00:42:18, MOVE, v:1, k:ed@caminho, mode:BACK

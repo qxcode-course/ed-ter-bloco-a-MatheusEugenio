@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_11-48-44",
+            "content": "@@ -21,16 +21,51 @@\n  %22fmt%22%0A%0A\n+type Par struct %7B%0A%09m int%0A%09f int%0A%7D%0A%0A\n func mai\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-14_11-54-09",
+            "content": "@@ -284,21 +284,8 @@\n else\n- if mapa%5Bval%5D\n  %7B%0A%09\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-14_11-55-16",
+            "content": "@@ -224,43 +224,21 @@\n %7B%0A%09%09\n-_, existe := mapa%5B-val%5D%0A%09%09if existe\n+if mapa%5B-val%5D\n  %7B%0A%09\n@@ -280,16 +280,29 @@\n %09%09%7D else\n+ if mapa%5Bval%5D\n  %7B%0A%09%09%09ma\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-04-14_11-56-27",
+            "content": "@@ -144,19 +144,20 @@\n %5D)%0A%09%7D%0A%0A%09\n+ma\n pa\n-r\n  := make\n@@ -233,19 +233,20 @@\n iste := \n+ma\n pa\n-r\n %5B-val%5D%0A%09\n@@ -261,19 +261,34 @@\n te %7B%0A%09%09%09\n+qtdPares++%0A%09%09%09ma\n pa\n-r\n %5B-val%5D =\n@@ -294,30 +294,16 @@\n = false%0A\n-%09%09%09qtdPares++%0A\n %09%09%7D else\n@@ -312,11 +312,12 @@\n %0A%09%09%09\n+ma\n pa\n-r\n %5Bval\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-04-14_11-58-20",
+            "content": "@@ -164,19 +164,20 @@\n map%5Bint%5D\n-int\n+bool\n )%0A%09qtdPa\n@@ -223,24 +223,42 @@\n %7B%0A%09%09\n-if par%5B-val%5D %3E 0\n+_, existe := par%5B-val%5D%0A%09%09if existe\n  %7B%0A%09\n@@ -272,10 +272,16 @@\n val%5D\n---\n+ = false\n %0A%09%09%09\n@@ -313,18 +313,23 @@\n par%5Bval%5D\n-++\n+ = true\n %0A%09%09%7D%0A%09%7D%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-04-14_15-31-09",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\n\tvar n int\n\tfmt.Scan(&n)\n\n\tanimais := make([]int, n)\n\tfor i := range animais {\n\t\tfmt.Scan(&animais[i])\n\t}\n\n\tpar := make(map[int]int)\n\tqtdPares := 0\n\n\tfor _, val := range animais {\n\t\tif par[-val] > 0 {\n\t\t\tpar[-val]--\n\t\t\tqtdPares++\n\t\t} else {\n\t\t\tpar[val]++\n\t\t}\n\t}\n\n\tfmt.Println(qtdPares)\n}\n",
+            "lines": "28"
+        }
+    ]
+}

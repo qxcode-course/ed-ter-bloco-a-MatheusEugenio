@@ -1,0 +1,14 @@
+2026-05-19 10:18:38, MOVE, v:1, k:ed@queimada, mode:PICK
+2026-05-19 10:18:47, EXEC, v:1, k:ed@queimada, mode:FULL, rate:100
+2026-05-19 10:18:48, MOVE, v:1, k:ed@queimada, mode:BACK
+2026-05-19 10:18:38, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-19 10:18:38, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-19 10:18:40, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-19 10:18:46, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-19 10:32:16, MOVE, v:1, k:ed@labirinto, mode:PICK
+2026-05-19 10:32:38, MOVE, v:1, k:ed@labirinto, mode:BACK
+2026-05-19 10:32:40, MOVE, v:1, k:ed@queimada, mode:PICK
+2026-05-19 10:32:16, MOVE, v:1, k:ed@labirinto, mode:EDIT
+2026-05-19 10:32:48, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-19 10:42:23, MOVE, v:1, k:ed@queimada, mode:EDIT
+2026-05-19 10:45:49, MOVE, v:1, k:ed@queimada, mode:EDIT

@@ -1,0 +1,134 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-11_17-29-24",
+            "content": "@@ -863,17 +863,16 @@\n %5Brune%5D()\n-;\n %0A%09e.line\n",
+            "lines": "158"
+        },
+        {
+            "label": "2026-05-11_17-37-58",
+            "content": "@@ -123,18 +123,18 @@\n to%0A%09\n+it_\n line   \n-%09  \n *Nod\n@@ -153,18 +153,18 @@\n %5D%5D%0A%09\n+it_\n cursor \n-%09  \n *Nod\n@@ -258,24 +258,27 @@\n  rune) %7B%0A%09e.\n+it_\n cursor = e.l\n@@ -268,32 +268,35 @@\n e.it_cursor = e.\n+it_\n line.Value.Inser\n@@ -299,16 +299,19 @@\n nsert(e.\n+it_\n cursor, \n@@ -312,24 +312,27 @@\n rsor, r)%0A%09e.\n+it_\n cursor = e.c\n@@ -322,32 +322,35 @@\n e.it_cursor = e.\n+it_\n cursor.Next()%0A%7D%0A\n@@ -377,32 +377,35 @@\n yLeft() %7B%0A%09if e.\n+it_\n cursor != e.line\n@@ -392,32 +392,35 @@\n .it_cursor != e.\n+it_\n line.Value.Front\n@@ -428,24 +428,27 @@\n ) %7B // Se o \n+it_\n cursor n%C3%A3o e\n@@ -470,24 +470,27 @@\n a linha%0A%09%09e.\n+it_\n cursor = e.c\n@@ -484,24 +484,27 @@\n _cursor = e.\n+it_\n cursor.Prev(\n@@ -507,32 +507,35 @@\n rev() // Move o \n+it_\n cursor para a es\n@@ -586,24 +586,27 @@\n linha%0A%09if e.\n+it_\n line != e.li\n@@ -652,24 +652,27 @@\n a linha%0A%09%09e.\n+it_\n line = e.lin\n@@ -664,24 +664,27 @@\n it_line = e.\n+it_\n line.Prev() \n@@ -720,24 +720,27 @@\n nterior%0A%09%09e.\n+it_\n cursor = e.l\n@@ -730,32 +730,35 @@\n e.it_cursor = e.\n+it_\n line.Value.End()\n@@ -768,16 +768,19 @@\n  Move o \n+it_\n cursor p\n@@ -883,16 +883,19 @@\n nsert(e.\n+it_\n line.Nex\n@@ -907,24 +907,27 @@\n newLine)%0A%09e.\n+it_\n line = e.lin\n@@ -915,32 +915,35 @@\n %0A%09e.it_line = e.\n+it_\n line.Next()%0A%09e.c\n@@ -937,24 +937,27 @@\n e.Next()%0A%09e.\n+it_\n cursor = e.l\n@@ -947,32 +947,35 @@\n e.it_cursor = e.\n+it_\n line.Value.Front\n@@ -1016,16 +1016,19 @@\n %7B%0A%09if e.\n+it_\n cursor !\n@@ -1027,24 +1027,27 @@\n cursor != e.\n+it_\n line.Value.E\n@@ -1053,24 +1053,27 @@\n End() %7B%0A%09%09e.\n+it_\n cursor = e.c\n@@ -1067,24 +1067,27 @@\n _cursor = e.\n+it_\n cursor.Next(\n@@ -1098,22 +1098,25 @@\n %0A%0A%09if e.\n+it_\n line \n-=\n+!\n = e.line\n@@ -1131,66 +1131,8 @@\n ) %7B%0A\n-%09%09e.line = e.line.Next()%0A%09%09e.cursor = e.line.Value.Front()\n %0A%09%7D%0A\n@@ -1313,16 +1313,19 @@\n i%C3%A7%C3%A3o do \n+it_\n cursor%0A%09\n@@ -2430,24 +2430,27 @@\n rune%5D())%0A%09e.\n+it_\n line = e.lin\n@@ -2463,16 +2463,19 @@\n nt()%0A%09e.\n+it_\n cursor =\n@@ -2473,24 +2473,27 @@\n _cursor = e.\n+it_\n line.Value.B\n@@ -3062,16 +3062,19 @@\n ar == e.\n+it_\n cursor %7B\n",
+            "lines": "158"
+        },
+        {
+            "label": "2026-05-11_17-46-58",
+            "content": "@@ -87,16 +87,19 @@\n %09lines  \n+   \n *List%5B*L\n@@ -126,16 +126,19 @@\n %09line   \n+%09  \n *Node%5B*L\n@@ -156,16 +156,19 @@\n %09cursor \n+%09  \n *Node%5Bru\n@@ -179,16 +179,19 @@\n %09screen \n+   \n tcell.Sc\n@@ -203,16 +203,19 @@\n %09style  \n+   \n tcell.St\n@@ -812,16 +812,17 @@\n %5Brune%5D()\n+;\n %0A%09e.line\n@@ -1020,22 +1020,20 @@\n %0A%0A%09if e.\n-cursor\n+line\n  == e.li\n@@ -1030,34 +1030,31 @@\n ne == e.line\n-.Value.End\n+s.Front\n () %7B%0A%09%09e.lin\n",
+            "lines": "159"
+        },
+        {
+            "label": "2026-05-11_17-47-56",
+            "content": "@@ -1036,32 +1036,8 @@\n nd()\n- && e.line.Next() != nil\n  %7B%0A%09\n",
+            "lines": "159"
+        },
+        {
+            "label": "2026-05-11_17-53-44",
+            "content": "@@ -1040,82 +1040,28 @@\n  && \n-(\n e.line.\n-Value.Front() != nil %7C%7C e.line.Value.Front() != e.line.Value.root)\n+Next() != nil\n  %7B%0A%09\n",
+            "lines": "159"
+        },
+        {
+            "label": "2026-05-11_17-55-02",
+            "content": "@@ -1048,23 +1048,67 @@\n ine.\n-Next() != e.lin\n+Value.Front() != nil %7C%7C e.line.Value.Front() != e.line.Valu\n e.ro\n",
+            "lines": "159"
+        },
+        {
+            "label": "2026-05-11_17-57-42",
+            "content": "@@ -773,256 +773,8 @@\n () %7B\n-%0A%0A%09if e.cursor != e.line.Value.Front() %7C%7C e.cursor != e.line.Value.End() %7B%0A%09%09// := NewList%5Brune%5D()%0A%09%09e.lines.Insert(e.line.Next(), e.line.Value)%0A%09%09//pula a linha para a de baixo%0A%09%09e.line = e.line.Next()%0A%09%09e.cursor = e.line.Value.Front()%0A%09%09return%0A%09%7D\n %0A%09ne\n@@ -1036,16 +1036,17 @@\n nd() && \n+(\n e.line.N\n@@ -1065,16 +1065,17 @@\n ine.root\n+)\n  %7B%0A%09%09e.l\n",
+            "lines": "159"
+        },
+        {
+            "label": "2026-05-11_18-08-29",
+            "content": "@@ -772,19 +772,16 @@\n r() %7B%0A%0A%09\n-// \n if e.cur\n@@ -848,20 +848,12 @@\n ) %7B%0A\n+%09\n %09//\n- %09newLine\n  := \n@@ -869,19 +869,16 @@\n une%5D()%0A%09\n-// \n %09e.lines\n@@ -904,22 +904,23 @@\n (), \n-newLine)%0A%0A%09// \n+e.line.Value)%0A%09\n %09//p\n@@ -948,19 +948,16 @@\n  baixo%0A%09\n-// \n %09e.line \n@@ -973,19 +973,16 @@\n Next()%0A%09\n-// \n %09e.curso\n@@ -1007,19 +1007,16 @@\n ront()%0A%09\n-// \n %09return%0A\n@@ -1016,19 +1016,16 @@\n return%0A%09\n-// \n %7D%0A%09newLi\n@@ -1480,136 +1480,8 @@\n () %7B\n-%0A%0A%09e.line.root.Value.Erase(e.cursor)%0A%0A%09noDeTras := e.cursor.prev%0A%0A%09noDeTras.next = nil%0A%09noDeTras.prev = nil%0A%09noDeTras.root = nil\n %0A%7D%0A%0A\n",
+            "lines": "168"
+        },
+        {
+            "label": "2026-05-11_18-23-32",
+            "content": "@@ -1508,38 +1508,44 @@\n %7B%0A%0A%09\n-noDeTras := e.cursor.prev%0A%09if \n+e.line.root.Value.Erase(e.cursor)%0A%0A%09\n noDe\n@@ -1549,17 +1549,17 @@\n oDeTras \n-=\n+:\n = e.curs\n@@ -1565,26 +1565,12 @@\n sor.\n-root %7B%0A%09%09return%0A%09%7D\n+prev\n %0A%0A%09n\n@@ -1633,44 +1633,8 @@\n  nil\n-%0A%0A%09e.line.root.Value.Erase(e.cursor)\n %0A%7D%0A%0A\n",
+            "lines": "177"
+        },
+        {
+            "label": "2026-05-11_18-24-53",
+            "content": "@@ -1576,19 +1576,16 @@\n rn%0A%09%7D%0A%0A%09\n-// \n noDeTras\n@@ -1589,35 +1589,32 @@\n ras.next = nil%0A%09\n-// \n noDeTras.prev = \n@@ -1618,19 +1618,16 @@\n  = nil%0A%09\n-// \n noDeTras\n",
+            "lines": "180"
+        },
+        {
+            "label": "2026-05-11_18-25-15",
+            "content": "@@ -1580,19 +1580,92 @@\n %7D%0A%0A%09\n-e.line.prev\n+// noDeTras.next = nil%0A%09// noDeTras.prev = nil%0A%09// noDeTras.root = nil%0A%0A%09e.line.root\n .Val\n@@ -1673,24 +1673,24 @@\n e.Erase(\n-noDeTras\n+e.cursor\n )%0A%7D%0A%0Afun\n",
+            "lines": "180"
+        },
+        {
+            "label": "2026-05-11_18-30-23",
+            "content": "@@ -1530,17 +1530,16 @@\n or.prev%0A\n-%0A\n %09if noDe\n@@ -1566,37 +1566,8 @@\n t %7B%0A\n-%09%09if e.line.Prev() == nil %7B%0A%09\n %09%09re\n@@ -1575,554 +1575,24 @@\n urn%0A\n-%09\n %09%7D%0A%0A%09\n-%09linhaAnterior := e.line.Prev()%0A%09%09ultimoNoDaLinhaNAnterior := linhaAnterior.Value.End()%0A%0A%09%09ultimoNoDaLinhaNAnterior.next = e.cursor%0A%09%09e.cursor.prev = ultimoNoDaLinhaNAnterior%0A%09%09return%0A%09%7D%0A%0A%09noAnteriorAoRemovido := noDeTras.prev%0A%09noDaFrenteDoCursor := e.cursor.next%0A%0A%09if noAnteriorAoRemovido != nil %7B%0A%09%09noAnteriorAoRemovido.next = e.cursor%0A%09%09e.cursor.prev = noAnteriorAoRemovido%0A%09%7D%0A%0A%09e.cursor.next = noDaFrenteDoCursor%0A%09if noDaFrenteDoCursor != nil %7B%0A%09%09noDaFrenteDoCursor.prev = e.cursor%0A%09%7D%0A%0A%09noDeTras.next = nil%0A%09noDeTras.prev = nil%0A%0A%09\n e.line\n+.prev\n .Val\n@@ -1640,25 +1640,24 @@\n yDelete() %7B%0A\n-%0A\n %7D%0A%0Afunc main\n",
+            "lines": "176"
+        },
+        {
+            "label": "2026-05-11_22-15-00",
+            "content": "@@ -1800,36 +1800,307 @@\n %7D%0A%0A%09\n-e.line.Value.Erase(noDeTras)\n+noAnteriorAoRemovido := noDeTras.prev%0A%09noDaFrenteDoCursor := e.cursor.next%0A%0A%09if noAnteriorAoRemovido != nil %7B%0A%09%09noAnteriorAoRemovido.next = e.cursor%0A%09%09e.cursor.prev = noAnteriorAoRemovido%0A%09%7D%0A%0A%09e.cursor.next = noDaFrenteDoCursor%0A%09if noDaFrenteDoCursor != nil %7B%0A%09%09noDaFrenteDoCursor.prev = e.cursor%0A%09%7D\n %0A%0A%09n\n@@ -2138,16 +2138,47 @@\n ev = nil\n+%0A%0A%09e.line.Value.Erase(noDeTras)\n %0A%7D%0A%0Afunc\n",
+            "lines": "203"
+        },
+        {
+            "label": "2026-05-11_22-18-57",
+            "content": "@@ -1565,46 +1565,8 @@\n oot \n-&& noDeTras.prev == e.line.Value.root \n %7B%0A%09%09\n",
+            "lines": "190"
+        },
+        {
+            "label": "2026-05-11_22-22-21",
+            "content": "@@ -1565,69 +1565,47 @@\n oot \n-%7B%0A%0A%09%09linhaParaApagar := e.line%0A%09%09linhaDeCima := e.line.Prev()\n+&& noDeTras.prev == e.line.Value.root %7B\n %0A%09%09i\n@@ -1650,91 +1650,89 @@\n %0A%0A%09%09\n-ultimoDaCima\n+linhaAnterior\n  := \n+e.\n lin\n-haDeCima.Value.End()%0A%09%09primeiroDaAtual := linhaParaApaga\n+e.Prev()%0A%09%09ultimoNoDaLinhaNAnterior := linhaAnterio\n r.Value.\n Fron\n@@ -1731,56 +1731,23 @@\n lue.\n-Front\n+End\n ()%0A%0A\n-%09%09if primeiroDaAtual != nil %7B%0A%09\n %09%09ultimo\n DaCi\n@@ -1746,176 +1746,85 @@\n timo\n+No\n Da\n-Cima.next = primeiroDaAtual%0A%09%09%09primeiroDaAtual.prev = ultimoDaCima%0A%09%09%7D%0A%0A%09%09e.cursor.prev = ultimoDaCima%0A%09%09e.cursor.next = linhaDeCima.Value.root%0A%09%09e.line = linhaDeCima\n+LinhaNAnterior.next = e.cursor%0A%09%09e.cursor.prev = ultimoNoDaLinhaNAnterior\n %0A%09%09r\n",
+            "lines": "190"
+        },
+        {
+            "label": "2026-05-11_22-44-32",
+            "content": "@@ -1549,26 +1549,22 @@\n as == e.\n-line.Value\n+cursor\n .root %7B%0A\n@@ -1570,94 +1570,122 @@\n %0A%0A%09%09\n-if e.line.Prev() != nil %7B%0A%0A%09%09%09linhaAnterior := e.line.Prev()%0A%09%09%09ultimaPosLinhaAnterior\n+linhaParaApagar := e.line%0A%09%09linhaDeCima := e.line.Prev()%0A%09%09if e.line.Prev() == nil %7B%0A%09%09%09return%0A%09%09%7D%0A%0A%09%09ultimoDaCima\n  := \n@@ -1685,32 +1685,30 @@\n ima := linha\n-Anterior\n+DeCima\n .Value.End()\n@@ -1711,39 +1711,9 @@\n nd()\n-.prev%0A%09%09%09linhaAtual := e.line%0A%09\n+%0A\n %09%09pr\n@@ -1716,29 +1716,24 @@\n %09%09primeiroDa\n-Linha\n Atual := lin\n@@ -1730,29 +1730,34 @@\n ual := linha\n-Atual\n+ParaApagar\n .Value.Front\n@@ -1763,83 +1763,54 @@\n t()%0A\n+%0A\n %09%09\n-%09ultimoDalinh\n+if primeiroD\n aAtual \n-:= linhaAtual.Value.Back()%0A%0A%09%09%09ultimaPosLinhaAnterior\n+!= nil %7B%0A%09%09%09ultimoDaCima\n .nex\n@@ -1819,29 +1819,24 @@\n = primeiroDa\n-Linha\n Atual%0A%09%09%09pri\n@@ -1842,21 +1842,16 @@\n imeiroDa\n-Linha\n Atual.pr\n@@ -1864,108 +1864,31 @@\n ltim\n-aPosLinhaAnterior%0A%0A%09%09%09ultimoDalinhaAtual.next = linhaAnterior.Value.root%0A%09%09%09linhaAnterior.Value.root\n+oDaCima%0A%09%09%7D%0A%0A%09%09e.cursor\n .pre\n@@ -1903,143 +1903,42 @@\n moDa\n-linhaAtual%0A\n+Cima\n %0A%09%09\n-%09\n e.\n-line = linhaAnterior%0A%0A%09%09%09linhaAtual.Value.root.next = linhaAtual.Value.root%0A%09%09%09linhaAtual.Value.root.prev = linhaAtual\n+cursor.next = linhaDeCima\n .Val\n@@ -1951,79 +1951,28 @@\n t%0A%09%09\n-%09linhaAtual.Value.size = 0%0A%0A%09%09%09e.lines.Erase(linhaAtual)%0A%09%09%09return%0A%09%09%7D%0A\n+e.line = linhaDeCima\n %0A%09%09r\n@@ -2011,16 +2011,17 @@\n DeTras)%0A\n+%0A\n %09noDeTra\n",
+            "lines": "199"
+        },
+        {
+            "label": "2026-05-17_13-21-03",
+            "content": "@@ -1638,43 +1638,28 @@\n %0A%09%09%09\n-linhaAtual := e.line%0A%0A%09%09%09novoNoCurs\n+ultimaPosLinhaAnteri\n or :\n@@ -1689,16 +1689,17 @@\n nd()\n-%0A\n+.prev\n %0A%09%09%09\n-if \n linh\n@@ -1708,89 +1708,19 @@\n tual\n-.Value.size %3E 0 %7B%0A%0A%09%09%09%09ultimaPosLinhaAnterior := linhaAnterior.Value.End().prev%0A%09\n+ := e.line%0A\n %09%09%09p\n@@ -1766,33 +1766,32 @@\n .Front()%0A%09%09%09\n-%09\n ultimoDa\n LinhaAtual :\n@@ -1770,33 +1770,33 @@\n nt()%0A%09%09%09ultimoDa\n-L\n+l\n inhaAtual := lin\n@@ -1817,17 +1817,16 @@\n Back()%0A%0A\n-%09\n %09%09%09ultim\n@@ -1874,17 +1874,16 @@\n tual%0A%09%09%09\n-%09\n primeiro\n@@ -1930,73 +1930,8 @@\n or%0A%0A\n-%09%09%09%09// Costura o final da linha atual no root da linha anterior%0A%09\n %09%09%09u\n@@ -1929,33 +1929,33 @@\n ior%0A%0A%09%09%09ultimoDa\n-L\n+l\n inhaAtual.next =\n@@ -1979,25 +1979,24 @@\n lue.root%0A%09%09%09\n-%09\n linhaAnterio\n@@ -2023,17 +2023,17 @@\n ultimoDa\n-L\n+l\n inhaAtua\n@@ -2042,43 +2042,23 @@\n %0A%09%09%09\n-%09linhaAnterior.Value.siz\n+e.lin\n e \n-+\n = linhaA\n tual\n@@ -2057,28 +2057,15 @@\n nhaA\n-tual.Value.size%0A%09%09%09%7D\n+nterior\n %0A%0A%09%09\n@@ -2204,75 +2204,8 @@\n  0%0A%0A\n-%09%09%09e.line = linhaAnterior%0A%0A%09%09%09//%0A%09%09%09e.cursor = novoNoCursor%0A%09%09%09//%0A%0A\n %09%09%09e\n@@ -2229,16 +2229,26 @@\n aAtual)%0A\n+%09%09%09return%0A\n %09%09%7D%0A%0A%09%09r\n",
+            "lines": "205"
+        },
+        {
+            "label": "2026-05-17_13-53-09",
+            "content": "@@ -1507,45 +1507,8 @@\n  %7B%0A%0A\n-%09if e.lines.size == 0 %7B%0A%09%09return%0A%09%7D%0A%0A\n %09noD\n@@ -2409,24 +2409,30 @@\n haAnterior%0A%0A\n+%09%09%09//%0A\n %09%09%09e.cursor \n@@ -2445,16 +2445,22 @@\n NoCursor\n+%0A%09%09%09//\n %0A%0A%09%09%09e.l\n",
+            "lines": "217"
+        },
+        {
+            "label": "2026-05-17_13-56-20",
+            "content": "@@ -1517,22 +1517,19 @@\n line\n-.Prev()\n+s.size\n  == \n-nil\n+0\n  %7B%0A%09\n",
+            "lines": "219"
+        },
+        {
+            "label": "2026-05-17_13-58-23",
+            "content": "@@ -1461,25 +1461,24 @@\n KeyDown() %7B%0A\n-%0A\n %7D%0A%0Afunc (e *\n@@ -1502,16 +1502,57 @@\n ace() %7B%0A\n+%0A%09if e.line.Prev() == nil %7B%0A%09%09return%0A%09%7D%0A%0A\n %09noDeTra\n@@ -2639,941 +2639,8 @@\n  %7B%0A%0A\n-%09noDaFrente := e.cursor.next%0A%0A%09if noDaFrente == e.line.Value.root %7B%0A%0A%09%09if e.line.Next() != nil %7B%0A%0A%09%09%09linhaAtual := e.line%0A%09%09%09linhaDaFrente := e.line.Next()%0A%0A%09%09%09if linhaAtual.Value.size %3E 0 %7B%0A%0A%09%09%09%09ultimoNOLinhaAtual := linhaAtual.Value.End().prev%0A%09%09%09%09ultimoNOlinhaDaFrente := linhaDaFrente.Value.End().prev%0A%0A%09%09%09%09primeiroNOLinhaDaFrente := linhaDaFrente.Value.Front()%0A%0A%09%09%09%09ultimoNOLinhaAtual.next = primeiroNOLinhaDaFrente%0A%09%09%09%09primeiroNOLinhaDaFrente.prev = ultimoNOLinhaAtual%0A%0A%09%09%09%09ultimoNOlinhaDaFrente.next = linhaAtual.Value.root%0A%09%09%09%09linhaAtual.Value.root.prev = ultimoNOlinhaDaFrente.next%0A%0A%09%09%09%09linhaAtual.Value.size += linhaDaFrente.Value.size%0A%09%09%09%7D%0A%0A%09%09%09linhaDaFrente.Value.root.next = linhaDaFrente.Value.root%0A%09%09%09linhaDaFrente.Value.root.prev = linhaDaFrente.Value.root%0A%09%09%09linhaDaFrente.Value.size = 0%0A%0A%09%09%09e.lines.Erase(linhaDaFrente)%0A%09%09%7D%0A%0A%09%09return%0A%09%7D%0A%0A%09e.line.Value.Erase(noDaFrente)%0A%09noDaFrente.next = nil%0A%09noDaFrente.prev = nil%0A\n %7D%0A%0Af\n",
+            "lines": "219"
+        },
+        {
+            "label": "2026-05-17_14-28-45",
+            "content": "@@ -1432,17 +1432,16 @@\n yUp() %7B%0A\n-%09\n %0A%7D%0A%0Afunc\n",
+            "lines": "253"
+        },
+        {
+            "label": "2026-05-17_16-24-37",
+            "content": "@@ -1436,851 +1436,42 @@\n ) %7B%0A\n-%0A%09if e.line == e.lines.Front() %7B%0A%09%09return%0A%09%7D%0A%0A%09linhaAnterior := e.line.prev%0A%0A%09colunaAtual := e.line.Value.IndexOf(e.cursor)%0A%0A%09novoNoCursor := linhaAnterior.Value.Front()%0A%0A%09if colunaAtual %3E= linhaAnterior.Value.size %7B%0A%09%09novoNoCursor = linhaAnterior.Value.root%0A%09%7D else %7B%0A%09%09for i := 0; i %3C colunaAtual; i++ %7B%0A%09%09%09novoNoCursor = novoNoCursor.Next()%0A%09%09%7D%0A%09%7D%0A%0A%09e.line = linhaAnterior%0A%09e.cursor = novoNoCursor%0A%7D%0A%0Afunc (e *Editor) KeyDown() %7B%0A%0A%09if e.line.Next() == nil %7B%0A%09%09return%0A%09%7D%0A%0A%09linhaDeBaixo := e.line.Next()%0A%0A%09colunaAtualCursor := e.line.Value.IndexOf(e.cursor)%0A%0A%09novoNoCursor := linhaDeBaixo.Value.Front()%0A%0A%09if colunaAtualCursor %3E= linhaDeBaixo.Value.size %7B%0A%09%09novoNoCursor = linhaDeBaixo.Value.root%0A%09%7D else %7B%0A%09%09for i := 0; i %3C colunaAtualCursor; i++ %7B%0A%09%09%09novoNoCursor = novoNoCursor.Next()%0A%09%09%7D%0A%09%7D%0A%0A%09e.line = linhaDeBaixo%0A%09e.cursor = novoNoCursor\n+%09%0A%7D%0A%0Afunc (e *Editor) KeyDown() %7B%0A\n %0A%7D%0A%0A\n",
+            "lines": "253"
+        },
+        {
+            "label": "2026-05-17_17-33-20",
+            "content": "@@ -1305,21 +1305,16 @@\n ue.End()\n-.prev\n  && e.li\n@@ -1880,26 +1880,22 @@\n line\n- == e.lines.Back()\n+.Next() == nil\n  %7B%0A%09\n",
+            "lines": "293"
+        },
+        {
+            "label": "2026-05-17_17-39-27",
+            "content": "@@ -1305,24 +1305,24 @@\n ue.End()\n- %7B%0A%0A%09%09if\n+.prev &&\n  e.line.\n@@ -1345,17 +1345,16 @@\n .root %7B%0A\n-%09\n %09%09e.line\n@@ -1372,17 +1372,16 @@\n ext()%0A%09%09\n-%09\n e.cursor\n@@ -1408,21 +1408,8 @@\n t()%0A\n-%09%09%7D%0A%09%09return%0A\n %09%7D%0A%7D\n",
+            "lines": "293"
+        },
+        {
+            "label": "2026-05-17_17-44-35",
+            "content": "@@ -776,37 +776,11 @@\n %7B%0A%0A%09\n-newLine := NewList%5Brune%5D()%0A%0A%09\n+// \n if e\n@@ -807,32 +807,29 @@\n lue.\n-End() %7B%0A%0A%09%09indexC\n+Front() %7C%7C e.c\n ursor \n-:\n+!\n = e.\n@@ -843,357 +843,170 @@\n lue.\n-IndexOf(e.cursor)%0A%09%09qtdMovida := e.line.Value.size - indexCursor%0A%0A%09%09primeiroAQuebrar := e.cursor%0A%09%09ultimoAQuebrar := e.line.Value.End().prev%0A%09%09ultimoQueFica := e.cursor.prev%0A%0A%09%09newLine.root.next = primeiroAQuebrar%0A%09%09primeiroAQuebrar.prev = newLine.root%0A%0A%09%09newLine.root.prev = ultimoAQuebrar%0A%09%09ultimoAQuebrar.next = newLine.root%0A%0A%09%09ultimoQueFica.next\n+End() %7B%0A%09// %09newLine := NewList%5Brune%5D()%0A%09// %09e.lines.Insert(e.line.Next(), newLine)%0A%0A%09// %09//pula a linha para a de baixo%0A%09// %09e.line = e.line.Next()%0A%09// %09e.cursor\n  = e\n@@ -1021,118 +1021,61 @@\n lue.\n+F\n ro\n-ot%0A%09%09e.line.Value.root.prev = ultimoQueFica%0A%0A%09%09newLine.size = qtdMovida%0A%09%09e.line.Value.size -= qtdMovida%0A%09%7D%0A\n+nt()%0A%09// %09return%0A%09// %7D%0A%09newLine := NewList%5Brune%5D()\n %0A%09e.\n",
+            "lines": "297"
+        },
+        {
+            "label": "2026-05-17_17-52-15",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\n\t\"github.com/gdamore/tcell/v2\"\n)\n\ntype Editor struct {\n\tlines  *List[*List[rune]] // texto\n\tline   *Node[*List[rune]]\n\tcursor *Node[rune]\n\tscreen tcell.Screen\n\tstyle  tcell.Style\n}\n\nfunc (e *Editor) InsertChar(r rune) {\n\te.cursor = e.line.Value.Insert(e.cursor, r)\n\te.cursor = e.cursor.Next()\n}\n\nfunc (e *Editor) KeyLeft() {\n\tif e.cursor != e.line.Value.Front() { // Se o cursor n\u00e3o est\u00e1 no in\u00edcio da linha\n\t\te.cursor = e.cursor.Prev() // Move o cursor para a esquerda\n\t\treturn\n\t}\n\t// Estamos no in\u00edcio da linha\n\tif e.line != e.lines.Front() { // Se n\u00e3o est\u00e1 na primeira linha\n\t\te.line = e.line.Prev()        // Move para a linha anterior\n\t\te.cursor = e.line.Value.End() // Move o cursor para o final da linha\n\t}\n}\n\nfunc (e *Editor) KeyEnter() {\n\n\tnewLine := NewList[rune]()\n\n\tif e.cursor != e.line.Value.End() {\n\n\t\tindexCursor := e.line.Value.IndexOf(e.cursor)\n\t\tqtdMovida := e.line.Value.size - indexCursor\n\n\t\tprimeiroAQuebrar := e.cursor\n\t\tultimoAQuebrar := e.line.Value.End().prev\n\t\tultimoQueFica := e.cursor.prev\n\n\t\tnewLine.root.next = primeiroAQuebrar\n\t\tprimeiroAQuebrar.prev = newLine.root\n\n\t\tnewLine.root.prev = ultimoAQuebrar\n\t\tultimoAQuebrar.next = newLine.root\n\n\t\tultimoQueFica.next = e.line.Value.root\n\t\te.line.Value.root.prev = ultimoQueFica\n\n\t\tnewLine.size = qtdMovida\n\t\te.line.Value.size -= qtdMovida\n\t}\n\n\te.lines.Insert(e.line.Next(), newLine)\n\te.line = e.line.Next()\n\te.cursor = e.line.Value.Front()\n}\n\nfunc (e *Editor) KeyRight() {\n\tif e.cursor != e.line.Value.End() {\n\t\te.cursor = e.cursor.Next()\n\t}\n\n\tif e.cursor == e.line.Value.End() {\n\n\t\tif e.line.Next() != e.line.root {\n\t\t\te.line = e.line.Next()\n\t\t\te.cursor = e.line.Value.Front()\n\t\t}\n\t\treturn\n\t}\n}\n\nfunc (e *Editor) KeyUp() {\n\n\tif e.line == e.lines.Front() {\n\t\treturn\n\t}\n\n\tlinhaAnterior := e.line.prev\n\n\tcolunaAtual := e.line.Value.IndexOf(e.cursor)\n\n\tnovoNoCursor := linhaAnterior.Value.Front()\n\n\tif colunaAtual >= linhaAnterior.Value.size {\n\t\tnovoNoCursor = linhaAnterior.Value.root\n\t} else {\n\t\tfor i := 0; i < colunaAtual; i++ {\n\t\t\tnovoNoCursor = novoNoCursor.Next()\n\t\t}\n\t}\n\n\te.line = linhaAnterior\n\te.cursor = novoNoCursor\n}\n\nfunc (e *Editor) KeyDown() {\n\n\tif e.line == e.lines.Back() {\n\t\treturn\n\t}\n\n\tlinhaDeBaixo := e.line.Next()\n\n\tcolunaAtualCursor := e.line.Value.IndexOf(e.cursor)\n\n\tnovoNoCursor := linhaDeBaixo.Value.Front()\n\n\tif colunaAtualCursor >= linhaDeBaixo.Value.size {\n\t\tnovoNoCursor = linhaDeBaixo.Value.root\n\t} else {\n\t\tfor i := 0; i < colunaAtualCursor; i++ {\n\t\t\tnovoNoCursor = novoNoCursor.Next()\n\t\t}\n\t}\n\n\te.line = linhaDeBaixo\n\te.cursor = novoNoCursor\n}\n\nfunc (e *Editor) KeyBackspace() {\n\tnoDeTras := e.cursor.prev\n\n\tif noDeTras == e.line.Value.root {\n\n\t\tif e.line.Prev() != nil {\n\n\t\t\tlinhaAnterior := e.line.Prev()\n\t\t\tlinhaAtual := e.line\n\n\t\t\tnovoNoCursor := linhaAnterior.Value.End()\n\n\t\t\tif linhaAtual.Value.size > 0 {\n\n\t\t\t\tultimaPosLinhaAnterior := linhaAnterior.Value.End().prev\n\t\t\t\tprimeiroDaLinhaAtual := linhaAtual.Value.Front()\n\t\t\t\tultimoDaLinhaAtual := linhaAtual.Value.Back()\n\n\t\t\t\tultimaPosLinhaAnterior.next = primeiroDaLinhaAtual\n\t\t\t\tprimeiroDaLinhaAtual.prev = ultimaPosLinhaAnterior\n\n\t\t\t\t// Costura o final da linha atual no root da linha anterior\n\t\t\t\tultimoDaLinhaAtual.next = linhaAnterior.Value.root\n\t\t\t\tlinhaAnterior.Value.root.prev = ultimoDaLinhaAtual\n\n\t\t\t\tlinhaAnterior.Value.size += linhaAtual.Value.size\n\t\t\t}\n\n\t\t\tlinhaAtual.Value.root.next = linhaAtual.Value.root\n\t\t\tlinhaAtual.Value.root.prev = linhaAtual.Value.root\n\t\t\tlinhaAtual.Value.size = 0\n\n\t\t\te.line = linhaAnterior\n\n\t\t\te.cursor = novoNoCursor\n\n\t\t\te.lines.Erase(linhaAtual)\n\t\t}\n\n\t\treturn\n\t}\n\n\te.line.Value.Erase(noDeTras)\n\tnoDeTras.next = nil\n\tnoDeTras.prev = nil\n}\n\nfunc (e *Editor) KeyDelete() {\n\n\tnoDaFrente := e.cursor.next\n\n\tif noDaFrente == e.line.Value.root {\n\n\t\tif e.line.Next() != nil {\n\n\t\t\tlinhaAtual := e.line\n\t\t\tlinhaDaFrente := e.line.Next()\n\n\t\t\tif linhaAtual.Value.size > 0 {\n\n\t\t\t\tultimoNOLinhaAtual := linhaAtual.Value.End().prev\n\t\t\t\tultimoNOlinhaDaFrente := linhaDaFrente.Value.End().prev\n\n\t\t\t\tprimeiroNOLinhaDaFrente := linhaDaFrente.Value.Front()\n\n\t\t\t\tultimoNOLinhaAtual.next = primeiroNOLinhaDaFrente\n\t\t\t\tprimeiroNOLinhaDaFrente.prev = ultimoNOLinhaAtual\n\n\t\t\t\tultimoNOlinhaDaFrente.next = linhaAtual.Value.root\n\t\t\t\tlinhaAtual.Value.root.prev = ultimoNOlinhaDaFrente.next\n\n\t\t\t\tlinhaAtual.Value.size += linhaDaFrente.Value.size\n\t\t\t}\n\n\t\t\tlinhaDaFrente.Value.root.next = linhaDaFrente.Value.root\n\t\t\tlinhaDaFrente.Value.root.prev = linhaDaFrente.Value.root\n\t\t\tlinhaDaFrente.Value.size = 0\n\n\t\t\te.lines.Erase(linhaDaFrente)\n\t\t}\n\n\t\treturn\n\t}\n\n\te.line.Value.Erase(noDaFrente)\n\tnoDaFrente.next = nil\n\tnoDaFrente.prev = nil\n}\n\nfunc main() {\n\t// Texto inicial e posi\u00e7\u00e3o do cursor\n\teditor := NewEditor()\n\teditor.Draw()\n\teditor.MainLoop()\n\tdefer editor.screen.Fini() // Encerra a tela ao sair\n}\n\nfunc (e *Editor) MainLoop() {\n\tfor {\n\t\tev := e.screen.PollEvent()\n\t\tswitch ev := ev.(type) {\n\t\tcase *tcell.EventKey:\n\t\t\tswitch ev.Key() {\n\t\t\tcase tcell.KeyEsc, tcell.KeyCtrlC:\n\t\t\t\treturn\n\t\t\tcase tcell.KeyEnter:\n\t\t\t\te.KeyEnter()\n\t\t\tcase tcell.KeyLeft:\n\t\t\t\te.KeyLeft()\n\t\t\tcase tcell.KeyRight:\n\t\t\t\te.KeyRight()\n\t\t\tcase tcell.KeyUp:\n\t\t\t\te.KeyUp()\n\t\t\tcase tcell.KeyDown:\n\t\t\t\te.KeyDown()\n\t\t\tcase tcell.KeyBackspace, tcell.KeyBackspace2:\n\t\t\t\te.KeyBackspace()\n\t\t\tcase tcell.KeyDelete:\n\t\t\t\te.KeyDelete()\n\t\t\tdefault:\n\t\t\t\tif ev.Rune() != 0 {\n\t\t\t\t\te.InsertChar(ev.Rune())\n\t\t\t\t}\n\t\t\t}\n\t\t\te.Draw()\n\t\tcase *tcell.EventResize:\n\t\t\te.screen.Sync()\n\t\t\te.Draw()\n\t\t}\n\t}\n}\n\nfunc NewEditor() *Editor {\n\te := &Editor{}\n\t// Inicializa a tela\n\tscreen, err := tcell.NewScreen()\n\tif err != nil {\n\t\tfmt.Printf(\"erro ao criar a tela: %v\", err)\n\t}\n\tif err := screen.Init(); err != nil {\n\t\tfmt.Printf(\"erro ao iniciar a tela: %v\", err)\n\t}\n\te.screen = screen\n\te.lines = NewList[*List[rune]]()\n\te.lines.PushBack(NewList[rune]())\n\te.line = e.lines.Front()\n\te.cursor = e.line.Value.Back()\n\t// Define o estilo do texto (branco com fundo preto)\n\te.style = tcell.StyleDefault.Foreground(tcell.ColorWhite).Background(tcell.ColorBlack)\n\n\t// Limpa a tela e define o estilo base\n\te.screen.SetStyle(e.style)\n\te.screen.Clear()\n\treturn e\n}\n\nfunc (e *Editor) Draw() {\n\te.screen.Clear()\n\tx := 0\n\ty := 0\n\tfor line := e.lines.Front(); line != e.lines.End(); line = line.Next() {\n\t\tfor char := line.Value.Front(); ; char = char.Next() {\n\t\t\tdata := char.Value\n\t\t\tif char == line.Value.End() {\n\t\t\t\tdata = '\u2936'\n\t\t\t}\n\t\t\tif data == ' ' {\n\t\t\t\tdata = '\u00b7'\n\t\t\t}\n\t\t\tif char == e.cursor {\n\t\t\t\te.screen.SetContent(x, y, data, nil, e.style.Reverse(true))\n\t\t\t} else {\n\t\t\t\te.screen.SetContent(x, y, data, nil, e.style)\n\t\t\t}\n\t\t\tx++\n\t\t\tif char == line.Value.End() {\n\t\t\t\tbreak\n\t\t\t}\n\t\t}\n\t\ty++\n\t\tx = 0\n\t}\n\te.screen.Show()\n}\n",
+            "lines": "311"
+        }
+    ]
+}

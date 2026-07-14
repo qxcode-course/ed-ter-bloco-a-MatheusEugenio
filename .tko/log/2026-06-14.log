@@ -1,0 +1,7 @@
+2026-06-14 12:20:50, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-06-14 12:20:51, MOVE, v:1, k:ed@fractais_png, mode:BACK
+2026-06-14 12:21:13, MOVE, v:1, k:ed@alternando, mode:PICK
+2026-06-14 12:21:15, EXEC, v:1, k:ed@alternando, mode:FULL, rate:100
+2026-06-14 12:21:16, MOVE, v:1, k:ed@alternando, mode:BACK
+2026-06-14 12:21:47, SELF, v:1, k:ed@fractais_png, self:1, rate:10, friend:au, guided:1, concept:1, problem:1, code:1
+2026-06-14 12:22:16, SELF, v:1, k:ed@editorint, self:1, rate:100

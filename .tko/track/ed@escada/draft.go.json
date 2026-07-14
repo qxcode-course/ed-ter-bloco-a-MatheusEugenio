@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-31_00-43-02",
+            "content": "@@ -179,17 +179,17 @@\n (n-2) + \n-2\n+1\n %0A%7D%0A%0Afunc\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-05-31_00-43-13",
+            "content": "@@ -178,34 +178,14 @@\n s(n-\n-1\n+2\n ) + \n-contagemDePassos(n-3)\n+2\n %0A%7D%0A%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-05-31_00-49-48",
+            "content": "@@ -53,21 +53,23 @@\n int) int\n- \n %7B%0A%0A\n-%09\n+    \n if n %3C= \n@@ -69,21 +69,26 @@\n f n %3C= 2\n- \n %7B%0A\n-%09%09\n+        \n return 1\n@@ -92,41 +92,68 @@\n n 1%0A\n-%09%7D%0A%0A%09if n == 3 %7B%0A%09%09return 2%0A%09%7D%0A%0A%09\n+    %7D%0A%0A    if n == 3 %7C%7C n == 5%7B%0A        return 2%0A    %7D%0A%0A    \n retu\n@@ -219,17 +219,20 @@\n in() %7B%0A%0A\n-%09\n+    \n var n in\n@@ -233,17 +233,20 @@\n r n int%0A\n-%09\n+    \n fmt.Scan\n@@ -255,9 +255,12 @@\n n)%0A%0A\n-%09\n+    \n fmt.\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-05-31_00-50-11",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc contagemDePassos(n int) int {\n\n\tif n <= 2 {\n\t\treturn 1\n\t}\n\n\tif n == 3 {\n\t\treturn 2\n\t}\n\n\treturn contagemDePassos(n-1) + contagemDePassos(n-3)\n}\n\nfunc main() {\n\n\tvar n int\n\tfmt.Scan(&n)\n\n\tfmt.Println(contagemDePassos(n))\n}\n",
+            "lines": "24"
+        }
+    ]
+}

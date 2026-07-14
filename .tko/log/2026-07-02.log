@@ -1,0 +1,83 @@
+2026-07-02 15:08:07, MOVE, v:1, k:ed@permutacoes, mode:PICK
+2026-07-02 15:08:45, EXEC, v:1, k:ed@permutacoes, mode:FULL, size:22, fail:COMP
+2026-07-02 15:09:15, MOVE, v:1, k:ed@permutacoes, mode:BACK
+2026-07-02 15:08:07, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 15:08:07, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 15:11:09, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 15:21:44, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 15:25:37, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 15:36:33, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 15:41:32, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 15:45:05, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 15:51:47, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 15:56:48, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 16:01:48, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 16:03:50, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 16:11:46, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 16:14:55, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 16:26:49, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 16:29:26, MOVE, v:1, k:ed@permutacoes, mode:PICK
+2026-07-02 16:31:11, MOVE, v:1, k:ed@permutacoes, mode:PICK
+2026-07-02 16:31:22, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:20, size:30
+2026-07-02 16:31:52, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:20, size:30
+2026-07-02 16:33:06, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:20, size:30
+2026-07-02 16:33:47, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:30
+2026-07-02 16:34:33, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:20, size:30
+2026-07-02 16:35:06, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:30
+2026-07-02 16:35:13, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:20, size:30
+2026-07-02 16:35:52, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:20, size:30
+2026-07-02 16:35:51, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 16:35:50, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 16:37:37, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:20, size:30
+2026-07-02 16:37:42, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:20, size:30
+2026-07-02 16:39:08, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:30
+2026-07-02 16:39:22, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:30
+2026-07-02 16:40:21, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:30
+2026-07-02 16:40:40, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:20, size:30
+2026-07-02 16:40:38, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 16:40:39, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 16:41:37, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:30
+2026-07-02 16:41:45, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0
+2026-07-02 16:42:00, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:30
+2026-07-02 16:42:08, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:20, size:30
+2026-07-02 16:42:22, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:30
+2026-07-02 16:42:44, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:30
+2026-07-02 16:42:53, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:20, size:30
+2026-07-02 16:44:57, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:20, size:30
+2026-07-02 16:45:13, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:20, size:30
+2026-07-02 16:45:32, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:20, size:30
+2026-07-02 16:45:42, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 16:45:31, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 16:48:07, MOVE, v:1, k:ed@permutacoes, mode:PICK
+2026-07-02 16:48:09, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:20, size:31
+2026-07-02 16:48:29, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:20, size:31
+2026-07-02 16:48:33, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:20, size:31
+2026-07-02 16:49:37, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:20, size:30
+2026-07-02 16:50:22, EXEC, v:1, k:ed@permutacoes, mode:FULL, size:33, fail:COMP
+2026-07-02 16:50:32, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:20, size:33
+2026-07-02 16:50:31, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 16:53:06, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 16:56:31, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:33
+2026-07-02 16:57:36, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 16:56:31, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 17:00:42, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:37
+2026-07-02 17:00:56, EXEC, v:1, k:ed@permutacoes, mode:FULL, size:37, fail:COMP
+2026-07-02 17:01:05, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:38
+2026-07-02 17:02:39, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:38
+2026-07-02 17:02:48, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:38
+2026-07-02 17:02:50, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 17:02:47, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 17:03:56, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0, size:38
+2026-07-02 17:04:31, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:0
+2026-07-02 17:08:03, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 17:04:30, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 17:12:51, MOVE, v:1, k:ed@permutacoes, mode:EDIT
+2026-07-02 17:14:17, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:100, size:47
+2026-07-02 17:14:20, MOVE, v:1, k:ed@permutacoes, mode:BACK
+2026-07-02 17:14:40, MOVE, v:1, k:ed@permutacoes, mode:PICK
+2026-07-02 17:14:41, EXEC, v:1, k:ed@permutacoes, mode:FULL, rate:100, size:48
+2026-07-02 17:14:48, MOVE, v:1, k:ed@permutacoes, mode:BACK
+2026-07-02 17:15:01, SELF, v:1, k:ed@permutacoes, self:1, rate:100, concept:1
+2026-07-02 17:15:14, MOVE, v:1, k:ed@rotten, mode:PICK
+2026-07-02 17:15:15, EXEC, v:1, k:ed@rotten, mode:FULL, rate:66, size:85
+2026-07-02 17:15:19, MOVE, v:1, k:ed@rotten, mode:BACK

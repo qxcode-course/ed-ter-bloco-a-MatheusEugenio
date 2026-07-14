@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-18_10-56-50",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\n\tvar h, p, f, d int\n\n\tfmt.Scan(&h, &p, &f, &d)\n\n\tif d == -1 { //horario ----> \"diminuir posi\u00e7\u00f5es no caminho\"\n\n\t\tfor {\n\t\t\tif f == p {\n\t\t\t\tfmt.Print(\"N\\n\")\n\t\t\t\treturn\n\t\t\t} else if f == h {\n\t\t\t\tfmt.Print(\"S\\n\")\n\t\t\t\treturn\n\t\t\t} else if f == -1 {\n\t\t\t\tf = 15\n\t\t\t} else {\n\t\t\t\tf--\n\t\t\t}\n\t\t}\n\n\t} else if d == 1 { //anti horario ----> \"aumentar posi\u00e7\u00f5es no caminho\"\n\n\t\tfor {\n\n\t\t\tif f == p {\n\t\t\t\tfmt.Print(\"N\\n\")\n\t\t\t\treturn\n\t\t\t} else if f == h {\n\t\t\t\tfmt.Print(\"S\\n\")\n\t\t\t\treturn\n\t\t\t} else if f == 16 {\n\t\t\t\tf = 0\n\t\t\t} else {\n\t\t\t\tf++\n\t\t\t}\n\t\t}\n\t}\n}\n",
+            "lines": "44"
+        }
+    ]
+}

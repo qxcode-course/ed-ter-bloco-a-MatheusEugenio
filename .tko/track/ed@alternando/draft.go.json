@@ -1,0 +1,219 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-04_10-36-34",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -23,579 +23,53 @@\n mt%22%0A\n-%0A\n func \n-imprimeLinha(vet map%5Bint%5Dbool) string %7B%0A%0A%09var res string%0A%09res += %22%5B %22%0A%0A%09for num, _ := range vet %7B%0A%09%09tem := vet%5Bnum%5D%0A%09%09if tem %7B%0A%09%09%09if num %3E 0 %7B%0A%09%09%09%09res +=\n+main() %7B%0A   \n  fmt.\n-Sp\n+P\n rint\n-f(%22%25d%3E %22, num)%0A%09%09%09%7D else %7B%0A%09%09%09%09res += fmt.Sprintf(%22%3C%25d %22, num)%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09res += %22%5D%22%0A%09return res%0A%7D%0A%0Afunc main() %7B%0A%09var n, e, f int%0A%0A%09fmt.Scan(&n, &e, &f)%0A%0A%09vet := make(%5B%5Dint, n)%0A%09vetMap := make(map%5Bint%5Dbool)%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09num := i + 1%0A%0A%09%09if f == 1 %7B%0A%09%09%09if i%252 != 0 %7B%0A%09%09%09%09vet%5Bi%5D = -num%0A%09%09%09%7D%0A%09%09%7D else %7B%0A%09%09%09if i%252 == 0 %7B%0A%09%09%09%09vet%5Bi%5D = -num%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09fmt.Println(imprimeLinha(vetMap))%0A\n+ln(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-06-04_11-22-27",
+            "content": "@@ -105,16 +105,19 @@\n %09for num\n+, _\n  := rang\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-06-04_11-23-25",
+            "content": "@@ -558,143 +558,8 @@\n %09%7D%0A%0A\n-%09//algotimo que coloca a espada%0A%09for i := 0; i %3C len(vet); i++ %7B%0A%09%09num := i + 1%0A%09%09if e == num %7B%0A%09%09%09vetMap%5Bnum%5D = true%0A%09%09%09break%0A%09%09%7D%0A%09%7D%0A%0A\n %09fmt\n@@ -589,10 +589,11 @@\n etMap))%0A\n+%0A\n %7D%0A\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-06-04_11-25-54",
+            "content": "@@ -294,200 +294,8 @@\n %0A%7D%0A%0A\n-func colocaEspada(vet %5B%5Dint, vetMap map%5Bint%5Dbool, e int) map%5Bint%5Dbool %7B%0A%09for i := 0; i %3C len(vet); i++ %7B%0A%09%09num := i + 1%0A%09%09if e == num %7B%0A%09%09%09vetMap%5Bnum%5D = true%0A%09%09%09break%0A%09%09%7D%0A%09%7D%0A%09return vetMap%0A%7D%0A%0A\n func\n@@ -591,157 +591,143 @@\n da%0A%09\n-vetMap = colocaEspada(vet, vetMap, e)%0A%0A%09// for len(vetMap) %3E 1%7B%0A%09//     fmt.Println(imprimeLinha(vetMap))%0A%0A%09//     index :=%0A%09//     vet = vet%5B:%5D%0A%09// %7D\n+for i := 0; i %3C len(vet); i++ %7B%0A%09%09num := i + 1%0A%09%09if e == num %7B%0A%09%09%09vetMap%5Bnum%5D = true%0A%09%09%09break%0A%09%09%7D%0A%09%7D%0A%0A%09fmt.Println(imprimeLinha(vetMap))\n %0A%7D%0A\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-06-04_11-32-02",
+            "content": "@@ -821,42 +821,8 @@\n  e)%0A\n-%09fmt.Println(imprimeLinha(vetMap))\n %0A%09//\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-06-04_11-32-20",
+            "content": "@@ -448,16 +448,25 @@\n  = true%0A\n+%09%09%09break%0A\n %09%09%7D%0A%09%7D%0A%09\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-06-04_11-32-47",
+            "content": "@@ -741,58 +741,8 @@\n %09%7D%0A%0A\n-%09for i := 1; i %3C= n; i++ %7B%0A%09%09vetMap%5Bi%5D = true%0A%09%7D%0A%0A\n %09//a\n@@ -808,17 +808,16 @@\n Map, e)%0A\n-%0A\n %09fmt.Pri\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-06-04_11-37-25",
+            "content": "@@ -308,18 +308,22 @@\n aEspada(\n-n \n+vet %5B%5D\n int, vet\n@@ -371,33 +371,40 @@\n for i := 0; i %3C \n-n\n+len(vet)\n ; i++ %7B%0A%09%09num :=\n@@ -742,34 +742,55 @@\n %7D%0A%0A%09\n-colocaEspada(n, vetMap, e)\n+for i := 1; i %3C= n; i++ %7B%0A%09%09vetMap%5Bi%5D = true%0A%09%7D\n %0A%0A%09/\n@@ -820,19 +820,16 @@\n espada%0A%09\n-// \n vetMap =\n@@ -842,17 +842,19 @@\n aEspada(\n-n\n+vet\n , vetMap\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-06-04_11-38-45",
+            "content": "@@ -441,42 +441,8 @@\n rue%0A\n-%09%09%7D else %7B%0A%09%09%09vetMap%5Bnum%5D = false%0A\n %09%09%7D%0A\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-06-04_11-39-36",
+            "content": "@@ -342,16 +342,29 @@\n , e int)\n+ map%5Bint%5Dbool\n  %7B%0A%09for \n@@ -478,16 +478,31 @@\n %0A%09%09%7D%0A%09%7D%0A\n+%09return vetMap%0A\n %7D%0A%0Afunc \n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-06-04_11-40-12",
+            "content": "@@ -259,53 +259,8 @@\n %09%09%7D%0A\n-%09%09%7D else %7B%0A%09%09%09res += fmt.Sprintf(%22%25d %22, num)%0A\n %09%09%7D%0A\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-06-04_11-42-11",
+            "content": "@@ -39,23 +39,16 @@\n meLinha(\n-n int, \n vet map%5B\n@@ -102,35 +102,32 @@\n %22%0A%0A%09for \n-i\n+num\n  := \n-1; i %3C= n; i++\n+range vet\n  %7B%0A%09%09tem\n@@ -134,17 +134,19 @@\n  := vet%5B\n-i\n+num\n %5D%0A%09%09if t\n@@ -156,17 +156,19 @@\n %7B%0A%09%09%09if \n-i\n+num\n  %3E 0 %7B%0A%09\n@@ -193,25 +193,27 @@\n ntf(%22%25d%3E %22, \n-i\n+num\n )%0A%09%09%09%7D else \n@@ -241,25 +241,27 @@\n ntf(%22%3C%25d %22, \n-i\n+num\n )%0A%09%09%09%7D%0A%09%09%7D e\n@@ -295,17 +295,19 @@\n (%22%25d %22, \n-i\n+num\n )%0A%09%09%7D%0A%09%7D\n@@ -404,15 +404,14 @@\n  := \n-1\n+0\n ; i %3C\n-=\n  n; \n@@ -416,16 +416,31 @@\n ; i++ %7B%0A\n+%09%09num := i + 1%0A\n %09%09if e =\n@@ -441,17 +441,19 @@\n if e == \n-i\n+num\n  %7B%0A%09%09%09ve\n@@ -453,25 +453,27 @@\n %7B%0A%09%09%09vetMap%5B\n-i\n+num\n %5D = true%0A%09%09%7D\n@@ -490,17 +490,19 @@\n %09vetMap%5B\n-i\n+num\n %5D = fals\n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-06-04_11-45-10",
+            "content": "@@ -108,20 +108,8 @@\n  %22%0A%0A\n-%09index := 0%0A\n %09for\n@@ -165,20 +165,16 @@\n %0A%09%09%09if i\n-ndex\n  %3E 0 %7B%0A%09\n@@ -199,27 +199,25 @@\n ntf(%22%25d%3E %22, \n-num\n+i\n )%0A%09%09%09%7D else \n@@ -245,27 +245,25 @@\n ntf(%22%3C%25d %22, \n-num\n+i\n )%0A%09%09%09%7D%0A%09%09%7D e\n@@ -301,27 +301,15 @@\n  %22, \n-num\n+i\n )%0A%09%09%7D%0A\n-%09%09index++%0A\n %09%7D%0A%0A\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-06-04_11-48-04",
+            "content": "@@ -215,25 +215,27 @@\n ntf(%22%25d%3E %22, \n-i\n+num\n )%0A%09%09%09%7D else \n@@ -263,25 +263,27 @@\n ntf(%22%3C%25d %22, \n-i\n+num\n )%0A%09%09%09%7D%0A%09%09%7D e\n@@ -317,17 +317,19 @@\n (%22%25d %22, \n-i\n+num\n )%0A%09%09%7D%0A%09%09\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-06-04_11-48-21",
+            "content": "@@ -911,19 +911,16 @@\n meLinha(\n-n, \n vetMap))\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-06-04_11-48-33",
+            "content": "@@ -105,19 +105,16 @@\n  %22%5B %22%0A%0A%09\n-// \n index :=\n@@ -177,16 +177,20 @@\n %0A%09%09%09if i\n+ndex\n  %3E 0 %7B%0A%09\n@@ -322,19 +322,16 @@\n )%0A%09%09%7D%0A%09%09\n-// \n index++%0A\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-06-04_11-49-36",
+            "content": "@@ -104,16 +104,31 @@\n = %22%5B %22%0A%0A\n+%09// index := 0%0A\n %09for i :\n@@ -146,16 +146,16 @@\n ; i++ %7B%0A\n-\n %09%09tem :=\n@@ -315,24 +315,37 @@\n d %22, i)%0A%09%09%7D%0A\n+%09%09// index++%0A\n %09%7D%0A%0A%09res += \n@@ -671,16 +671,17 @@\n = i + 1%0A\n+%0A\n %09%09if f =\n@@ -712,32 +712,28 @@\n %09%09%09vet%5Bi%5D = \n+-\n num\n- * -1\n %0A%09%09%09%7D%0A%09%09%7D el\n@@ -771,16 +771,12 @@\n %5D = \n+-\n num\n- * -1\n %0A%09%09%09\n@@ -819,43 +819,228 @@\n )%0A%0A%09\n-fmt.Println(imprimeLinha(n, vetMap))\n+//algotimo que coloca a espada%0A%09// vetMap = colocaEspada(n, vetMap, e)%0A%0A%09fmt.Println(imprimeLinha(n, vetMap))%0A%09// for len(vetMap) %3E 1%7B%0A%09//     fmt.Println(imprimeLinha(vetMap))%0A%0A%09//     index :=%0A%09//     vet = vet%5B:%5D%0A%09// %7D\n %0A%7D%0A\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-06-04_11-51-14",
+            "content": "@@ -763,62 +763,8 @@\n %0A%09%09%7D\n-else %7B%0A            %0A            vet%5Bi%5D = num%0A        %7D\n %0A%09%7D%0A\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-06-04_11-56-48",
+            "content": "@@ -700,37 +700,8 @@\n  -1%0A\n-%09%09%09%7D else %7B%0A%09%09%09%09vet%5Bi%5D = num%0A\n %09%09%09%7D\n@@ -755,28 +755,52 @@\n  -1%0A%09%09%09%7D\n- \n+%0A%09%09%7D\n else %7B%0A\n-%09%09%09%09\n+            %0A            \n vet%5Bi%5D =\n@@ -808,17 +808,17 @@\n num%0A\n-%09%09%09%7D%0A%09%09%7D%0A\n+        %7D\n %0A%09%7D%0A\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-06-04_11-58-15",
+            "content": "@@ -41,35 +41,32 @@\n Linha(n int, vet\n-Map\n  map%5Bint%5Dbool, v\n@@ -66,19 +66,8 @@\n bool\n-, vet %5B%5Dint\n ) st\n@@ -106,38 +106,39 @@\n %22%5B %22%0A%0A%09for i := \n-0\n+1\n ; i %3C\n+=\n  n; i++ %7B%0A%09%09valo\n@@ -137,71 +137,20 @@\n %7B%0A%09%09\n-valorReal := vet%5Bi%5D%0A%09%09posMapa := i + 1%0A%0A%09%09tem := vetMap%5BposMapa\n+tem := vet%5Bi\n %5D%0A%09%09\n@@ -164,25 +164,17 @@\n %7B%0A%09%09%09if \n-valorReal\n+i\n  %3E 0 %7B%0A%09\n@@ -199,33 +199,25 @@\n ntf(%22%25d%3E %22, \n-valorReal\n+i\n )%0A%09%09%09%7D else \n@@ -253,20 +253,9 @@\n  %22, \n-valorReal*-1\n+i\n )%0A%09%09\n@@ -301,17 +301,9 @@\n  %22, \n-valorReal\n+i\n )%0A%09%09\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-06-04_12-02-52",
+            "content": "@@ -990,14 +990,8 @@\n tMap\n-,  vet\n ))%0A%7D\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-06-04_12-03-02",
+            "content": "@@ -702,19 +702,16 @@\n bool)%0A%0A%09\n-// \n for i :=\n@@ -728,19 +728,16 @@\n  i++ %7B%0A%09\n-// \n %09num := \n@@ -743,19 +743,16 @@\n  i + 1%0A%09\n-// \n %09if f ==\n@@ -753,27 +753,24 @@\n f f == 1 %7B%0A%09\n-// \n %09%09if i%252 != \n@@ -770,27 +770,24 @@\n i%252 != 0 %7B%0A%09\n-// \n %09%09%09vet%5Bi%5D = \n@@ -788,35 +788,32 @@\n %5Bi%5D = num * -1%0A%09\n-// \n %09%09%7D else %7B%0A%09// %09\n@@ -800,35 +800,32 @@\n -1%0A%09%09%09%7D else %7B%0A%09\n-// \n %09%09%09vet%5Bi%5D = num%0A\n@@ -825,27 +825,21 @@\n  = num%0A%09\n-// \n %09%09%7D%0A%09\n-// \n %09%7D else \n@@ -841,19 +841,16 @@\n else %7B%0A%09\n-// \n %09%09if i%252\n@@ -854,27 +854,24 @@\n i%252 == 0 %7B%0A%09\n-// \n %09%09%09vet%5Bi%5D = \n@@ -880,19 +880,16 @@\n m * -1%0A%09\n-// \n %09%09%7D else\n@@ -892,19 +892,16 @@\n else %7B%0A%09\n-// \n %09%09%09vet%5Bi\n@@ -913,27 +913,18 @@\n um%0A%09\n-// \n %09%09%7D%0A%09\n-// \n %09%7D%0A%0A%09\n-// \n %7D%0A%0A%09\n@@ -987,16 +987,17 @@\n  vetMap,\n+ \n  vet))%0A%7D\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-06-04_12-03-27",
+            "content": "@@ -702,16 +702,19 @@\n bool)%0A%0A%09\n+// \n for i :=\n@@ -731,16 +731,19 @@\n  i++ %7B%0A%09\n+// \n %09num := \n@@ -748,18 +748,20 @@\n = i + 1%0A\n-%0A\n %09\n+// \n %09if f ==\n@@ -762,24 +762,27 @@\n f f == 1 %7B%0A%09\n+// \n %09%09if i%252 != \n@@ -782,24 +782,27 @@\n i%252 != 0 %7B%0A%09\n+// \n %09%09%09vet%5Bi%5D = \n@@ -803,32 +803,35 @@\n %5Bi%5D = num * -1%0A%09\n+// \n %09%09%7D else %7B%0A%09%09%09%09v\n@@ -818,32 +818,35 @@\n %09// %09%09%7D else %7B%0A%09\n+// \n %09%09%09vet%5Bi%5D = num%0A\n@@ -846,21 +846,27 @@\n  = num%0A%09\n+// \n %09%09%7D%0A%09\n+// \n %09%7D else \n@@ -864,24 +864,27 @@\n  %09%7D else %7B%0A%09\n+// \n %09%09if i%252 == \n@@ -884,24 +884,27 @@\n i%252 == 0 %7B%0A%09\n+// \n %09%09%09vet%5Bi%5D = \n@@ -913,16 +913,19 @@\n m * -1%0A%09\n+// \n %09%09%7D else\n@@ -928,16 +928,19 @@\n else %7B%0A%09\n+// \n %09%09%09vet%5Bi\n@@ -952,18 +952,27 @@\n um%0A%09\n+// \n %09%09%7D%0A%09\n+// \n %09%7D%0A%0A%09\n+// \n %7D%0A%0A%09\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-06-04_12-05-54",
+            "content": "@@ -843,19 +843,8 @@\n lse \n-if f == -1 \n %7B%0A%09%09\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-06-04_12-06-23",
+            "content": "@@ -18,18 +18,13 @@\n ort \n-(%0A%09\n %22fmt%22\n-%0A)\n %0A%0Afu\n@@ -491,33 +491,9 @@\n nt) \n-int %7B%0A%0A%09indexEspada := -1\n+%7B\n %0A%09fo\n@@ -534,31 +534,8 @@\n i %7B%0A\n-%09%09%09indexEspada = i - 1%0A\n %09%09%09v\n@@ -593,28 +593,8 @@\n %0A%09%7D%0A\n-%09return indexEspada%0A\n %7D%0A%0Af\n@@ -835,24 +835,35 @@\n %09%7D%0A%09%09%7D else \n+if f == -1 \n %7B%0A%09%09%09if i%252 \n@@ -935,31 +935,16 @@\n %7D%0A%0A%09%7D%0A%0A%09\n-indexEspada := \n colocaEs\n@@ -967,29 +967,8 @@\n e)%0A%0A\n-%09for len(vet) %3E 1 %7B%0A%09\n %09fmt\n@@ -1010,328 +1010,6 @@\n t))%0A\n-%0A%09%09indexEspada := colocaEspada(n, vetMap, e)%0A%0A%09%09dir := -1%0A%09%09if vet%5BindexEspada%5D %3E 0 %7B%0A%09%09%09dir = 1%0A%09%09%7D%0A%0A%09%09indexMorto := (indexEspada + dir + len(vet)) %25 len(vet)%0A%0A%09%09vet = append(vet%5B:indexMorto%5D, vet%5BindexMorto+1:%5D...)%0A%0A%09%09novoIndexEspada := indexMorto %25 len(vet)%0A%09%09e = vet%5BnovoIndexEspada%5D%0A%0A%09%09if e %3C 0 %7B%0A%09%09%09e *= -1%0A%09%09%7D%0A%0A%09%7D%0A%0A\n %7D%0A\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-06-04_12-30-23",
+            "content": "@@ -1118,16 +1118,17 @@\n xEspada \n+:\n = coloca\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-06-04_12-30-46",
+            "content": "@@ -1000,11 +1000,8 @@\n %7D%0A%0A%09\n-// \n inde\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-06-04_12-30-52",
+            "content": "@@ -1113,33 +1113,32 @@\n %0A%0A%09%09indexEspada \n-:\n = colocaEspada(n\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-06-04_12-31-01",
+            "content": "@@ -44,16 +44,23 @@\n meLinha(\n+n int, \n vetMap m\n@@ -144,24 +144,17 @@\n i %3C \n-len(vet)\n+n\n ; i++ %7B%0A\n %0A%09%09p\n@@ -153,18 +153,19 @@\n + %7B%0A\n-%0A\n %09%09\n-posMapa\n+valorReal\n  := \n@@ -175,22 +175,18 @@\n %5Bi%5D%0A\n-%0A\n %09%09\n-if \n posMapa \n %3C 0 \n@@ -185,34 +185,16 @@\n apa \n-%3C 0 %7B%0A%09%09%09posMapa *= -1%0A%09%09%7D\n+:= i + 1\n %0A%0A%09%09\n@@ -234,21 +234,24 @@\n %0A%09%09%09if v\n-et%5Bi%5D\n+alorReal\n  %3E 0 %7B%0A%09\n@@ -277,29 +277,32 @@\n tf(%22%25d%3E %22, v\n-et%5Bi%5D\n+alorReal\n )%0A%09%09%09%7D else \n@@ -331,29 +331,35 @@\n tf(%22%3C%25d %22, v\n-et%5Bi%5D\n+alorReal*-1\n )%0A%09%09%09%7D%0A%09%09%7D e\n@@ -394,21 +394,24 @@\n %22%25d %22, v\n-et%5Bi%5D\n+alorReal\n )%0A%09%09%7D%0A%09%7D\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-06-04_13-23-34",
+            "content": "@@ -1091,24 +1091,27 @@\n mprimeLinha(\n+n, \n vetMap, vet)\n",
+            "lines": "102"
+        },
+        {
+            "label": "2026-06-04_13-24-06",
+            "content": "@@ -459,24 +459,31 @@\n olocaEspada(\n+n int, \n vetMap map%5Bi\n@@ -502,71 +502,139 @@\n nt) \n-%7B%0A\n+int %7B%0A%0A%09indexEspada := -1\n %0A%09for \n-key\n+i\n  := \n-range vetMap %7B%0A%09%09delete(vetMap, key)%0A%09%7D%0A\n+1; i %3C= n; i++ %7B%0A%09%09if e == i %7B%0A%09%09%09indexEspada = i - 1%0A%09%09%09vetMap%5Bi%5D = true%0A%09%09%7D else %7B%0A%09%09\n %09vetMap%5B\n e%5D =\n@@ -633,17 +633,45 @@\n Map%5B\n-e\n+i\n %5D = \n-true\n+false%0A%09%09%7D%0A%09%7D%0A%09return indexEspada\n %0A%7D%0A%0A\n@@ -1006,30 +1006,26 @@\n %7D%0A%0A%09\n-for len(vet) %3E 1 %7B%0A%0A%09%09\n+// indexEspada := \n colo\n@@ -1033,16 +1033,19 @@\n aEspada(\n+n, \n vetMap, \n@@ -1048,16 +1048,36 @@\n ap, e)%0A%0A\n+%09for len(vet) %3E 1 %7B%0A\n %09%09fmt.Pr\n@@ -1131,132 +1131,34 @@\n  := \n--1%0A%0A%09%09for i, val := range vet %7B%0A%09%09%09if val %3C 0 %7B%0A%09%09%09%09val *= -1%0A%09%09%09%7D%0A%0A%09%09%09if val == e %7B%0A%09%09%09%09indexEspada = i%0A%09%09%09%09break%0A%09%09%09%7D%0A%0A%09%09%7D\n+colocaEspada(n, vetMap, e)\n %0A%0A%09%09\n@@ -1370,17 +1370,16 @@\n en(vet)%0A\n-%0A\n %09%09e = ve\n@@ -1397,16 +1397,17 @@\n Espada%5D%0A\n+%0A\n %09%09if e %3C\n@@ -1422,18 +1422,19 @@\n e *= -1%0A%09%09%7D%0A\n+%0A\n %09%7D%0A%0A%7D%0A\n",
+            "lines": "102"
+        },
+        {
+            "label": "2026-06-04_15-00-35",
+            "content": "@@ -914,17 +914,17 @@\n (vet) %3E \n-0\n+1\n  %7B%0A%0A%09%09co\n",
+            "lines": "108"
+        },
+        {
+            "label": "2026-06-04_15-00-58",
+            "content": "@@ -914,17 +914,17 @@\n (vet) %3E \n-1\n+0\n  %7B%0A%0A%09%09co\n@@ -1410,72 +1410,6 @@\n %09%7D%0A%0A\n-%09colocaEspada(vetMap, e)%0A%09fmt.Println(imprimeLinha(vetMap, vet))%0A%0A\n %7D%0A\n",
+            "lines": "108"
+        },
+        {
+            "label": "2026-06-04_15-01-19",
+            "content": "@@ -1037,17 +1037,16 @@\n e vet %7B%0A\n-%0A\n %09%09%09if va\n",
+            "lines": "111"
+        },
+        {
+            "label": "2026-06-04_15-02-57",
+            "content": "@@ -1141,16 +1141,17 @@\n %09dir := \n+-\n 1%0A%09%09if v\n@@ -1181,17 +1181,16 @@\n %09%09dir = \n--\n 1%0A%09%09%7D%0A%0A%09\n",
+            "lines": "112"
+        },
+        {
+            "label": "2026-06-04_15-04-05",
+            "content": "@@ -1141,17 +1141,16 @@\n %09dir := \n--\n 1%0A%09%09if v\n@@ -1180,16 +1180,17 @@\n %09%09dir = \n+-\n 1%0A%09%09%7D%0A%0A%09\n@@ -1340,14 +1340,10 @@\n rto \n-+ dir\n %25\n+ \n len(\n",
+            "lines": "112"
+        },
+        {
+            "label": "2026-06-04_15-04-50",
+            "content": "@@ -1338,17 +1338,19 @@\n Morto + \n-1\n+dir\n %25len(vet\n",
+            "lines": "112"
+        },
+        {
+            "label": "2026-06-04_15-04-59",
+            "content": "@@ -1321,25 +1321,24 @@\n exEspada := \n-(\n indexMorto +\n@@ -1342,15 +1342,10 @@\n o + \n-dir) %25 \n+1%25\n len(\n",
+            "lines": "112"
+        },
+        {
+            "label": "2026-06-04_15-05-09",
+            "content": "@@ -1339,17 +1339,19 @@\n Morto + \n-1\n+dir\n ) %25 len(\n",
+            "lines": "112"
+        },
+        {
+            "label": "2026-06-04_15-05-17",
+            "content": "@@ -1008,16 +1008,17 @@\n a := -1%0A\n+%0A\n %09%09for i,\n@@ -1192,24 +1192,8 @@\n %09%7D%0A%0A\n-%09%09indexEspada++%0A\n %09%09in\n@@ -1325,16 +1325,17 @@\n pada := \n+(\n indexMor\n@@ -1336,16 +1336,21 @@\n dexMorto\n+ + 1)\n  %25 len(v\n",
+            "lines": "112"
+        },
+        {
+            "label": "2026-06-04_15-08-39",
+            "content": "@@ -1187,16 +1187,32 @@\n  1%0A%09%09%7D%0A%0A\n+%09%09indexEspada++%0A\n %09%09indexM\n",
+            "lines": "112"
+        },
+        {
+            "label": "2026-06-04_15-08-48",
+            "content": "@@ -1328,175 +1328,29 @@\n  := \n-0%0A        if dir == 1%7B%0A            novoIndexEspada = indexMorto %25 len(vet)%0A        %7Delse %7B%0A            novoIndexEspada = (indexMorto-1 + len(vet)) %25 len(vet)%0A        %7D\n+indexMorto %25 len(vet)\n %0A%0A%09%09\n",
+            "lines": "111"
+        },
+        {
+            "label": "2026-06-04_15-14-35",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc imprimeLinha(vetMap map[int]bool, vet []int) string {\n\n\tvar res string\n\tres += \"[ \"\n\n\tfor i := 0; i < len(vet); i++ {\n\n\t\tposMapa := vet[i]\n\n\t\tif posMapa < 0 {\n\t\t\tposMapa *= -1\n\t\t}\n\n\t\ttem := vetMap[posMapa]\n\t\tif tem {\n\t\t\tif vet[i] > 0 {\n\t\t\t\tres += fmt.Sprintf(\"%d> \", vet[i])\n\t\t\t} else {\n\t\t\t\tres += fmt.Sprintf(\"<%d \", vet[i])\n\t\t\t}\n\t\t} else {\n\t\t\tres += fmt.Sprintf(\"%d \", vet[i])\n\t\t}\n\t}\n\n\tres += \"]\"\n\treturn res\n}\n\nfunc colocaEspada(vetMap map[int]bool, e int) {\n\n\tfor key := range vetMap {\n\t\tdelete(vetMap, key)\n\t}\n\tvetMap[e] = true\n}\n\nfunc main() {\n\tvar n, e, f int\n\n\tfmt.Scan(&n, &e, &f)\n\n\tvet := make([]int, n)\n\tvetMap := make(map[int]bool)\n\n\tfor i := 0; i < n; i++ {\n\t\tnum := i + 1\n\n\t\tif f == 1 {\n\t\t\tif i%2 != 0 {\n\t\t\t\tvet[i] = num * -1\n\t\t\t} else {\n\t\t\t\tvet[i] = num\n\t\t\t}\n\t\t} else {\n\t\t\tif i%2 == 0 {\n\t\t\t\tvet[i] = num * -1\n\t\t\t} else {\n\t\t\t\tvet[i] = num\n\t\t\t}\n\t\t}\n\n\t}\n\n\tfor len(vet) > 1 {\n\n\t\tcolocaEspada(vetMap, e)\n\n\t\tfmt.Println(imprimeLinha(vetMap, vet))\n\n\t\tindexEspada := -1\n\t\tfor i, val := range vet {\n\n\t\t\tif val < 0 {\n\t\t\t\tval *= -1\n\t\t\t}\n\n\t\t\tif val == e {\n\t\t\t\tindexEspada = i\n\t\t\t\tbreak\n\t\t\t}\n\n\t\t}\n\n\t\tdir := -1\n\t\tif vet[indexEspada] > 0 {\n\t\t\tdir = 1\n\t\t}\n\n\t\tindexMorto := (indexEspada + dir + len(vet)) % len(vet)\n\n\t\tvet = append(vet[:indexMorto], vet[indexMorto+1:]...)\n\n\t\tnovoIndexEspada := 0\n        if dir == 1{\n            novoIndexEspada = indexMorto % len(vet)\n        }else {\n            novoIndexEspada = (indexMorto-1 + len(vet)) % len(vet)\n        }\n\n\t\te = vet[novoIndexEspada]\n\t\tif e < 0 {\n\t\t\te *= -1\n\t\t}\n\t}\n\n\tcolocaEspada(vetMap, e)\n\tfmt.Println(imprimeLinha(vetMap, vet))\n\n}\n",
+            "lines": "116"
+        }
+    ]
+}

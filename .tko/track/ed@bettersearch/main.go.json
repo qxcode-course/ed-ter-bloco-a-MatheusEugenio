@@ -1,0 +1,94 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-26_11-57-59",
+            "content": "@@ -123,445 +123,28 @@\n ) %7B%0A\n-%0A%09tam := len(slice)%0A%0A%09if tam == 0 %7B%0A%09%09return false, 0%0A%09%7D%0A%0A%09if slice%5B0%5D == value %7B%0A%09%09return true, 0%0A%09%7D else if slice%5Btam-1%5D == value %7B%0A%09%09return true, tam - 1%0A%09%7D%0A%0A%09low, high := 0, tam-1%0A%0A%09meio := 0%0A%09for low %3C= high %7B%0A%0A%09%09meio = (low + high) / 2%0A%0A%09%09if slice%5Bmeio%5D %3C value %7B%0A%09%09%09high = meio + 1%0A%09%09%7D else if slice%5Bmeio%5D %3E value %7B%0A%09%09%09low = meio - 1%0A%09%09%7D else if slice%5Bmeio%5D == value %7B%0A%09%09%09return true, meio%0A%09%09%7D else %7B%0A%09%09%09return false, meio%0A%09%09%7D%0A%09%7D%0A\n+%09_, _ = slice, value\n %0A%09re\n@@ -174,17 +174,16 @@\n ain() %7B%0A\n-%0A\n %09scanner\n@@ -408,12 +408,11 @@\n ue)%0A\n+\n %09%7D%0A\n-%0A\n %09sca\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-04-26_12-20-14",
+            "content": "@@ -325,16 +325,17 @@\n or low %3C\n+=\n  high %7B%0A\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-26_12-21-10",
+            "content": "@@ -300,16 +300,18 @@\n = 0, tam\n+-1\n %0A%0A%09meio \n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-26_12-23-05",
+            "content": "@@ -304,12 +304,21 @@\n  tam\n--1\n %0A%0A\n+%09meio := 0%0A\n %09for\n@@ -323,17 +323,16 @@\n or low %3C\n-=\n  high %7B%0A\n@@ -339,17 +339,16 @@\n %0A%09%09meio \n-:\n = (low +\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-04-26_12-25-58",
+            "content": "@@ -382,19 +382,20 @@\n ue %7B%0A%09%09%09\n-low\n+high\n  = meio \n@@ -427,36 +427,35 @@\n o%5D %3E value %7B%0A%09%09%09\n-high\n+low\n  = meio - 1%0A%09%09%7D \n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-26_12-34-34",
+            "content": "@@ -308,19 +308,8 @@\n -1%0A%0A\n-%09meio := 0%0A\n %09for\n@@ -331,16 +331,17 @@\n %0A%09%09meio \n+:\n = (low +\n@@ -356,54 +356,8 @@\n  2%0A%0A\n-%09%09if low == high %7B%0A%09%09%09return false, meio%0A%09%09%7D%0A%0A\n %09%09if\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-04-26_12-48-44",
+            "content": "@@ -565,21 +565,26 @@\n meio%0A%09%09%7D\n-%0A%09%7D%0A%0A\n+ else %7B%0A%09%09\n %09return \n@@ -595,16 +595,41 @@\n e, meio%0A\n+%09%09%7D%0A%09%7D%0A%0A%09return false, 0%0A\n %7D%0A%0Afunc \n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-04-26_12-49-29",
+            "content": "@@ -566,41 +566,8 @@\n eio%0A\n-%09%09%7D else %7B%0A%09%09%09return false, meio%0A\n %09%09%7D%0A\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-04-26_12-59-43",
+            "content": "@@ -300,16 +300,18 @@\n = 0, tam\n+-1\n %0A%0A%09meio \n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-04-26_13-01-21",
+            "content": "@@ -556,24 +556,57 @@\n  true, meio%0A\n+%09%09%7D else %7B%0A%09%09%09return false, meio%0A\n %09%09%7D%0A%09%7D%0A%0A%09ret\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-04-26_13-02-22",
+            "content": "@@ -564,41 +564,8 @@\n eio%0A\n-%09%09%7D else %7B%0A%09%09%09return false, meio%0A\n %09%09%7D%0A\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-04-26_13-02-35",
+            "content": "@@ -564,16 +564,48 @@\n eio%0A%09%09%7D \n+else %7B%0A%09%09%09return false, meio%0A%09%09%7D\n %0A%09%7D%0A%0A%09re\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-04-26_13-02-46",
+            "content": "@@ -381,35 +381,36 @@\n igh %7B%0A%09%09%09return \n-tru\n+fals\n e, meio%0A%09%09%7D%0A%0A%09%09i\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-04-26_13-05-20",
+            "content": "@@ -381,36 +381,35 @@\n igh %7B%0A%09%09%09return \n-fals\n+tru\n e, meio%0A%09%09%7D%0A%0A%09%09i\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-04-26_13-05-27",
+            "content": "@@ -177,16 +177,119 @@\n , 0%0A%09%7D%0A%0A\n+%09if slice%5B0%5D == value %7B%0A%09%09return true, 0%0A%09%7D else if slice%5Btam-1%5D == value %7B%0A%09%09return true, tam - 1%0A%09%7D%0A%0A\n %09low, hi\n@@ -304,12 +304,21 @@\n  tam\n--1\n %0A%0A\n+%09meio := 0%0A\n %09for\n@@ -340,17 +340,16 @@\n %0A%09%09meio \n-:\n = (low +\n@@ -360,16 +360,62 @@\n h) / 2%0A%0A\n+%09%09if low == high %7B%0A%09%09%09return false, meio%0A%09%09%7D%0A%0A\n %09%09if sli\n@@ -509,24 +509,48 @@\n  1%0A%09%09%7D else \n+if slice%5Bmeio%5D == value \n %7B%0A%09%09%09return \n@@ -584,19 +584,20 @@\n  false, \n-low\n+meio\n %0A%7D%0A%0Afunc\n",
+            "lines": "67"
+        },
+        {
+            "label": "2026-04-26_13-08-18",
+            "content": "@@ -403,20 +403,19 @@\n  false, \n-high\n+low\n %0A%7D%0A%0Afunc\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-26_13-23-14",
+            "content": "@@ -403,19 +403,20 @@\n  false, \n-low\n+high\n %0A%7D%0A%0Afunc\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-04-26_13-23-23",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc BetterSearch(slice []int, value int) (bool, int) {\n\n\ttam := len(slice)\n\n\tif tam == 0 {\n\t\treturn false, 0\n\t}\n\n\tlow, high := 0, tam-1\n\n\tfor low <= high {\n\n\t\tmeio := (low + high) / 2\n\n\t\tif slice[meio] < value {\n\t\t\tlow = meio + 1\n\t\t} else if slice[meio] > value {\n\t\t\thigh = meio - 1\n\t\t} else {\n\t\t\treturn true, meio\n\t\t} \n\t}\n\n\treturn false, low\n}\n\nfunc main() {\n\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Split(scanner.Text(), \" \")\n\tslice := []int{}\n\tfor _, elem := range parts[1 : len(parts)-1] {\n\t\tvalue, _ := strconv.Atoi(elem)\n\t\tslice = append(slice, value)\n\t}\n\n\tscanner.Scan()\n\tvalue, _ := strconv.Atoi(scanner.Text())\n\tfound, result := BetterSearch(slice, value)\n\tif found {\n\t\tfmt.Println(\"V\", result)\n\t} else {\n\t\tfmt.Println(\"F\", result)\n\t}\n}\n",
+            "lines": "56"
+        }
+    ]
+}

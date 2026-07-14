@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-18_10-59-08",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\ntype Jogador struct {\n\testaComEspada bool\n\tid            int\n}\n\nfunc main() {\n\n\tvar n, e int\n\tfmt.Scan(&n, &e)\n\n\tjogadores := make([]Jogador, n)\n\n\tfor i := 0; i < len(jogadores); i++ {\n\t\tjogadores[i].id = i + 1\n\t}\n\n\t// vai do 0 ao n-1, por isso o e-1\n\tindiceEspada := e - 1\n\n\tjogadores[indiceEspada].estaComEspada = true\n\n\tfor {\n\n\t\tfmt.Printf(\"[ \")\n\t\tfor j := 0; j < len(jogadores); j++ {\n\n\t\t\tif jogadores[j].estaComEspada == false {\n\t\t\t\tfmt.Printf(\"%d \", jogadores[j].id)\n\t\t\t} else {\n\t\t\t\tfmt.Printf(\"%d> \", jogadores[j].id)\n\t\t\t}\n\n\t\t}\n\t\tfmt.Printf(\"]\\n\")\n\n\t\tif len(jogadores) == 1 {\n\t\t\tbreak\n\t\t}\n\n\t\tindiceDoMorto := (indiceEspada + 1) % len(jogadores)\n\n\t\tjogadores = append(jogadores[:indiceDoMorto], jogadores[indiceDoMorto+1:]...)\n\n\t\tif indiceDoMorto < indiceEspada {\n\t\t\tindiceEspada--\n\t\t}\n\n\t\t// Agora a espada vai para o pr\u00f3ximo vivo\n\t\tindiceEspada = (indiceEspada + 1) % len(jogadores)\n\n\t\t//reinicia o status da espada de todos os jogadores, pois ao remover bagun\u00e7a a ordem dos jogadores\n\t\tfor i := 0; i < len(jogadores); i++ {\n\t\t\tjogadores[i].estaComEspada = false\n\t\t}\n\n\t\t//jogador com indice da espada recebe a espada\n\t\tjogadores[indiceEspada].estaComEspada = true\n\n\t}\n}\n",
+            "lines": "66"
+        }
+    ]
+}

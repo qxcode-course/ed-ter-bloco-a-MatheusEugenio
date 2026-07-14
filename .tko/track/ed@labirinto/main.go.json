@@ -1,0 +1,84 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-20_10-18-47",
+            "content": "@@ -76,27 +76,8 @@\n %0A%7D%0A%0A\n-// acessar vizinho%0A\n func\n@@ -185,49 +185,8 @@\n %0A%7D%0A%0A\n-// se a POS est%C3%A1 dentro da matriz ou n%C3%A3o%0A\n func\n@@ -302,62 +302,8 @@\n %0A%7D%0A%0A\n-// se corresponde ao caractere passado como par%C3%A2metro%0A\n func\n@@ -522,32 +522,8 @@\n  Pos\n-, visitados map%5BPos%5Dbool\n ) bo\n@@ -531,628 +531,41 @@\n l %7B%0A\n-%0A%09// verfica se s%C3%A3o POS v%C3%A1lidas%0A%09if !inside(grid, startPos) %7C%7C !inside(grid, endPos) %7B%0A%09%09return false%0A%09%7D%0A%0A%09// se a POS atual/de come%C3%A7o %C3%A9 igual a de destino%0A%09if startPos == endPos %7B%0A%09%09return true%0A%09%7D%0A%0A%09if grid%5BstartPos.l%5D%5BstartPos.c%5D == ' ' && !visitados%5BstartPos%5D %7B%0A%0A%09%09grid%5BstartPos.l%5D%5BstartPos.c%5D = '.'%0A%09%09visitados%5BstartPos%5D = true%0A%0A%09%7D else %7B%0A%09%09return false%0A%09%7D%0A%0A%09vizinhos := getNeig(startPos)%0A%0A%09for _, vizinhoActual := range vizinhos %7B%0A%0A%09%09if !inside(grid, vizinhoActual) %7B%0A%09%09%09return false%0A%09%09%7D%0A%0A%09%09if match(grid, vizinhoActual, ' ') && !visitados%5BvizinhoActual%5D %7B%0A%09%09%09search(grid, vizinhoActual, endPos, visitados)%0A%09%09%7D%0A%0A%09%7D%0A\n+%09_, _, _ = grid, startPos, endPos\n %0A%09re\n@@ -672,17 +672,16 @@\n .Text()%0A\n-%0A\n %09var nl,\n@@ -726,17 +726,16 @@\n l, &nc)%0A\n-%0A\n %09grid :=\n@@ -1140,41 +1140,8 @@\n %09%7D%0A%0A\n-%09visitados := make(map%5BPos%5Dbool)%0A\n %09sea\n@@ -1170,19 +1170,8 @@\n dPos\n-, visitados\n )%0A%0A%09\n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-05-24_16-22-37",
+            "content": "@@ -850,41 +850,8 @@\n s %7B%0A\n-%09%09grid%5BendPos.l%5D%5BendPos.c%5D = '.'%0A\n %09%09re\n",
+            "lines": "105"
+        },
+        {
+            "label": "2026-05-24_16-24-16",
+            "content": "@@ -883,35 +883,8 @@\n '.'%0A\n-%09%09visitados%5BendPos%5D = true%0A\n %09%09re\n@@ -1327,19 +1327,20 @@\n %09return \n-tru\n+fals\n e%0A%7D%0A%0Afun\n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-05-24_16-26-48",
+            "content": "@@ -1162,16 +1162,73 @@\n nhos %7B%0A%0A\n+%09%09if !inside(grid, vizinhoActual) %7B%0A%09%09%09return false%0A%09%09%7D%0A%0A\n %09%09if mat\n@@ -1287,23 +1287,19 @@\n tual%5D %7B%0A\n-%0A\n %09%09%09\n-if \n search(g\n@@ -1340,31 +1340,8 @@\n dos)\n- %7B%0A%09%09%09%09return true%0A%09%09%09%7D\n %0A%09%09%7D\n",
+            "lines": "107"
+        },
+        {
+            "label": "2026-05-24_16-28-27",
+            "content": "@@ -1166,65 +1166,8 @@\n  %7B%0A%0A\n-%09%09if !inside(grid, vizinhoActual) %7B%0A%09%09%09return false%0A%09%09%7D%0A%0A\n %09%09if\n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-05-24_16-28-41",
+            "content": "@@ -724,16 +724,41 @@\n tartPos)\n+ %7C%7C !inside(grid, endPos)\n  %7B%0A%09%09ret\n@@ -878,17 +878,16 @@\n c%5D = '.'\n-s\n %0A%09%09visit\n@@ -1162,16 +1162,73 @@\n nhos %7B%0A%0A\n+%09%09if !inside(grid, vizinhoActual) %7B%0A%09%09%09return false%0A%09%09%7D%0A%0A\n %09%09if mat\n",
+            "lines": "110"
+        },
+        {
+            "label": "2026-05-24_16-30-27",
+            "content": "@@ -845,32 +845,33 @@\n %5BendPos.c%5D = '.'\n+s\n %0A%09%09visitados%5Bend\n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-05-24_16-30-35",
+            "content": "@@ -750,92 +750,8 @@\n %09%7D%0A%0A\n-%09if grid%5BstartPos.l%5D%5BstartPos.c%5D != ' ' && visitados%5BstartPos%5D %7B%0A%09%09return false%0A%09%7D%0A%0A\n %09// \n@@ -904,34 +904,168 @@\n %7D%0A%0A%09\n-visitados%5BstartPos%5D = true\n+if grid%5BstartPos.l%5D%5BstartPos.c%5D == ' ' && !visitados%5BstartPos%5D %7B%0A%0A%09%09grid%5BstartPos.l%5D%5BstartPos.c%5D = '.'%0A%09%09visitados%5BstartPos%5D = true%0A%0A%09%7D else %7B%0A%09%09return false%0A%09%7D\n %0A%0A%09v\n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-05-24_16-32-38",
+            "content": "@@ -1014,40 +1014,8 @@\n true\n-%0A%09grid%5BendPos.l%5D%5BendPos.c%5D = '.'\n %0A%0A%09v\n",
+            "lines": "103"
+        },
+        {
+            "label": "2026-05-24_16-33-02",
+            "content": "@@ -1017,33 +1017,29 @@\n e%0A%09grid%5B\n-start\n+end\n Pos.l%5D%5B\n-start\n+end\n Pos.c%5D =\n",
+            "lines": "104"
+        },
+        {
+            "label": "2026-05-24_16-33-28",
+            "content": "@@ -1123,16 +1123,86 @@\n nhos %7B%0A%0A\n+%09%09if match(grid, vizinhoActual, ' ') && !visitados%5BvizinhoActual%5D %7B%0A%0A%09\n %09%09if sea\n@@ -1250,16 +1250,17 @@\n s) %7B%0A%09%09%09\n+%09\n return t\n@@ -1265,17 +1265,23 @@\n  true%0A%09%09\n-%7D\n+%09%7D%0A%09%09%7D%0A\n %0A%09%7D%0A%0A%09re\n@@ -1285,20 +1285,19 @@\n %09return \n-fals\n+tru\n e%0A%7D%0A%0Afun\n",
+            "lines": "104"
+        },
+        {
+            "label": "2026-05-24_16-35-41",
+            "content": "@@ -1079,16 +1079,17 @@\n artPos)%0A\n+%0A\n %09for _, \n@@ -1208,19 +1208,20 @@\n %09return \n-tru\n+fals\n e%0A%7D%0A%0Afun\n",
+            "lines": "100"
+        },
+        {
+            "label": "2026-05-24_16-36-13",
+            "content": "@@ -1207,20 +1207,19 @@\n %09return \n-fals\n+tru\n e%0A%7D%0A%0Afun\n",
+            "lines": "99"
+        },
+        {
+            "label": "2026-05-24_16-37-29",
+            "content": "@@ -1203,45 +1203,8 @@\n %09%7D%0A%0A\n-%09grid%5BstartPos.l%5D%5BstartPos.c%5D = ' '%0A%0A\n %09ret\n",
+            "lines": "99"
+        },
+        {
+            "label": "2026-05-24_16-37-59",
+            "content": "@@ -786,18 +786,18 @@\n  != ' ' \n-%7C%7C\n+&&\n  visitad\n",
+            "lines": "101"
+        },
+        {
+            "label": "2026-05-24_16-38-42",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\n// acessar vizinho\nfunc getNeig(p Pos) []Pos {\n\treturn []Pos{{p.l, p.c - 1}, {p.l - 1, p.c}, {p.l, p.c + 1}, {p.l + 1, p.c}}\n}\n\n// se a POS est\u00e1 dentro da matriz ou n\u00e3o\nfunc inside(grid [][]rune, p Pos) bool {\n\treturn !(p.l < 0 || p.l >= len(grid) || p.c < 0 || p.c >= len(grid[0]))\n}\n\n// se corresponde ao caractere passado como par\u00e2metro\nfunc match(grid [][]rune, p Pos, value rune) bool {\n\treturn inside(grid, p) && grid[p.l][p.c] == value\n}\n\n// Fun\u00e7\u00e3o recursiva que tenta encontrar o caminho do in\u00edcio ao fim\nfunc search(grid [][]rune, startPos, endPos Pos, visitados map[Pos]bool) bool {\n\n\t// verfica se s\u00e3o POS v\u00e1lidas\n\tif !inside(grid, startPos) {\n\t\treturn false\n\t}\n\n\tif grid[startPos.l][startPos.c] != ' ' || visitados[startPos] {\n\t\treturn false\n\t}\n\n\t// se a POS atual/de come\u00e7o \u00e9 igual a de destino\n\tif startPos == endPos {\n\t\tgrid[endPos.l][endPos.c] = '.'\n\t\tvisitados[endPos] = true\n\t\treturn true\n\t}\n\n\tvisitados[startPos] = true\n\tgrid[startPos.l][startPos.c] = '.'\n\n\tvizinhos := getNeig(startPos)\n\tfor _, vizinhoActual := range vizinhos {\n\n\t\tif search(grid, vizinhoActual, endPos, visitados) {\n\t\t\treturn true\n\t\t}\n\t}\n\n\tgrid[startPos.l][startPos.c] = ' '\n\n\treturn false\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tnl_nc := scanner.Text()\n\n\tvar nl, nc int\n\tfmt.Sscanf(nl_nc, \"%d %d\", &nl, &nc)\n\n\tgrid := make([][]rune, nl)\n\n\t// L\u00ea a gridriz\n\tfor i := range nl {\n\t\tscanner.Scan()\n\t\tgrid[i] = []rune(scanner.Text())\n\t}\n\n\t// Procura posi\u00e7\u00f5es de in\u00edcio e endPos e conserta para _\n\tvar startPos, endPos Pos\n\tfor l := range nl {\n\t\tfor c := range nc {\n\t\t\tif grid[l][c] == 'I' {\n\t\t\t\tgrid[l][c] = ' '\n\t\t\t\tstartPos = Pos{l, c}\n\t\t\t}\n\t\t\tif grid[l][c] == 'F' {\n\t\t\t\tgrid[l][c] = ' '\n\t\t\t\tendPos = Pos{l, c}\n\t\t\t}\n\t\t}\n\t}\n\n\tvisitados := make(map[Pos]bool)\n\tsearch(grid, startPos, endPos, visitados)\n\n\t// Imprime o labirinto final\n\tfor _, line := range grid {\n\t\tfmt.Println(string(line))\n\t}\n}\n",
+            "lines": "101"
+        }
+    ]
+}

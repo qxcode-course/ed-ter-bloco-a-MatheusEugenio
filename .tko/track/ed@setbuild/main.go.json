@@ -1,0 +1,149 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-25_16-04-23",
+            "content": "@@ -1184,16 +1184,18 @@\n %5B:v.size\n+-1\n %5D, %22, %22)\n",
+            "lines": "132"
+        },
+        {
+            "label": "2026-04-25_16-04-48",
+            "content": "@@ -29,18 +29,8 @@\n io%22%0A\n-%09%22errors%22%0A\n %09%22fm\n@@ -724,28 +724,8 @@\n t) %7B\n-//usa busca binaria%0A\n %0A%0A%09i\n@@ -744,16 +744,18 @@\n capacity\n+-1\n  %7C%7C inde\n@@ -758,17 +758,22 @@\n index %3C \n-0\n+v.size\n  %7B%0A%09%09ret\n@@ -838,84 +838,8 @@\n  %7B%0A%0A\n-%09if index %3C 0 %7C%7C index %3E v.size%7B%0A%09%09return errors.New(%22value not found%22)%0A%09%7D%0A%0A\n %09ret\n",
+            "lines": "132"
+        },
+        {
+            "label": "2026-04-25_16-10-29",
+            "content": "@@ -576,19 +576,16 @@\n privado%0A\n-// \n func (v \n@@ -661,19 +661,16 @@\n existe%0A%0A\n-// \n %09return \n@@ -672,19 +672,16 @@\n turn -1%0A\n-// \n %7D%0A%0A// pr\n@@ -885,17 +885,15 @@\n ex %3E\n-=\n  v.size\n- \n %7B%0A%09%09\n@@ -937,135 +937,8 @@\n %09%7D%0A%0A\n-%09if index == v.size-1%7B%0A%09%09v.size--%0A%09%09return nil%0A%09%7D%0A%0A%09for i := index; i %3C v.size-1; i++%7B%0A%09%09v.data%5Bi%5D = v.data%5Bi+1%5D %0A%09%7D%0A%09v.size--%0A\n %09ret\n@@ -1087,63 +1087,25 @@\n nt) \n-bool %7B%0A%09res := v.erase(index)%0A%09if res == nil%7B%0A%09\n+error %7B%0A%0A\n %09return \n true\n@@ -1104,39 +1104,11 @@\n urn \n-true%0A%09%7Delse %7B%0A%09%09return false%0A%09%7D\n+nil\n %0A%7D%0A%0A\n@@ -2083,24 +2083,27 @@\n %22erase%22:%0A%09%09%09\n+// \n value, _ := \n@@ -2129,26 +2129,8 @@\n 1%5D)%0A\n-%09%09%09v.erase(value)%0A\n %09%09ca\n",
+            "lines": "138"
+        },
+        {
+            "label": "2026-04-25_16-45-20",
+            "content": "@@ -687,35 +687,32 @@\n / %7D%0A%0A// privado%0A\n-// \n func (v *Set) in\n@@ -761,19 +761,16 @@\n naria%0A%0A%0A\n-// \n %09if inde\n@@ -799,19 +799,16 @@\n x %3C 0 %7B%0A\n-// \n %09%09return\n@@ -812,18 +812,12 @@\n urn%0A\n-// \n %09%7D%0A%0A\n-// \n %7D%0A%0A/\n@@ -2333,96 +2333,22 @@\n %0A%09%09%09\n-if v.Erase(value)%7B%0A%09%09%09%09fmt.Println(v)%0A%09%09%09%7Delse %7B%0A%09%09%09%09fmt.Println(%22value not found%22)%0A%09%09%09%7D\n+v.erase(value)\n %0A%09%09c\n",
+            "lines": "152"
+        },
+        {
+            "label": "2026-04-25_16-48-30",
+            "content": "@@ -568,32 +568,35 @@\n p%0A%7D%0A%0A// privado%0A\n+// \n func (v *Set) bi\n@@ -668,373 +668,25 @@\n te%0A%0A\n-%09inicio, final := 0, v.size-1%0A%0A%09if value == v.data%5B0%5D %7B%0A%09%09return 0%0A%09%7D else if value == v.data%5Bv.size-1%5D %7B%0A%09%09return v.size - 1%0A%09%7D%0A%0A%09for inicio %3C= final %7B%0A%0A%09%09indexMeio := (inicio + final) / 2%0A%0A%09%09if value %3E v.data%5BindexMeio%5D %7B%0A%09%09%09inicio = indexMeio + 1%0A%09%09%7D else if value %3C v.data%5BindexMeio%5D %7B%0A%09%09%09final = indexMeio - 1%0A%09%09%7D else %7B%0A%09%09%09return indexMeio%0A%09%09%7D%0A%09%7D%0A%0A%09return -1%0A\n+// %09return -1%0A// \n %7D%0A%0A/\n@@ -687,32 +687,35 @@\n / %7D%0A%0A// privado%0A\n+// \n func (v *Set) in\n@@ -734,33 +734,32 @@\n nt, index int) %7B\n- \n //usa busca bina\n@@ -763,16 +763,20 @@\n inaria%0A%0A\n+%0A// \n %09if inde\n@@ -801,24 +801,27 @@\n index %3C 0 %7B%0A\n+// \n %09%09return%0A%09%7D%0A\n@@ -817,20 +817,26 @@\n %09return%0A\n+// \n %09%7D%0A%0A\n+// \n %7D%0A%0A// pr\n@@ -980,17 +980,16 @@\n v.size-1\n- \n %7B%0A%09%09v.si\n@@ -1044,17 +1044,16 @@\n e-1; i++\n- \n %7B%0A%09%09v.da\n@@ -1071,16 +1071,17 @@\n ata%5Bi+1%5D\n+ \n %0A%09%7D%0A%09v.s\n@@ -1280,17 +1280,16 @@\n s == nil\n- \n %7B%0A%09%09retu\n@@ -1298,17 +1298,16 @@\n  true%0A%09%7D\n- \n else %7B%0A%09\n@@ -2361,17 +2361,16 @@\n e(value)\n- \n %7B%0A%09%09%09%09fm\n@@ -2386,17 +2386,16 @@\n (v)%0A%09%09%09%7D\n- \n else %7B%0A%09\n@@ -2401,46 +2401,8 @@\n %09%09%09%09\n-// fmt.Println(v.erase(value))%0A%09%09%09%09// \n fmt.\n",
+            "lines": "156"
+        },
+        {
+            "label": "2026-04-25_22-12-20",
+            "content": "@@ -1161,193 +1161,8 @@\n %09%7D%0A%0A\n-%09indice := v.binarySearch(value)%0A%09if indice != -1%7B%0A%09%09return// ent%C3%A3o o valor existe%0A%09%7D%0A%0A%09for i := v.size-1; i %3E index; i--%7B%0A%09%09v.data%5Bi+1%5D = v.data%5Bi%5D%0A%09%7D%0A%09v.size++%0A%09v.data%5Bindex%5D = value%0A\n %7D%0A%0A/\n@@ -1756,82 +1756,9 @@\n ste%0A\n-%09existe := v.binarySearch(value)%0A%09if existe != 1%7B%0A%09%09return true%0A%09%7Delse %7B%0A%09\n+%0A\n %09ret\n@@ -1759,35 +1759,32 @@\n %0A%0A%09return false%0A\n-%09%7D%0A\n %7D%0A%0Afunc (v *Set)\n@@ -2824,24 +2824,27 @@\n ntains%22:%0A%09%09%09\n+// \n value, _ := \n@@ -2870,98 +2870,8 @@\n 1%5D)%0A\n-%09%09%09if v.Contains(value)%7B%0A%09%09%09%09fmt.Println(%22true%22)%0A%09%09%09%7Delse %7B%0A%09%09%09%09fmt.Println(%22false%22)%0A%09%09%09%7D%0A\n %09%09ca\n",
+            "lines": "177"
+        },
+        {
+            "label": "2026-04-25_22-24-44",
+            "content": "@@ -1082,22 +1082,16 @@\n dex int)\n- error\n  %7B //usa\n@@ -1156,38 +1156,8 @@\n turn\n- errors.New(%22value not found%22)\n %0A%09%7D%0A\n@@ -1206,17 +1206,16 @@\n ce != -1\n- \n %7B%0A%09%09retu\n@@ -1220,39 +1220,8 @@\n turn\n- errors.New(%22value not found%22) \n // e\n@@ -1264,18 +1264,15 @@\n size\n- - \n+-\n 1; i %3E\n-=\n  ind\n@@ -1278,17 +1278,16 @@\n dex; i--\n- \n %7B%0A%09%09v.da\n@@ -1342,28 +1342,16 @@\n = value%0A\n-%09return nil%0A\n %7D%0A%0A// pr\n@@ -1640,24 +1640,35 @@\n nsert(value \n+int, index \n int) %7B //usa\n@@ -1722,46 +1722,8 @@\n te%0A%0A\n-%09//primeira ordena%0A%09//segundo insere%0A%0A\n %7D%0A%0Af\n@@ -1985,17 +1985,16 @@\n ste != 1\n- \n %7B%0A%09%09retu\n@@ -1995,33 +1995,32 @@\n %09%09return true%0A%09%7D\n- \n else %7B%0A%09%09return \n@@ -3143,25 +3143,24 @@\n tains(value)\n- \n %7B%0A%09%09%09%09fmt.Pr\n@@ -3173,25 +3173,24 @@\n %22true%22)%0A%09%09%09%7D\n- \n else %7B%0A%09%09%09%09f\n",
+            "lines": "196"
+        },
+        {
+            "label": "2026-04-25_22-34-17",
+            "content": "@@ -2879,16 +2879,19 @@\n rt%22:%0A%09%09%09\n+// \n for _, p\n@@ -2918,16 +2918,19 @@\n :%5D %7B%0A%09%09%09\n+// \n %09value, \n@@ -2960,28 +2960,11 @@\n %0A%09%09%09\n-%09v.Insert(value)%0A%09%09%09\n+// \n %7D%0A%09%09\n",
+            "lines": "200"
+        },
+        {
+            "label": "2026-04-25_22-35-06",
+            "content": "@@ -1199,75 +1199,120 @@\n %0A%0A%09i\n-f index %3E= v.size %7B%0A%09%09v.size++%0A%09%09v.data%5Bindex%5D = value%0A%09%09return nil\n+ndice := v.binarySearch(value)%0A%09if indice != -1 %7B%0A%09%09return errors.New(%22value not found%22) // ent%C3%A3o o valor existe\n %0A%09%7D%0A\n@@ -1414,17 +1414,16 @@\n = value%0A\n-%0A\n %09return \n@@ -1796,271 +1796,44 @@\n e%0A%0A%09\n-indice := v.binarySearch(value)%0A%09if indice != -1 %7B%0A%09%09return //ent%C3%A3o o valor existe%0A%09%7D%0A%0A%09if v.size == 0 %7B%0A%09%09v.size++%0A%09%09v.data%5B0%5D = value%0A%09%09return%0A%09%7D%0A%0A%09index := 0%0A%0A%09for index %3C v.size %7B%0A%09%09if v.data%5Bindex%5D %3E value %7B%0A%09%09%09break%0A%09%09%7D%0A%09%09index++%0A%09%7D%0A%0A%09v.insert(value, index)\n+//primeira ordena%0A%09//segundo insere%0A\n %0A%7D%0A%0A\n@@ -2486,47 +2486,8 @@\n %0A%7D%0A%0A\n-func (v *Set) Clear() %7B%0A%09v.size = 0%0A%7D%0A%0A\n func\n@@ -2800,17 +2800,16 @@\n %22init%22:%0A\n-%0A\n %09%09%09value\n@@ -2859,17 +2859,16 @@\n (value)%0A\n-%0A\n %09%09case %22\n@@ -2876,17 +2876,16 @@\n nsert%22:%0A\n-%0A\n %09%09%09for _\n@@ -2968,25 +2968,24 @@\n value)%0A%09%09%09%7D%0A\n-%0A\n %09%09case %22show\n@@ -2987,17 +2987,16 @@\n %22show%22:%0A\n-%0A\n %09%09%09fmt.P\n@@ -3005,17 +3005,16 @@\n ntln(v)%0A\n-%0A\n %09%09case %22\n@@ -3021,17 +3021,16 @@\n erase%22:%0A\n-%0A\n %09%09%09value\n@@ -3051,33 +3051,32 @@\n .Atoi(parts%5B1%5D)%0A\n-%0A\n %09%09%09if v.Erase(va\n@@ -3109,32 +3109,70 @@\n %09%09%09%7D else %7B%0A%09%09%09%09\n+// fmt.Println(v.erase(value))%0A%09%09%09%09// \n fmt.Println(%22val\n@@ -3183,33 +3183,32 @@\n ot found%22)%0A%09%09%09%7D%0A\n-%0A\n %09%09case %22contains\n@@ -3210,17 +3210,16 @@\n tains%22:%0A\n-%0A\n %09%09%09value\n@@ -3248,17 +3248,16 @@\n rts%5B1%5D)%0A\n-%0A\n %09%09%09if v.\n@@ -3340,17 +3340,16 @@\n %22)%0A%09%09%09%7D%0A\n-%0A\n %09%09case %22\n@@ -3360,21 +3360,8 @@\n r%22:%0A\n-%09%09%09v.Clear()%0A\n %09%09de\n",
+            "lines": "201"
+        },
+        {
+            "label": "2026-04-25_23-34-21",
+            "content": "@@ -1082,32 +1082,52 @@\n dex int) error %7B\n+ //usa busca binaria\n %0A%0A%09if index %3E v.\n",
+            "lines": "237"
+        },
+        {
+            "label": "2026-04-25_23-39-53",
+            "content": "@@ -1731,70 +1731,8 @@\n te%0A%0A\n-%09if v.size == 0 %7B%0A%09%09v.size++%0A%09%09v.data%5B0%5D = value%0A%09%09return%0A%09%7D%0A%0A\n %09ind\n",
+            "lines": "237"
+        },
+        {
+            "label": "2026-04-25_23-42-31",
+            "content": "@@ -1096,63 +1096,8 @@\n  %7B%0A%0A\n-%09if v.size == v.capacity %7B%0A%09%09v.reserve(v.size + 1)%0A%09%7D%0A%0A\n %09if \n@@ -1103,17 +1103,16 @@\n  index %3E\n-=\n  v.capac\n",
+            "lines": "243"
+        },
+        {
+            "label": "2026-04-25_23-51-16",
+            "content": "@@ -2372,25 +2372,24 @@\n f existe != \n--\n 1 %7B%0A%09%09return\n",
+            "lines": "247"
+        },
+        {
+            "label": "2026-04-25_23-52-53",
+            "content": "@@ -3541,19 +3541,23 @@\n rts%5B1%5D)%0A\n+%0A\n %09%09%09\n+if \n v.Contai\n@@ -3565,16 +3565,85 @@\n s(value)\n+ %7B%0A%09%09%09%09fmt.Println(%22true%22)%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Println(%22false%22)%0A%09%09%09%7D%0A\n %0A%09%09case \n",
+            "lines": "247"
+        },
+        {
+            "label": "2026-04-25_23-53-35",
+            "content": "@@ -3541,23 +3541,19 @@\n rts%5B1%5D)%0A\n-%0A\n %09%09%09\n-if \n v.Contai\n@@ -3565,77 +3565,8 @@\n lue)\n- %7B%0A%09%09%09%09fmt.Println(%22true%22)%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Println(%22false%22)%0A%09%09%09%7D%0A\n %0A%09%09c\n",
+            "lines": "241"
+        },
+        {
+            "label": "2026-04-25_23-53-53",
+            "content": "@@ -1413,32 +1413,304 @@\n %0A%09return nil%0A%7D%0A%0A\n+// privado%0Afunc (v *Set) erase(index int) error %7B%0A%0A%09if index %3C 0 %7C%7C index %3E= v.size %7B%0A%09%09return errors.New(%22value not found%22)%0A%09%7D%0A%0A%09if index == v.size-1 %7B%0A%09%09v.size--%0A%09%09return nil%0A%09%7D%0A%0A%09for i := index; i %3C v.size-1; i++ %7B%0A%09%09v.data%5Bi%5D = v.data%5Bi+1%5D%0A%09%7D%0A%09v.size--%0A%09return nil%0A%7D%0A%0A\n func (v *Set) In\n@@ -2117,280 +2117,8 @@\n %0A%7D%0A%0A\n-// privado%0Afunc (v *Set) erase(index int) error %7B%0A%0A%09if index %3C 0 %7C%7C index %3E= v.size %7B%0A%09%09return errors.New(%22value not found%22)%0A%09%7D%0A%0A%09if index == v.size-1 %7B%0A%09%09v.size--%0A%09%09return nil%0A%09%7D%0A%0A%09for i := index; i %3C v.size-1; i++ %7B%0A%09%09v.data%5Bi%5D = v.data%5Bi+1%5D%0A%09%7D%0A%09v.size--%0A%09return nil%0A%7D%0A%0A\n func\n",
+            "lines": "247"
+        },
+        {
+            "label": "2026-04-25_23-56-28",
+            "content": "@@ -2133,21 +2133,21 @@\n ) Erase(\n-value\n+index\n  int) bo\n@@ -2155,79 +2155,8 @@\n l %7B%0A\n-%0A%09index := v.binarySearch(value)%0A%0A%09if index == -1 %7B%0A%09%09return false%0A%09%7D%0A%0A\n %09res\n",
+            "lines": "247"
+        },
+        {
+            "label": "2026-04-26_00-05-47",
+            "content": "@@ -2224,32 +2224,8 @@\n e%0A%09%7D\n- else %7B%0A%09%09return true%0A%09%7D\n %0A%0A%09r\n",
+            "lines": "254"
+        },
+        {
+            "label": "2026-04-26_00-07-52",
+            "content": "@@ -2232,25 +2232,8 @@\n e %7B%0A\n-%09%09v.erase(index)%0A\n %09%09re\n",
+            "lines": "256"
+        },
+        {
+            "label": "2026-04-26_00-08-50",
+            "content": "@@ -2220,16 +2220,57 @@\n false%0A%09%7D\n+ else %7B%0A%09%09v.erase(index)%0A%09%09return true%0A%09%7D\n %0A%0A%09res :\n@@ -3506,17 +3506,16 @@\n %0A%0A%09%09%09if \n-!\n v.Erase(\n@@ -3515,32 +3515,63 @@\n .Erase(value) %7B%0A\n+%09%09%09%09fmt.Println(v)%0A%09%09%09%7D else %7B%0A\n %09%09%09%09fmt.Println(\n",
+            "lines": "257"
+        },
+        {
+            "label": "2026-04-26_00-14-04",
+            "content": "@@ -2347,17 +2347,68 @@\n ) bool %7B\n-%0A\n+ //usa busca binaria para saber se o elemento existe\n %0A%09existe\n",
+            "lines": "252"
+        },
+        {
+            "label": "2026-04-26_00-21-01",
+            "content": "@@ -693,19 +693,16 @@\n ize-1%0A%0A%09\n-// \n if value\n@@ -714,27 +714,24 @@\n .data%5B0%5D %7B%0A%09\n-// \n %09return 0%0A%09/\n@@ -729,19 +729,16 @@\n turn 0%0A%09\n-// \n %7D else i\n@@ -768,19 +768,16 @@\n e-1%5D %7B%0A%09\n-// \n %09return \n@@ -788,19 +788,16 @@\n ze - 1%0A%09\n-// \n %7D%0A%0A%09for \n",
+            "lines": "253"
+        },
+        {
+            "label": "2026-04-26_13-14-35",
+            "content": "@@ -692,16 +692,130 @@\n size-1%0A%0A\n+%09// if value == v.data%5B0%5D %7B%0A%09// %09return 0%0A%09// %7D else if value == v.data%5Bv.size-1%5D %7B%0A%09// %09return v.size - 1%0A%09// %7D%0A%0A\n %09for ini\n",
+            "lines": "253"
+        },
+        {
+            "label": "2026-04-26_13-15-01",
+            "content": "@@ -1563,19 +1563,16 @@\n te%0A%09%7D%0A%0A%09\n-// \n if v.siz\n@@ -1581,19 +1581,16 @@\n == 0 %7B%0A%09\n-// \n %09v.size+\n@@ -1592,19 +1592,16 @@\n size++%0A%09\n-// \n %09v.data%5B\n@@ -1612,19 +1612,16 @@\n  value%0A%09\n-// \n %09return%0A\n@@ -1621,19 +1621,16 @@\n return%0A%09\n-// \n %7D%0A%0A%09inde\n",
+            "lines": "247"
+        },
+        {
+            "label": "2026-04-27_16-20-51",
+            "content": "@@ -1558,24 +1558,101 @@\n  existe%0A%09%7D%0A%0A\n+%09// if v.size == 0 %7B%0A%09// %09v.size++%0A%09// %09v.data%5B0%5D = value%0A%09// %09return%0A%09// %7D%0A%0A\n %09index := 0%0A\n",
+            "lines": "247"
+        },
+        {
+            "label": "2026-04-27_16-21-02",
+            "content": "@@ -1413,19 +1413,16 @@\n xiste%0A%0A%09\n-// \n if v.siz\n@@ -1431,19 +1431,16 @@\n == 0 %7B%0A%09\n-// \n %09v.size+\n@@ -1442,19 +1442,16 @@\n size++%0A%09\n-// \n %09v.data%5B\n@@ -1462,19 +1462,16 @@\n  value%0A%09\n-// \n %09return%0A\n@@ -1471,19 +1471,16 @@\n return%0A%09\n-// \n %7D%0A%0A%09indi\n",
+            "lines": "241"
+        },
+        {
+            "label": "2026-04-27_16-21-09",
+            "content": "@@ -1412,16 +1412,93 @@\n existe%0A%0A\n+%09// if v.size == 0 %7B%0A%09// %09v.size++%0A%09// %09v.data%5B0%5D = value%0A%09// %09return%0A%09// %7D%0A%0A\n %09indice \n",
+            "lines": "241"
+        },
+        {
+            "label": "2026-04-27_16-21-20",
+            "content": "@@ -1416,14 +1416,8 @@\n te%0A%0A\n-%09// %0A%0A\n %09ind\n",
+            "lines": "235"
+        },
+        {
+            "label": "2026-05-18_11-01-49",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"errors\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Set struct {\n\tdata     []int\n\tsize     int\n\tcapacity int\n}\n\nfunc NewSet(newCacpacity int) *Set {\n\treturn &Set{\n\t\tdata:     make([]int, newCacpacity),\n\t\tsize:     0,\n\t\tcapacity: newCacpacity,\n\t}\n}\n\n// privado\nfunc (v *Set) reserve(newCacpacity int) {\n\n\tif newCacpacity == 0 {\n\t\tv.capacity = 1\n\t} else if newCacpacity <= v.capacity {\n\t\treturn\n\t} else {\n\t\tv.capacity *= 2\n\t}\n\n\tdataTemp := make([]int, v.capacity)\n\n\tfor i, val := range v.data {\n\t\tdataTemp[i] = val\n\t}\n\n\tv.data = dataTemp\n}\n\n// privado\nfunc (v *Set) binarySearch(value int) int { //retorna o indice do numero, se existe\n\n\tinicio, final := 0, v.size-1\n\n\tfor inicio <= final {\n\n\t\tindexMeio := (inicio + final) / 2\n\n\t\tif value > v.data[indexMeio] {\n\t\t\tinicio = indexMeio + 1\n\t\t} else if value < v.data[indexMeio] {\n\t\t\tfinal = indexMeio - 1\n\t\t} else {\n\t\t\treturn indexMeio\n\t\t}\n\t}\n\n\treturn -1\n}\n\n// privado\nfunc (v *Set) insert(value int, index int) error {\n\n\tif v.size == v.capacity {\n\t\tv.reserve(v.size + 1)\n\t}\n\n\tif index >= v.capacity || index < 0 {\n\t\treturn errors.New(\"value not found\")\n\t}\n\n\tif index >= v.size {\n\t\tv.size++\n\t\tv.data[index] = value\n\t\treturn nil\n\t}\n\n\tfor i := v.size - 1; i >= index; i-- {\n\t\tv.data[i+1] = v.data[i]\n\t}\n\tv.size++\n\tv.data[index] = value\n\n\treturn nil\n}\n\nfunc (v *Set) Insert(value int) { //usa busca binaria para saber se o elemento j\u00e1 existe\n\n\t// \n\n\tindice := v.binarySearch(value)\n\tif indice != -1 {\n\t\treturn //ent\u00e3o o valor existe\n\t}\n\n\tindex := 0\n\n\tfor index < v.size {\n\t\tif v.data[index] > value {\n\t\t\tbreak\n\t\t}\n\t\tindex++\n\t}\n\n\tv.insert(value, index)\n}\n\n// privado\nfunc (v *Set) erase(index int) error {\n\n\tif index < 0 || index >= v.size {\n\t\treturn errors.New(\"value not found\")\n\t}\n\n\tif index == v.size-1 {\n\t\tv.size--\n\t\treturn nil\n\t}\n\n\tfor i := index; i < v.size-1; i++ {\n\t\tv.data[i] = v.data[i+1]\n\t}\n\tv.size--\n\treturn nil\n}\n\nfunc (v *Set) Erase(value int) bool {\n\n\tindex := v.binarySearch(value)\n\n\tif index == -1 {\n\t\treturn false\n\t}\n\n\tres := v.erase(index)\n\tif res == nil {\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}\n\nfunc (v *Set) Contains(value int) bool {\n\n\texiste := v.binarySearch(value)\n\tif existe != -1 {\n\t\treturn true\n\t} else {\n\t\treturn false\n\t}\n}\n\nfunc (v *Set) String() string {\n\treturn \"[\" + Join(v.data[:v.size], \", \") + \"]\"\n}\n\nfunc Join(slice []int, sep string) string {\n\tif len(slice) == 0 {\n\t\treturn \"\"\n\t}\n\tvar result strings.Builder\n\tfmt.Fprintf(&result, \"%d\", slice[0])\n\tfor _, value := range slice[1:] {\n\t\tfmt.Fprintf(&result, \"%s%d\", sep, value)\n\t}\n\treturn result.String()\n}\n\nfunc (v *Set) Clear() {\n\tv.size = 0\n}\n\nfunc main() {\n\tvar line, cmd string\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tv := NewSet(0)\n\tfor scanner.Scan() {\n\t\tfmt.Print(\"$\")\n\t\tline = scanner.Text()\n\t\tfmt.Println(line)\n\t\tparts := strings.Fields(line)\n\t\tif len(parts) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tcmd = parts[0]\n\n\t\tswitch cmd {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"init\":\n\n\t\t\tvalue, _ := strconv.Atoi(parts[1])\n\t\t\tv = NewSet(value)\n\n\t\tcase \"insert\":\n\n\t\t\tfor _, part := range parts[1:] {\n\t\t\t\tvalue, _ := strconv.Atoi(part)\n\t\t\t\tv.Insert(value)\n\t\t\t}\n\n\t\tcase \"show\":\n\n\t\t\tfmt.Println(v)\n\n\t\tcase \"erase\":\n\n\t\t\tvalue, _ := strconv.Atoi(parts[1])\n\n\t\t\tif !v.Erase(value) {\n\t\t\t\tfmt.Println(\"value not found\")\n\t\t\t}\n\n\t\tcase \"contains\":\n\n\t\t\tvalue, _ := strconv.Atoi(parts[1])\n\n\t\t\tif v.Contains(value) {\n\t\t\t\tfmt.Println(\"true\")\n\t\t\t} else {\n\t\t\t\tfmt.Println(\"false\")\n\t\t\t}\n\n\t\tcase \"clear\":\n\t\t\tv.Clear()\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "237"
+        }
+    ]
+}

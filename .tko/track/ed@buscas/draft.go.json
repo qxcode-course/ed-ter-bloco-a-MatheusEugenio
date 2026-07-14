@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-03_18-55-23",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -23,571 +23,63 @@\n mt%22%0A\n-%0A\n func ma\n-tchingStrings(consultas %5B%5Dstring, stringsVisitadas %5B%5Dstring) %5B%5Dint %7B%0A%0A%09consultasMap := make(map%5Bstring%5Dint)%0A%0A%09for _, val := range consultas %7B%0A%09%09_, exist := consultasMap%5Bval%5D%0A%0A%09%09if !exist %7B%0A%09%09%09consultasMap%5Bval%5D = 1%0A%09%09%7D%0A%09%09consultasMap%5Bval%5D += 1%0A%09%7D%0A%0A%09var vetOcorrencias = make(%5B%5Dint, 0)%0A%0A%09for _, str := range stringsVisitadas %7B%0A%09%09val, existe := consultasMap%5Bstr%5D%0A%09%09if existe %7B%0A%09%09%09vetOcorrencias = append(vetOcorrencias, val)%0A%09%09%7D else %7B%0A%09%09%09vetOcorrencias = append(vetOcorrencias, 0)%0A%09%09%7D%0A%09%7D%0A%0A%09return vetOcorrencias%0A%7D%0A%0Afunc main() %7B%0A%0A%09var n int%0A%09fmt.Scan(&n)%0A%0A%09\n+in() %7B%0A%0A    var n int%0A    fmt.Scan(&n)%0A    %0A    \n var \n@@ -111,18 +111,25 @@\n ing, n)%0A\n-%0A%09\n+    %0A    \n for i :=\n@@ -138,29 +138,34 @@\n ; i %3C n; i++\n- \n %7B%0A\n-%09%09\n+        \n fmt.Scan(&ve\n@@ -179,21 +179,31 @@\n tas%5Bi%5D)%0A\n-%09%7D%0A%0A%09\n+    %7D%0A    %0A    \n var tamV\n@@ -214,17 +214,20 @@\n sca int%0A\n-%09\n+    \n fmt.Scan\n@@ -241,18 +241,25 @@\n tbusca)%0A\n-%0A%09\n+    %0A    \n var vetB\n@@ -293,18 +293,25 @@\n tbusca)%0A\n-%0A%09\n+    %0A    \n for i :=\n@@ -338,13 +338,18 @@\n  i++\n- \n %7B%0A\n-%09%09\n+        \n fmt.\n@@ -371,65 +371,14 @@\n i%5D)%0A\n-%09%7D%0A%0A%09fmt.Println(matchingStrings(vetConsultas, vetBusca))\n+    %7D%0A\n %0A%0A%7D%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-06-03_19-22-51",
+            "content": "@@ -265,18 +265,21 @@\n Map%5Bval%5D\n-++\n+ += 1\n %0A%09%7D%0A%0A%09va\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-06-03_19-23-16",
+            "content": "@@ -25,174 +25,8 @@\n t%22%0A%0A\n-func imprimeVet(vet %5B%5Dint) string %7B%0A%0A%09var res string%0A%0A%09for i, val := range vet %7B%0A%09%09res += fmt.Sprint(val)%0A%09%09if i != len(vet)-1 %7B%0A%09%09%09res += %22 %22%0A%09%09%7D%0A%09%7D%0A%0A%09return res%0A%7D%0A%0A\n func\n@@ -838,23 +838,20 @@\n %7D%0A%0A%09\n-ocorrencias := \n+fmt.Println(\n matc\n@@ -889,45 +889,8 @@\n sca)\n-%0A%09fmt.Println(imprimeVet(ocorrencias)\n )%0A%0A%7D\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-06-03_19-29-06",
+            "content": "@@ -338,19 +338,16 @@\n tas %7B%0A%09%09\n-// \n _, exist\n@@ -368,21 +368,19 @@\n ap%5Bval%5D%0A\n+%0A\n %09%09\n-// \n if !exis\n@@ -385,19 +385,16 @@\n ist %7B%0A%09%09\n-// \n %09consult\n@@ -414,11 +414,8 @@\n 1%0A%09%09\n-// \n %7D%0A%09%09\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-06-03_19-33-14",
+            "content": "@@ -336,16 +336,102 @@\n ultas %7B%0A\n+%09%09// _, exist := consultasMap%5Bval%5D%0A%09%09// if !exist %7B%0A%09%09// %09consultasMap%5Bval%5D = 1%0A%09%09// %7D\n %0A%09%09consu\n",
+            "lines": "68"
+        },
+        {
+            "label": "2026-06-03_19-35-42",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc imprimeVet(vet []int) string {\n\n\tvar res string\n\n\tfor i, val := range vet {\n\t\tres += fmt.Sprint(val)\n\t\tif i != len(vet)-1 {\n\t\t\tres += \" \"\n\t\t}\n\t}\n\n\treturn res\n}\n\nfunc matchingStrings(consultas []string, stringsVisitadas []string) []int {\n\n\tconsultasMap := make(map[string]int)\n\n\tfor _, val := range consultas {\n\n\t\tconsultasMap[val]++\n\t}\n\n\tvar vetOcorrencias = make([]int, 0)\n\n\tfor _, str := range stringsVisitadas {\n\t\tval, existe := consultasMap[str]\n\t\tif existe {\n\t\t\tvetOcorrencias = append(vetOcorrencias, val)\n\t\t} else {\n\t\t\tvetOcorrencias = append(vetOcorrencias, 0)\n\t\t}\n\t}\n\n\treturn vetOcorrencias\n}\n\nfunc main() {\n\n\tvar n int\n\tfmt.Scan(&n)\n\n\tvar vetConsultas = make([]string, n)\n\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&vetConsultas[i])\n\t}\n\n\tvar tamVetbusca int\n\tfmt.Scan(&tamVetbusca)\n\n\tvar vetBusca = make([]string, tamVetbusca)\n\n\tfor i := 0; i < tamVetbusca; i++ {\n\t\tfmt.Scan(&vetBusca[i])\n\t}\n\n\tocorrencias := matchingStrings(vetConsultas, vetBusca)\n\tfmt.Println(imprimeVet(ocorrencias))\n\n}\n",
+            "lines": "65"
+        }
+    ]
+}

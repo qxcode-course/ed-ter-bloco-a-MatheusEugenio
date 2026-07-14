@@ -1,0 +1,59 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-28_16-53-19",
+            "content": "@@ -18,676 +18,25 @@\n ort \n-%22fmt%22%0A%0Afunc main() %7B%0A%0A%09times := %5B%5Drune%7B%0A%09%09'A', 'B', 'C', 'D',%0A%09%09'E', 'F', 'G', 'H',%0A%09%09'I', 'J', 'K', 'L',%0A%09%09'M', 'N', 'O', 'P',%0A%09%7D%0A%0A%09fila := NewQueue%5Brune%5D()%0A%0A%09i := 0%0A%09for i %3C len(times) %7B%0A%09%09fila.Enqueue(times%5Bi%5D)%0A%09%09i++%0A%09%7D%0A%0A%09j := 0%0A%09limiteRodada := 8%0A%09var campeao rune%0A%0A%09for j %3E= 0 %7B%0A%0A%09%09if fila.items.Len() == 1 %7B%0A%09%09%09campeao = fila.Dequeue()%0A%09%09%09return%0A%09%09%7D%0A%0A%09%09if j == limiteRodada %7B%0A%09%09%09novaRodada := j / 2%0A%09%09%09limiteRodada = novaRodada%0A%09%09%09j = 0%0A%09%09%7D%0A%0A%09%09time1, time2 := fila.Dequeue(), fila.Dequeue()%0A%09%09var golst1, golst2 int%0A%0A%09%09fmt.Scan(&golst1, &golst2)%0A%0A%09%09if golst1 %3E golst2 %7B%0A%09%09%09fila.Enqueue(time1)%0A%09%09%7D else %7B%0A%09%09%09fila.Enqueue(time2)%0A%09%09%7D%0A%0A%09%09j++%0A%09%7D%0A%0A%09fmt.Println(campeao)\n+(%0A)%0A%0Afunc main() %7B\n %0A%7D%0A\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-06-28_20-08-09",
+            "content": "@@ -293,28 +293,14 @@\n for \n-fila.items.Len() %3E 1\n+j %3E= 0\n  %7B%0A%0A\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-06-28_20-14-08",
+            "content": "@@ -359,13 +359,8 @@\n o = \n-rune(\n fila\n@@ -369,17 +369,16 @@\n equeue()\n-)\n %0A%09%09%09retu\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-06-28_20-14-36",
+            "content": "@@ -355,16 +355,21 @@\n mpeao = \n+rune(\n fila.Deq\n@@ -378,17 +378,19 @@\n ue()\n+)\n %0A%09%09%09\n-b\n re\n-ak\n+turn\n %0A%09%09%7D\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-06-28_20-15-46",
+            "content": "@@ -689,18 +689,11 @@\n rint\n-f(%22%25c%5Cn%22, \n+ln(\n camp\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-06-28_20-16-49",
+            "content": "@@ -238,16 +238,43 @@\n i++%0A%09%7D%0A%0A\n+%09j := 0%0A%09limiteRodada := 8%0A\n %09var cam\n@@ -283,16 +283,16 @@\n ao rune%0A\n-\n %0A%09for fi\n@@ -384,16 +384,107 @@\n ak%0A%09%09%7D%0A%0A\n+%09%09if j == limiteRodada %7B%0A%09%09%09novaRodada := j / 2%0A%09%09%09limiteRodada = novaRodada%0A%09%09%09j = 0%0A%09%09%7D%0A%0A\n %09%09time1,\n@@ -665,16 +665,22 @@\n 2)%0A%09%09%7D%0A%0A\n+%09%09j++%0A\n %09%7D%0A%0A%09fmt\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-06-28_20-17-32",
+            "content": "@@ -565,11 +565,18 @@\n rint\n-ln(\n+f(%22%25c%5Cn%22, \n camp\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-06-28_20-17-51",
+            "content": "@@ -280,17 +280,16 @@\n .Len() %3E\n-=\n  1 %7B%0A%0A%09%09\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-06-28_20-18-39",
+            "content": "@@ -569,21 +569,16 @@\n tln(\n-rune(\n campeao)\n )%0A%7D%0A\n@@ -573,12 +573,11 @@\n campeao)\n-)\n %0A%7D%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-06-28_20-18-53",
+            "content": "@@ -566,25 +566,23 @@\n rint\n-f(%22%25c%5Cn%22, \n+ln(rune(\n campeao)\n %0A%7D%0A\n@@ -578,11 +578,12 @@\n campeao)\n+)\n %0A%7D%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-06-28_20-19-24",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\n\ttimes := []rune{\n\t\t'A', 'B', 'C', 'D',\n\t\t'E', 'F', 'G', 'H',\n\t\t'I', 'J', 'K', 'L',\n\t\t'M', 'N', 'O', 'P',\n\t}\n\n\tfila := NewQueue[rune]()\n\n\ti := 0\n\tfor i < len(times) {\n\t\tfila.Enqueue(times[i])\n\t\ti++\n\t}\n\n\tvar campeao rune\n\n\tfor fila.items.Len() >= 1 {\n\n\t\tif fila.items.Len() == 1 {\n\t\t\tcampeao = fila.Dequeue()\n\t\t\tbreak\n\t\t}\n\n\t\ttime1, time2 := fila.Dequeue(), fila.Dequeue()\n\t\tvar golst1, golst2 int\n\n\t\tfmt.Scan(&golst1, &golst2)\n\n\t\tif golst1 > golst2 {\n\t\t\tfila.Enqueue(time1)\n\t\t} else {\n\t\t\tfila.Enqueue(time2)\n\t\t}\n\n\t}\n\n\tfmt.Printf(\"%c\\n\", campeao)\n}\n",
+            "lines": "45"
+        }
+    ]
+}

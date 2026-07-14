@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-27_18-41-56",
+            "content": "@@ -39,45 +39,36 @@\n ) %7B%0A\n-%0A%09var rainhas int%0A%09fmt.Scan(&rainhas)%0A\n+%09fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-06-27_18-44-57",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\n\tvar rainhas int\n\tfmt.Scan(&rainhas)\n\n}\n",
+            "lines": "10"
+        }
+    ]
+}

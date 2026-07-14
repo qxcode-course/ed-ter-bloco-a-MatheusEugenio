@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-09_08-55-10",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strings\"\n\t\"unicode\"\n)\n\nfunc isPalindromo(s string) bool {\n\t// TODO: Limpe string (lowercase, alfanum s\u00f3)\n\t// Compare com reverse\n\tlimpa := strings.ToLower(s) // In\u00edcio\n\t// Adicione: remova non-alphanum, reverse e compare\n\treturn false\n}\n\nfunc main() {\n\tvar s string\n\tfmt.Scan(&s)\n\tfmt.Println(isPalindromo(s))\n}\n\n",
+            "lines": "22"
+        }
+    ]
+}

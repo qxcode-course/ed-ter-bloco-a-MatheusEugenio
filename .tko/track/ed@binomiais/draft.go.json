@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-27_19-33-58",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -23,251 +23,53 @@\n mt%22%0A\n-%0Afunc calcCoeficientes(n, k int) int %7B%0A%0A%09if k == 0 %7B%0A%09%09return 1%0A%09%7D%0A%0A%09if k == n %7B%0A%09%09return 1%0A%09%7D%0A%0A%09return calcCoeficientes(n-1, k-1) + calcCoeficientes(n-1, k)%0A%7D%0Afunc main() %7B%0A%0A%09var n, k int%0A%09fmt.Scan(&n, &k)%0A%0A%09fmt.Println(calcCoeficientes(n, k)\n+func main() %7B%0A    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-06-27_20-00-42",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc calcCoeficientes(n, k int) int {\n\n\tif k == 0 {\n\t\treturn 1\n\t}\n\n\tif k == n {\n\t\treturn 1\n\t}\n\n\treturn calcCoeficientes(n-1, k-1) + calcCoeficientes(n-1, k)\n}\nfunc main() {\n\n\tvar n, k int\n\tfmt.Scan(&n, &k)\n\n\tfmt.Println(calcCoeficientes(n, k))\n}\n",
+            "lines": "23"
+        }
+    ]
+}

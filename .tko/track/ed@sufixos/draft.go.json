@@ -1,0 +1,84 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-27_20-38-33",
+            "content": "@@ -191,16 +191,18 @@\n imoIndex\n+-1\n %5D)%0A%7D%0A%0Afu\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-06-27_20-39-04",
+            "content": "@@ -77,17 +77,16 @@\n (s) - 1%0A\n-%0A\n %09if len(\n@@ -256,10 +256,11 @@\n ower(s)%0A\n+%0A\n %7D%0A\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-06-27_20-45-20",
+            "content": "@@ -50,18 +50,11 @@\n ing)\n- string\n  %7B%0A\n+\n %0A%09ul\n@@ -127,11 +127,8 @@\n turn\n- %22%22\n %0A%09%7D%0A\n@@ -170,48 +170,9 @@\n ))%0A%0A\n+\n %09\n-return printTower(s%5B:ultimoIndex-1%5D) + \n prin\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-06-27_20-47-55",
+            "content": "@@ -175,24 +175,35 @@\n ndex\n--1%5D) + string\n+%5D))%0A%0A%09return printTower\n (s%5B\n+:\n ulti\n@@ -205,36 +205,30 @@\n :ultimoIndex\n-%5D))%0A%0A%09return\n+-1%5D) +\n  printTower(\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-06-27_20-49-02",
+            "content": "@@ -151,16 +151,43 @@\n Println(\n+string(s%5BultimoIndex-1%5D) + \n string(s\n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-06-27_20-49-22",
+            "content": "@@ -46,16 +46,23 @@\n  string)\n+ string\n  %7B%0A%0A%09ult\n@@ -134,41 +134,14 @@\n turn\n+ %22%22\n %0A%09%7D\n-%0A%0A%09printTower(s%5B:ultimoIndex%5D)\n %0A%0A%09f\n@@ -176,16 +176,52 @@\n dex%5D))%0A%0A\n+%09return printTower(s%5B:ultimoIndex%5D)%0A\n %7D%0A%0Afunc \n",
+            "lines": "24"
+        },
+        {
+            "label": "2026-06-27_20-55-55",
+            "content": "@@ -43,28 +43,8 @@\n r(s \n-string, strAnterior \n stri\n@@ -49,16 +49,16 @@\n ring) %7B%0A\n+\n %0A%09ultimo\n@@ -132,35 +132,23 @@\n %09%7D%0A%0A\n-    strAnterior = string\n+%09printTower\n (s%5B\n+:\n ulti\n@@ -160,14 +160,9 @@\n ex%5D)\n- + %22%22 \n+%0A\n %0A%09fm\n@@ -178,38 +178,14 @@\n (str\n-Anterior)%0A    %0A%09printTower\n+ing\n (s%5B\n-:\n ulti\n@@ -196,21 +196,9 @@\n dex%5D\n-, strAnterior\n+)\n )%0A%0A%7D\n@@ -247,27 +247,8 @@\n s)%0A%0A\n-    var str string%0A\n %09pri\n@@ -260,10 +260,8 @@\n er(s\n-,s\n )%0A%7D%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-06-27_20-58-08",
+            "content": "@@ -350,14 +350,12 @@\n ower(s,s\n-tr\n )%0A%7D%0A\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-06-27_20-58-20",
+            "content": "@@ -92,17 +92,21 @@\n = len(s)\n+ - 1\n %0A\n-\n %0A%09if len\n@@ -148,17 +148,20 @@\n urn%0A%09%7D%0A%0A\n-%09\n+    \n strAnter\n@@ -193,16 +193,17 @@\n x%5D) + %22%22\n+ \n %0A%09fmt.Pr\n@@ -221,17 +221,21 @@\n terior)%0A\n+    \n %0A\n-\n %09printTo\n@@ -316,17 +316,20 @@\n an(&s)%0A%0A\n-%09\n+    \n var str \n@@ -349,16 +349,15 @@\n Tower(s,\n- \n str)%0A%7D%0A\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-06-27_20-58-52",
+            "content": "@@ -96,12 +96,8 @@\n n(s)\n- - 1\n %0A%0A%09i\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-06-27_20-58-57",
+            "content": "@@ -75,11 +75,8 @@\n %7B%0A%0A%09\n-// \n ulti\n@@ -111,16 +111,35 @@\n en(s) ==\n+ 0 %7C%7C ultimoIndex %3C\n  0 %7B%0A%09%09r\n@@ -172,17 +172,27 @@\n tring(s%5B\n-0\n+ultimoIndex\n %5D) + %22%22%0A\n@@ -236,10 +236,20 @@\n r(s%5B\n-1\n :\n+ultimoIndex\n %5D, s\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-06-27_21-01-18",
+            "content": "@@ -70,20 +70,16 @@\n ing)\n- string\n  %7B%0A%0A%09\n+// \n ulti\n@@ -127,19 +127,16 @@\n %09%09return\n- %22%22\n %0A%09%7D%0A%0A%09st\n@@ -156,27 +156,17 @@\n tring(s%5B\n-ultimoIndex\n+0\n %5D) + %22%22%0A\n@@ -197,15 +197,8 @@\n )%0A%0A%09\n-return \n prin\n@@ -210,20 +210,10 @@\n r(s%5B\n+1\n :\n-ultimoIndex\n %5D, s\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-06-27_21-04-13",
+            "content": "@@ -66,19 +66,26 @@\n  string)\n+ string\n  %7B%0A\n-\n %0A%09ultimo\n@@ -131,16 +131,19 @@\n %09%09return\n+ %22%22\n %0A%09%7D%0A%0A%09st\n@@ -210,16 +210,23 @@\n rior)%0A%0A%09\n+return \n printTow\n@@ -263,35 +263,8 @@\n r)%0A%0A\n-%09fmt.Println(strAnterior)%0A%0A\n %7D%0A%0Af\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-06-27_21-06-21",
+            "content": "@@ -134,20 +134,8 @@\n %7D%0A%0A%09\n-strAtual := \n strA\n@@ -146,9 +146,9 @@\n ior \n-+\n+=\n  str\n@@ -166,16 +166,21 @@\n oIndex%5D)\n+ + %22%22\n %0A%09fmt.Pr\n@@ -189,20 +189,23 @@\n tln(strA\n-tual\n+nterior\n )%0A%0A%09prin\n@@ -236,12 +236,42 @@\n strA\n-tual\n+nterior)%0A%0A%09fmt.Println(strAnterior\n )%0A%0A%7D\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-06-27_21-16-31",
+            "content": "@@ -141,16 +141,30 @@\n Atual :=\n+ strAnterior +\n  string(\n@@ -182,22 +182,8 @@\n ex%5D)\n- + strAnterior\n %0A%09fm\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-06-27_21-17-03",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc printTower(s string, strAnterior string) {\n\n\tultimoIndex := len(s) - 1\n\n\tif len(s) == 0 {\n\t\treturn\n\t}\n\n\tstrAtual := string(s[ultimoIndex]) + strAnterior\n\tfmt.Println(strAtual)\n\n\tprintTower(s[:ultimoIndex], strAtual)\n\n}\n\nfunc main() {\n\n\tvar s string\n\tfmt.Scan(&s)\n\n\tvar str string\n\tprintTower(s, str)\n}\n",
+            "lines": "27"
+        }
+    ]
+}

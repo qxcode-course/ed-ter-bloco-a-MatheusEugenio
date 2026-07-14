@@ -1,0 +1,269 @@
+{
+    "patches": [
+        {
+            "label": "2026-07-04_16-14-56",
+            "content": "@@ -18,767 +18,57 @@\n ort \n-(%0A%09\n %22fmt%22%0A\n-%09%22math%22%0A)%0A%0Atype Pos struct %7B%0A%09l, c int%0A%7D%0A%0Afunc estouros(bombs %5B%5D%5B%5Dint, positions %5B%5DPos) int %7B%0A%0A%09estouradas := 0%0A%09// distc = (x%C2%B9 - x2)%C2%B2 + (y%C2%B9 - y%C2%B2)%C2%B2 %3C= R%C2%B2 == 2 bombas estourada%0A%0A%09i := 0%0A%09for i %3C len(bombs) %7B%0A%09%09pos1 := positions%5Bi%5D%0A%09%09pos2 := positions%5Bi+1%5D%0A%0A%09%09distc := math.Pow(float64(pos1.l-pos2.l), 2) + math.Pow(float64(pos1.c-pos2.c), 2)%0A%09%09quad_r1 := math.Pow(float64(bombs%5Bi%5D%5B2%5D), 2)%0A%0A%09%09if distc %3C= float64(quad_r1) %7B%0A%09%09%09estouradas += 2%0A%09%09%7D else %7B%0A%09%09%09estouradas++%0A%09%09%7D%0A%0A%09%09i++%0A%09%7D%0A%0A%09return estouradas%0A%7D%0A%0Afunc main() %7B%0A%0A%09var m int%0A%09fmt.Scan(&m)%0A%0A%09bombs := make(%5B%5D%5B%5Dint, m)%0A%09coordenadas := make(%5B%5DPos, 0)%0A%0A%09for i := 0; i %3C m; i++ %7B%0A%09%09var x, y, r int%0A%09%09fmt.Scan(&x, &y, &r)%0A%0A%09%09bombs%5Bi%5D = %5B%5Dint%7Bx, y, r%7D%0A%09%09coordenadas = append(coordenadas, Pos%7Bx, y%7D)%0A%09%7D%0A\n+%0Afunc main() %7B%0A%09fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-07-04_17-25-07",
+            "content": "@@ -779,63 +779,6 @@\n %09%7D%0A%0A\n-%09bang := estouros(bombs, coordenadas)%0A%09fmt.Println(bang)%0A\n %7D%0A\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-07-04_17-25-47",
+            "content": "@@ -234,60 +234,8 @@\n ) %7B%0A\n-%0A%09%09if i+1 == len(bombs) %7B%0A%09%09%09return estouradas%0A%09%09%7D%0A%0A\n %09%09po\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-07-04_17-28-16",
+            "content": "@@ -280,12 +280,8 @@\n adas\n- + 1\n %0A%09%09%7D\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-07-04_17-28-30",
+            "content": "@@ -276,16 +276,20 @@\n touradas\n+ + 1\n %0A%09%09%7D%0A%0A%09%09\n@@ -477,25 +477,24 @@\n %09if \n-int(\n distc\n-)\n  %3C= \n-int\n+float64\n (qua\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-07-04_17-29-04",
+            "content": "@@ -473,24 +473,25 @@\n %09if \n+int(\n distc\n+)\n  %3C= \n-float64\n+int\n (qua\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-07-04_17-29-17",
+            "content": "@@ -506,26 +506,29 @@\n %09%09estouradas\n-++\n+ += 2\n %0A%09%09%7D else %7B%0A\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-07-04_17-29-49",
+            "content": "@@ -276,18 +276,16 @@\n touradas\n-+1\n %0A%09%09%7D%0A%0A%09%09\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-07-04_17-30-01",
+            "content": "@@ -276,19 +276,17 @@\n touradas\n- + \n++\n 1%0A%09%09%7D%0A%0A%09\n@@ -514,24 +514,51 @@\n uradas++%0A%09%09%7D\n+ else %7B%0A%09%09%09estouradas++%0A%09%09%7D\n %0A%0A%09%09i++%0A%09%7D%0A%0A\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-07-04_17-30-17",
+            "content": "@@ -463,9 +463,9 @@\n %5Bi%5D%5B\n-3\n+2\n %5D), \n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-07-04_17-31-32",
+            "content": "@@ -459,17 +459,17 @@\n ombs%5Bi%5D%5B\n-2\n+3\n %5D), 2)%0A%0A\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-07-04_17-31-36",
+            "content": "@@ -482,23 +482,32 @@\n istc %3C= \n+float64(\n quad_r1\n+)\n  %7B%0A%09%09%09es\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-07-04_17-32-08",
+            "content": "@@ -276,16 +276,20 @@\n touradas\n+ + 1\n %0A%09%09%7D%0A%0A%09%09\n@@ -515,35 +515,8 @@\n %0A%09%09%7D\n- else %7B%0A%09%09%09estouradas++%0A%09%09%7D\n %0A%0A%09%09\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-07-04_17-34-45",
+            "content": "@@ -280,12 +280,8 @@\n adas\n- + 1\n %0A%09%09%7D\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-07-04_17-35-24",
+            "content": "@@ -507,24 +507,51 @@\n uradas++%0A%09%09%7D\n+ else %7B%0A%09%09%09estouradas++%0A%09%09%7D\n %0A%0A%09%09i++%0A%09%7D%0A%0A\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-07-04_17-35-37",
+            "content": "@@ -509,35 +509,10 @@\n adas\n- += 2%0A%09%09%09i += 2%0A%09%09%09continue\n+++\n %0A%09%09%7D\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-07-04_17-36-41",
+            "content": "@@ -233,19 +233,16 @@\n s) %7B%0A%0A%09%09\n-// \n if i+1 =\n@@ -258,19 +258,16 @@\n bs) %7B%0A%09%09\n-// \n %09return \n@@ -283,19 +283,16 @@\n s + 1%0A%09%09\n-// \n %7D%0A%0A%09%09pos\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-07-04_17-37-00",
+            "content": "@@ -233,16 +233,19 @@\n s) %7B%0A%0A%09%09\n+// \n if i+1 =\n@@ -261,16 +261,19 @@\n bs) %7B%0A%09%09\n+// \n %09return \n@@ -286,12 +286,18 @@\n adas\n-s%0A%09%09\n+ + 1%0A%09%09// \n %7D%0A%0A%09\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-07-04_17-39-09",
+            "content": "@@ -276,16 +276,17 @@\n touradas\n+s\n %0A%09%09%7D%0A%0A%09%09\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-07-04_17-39-15",
+            "content": "@@ -280,12 +280,8 @@\n adas\n- + 1\n %0A%09%09%7D\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-07-04_17-39-41",
+            "content": "@@ -540,35 +540,8 @@\n %0A%09%09%7D\n- else %7B%0A%09%09%09estouradas++%0A%09%09%7D\n %0A%0A%09%09\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-07-04_17-40-02",
+            "content": "@@ -263,13 +263,29 @@\n %0A%09%09%09\n-b\n re\n-ak\n+turn estouradas + 1\n %0A%09%09%7D\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-07-04_17-40-37",
+            "content": "@@ -516,24 +516,51 @@\n continue%0A%09%09%7D\n+ else %7B%0A%09%09%09estouradas++%0A%09%09%7D\n %0A%0A%09%09i++%0A%09%7D%0A%0A\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-07-04_17-41-54",
+            "content": "@@ -263,20 +263,13 @@\n %0A%09%09%09\n-estouradas++\n+break\n %0A%09%09%7D\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-07-04_17-42-12",
+            "content": "@@ -276,17 +276,8 @@\n s++%0A\n-%09%09%09break%0A\n %09%09%7D%0A\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-07-04_17-42-19",
+            "content": "@@ -133,17 +133,17 @@\n adas := \n-1\n+0\n %0A%09// dis\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-07-04_17-47-36",
+            "content": "@@ -501,26 +501,29 @@\n %09%09estouradas\n-++\n+ += 2\n %0A%09%09%09i += 2%0A%09\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-07-04_17-47-48",
+            "content": "@@ -256,16 +256,32 @@\n ombs) %7B%0A\n+%09%09%09estouradas++%0A\n %09%09%09break\n@@ -505,21 +505,18 @@\n touradas\n- += 2\n+++\n %0A%09%09%09i +=\n",
+            "lines": "61"
+        },
+        {
+            "label": "2026-07-04_17-48-25",
+            "content": "@@ -524,35 +524,8 @@\n %0A%09%09%7D\n- else %7B%0A%09%09%09estouradas++%0A%09%09%7D\n %0A%0A%09%09\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-07-04_17-48-43",
+            "content": "@@ -65,19 +65,16 @@\n  int%0A%7D%0A%0A\n-// \n func est\n@@ -118,19 +118,16 @@\n  int %7B%0A%0A\n-// \n %09estoura\n@@ -135,19 +135,16 @@\n as := 1%0A\n-// \n %09// dist\n@@ -204,19 +204,16 @@\n da%0A%0A\n-// \n %09i := 0%0A\n // %09\n@@ -208,19 +208,16 @@\n %09i := 0%0A\n-// \n %09for i %3C\n@@ -231,19 +231,16 @@\n mbs) %7B%0A%0A\n-// \n %09%09if i+1\n@@ -256,19 +256,16 @@\n ombs) %7B%0A\n-// \n %09%09%09break\n@@ -265,27 +265,21 @@\n %09%09break%0A\n-// \n %09%09%7D%0A%0A\n-// \n %09%09pos1 :\n@@ -293,19 +293,16 @@\n ions%5Bi%5D%0A\n-// \n %09%09pos2 :\n@@ -319,19 +319,16 @@\n s%5Bi+1%5D%0A%0A\n-// \n %09%09distc \n@@ -404,19 +404,16 @@\n .c), 2)%0A\n-// \n %09%09quad_r\n@@ -452,19 +452,16 @@\n %5D), 2)%0A%0A\n-// \n %09%09if dis\n@@ -476,19 +476,16 @@\n ad_r1 %7B%0A\n-// \n %09%09%09estou\n@@ -495,19 +495,16 @@\n as += 2%0A\n-// \n %09%09%09i += \n@@ -505,19 +505,16 @@\n %09i += 2%0A\n-// \n %09%09%09conti\n@@ -517,19 +517,16 @@\n ontinue%0A\n-// \n %09%09%7D else\n@@ -528,19 +528,16 @@\n  else %7B%0A\n-// \n %09%09%09estou\n@@ -548,35 +548,23 @@\n s++%0A\n-// \n %09%09%7D%0A%0A\n-// \n %09%09i++%0A\n-// \n %09%7D%0A%0A\n-// \n %09ret\n@@ -582,580 +582,8 @@\n das%0A\n-// %7D%0A%0Afunc distancia(x1, y1, x2, y2 int) float64 %7B%0A%0A%09return math.Pow(float64(x1-x2), 2) + math.Pow(float64(y1-y2), 2)%0A%7D%0A%0Afunc raio(r int) float64 %7B%0A%09return math.Pow(float64(2), 2)%0A%7D%0A%0Afunc estouros(bombs %5B%5D%5B%5Dint) int %7B%0A%0A%09n := len(bombs)%0A%09adj := make(%5B%5D%5B%5Dint, n)%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09for j := 0; j %3C n; j++ %7B%0A%09%09%09x1, y1, r1 := bombs%5Bi%5D%5B0%5D, bombs%5Bi%5D%5B1%5D, bombs%5Bi%5D%5B2%5D%0A%09%09%09x2, y2 := bombs%5Bj%5D%5B0%5D, bombs%5Bj%5D%5B1%5D%0A%0A%09%09%09if distancia(x1, y1, x2, y2) %3C= raio(r1) %7B%0A%09%09%09%09adj%5Bi%5D = append(adj%5Bi%5D, j)%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09explosoes := 0%0A%0A%09for i := 0; i %3C len(adj); i++ %7B%0A%0A%09%7D%0A%0A%09return explosoes%0A\n %7D%0A%0Af\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-07-04_23-03-59",
+            "content": "@@ -1286,16 +1286,47 @@\n %5Dint, m)\n+%0A%09coordenadas := make(%5B%5DPos, 0)\n %0A%0A%09for i\n@@ -1415,16 +1415,63 @@\n , y, r%7D%0A\n+%09%09coordenadas = append(coordenadas, Pos%7Bx, y%7D)%0A\n %09%7D%0A%0A%09ban\n@@ -1489,16 +1489,29 @@\n os(bombs\n+, coordenadas\n )%0A%09fmt.P\n",
+            "lines": "96"
+        },
+        {
+            "label": "2026-07-04_23-04-17",
+            "content": "@@ -654,274 +654,8 @@\n  %7D%0A%0A\n-func procuraBombas(bombaAtual int, adj %5B%5D%5B%5Dint, visitados map%5Bint%5Dbool) int %7B%0A%0A%09visitados%5BbombaAtual%5D = true%0A%09cont := 1%0A%0A%09for _, bombadj := range adj%5BbombaAtual%5D %7B%0A%0A%09%09if !visitados%5Bbombadj%5D %7B%0A%09%09%09cont += procuraBombas(bombadj, adj, visitados)%0A%09%09%7D%0A%09%7D%0A%0A%09return cont%0A%7D%0A%0A\n func\n@@ -1165,120 +1165,40 @@\n 0%0A%0A%09\n-visitados := make(map%5Bint%5Dbool)%0A%09for i := 0; i %3C len(adj); i++ %7B%0A%0A%09%09explosoes = procuraBombas(i, adj, visitados)\n+for i := 0; i %3C len(adj); i++ %7B%0A\n %0A%09%7D%0A\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-07-04_23-19-04",
+            "content": "@@ -1468,33 +1468,40 @@\n for i := 0; i %3C \n-n\n+len(adj)\n ; i++ %7B%0A%0A%09%09explo\n",
+            "lines": "111"
+        },
+        {
+            "label": "2026-07-04_23-20-13",
+            "content": "@@ -1492,15 +1492,18 @@\n %0A%0A%09%09\n-total :\n+explosoes \n = pr\n@@ -1536,59 +1536,8 @@\n dos)\n-%0A%0A%09%09if total %3E explosoes %7B%0A%09%09%09explosoes = total%0A%09%09%7D\n %0A%09%7D%0A\n",
+            "lines": "111"
+        },
+        {
+            "label": "2026-07-04_23-20-52",
+            "content": "@@ -1430,35 +1430,8 @@\n  0%0A%0A\n-%09for i := 0; i %3C n; i++ %7B%0A%09\n %09vis\n@@ -1463,56 +1463,129 @@\n ol)%0A\n-%0A%09%09explosoes = procuraBombas(i, adj, visitados)%0A\n+%09for i := 0; i %3C n; i++ %7B%0A%0A%09%09total := procuraBombas(i, adj, visitados)%0A%0A%09%09if total %3E explosoes %7B%0A%09%09%09explosoes = total%0A%09%09%7D\n %0A%09%7D%0A\n",
+            "lines": "115"
+        },
+        {
+            "label": "2026-07-04_23-21-15",
+            "content": "@@ -1083,17 +1083,17 @@\n float64(\n-r\n+2\n ), 2)%0A%7D%0A\n@@ -1426,16 +1426,43 @@\n s := 0%0A%0A\n+%09for i := 0; i %3C n; i++ %7B%0A%09\n %09visitad\n@@ -1489,34 +1489,8 @@\n ool)\n-%0A%09for i := 0; i %3C n; i++ %7B\n %0A%0A%09%09\n",
+            "lines": "112"
+        },
+        {
+            "label": "2026-07-04_23-21-33",
+            "content": "@@ -61,24 +61,609 @@\n l, c int%0A%7D%0A%0A\n+// func estouros(bombs %5B%5D%5B%5Dint, positions %5B%5DPos) int %7B%0A%0A// %09estouradas := 1%0A// %09// distc = (x%C2%B9 - x2)%C2%B2 + (y%C2%B9 - y%C2%B2)%C2%B2 %3C= R%C2%B2 == 2 bombas estourada%0A%0A// %09i := 0%0A// %09for i %3C len(bombs) %7B%0A%0A// %09%09if i+1 == len(bombs) %7B%0A// %09%09%09break%0A// %09%09%7D%0A%0A// %09%09pos1 := positions%5Bi%5D%0A// %09%09pos2 := positions%5Bi+1%5D%0A%0A// %09%09distc := math.Pow(float64(pos1.l-pos2.l), 2) + math.Pow(float64(pos1.c-pos2.c), 2)%0A// %09%09quad_r1 := math.Pow(float64(bombs%5Bi%5D%5B2%5D), 2)%0A%0A// %09%09if distc %3C= quad_r1 %7B%0A// %09%09%09estouradas += 2%0A// %09%09%09i += 2%0A// %09%09%09continue%0A// %09%09%7D else %7B%0A// %09%09%09estouradas++%0A// %09%09%7D%0A%0A// %09%09i++%0A// %09%7D%0A%0A// %09return estouradas%0A// %7D%0A%0A\n func procura\n@@ -1459,17 +1459,16 @@\n t%5Dbool)%0A\n-%0A\n %09for i :\n",
+            "lines": "112"
+        },
+        {
+            "label": "2026-07-04_23-23-25",
+            "content": "@@ -914,17 +914,16 @@\n plosoes \n-+\n = procur\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-07-04_23-23-42",
+            "content": "@@ -914,16 +914,17 @@\n plosoes \n++\n = procur\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-07-04_23-23-49",
+            "content": "@@ -908,14 +908,18 @@\n %0A%0A%09%09\n-resu :\n+explosoes \n = pr\n@@ -954,56 +954,8 @@\n s)%0A%0A\n-%09%09if resu %3E explosoes %7B%0A%09%09%09explosoes = resu%0A%09%09%7D%0A\n %09%7D%0A%0A\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-07-04_23-24-31",
+            "content": "@@ -845,36 +845,8 @@\n  0%0A%0A\n-%09for i := 0; i %3C n; i++ %7B%0A%0A%09\n %09vis\n@@ -874,16 +874,44 @@\n t%5Dbool)%0A\n+%0A%09for i := 0; i %3C n; i++ %7B%0A%0A\n %09%09resu :\n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-07-04_23-24-54",
+            "content": "@@ -362,27 +362,31 @@\n x2, y2 int) \n-int\n+float64\n  %7B%0A%0A%09return \n@@ -377,36 +377,32 @@\n at64 %7B%0A%0A%09return \n-int(\n math.Pow(float64\n@@ -438,25 +438,24 @@\n 4(y1-y2), 2)\n-)\n %0A%7D%0A%0Afunc rai\n@@ -463,19 +463,23 @@\n (r int) \n-int\n+float64\n  %7B%0A%09retu\n@@ -485,12 +485,8 @@\n urn \n-int(\n math\n@@ -504,17 +504,16 @@\n 4(r), 2)\n-)\n %0A%7D%0A%0Afunc\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-07-04_23-36-06",
+            "content": "@@ -366,23 +366,19 @@\n y2 int) \n-float64\n+int\n  %7B%0A%0A%09ret\n@@ -373,32 +373,36 @@\n  int %7B%0A%0A%09return \n+int(\n math.Pow(float64\n@@ -438,24 +438,25 @@\n 4(y1-y2), 2)\n+)\n %0A%7D%0A%0Afunc rai\n@@ -464,23 +464,19 @@\n (r int) \n-float64\n+int\n  %7B%0A%09retu\n@@ -478,16 +478,20 @@\n %09return \n+int(\n math.Pow\n@@ -505,16 +505,17 @@\n 4(r), 2)\n+)\n %0A%7D%0A%0Afunc\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-07-04_23-36-13",
+            "content": "@@ -644,43 +644,8 @@\n + %7B%0A\n-%0A%09%09%09if i == j %7B%0A%09%09%09%09continue%0A%09%09%09%7D%0A%0A\n %09%09%09x\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-07-04_23-38-37",
+            "content": "@@ -382,88 +382,72 @@\n %7B%0A%0A%09\n-x := float64(x1) - float64(x2)%0A%09y := float64(y1) - float64(y2)%0A%09return x*x + y*y\n+return math.Pow(float64(x1-x2), 2) + math.Pow(float64(y1-y2), 2)\n %0A%7D%0A%0A\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-04_23-41-00",
+            "content": "@@ -493,18 +493,16 @@\n 4 %7B%0A\n-%09%0A\n %09return \n floa\n@@ -497,16 +497,25 @@\n %09return \n+math.Pow(\n float64(\n@@ -519,12 +519,13 @@\n 64(r\n- * r\n+), 2)\n %0A%7D%0A%0A\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-07-04_23-41-47",
+            "content": "@@ -23,16 +23,24 @@\n %0A%09%22fmt%22%0A\n+%09%22math%22%0A\n )%0A%0Atype \n@@ -489,16 +489,17 @@\n oat64 %7B%0A\n+%09\n %0A%09return\n@@ -512,17 +512,16 @@\n 64(r * r\n-)\n %0A%7D%0A%0Afunc\n",
+            "lines": "91"
+        },
+        {
+            "label": "2026-07-04_23-41-52",
+            "content": "@@ -26,16 +26,47 @@\n fmt%22%0A)%0A%0A\n+type Pos struct %7B%0A%09l, c int%0A%7D%0A%0A\n func pro\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-07-04_23-42-18",
+            "content": "@@ -450,16 +450,17 @@\n oat64 %7B%0A\n+%0A\n %09return \n@@ -472,20 +472,11 @@\n 64(r\n-)\n  * \n-float64(\n r)%0A%7D\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-07-04_23-44-16",
+            "content": "@@ -1054,11 +1054,8 @@\n %09var\n- n,\n  m i\n@@ -1071,12 +1071,8 @@\n can(\n-&n, \n &m)%0A\n@@ -1099,16 +1099,17 @@\n int, m)%0A\n+%0A\n %09for i :\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-07-04_23-46-07",
+            "content": "@@ -1103,17 +1103,17 @@\n %5D%5B%5Dint, \n-n\n+m\n )%0A%09for i\n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-07-04_23-46-15",
+            "content": "@@ -1098,33 +1098,32 @@\n ake(%5B%5D%5B%5Dint, n)%0A\n-%0A\n %09for i := 0; i %3C\n@@ -1115,33 +1115,33 @@\n for i := 0; i %3C \n-n\n+m\n ; i++ %7B%0A%09%09var x,\n",
+            "lines": "84"
+        },
+        {
+            "label": "2026-07-04_23-46-40",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc procuraBombas(bombaAtual int, adj [][]int, visitados map[int]bool) int {\n\n\tvisitados[bombaAtual] = true\n\tcont := 1\n\n\tfor _, bombadj := range adj[bombaAtual] {\n\n\t\tif !visitados[bombadj] {\n\t\t\tcont += procuraBombas(bombadj, adj, visitados)\n\t\t}\n\t}\n\n\treturn cont\n}\n\nfunc distancia(x1, y1, x2, y2 int) float64 {\n\n\tx := float64(x1) - float64(x2)\n\ty := float64(y1) - float64(y2)\n\treturn x*x + y*y\n}\n\nfunc raio(r int) float64 {\n\treturn float64(r) * float64(r)\n}\n\nfunc estouros(bombs [][]int) int {\n\n\tn := len(bombs)\n\tadj := make([][]int, n)\n\n\tfor i := 0; i < n; i++ {\n\t\tfor j := 0; j < n; j++ {\n\n\t\t\tif i == j {\n\t\t\t\tcontinue\n\t\t\t}\n\n\t\t\tx1, y1, r1 := bombs[i][0], bombs[i][1], bombs[i][2]\n\t\t\tx2, y2 := bombs[j][0], bombs[j][1]\n\n\t\t\tif distancia(x1, y1, x2, y2) <= raio(r1) {\n\t\t\t\tadj[i] = append(adj[i], j)\n\t\t\t}\n\t\t}\n\t}\n\n\texplosoes := 0\n\n\tfor i := 0; i < n; i++ {\n\n\t\tvisitados := make(map[int]bool)\n\t\tresu := procuraBombas(i, adj, visitados)\n\n\t\tif resu > explosoes {\n\t\t\texplosoes = resu\n\t\t}\n\t}\n\n\treturn explosoes\n}\n\nfunc main() {\n\n\tvar n, m int\n\tfmt.Scan(&n, &m)\n\n\tbombs := make([][]int, n)\n\n\tfor i := 0; i < n; i++ {\n\t\tvar x, y, r int\n\t\tfmt.Scan(&x, &y, &r)\n\n\t\tbombs[i] = []int{x, y, r}\n\t}\n\n\tbang := estouros(bombs)\n\tfmt.Println(bang)\n}\n",
+            "lines": "85"
+        }
+    ]
+}

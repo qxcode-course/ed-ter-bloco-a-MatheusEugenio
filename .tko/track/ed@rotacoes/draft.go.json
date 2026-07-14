@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-03_19-46-57",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -23,505 +23,61 @@\n mt%22%0A\n-%0A\n func \n-runRigth(vet %5B%5Dint) %7B%0A%0A%09indexAtual := len(vet) - 1%0A%09temp := vet%5BindexAtual%5D%0A%0A%09for i := len(vet) - 1; i %3E 0; i-- %7B%0A%09%09vet%5Bi%5D = vet%5Bi-1%5D%0A%09%7D%0A%0A%09novoIndex := (indexAtual - 1 + len(vet)) %25 len(vet)%0A%09vet%5BnovoIndex%5D = temp%0A%7D%0A%0Afunc main() %7B%0A%0A%09var n, numRotacion int%0A%09fmt.Scan(&n, &numRotacion)%0A%0A%09var vet = make(%5B%5Dint, n)%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09fmt.Scan(&vet%5Bi%5D)%0A%09%7D%0A%0A%09if len(vet) %3C= 1 %7B%0A%09%09fmt.Println(vet)%0A%09%09return%0A%09%7D%0A%0A%09for numRotacion %3E 0 %7B%0A%0A%09%09runRigth(vet)%0A%09%09numRotacion--%0A%09%7D%0A%0A%09fmt.Println(vet)\n+main() %7B%0A%0A    var n int%0A    fmt.Scan(&n)%0A    %0A%0A%0A\n %0A%0A%7D%0A\n",
+            "lines": "12"
+        },
+        {
+            "label": "2026-06-03_23-03-46",
+            "content": "@@ -169,11 +169,8 @@\n %7D%0A%0A%09\n-// \n novo\n@@ -222,17 +222,25 @@\n t)%0A%09vet%5B\n-0\n+novoIndex\n %5D = temp\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-06-03_23-04-21",
+            "content": "@@ -169,166 +169,77 @@\n %7D%0A%0A%09\n-vet%5B0%5D = temp%0A%7D%0A%0Afunc stringVet(vet %5B%5Dint) string %7B%0A%0A%09var res string%0A%0A%09for _, val := range vet %7B%0A%09%09res += fmt.Sprintf(%22%25d %22, val)%0A%09%7D%0A%0A%09return %22%5B %22 + res + %22%5D%22\n+// novoIndex := (indexAtual - 1 + len(vet)) %25 len(vet)%0A%09vet%5B0%5D = temp\n %0A%7D%0A%0A\n@@ -417,31 +417,20 @@\n Println(\n-stringVet(\n vet)\n-)\n %0A%09%09retur\n@@ -512,23 +512,12 @@\n tln(\n-stringVet(\n vet)\n-)\n %0A%0A%7D%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-06-03_23-08-37",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc runRigth(vet []int) {\n\n\tindexAtual := len(vet) - 1\n\ttemp := vet[indexAtual]\n\n\tfor i := len(vet) - 1; i > 0; i-- {\n\t\tvet[i] = vet[i-1]\n\t}\n\n\tvet[0] = temp\n}\n\nfunc stringVet(vet []int) string {\n\n\tvar res string\n\n\tfor _, val := range vet {\n\t\tres += fmt.Sprintf(\"%d \", val)\n\t}\n\n\treturn \"[ \" + res + \"]\"\n}\n\nfunc main() {\n\n\tvar n, numRotacion int\n\tfmt.Scan(&n, &numRotacion)\n\n\tvar vet = make([]int, n)\n\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&vet[i])\n\t}\n\n\tif len(vet) <= 1 {\n\t\tfmt.Println(stringVet(vet))\n\t\treturn\n\t}\n\n\tfor numRotacion > 0 {\n\n\t\trunRigth(vet)\n\t\tnumRotacion--\n\t}\n\n\tfmt.Println(stringVet(vet))\n\n}\n",
+            "lines": "52"
+        }
+    ]
+}

@@ -1,0 +1,159 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-23_22-29-05",
+            "content": "@@ -122,36 +122,8 @@\n %0A%7D%0A%0A\n-// est%C3%A1 na posi%C3%A7%C3%A3o adequada%0A\n func\n@@ -278,46 +278,8 @@\n %0A%7D%0A%0A\n-// verifica se %C3%A9 o caractere referido%0A\n func\n@@ -390,50 +390,8 @@\n %0A%7D%0A%0A\n-func buscaFim() %7B%0A%0A%7D%0A%0A// method principal%0A\n func\n@@ -441,738 +441,62 @@\n  Pos\n-, visitados map%5BPos%5Dbool, caminho map%5BPos%5DPos) bool %7B%0A%0A%09if !inside(grid, startPos) %7B%0A%09%09return false%0A%09%7D%0A%0A%09if match(grid, startPos, '#') %7C%7C visitados%5BstartPos%5D %7B%0A%09%09return false%0A%09%7D%0A%0A%09if match(grid, startPos, 'F') && startPos == endPos %7B%0A%09%09return true%0A%09%7D%0A%0A%09// adicionar na fila%0A%09visitados%5BstartPos%5D = true%0A%09grid%5BstartPos.l%5D%5BstartPos.c%5D = '.'%0A%09// registrar o no%C3%B3 atual como anterior do vizinho no mapa caminho%0A%0A%09if search(grid, startPos, endPos, visitados, caminho) %7C%7C%0A%09%09search(grid, startPos, endPos, visitados, caminho) %7C%7C%0A%09%09search(grid, startPos, endPos, visitados, caminho) %7C%7C%0A%09%09search(grid, startPos, endPos, visitados, caminho) %7B%0A%09%09return true%0A%09%7D%0A%0A%09visitados%5BstartPos%5D = false%0A%09grid%5BstartPos.l%5D%5BstartPos.c%5D = ' '%0A%0A%09return false%0A%7D\n+) %7B%0A%09_, _, _ = grid, startPos, endPos%0A%7D%0A%0Afunc voltar()\n %0A%0Afu\n@@ -1100,149 +1100,31 @@\n %7D%0A%0A%09\n-queue := &NewQueue%5BPos%5D()%0A%09visitados := make(map%5BPos%5Dbool)%0A%09caminho := make(map%5BPos%5DPos)%0A%0A%09search(mat, inicio, fim, visitados, caminho, queue\n+search(mat, inicio, fim\n )%0A%0A%09\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-06-24_00-19-08",
+            "content": "@@ -452,16 +452,38 @@\n char%0A%7D%0A%0A\n+func buscaFim() %7B%0A%0A%7D%0A%0A\n // metho\n",
+            "lines": "107"
+        },
+        {
+            "label": "2026-06-24_00-19-24",
+            "content": "@@ -572,25 +572,8 @@\n %5DPos\n-, fila Queue%5BPos%5D\n ) bo\n@@ -767,32 +767,54 @@\n return true%0A%09%7D%0A%0A\n+%09// adicionar na fila%0A\n %09visitados%5Bstart\n@@ -830,41 +830,24 @@\n ue%0A%09\n-%0A%09fila.Enqueue(startPos)%0A%09caminho\n+grid%5BstartPos.l%5D\n %5Bsta\n@@ -855,13 +855,17 @@\n tPos\n+.c\n %5D = \n- \n+'.'\n %0A%09//\n@@ -878,16 +878,17 @@\n trar o n\n+o\n %C3%B3 atual \n@@ -931,44 +931,8 @@\n inho\n-%0A%09grid%5BstartPos.l%5D%5BstartPos.c%5D = '.'\n %0A%0A%09i\n@@ -1871,9 +1871,9 @@\n  := \n-*\n+&\n NewQ\n",
+            "lines": "103"
+        },
+        {
+            "label": "2026-06-24_00-42-16",
+            "content": "@@ -321,9 +321,9 @@\n  se \n-%C3%89\n+%C3%A9\n  o c\n@@ -570,21 +570,20 @@\n os%5DPos, \n-queue\n+fila\n  Queue%5BP\n@@ -722,16 +722,46 @@\n %0A%09%7D%0A%0A%09if\n+ match(grid, startPos, 'F') &&\n  startPo\n@@ -820,23 +820,23 @@\n  = true%0A\n+%09\n %0A%09\n-queue\n+fila\n .Enqueue\n@@ -847,19 +847,16 @@\n rtPos)%0A%09\n-// \n caminho%5B\n@@ -866,16 +866,18 @@\n rtPos%5D =\n+  \n %0A%09// reg\n@@ -993,14 +993,16 @@\n id, \n+start\n Pos\n-%7Bl%7D\n , en\n@@ -1017,39 +1017,32 @@\n sitados, caminho\n-, queue\n ) %7C%7C%0A%09%09search(gr\n@@ -1073,39 +1073,32 @@\n sitados, caminho\n-, queue\n ) %7C%7C%0A%09%09search(gr\n@@ -1137,23 +1137,16 @@\n  caminho\n-, queue\n ) %7C%7C%0A%09%09s\n@@ -1193,23 +1193,16 @@\n  caminho\n-, queue\n ) %7B%0A%09%09re\n",
+            "lines": "105"
+        },
+        {
+            "label": "2026-07-04_12-42-10",
+            "content": "@@ -969,34 +969,9 @@\n Pos%7B\n-startPos.l, startPos.c + 1\n+l\n %7D, e\n@@ -1022,28 +1022,24 @@\n h(grid, \n-Pos%7B\n startPos\n .l, star\n@@ -1034,27 +1034,8 @@\n tPos\n-.l, startPos.c - 1%7D\n , en\n@@ -1085,28 +1085,24 @@\n h(grid, \n-Pos%7B\n startPos\n .l + 1, \n@@ -1097,27 +1097,8 @@\n tPos\n-.l + 1, startPos.c%7D\n , en\n@@ -1152,20 +1152,16 @@\n id, \n-Pos%7B\n startPos\n .l -\n@@ -1160,27 +1160,8 @@\n tPos\n-.l - 1, startPos.c%7D\n , en\n",
+            "lines": "105"
+        },
+        {
+            "label": "2026-07-04_12-43-00",
+            "content": "@@ -749,37 +749,8 @@\n s %7B%0A\n-%09%09visitados%5BstartPos%5D = true%0A\n %09%09re\n",
+            "lines": "105"
+        },
+        {
+            "label": "2026-07-04_12-44-27",
+            "content": "@@ -747,32 +747,25 @@\n Pos %7B%0A%09%09\n-grid%5BstartPos.l%5D\n+visitados\n %5BstartPo\n@@ -765,25 +765,24 @@\n startPos\n-.c\n %5D = \n-'.'\n+true\n %0A%09%09retur\n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-07-04_12-45-28",
+            "content": "@@ -805,39 +805,34 @@\n %7D%0A%0A%09\n-previous_pos, _ := queue.Peek()\n+visitados%5BstartPos%5D = true\n %0A%0A%09q\n@@ -854,18 +854,20 @@\n artPos)%0A\n-%0A\n %09\n+// \n caminho%5B\n@@ -881,51 +881,74 @@\n s%5D =\n- previous_pos%0A%0A%09visitados%5BstartPos%5D = true%0A\n+%0A%09// registrar o n%C3%B3 atual como anterior do vizinho no mapa caminho\n %0A%09gr\n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-07-04_13-00-20",
+            "content": "@@ -805,97 +805,65 @@\n %7D%0A%0A%09\n-queue.Enqueue(startPos)%0A%0A%09previous_pos, _ := queue.Dequeue()%0A%0A%09visitados%5BstartPos%5D = true\n+previous_pos, _ := queue.Peek()%0A%0A%09queue.Enqueue(startPos)\n %0A%0A%09c\n@@ -895,16 +895,45 @@\n us_pos%0A%0A\n+%09visitados%5BstartPos%5D = true%0A%0A\n %09grid%5Bst\n",
+            "lines": "109"
+        },
+        {
+            "label": "2026-07-04_13-17-42",
+            "content": "@@ -792,32 +792,95 @@\n return true%0A%09%7D%0A%0A\n+%09queue.Enqueue(startPos)%0A%0A%09previous_pos, _ := queue.Dequeue()%0A%0A\n %09visitados%5Bstart\n@@ -917,42 +917,20 @@\n %5D = \n-startPos%0A%0A%09queue.Enqueue(startP\n+previous_p\n os\n-)\n %0A%0A%09g\n@@ -1313,39 +1313,8 @@\n ) %7B%0A\n-%09%09caminho%5BstartPos%5D = startPos%0A\n %09%09re\n",
+            "lines": "109"
+        },
+        {
+            "label": "2026-07-04_13-23-28",
+            "content": "@@ -834,141 +834,101 @@\n e%0A%0A%09\n-queue.Enqueue(startPos)%0A%0A%09for !queue.IsEmpty() %7B%0A%0A%09%09pos_front, _ := \n+caminho%5BstartPos%5D = startPos%0A%0A%09\n queue.\n-De\n+En\n queue(\n-)%0A%0A%09%09if pos_front == endPos %7B%0A%09%09%09return true%0A%09%09%7D\n+startPos)%0A%0A%09grid%5BstartPos.l%5D%5BstartPos.c%5D = '.'\n %0A%0A\n-%09\n %09if \n@@ -1005,33 +1005,32 @@\n ho, queue) %7C%7C%0A%09%09\n-%09\n search(grid, Pos\n@@ -1089,33 +1089,32 @@\n inho, queue) %7C%7C%0A\n-%09\n %09%09search(grid, P\n@@ -1185,17 +1185,16 @@\n e) %7C%7C%0A%09%09\n-%09\n search(g\n@@ -1270,21 +1270,23 @@\n ue) %7B%0A%09%09\n-%09grid\n+caminho\n %5BstartPo\n@@ -1282,36 +1282,36 @@\n nho%5BstartPos\n-.l%5D%5B\n+%5D = \n startPos\n .c%5D = '.'%0A%09%09\n@@ -1302,57 +1302,91 @@\n tPos\n-.c%5D = '.'%0A%09%09%09caminho%5BstartPos%5D = startPos%0A%09%09%7D%0A%0A%09%7D\n+%0A%09%09return true%0A%09%7D%0A%0A%09visitados%5BstartPos%5D = false%0A%09grid%5BstartPos.l%5D%5BstartPos.c%5D = ' '\n %0A%0A%09r\n",
+            "lines": "108"
+        },
+        {
+            "label": "2026-07-04_13-32-12",
+            "content": "@@ -1314,23 +1314,20 @@\n e) %7B%0A%09%09%09\n-caminho\n+grid\n %5BstartPo\n@@ -1331,20 +1331,20 @@\n tPos\n-%5D = \n+.l%5D%5B\n startPos\n %0A%09%09%7D\n@@ -1343,20 +1343,28 @@\n tPos\n-%0A%09%09%7D%0A%0A%09%09grid\n+.c%5D = '.'%0A%09%09%09caminho\n %5Bsta\n@@ -1364,36 +1364,36 @@\n nho%5BstartPos\n-.l%5D%5B\n+%5D = \n startPos\n .c%5D = '.'%0A%09%7D\n@@ -1380,25 +1380,21 @@\n startPos\n-.c%5D = '.'\n+%0A%09%09%7D%0A\n %0A%09%7D%0A%0A%09re\n",
+            "lines": "111"
+        },
+        {
+            "label": "2026-07-04_13-32-22",
+            "content": "@@ -946,46 +946,8 @@\n s %7B%0A\n-%09%09%09grid%5BstartPos.l%5D%5BstartPos.c%5D = '.'%0A\n %09%09%09r\n@@ -1348,16 +1348,53 @@\n os%0A%09%09%7D%0A%0A\n+%09%09grid%5BstartPos.l%5D%5BstartPos.c%5D = '.'%0A\n %09%7D%0A%0A%09ret\n",
+            "lines": "111"
+        },
+        {
+            "label": "2026-07-04_13-32-47",
+            "content": "@@ -1353,46 +1353,8 @@\n ) %7B%0A\n-%09%09%09grid%5BstartPos.l%5D%5BstartPos.c%5D = '.'%0A\n %09%09%09c\n",
+            "lines": "111"
+        },
+        {
+            "label": "2026-07-04_13-33-21",
+            "content": "@@ -1004,45 +1004,8 @@\n %09%7D%0A%0A\n-%09%09grid%5BstartPos.l%5D%5BstartPos.c%5D = '.'%0A\n %09%09if\n@@ -1349,16 +1349,54 @@\n ueue) %7B%0A\n+%09%09%09grid%5BstartPos.l%5D%5BstartPos.c%5D = '.'%0A\n %09%09%09camin\n",
+            "lines": "112"
+        },
+        {
+            "label": "2026-07-04_13-33-28",
+            "content": "@@ -115,86 +115,11 @@\n urn \n-%5B%5DPos%7B%7Bp.l, p.c + 1%7D,%0A%09%09%7Bp.l, p.c - 1%7D,%0A%09%09%7Bp.l + 1, p.c%7D,%0A%09%09%7Bp.l - 1, p.c%7D,%0A%09%7D\n+nil\n %0A%7D%0A%0A\n@@ -596,16 +596,220 @@\n bool %7B%0A%0A\n+%09if !inside(grid, startPos) %7B%0A%09%09return false%0A%09%7D%0A%0A%09if match(grid, startPos, '#') %7C%7C visitados%5BstartPos%5D %7B%0A%09%09return false%0A%09%7D%0A%0A%09if startPos == endPos %7B%0A%09%09grid%5BstartPos.l%5D%5BstartPos.c%5D = '.'%0A%09%09return true%0A%09%7D%0A%0A\n %09visitad\n@@ -945,19 +945,16 @@\n os %7B%0A%09%09%09\n-// \n grid%5Bsta\n@@ -1006,244 +1006,428 @@\n %0A%0A%09%09\n-for _, vizinho := range pos_front.getNeig() %7B%0A%0A%09%09%09if inside(grid, vizinho) && !match(grid, vizinho, '#') && !visitados%5Bvizinho%5D %7B%0A%09%09%09%09visitados%5Bvizinho%5D = true%0A%09%09%09%09grid%5Bvizinho.l%5D%5Bvizinho.c%5D = '.'%0A%09%09%09%09caminho%5Bvizinho%5D = vizinho\n+grid%5BstartPos.l%5D%5BstartPos.c%5D = '.'%0A%09%09if search(grid, Pos%7BstartPos.l, startPos.c + 1%7D, endPos, visitados, caminho, queue) %7C%7C%0A%09%09%09search(grid, Pos%7BstartPos.l, startPos.c - 1%7D, endPos, visitados, caminho, queue) %7C%7C%0A%09%09%09search(grid, Pos%7BstartPos.l + 1, startPos.c%7D, endPos, visitados, caminho, queue) %7C%7C%0A%09%09%09search(grid, Pos%7BstartPos.l - 1, startPos.c%7D, endPos, visitados, caminho, queue) %7B%0A%09%09%09caminho%5BstartPos%5D = startPos\n %0A%09%09\n-%09\n %7D%0A\n-%09%09%7D\n %0A%09%7D%0A\n",
+            "lines": "112"
+        },
+        {
+            "label": "2026-07-04_13-46-15",
+            "content": "@@ -816,16 +816,19 @@\n os %7B%0A%09%09%09\n+// \n grid%5Bsta\n",
+            "lines": "103"
+        },
+        {
+            "label": "2026-07-04_13-46-22",
+            "content": "@@ -790,58 +790,8 @@\n ()%0A%0A\n-%09%09for _, vizinho := range pos_front.getNeig() %7B%0A%0A%09\n %09%09if\n@@ -820,32 +820,33 @@\n %0A%09%09%09\n-%09\n grid%5B\n-vizinho.l%5D%5Bvizinho\n+startPos.l%5D%5BstartPos\n .c%5D \n@@ -851,17 +851,16 @@\n %5D = '.'%0A\n-%09\n %09%09%09retur\n@@ -868,18 +868,66 @@\n  true%0A%09%09\n-%09\n %7D\n+%0A%0A%09%09for _, vizinho := range pos_front.getNeig() %7B\n %0A%0A%09%09%09if \n",
+            "lines": "103"
+        },
+        {
+            "label": "2026-07-04_13-47-10",
+            "content": "@@ -792,100 +792,140 @@\n %0A%0A%09%09\n-if pos_front == endPos %7B%0A%09%09%09return true%0A%09%09%7D%0A%0A%09%09for _, vizinho := range pos_front.getNeig() %7B\n+for _, vizinho := range pos_front.getNeig() %7B%0A%0A%09%09%09if pos_front == endPos %7B%0A%09%09%09%09grid%5Bvizinho.l%5D%5Bvizinho.c%5D = '.'%0A%09%09%09%09return true%0A%09%09%09%7D\n %0A%0A%09%09\n",
+            "lines": "103"
+        },
+        {
+            "label": "2026-07-04_13-47-41",
+            "content": "@@ -1036,36 +1036,8 @@\n '.'%0A\n-%09%09%09%09queue.Enqueue(startPos)%0A\n %09%09%09%09\n",
+            "lines": "102"
+        },
+        {
+            "label": "2026-07-04_13-48-24",
+            "content": "@@ -1050,23 +1050,24 @@\n Enqueue(\n-vizinho\n+startPos\n )%0A%09%09%09%09ca\n",
+            "lines": "103"
+        },
+        {
+            "label": "2026-07-04_13-49-14",
+            "content": "@@ -969,68 +969,8 @@\n %5D %7B%0A\n-%0A%09%09%09%09queue.Enqueue(vizinho)%0A%09%09%09%09caminho%5Bvizinho%5D = vizinho%0A%0A\n %09%09%09%09\n@@ -1032,16 +1032,74 @@\n %5D = '.'%0A\n+%09%09%09%09queue.Enqueue(vizinho)%0A%09%09%09%09caminho%5Bvizinho%5D = vizinho%0A\n %09%09%09%7D%0A%09%09%7D\n",
+            "lines": "103"
+        },
+        {
+            "label": "2026-07-04_13-49-53",
+            "content": "@@ -1016,25 +1016,23 @@\n inho%5D = \n-pos_front\n+vizinho\n %0A%0A%09%09%09%09vi\n",
+            "lines": "105"
+        },
+        {
+            "label": "2026-07-04_13-50-24",
+            "content": "@@ -1064,53 +1064,53 @@\n %0A%09%09%09\n-%7D%0A%09%09%7D%0A%09%7D%0A%0A%09grid%5BstartPos.l%5D%5BstartPos.c%5D = '.'\n+%09grid%5Bvizinho.l%5D%5Bvizinho.c%5D = '.'%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D\n %0A%0A%09r\n",
+            "lines": "105"
+        },
+        {
+            "label": "2026-07-04_13-51-25",
+            "content": "@@ -755,46 +755,8 @@\n  %7B%0A%0A\n-%09%09grid%5BstartPos.l%5D%5BstartPos.c%5D = '.'%0A%0A\n %09%09po\n@@ -1070,16 +1070,53 @@\n %09%09%7D%0A%09%7D%0A%0A\n+%09grid%5BstartPos.l%5D%5BstartPos.c%5D = '.'%0A%0A\n %09return \n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-07-04_13-51-39",
+            "content": "@@ -1876,63 +1876,8 @@\n e)%0A%0A\n-%09for _, p := range caminho %7B%0A%09%09mat%5Bp.l%5D%5Bp.c%5D = '.'%0A%09%7D%0A%0A\n %09for\n",
+            "lines": "106"
+        },
+        {
+            "label": "2026-07-04_13-55-43",
+            "content": "@@ -753,19 +753,16 @@\n () %7B%0A%0A%09%09\n-// \n grid%5Bsta\n@@ -1008,38 +1008,8 @@\n  %7B%0A%0A\n-%09%09%09%09visitados%5Bvizinho%5D = true%0A\n %09%09%09%09\n@@ -1063,16 +1063,47 @@\n os_front\n+%0A%0A%09%09%09%09visitados%5Bvizinho%5D = true\n %0A%09%09%09%7D%0A%09%09\n",
+            "lines": "110"
+        },
+        {
+            "label": "2026-07-04_13-56-05",
+            "content": "@@ -751,16 +751,57 @@\n ty() %7B%0A%0A\n+%09%09// grid%5BstartPos.l%5D%5BstartPos.c%5D = '.'%0A%0A\n %09%09pos_fr\n",
+            "lines": "109"
+        },
+        {
+            "label": "2026-07-04_13-56-37",
+            "content": "@@ -1837,38 +1837,37 @@\n e)%0A%0A\n-%09p := fim%0A\n %09for\n+ _,\n  p \n-!= inici\n+:= range caminh\n o %7B%0A\n-%0A\n %09%09ma\n@@ -1888,25 +1888,8 @@\n '.'%0A\n-%09%09p = caminho%5Bp%5D%0A\n %09%7D%0A%0A\n",
+            "lines": "107"
+        },
+        {
+            "label": "2026-07-04_13-59-38",
+            "content": "@@ -1908,29 +1908,8 @@\n %5D%0A%09%7D\n-%0A%09mat%5Bp.l%5D%5Bp.c%5D = '.'\n %0A%0A%09f\n",
+            "lines": "110"
+        },
+        {
+            "label": "2026-07-04_14-00-27",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc (p Pos) getNeig() []Pos {\n\treturn []Pos{{p.l, p.c + 1},\n\t\t{p.l, p.c - 1},\n\t\t{p.l + 1, p.c},\n\t\t{p.l - 1, p.c},\n\t}\n}\n\n// est\u00e1 na posi\u00e7\u00e3o adequada\nfunc inside(grid [][]rune, pos Pos) bool {\n\tnrows := len(grid)\n\tncols := len(grid[0])\n\treturn pos.l >= 0 && pos.l < nrows && pos.c >= 0 && pos.c < ncols\n}\n\n// verifica se \u00c9 o caractere referido\nfunc match(grid [][]rune, pos Pos, char rune) bool {\n\treturn inside(grid, pos) && grid[pos.l][pos.c] == char\n}\n\n// method principal\nfunc search(grid [][]rune, startPos Pos, endPos Pos, visitados map[Pos]bool, caminho map[Pos]Pos, queue Queue[Pos]) bool {\n\n\tvisitados[startPos] = true\n\n\tqueue.Enqueue(startPos)\n\n\tfor !queue.IsEmpty() {\n\n\t\tpos_front, _ := queue.Dequeue()\n\n\t\tif pos_front == endPos {\n\t\t\treturn true\n\t\t}\n\n\t\tfor _, vizinho := range pos_front.getNeig() {\n\n\t\t\tif inside(grid, vizinho) && !match(grid, vizinho, '#') && !visitados[vizinho] {\n\n\t\t\t\tvisitados[vizinho] = true\n\t\t\t\tqueue.Enqueue(vizinho)\n\t\t\t\tcaminho[vizinho] = pos_front\n\t\t\t}\n\t\t}\n\t}\n\n\treturn false\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tvar nl, nc int\n\tscanner.Scan()\n\tline := scanner.Text()\n\tfmt.Sscanf(line, \"%d %d\", &nl, &nc)\n\tmat := make([][]rune, nl) // Inicializa a matriz de runes\n\n\t// Carregando matriz\n\tfor i := range nl {\n\t\tscanner.Scan()\n\t\tline := scanner.Text()\n\t\tmat[i] = []rune(line)\n\t}\n\n\tvar inicio, fim Pos\n\n\t// Procurando inicio e fim e colocando ' ' nas posi\u00e7\u00f5es iniciais\n\tfor l := range nl {\n\t\tfor c := range nc {\n\t\t\tif mat[l][c] == 'I' {\n\t\t\t\tmat[l][c] = ' '\n\t\t\t\tinicio = Pos{l, c}\n\t\t\t}\n\t\t\tif mat[l][c] == 'F' {\n\t\t\t\tmat[l][c] = ' '\n\t\t\t\tfim = Pos{l, c}\n\t\t\t}\n\t\t}\n\t}\n\n\tqueue := *NewQueue[Pos]()\n\tvisitados := make(map[Pos]bool)\n\tcaminho := make(map[Pos]Pos)\n\n\tsearch(mat, inicio, fim, visitados, caminho, queue)\n\n\tp := fim\n\tfor p != inicio {\n\n\t\tmat[p.l][p.c] = '.'\n\t\tp = caminho[p]\n\t}\n\tmat[p.l][p.c] = '.'\n\n\tfor _, line := range mat {\n\t\tfmt.Println(string(line)) // Converte o slice de runes de volta para string para imprimir\n\t}\n}\n",
+            "lines": "111"
+        }
+    ]
+}

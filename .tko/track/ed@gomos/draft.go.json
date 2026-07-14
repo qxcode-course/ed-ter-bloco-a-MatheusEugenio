@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-18_10-59-02",
+            "content": "package main\n\nimport \"fmt\"\n\ntype Par struct {\n\tx, y int\n}\n\nfunc main() {\n\n\tvar direcao string //* 'L' = ESQUERDA ; 'R' = DIREITA ; 'U' = PRA CIMA ; 'D' = PRA BAIXO\n\tvar quantidadeDeGomos int\n\tfmt.Scan(&quantidadeDeGomos, &direcao)\n\n\tgomos := make([]Par, quantidadeDeGomos)\n\n\tfor i := 0; i < quantidadeDeGomos; i++ {\n\t\tfmt.Scan(&gomos[i].x, &gomos[i].y)\n\t}\n\n\t//* A cauda se mexe ate chegar na cabe\u00e7a\n\tfor i := quantidadeDeGomos - 1; i > 0; i-- {\n\t\tgomos[i] = gomos[i-1]\n\t}\n\n\t//* movimento da cabe\u00e7a\n\tswitch direcao {\n\tcase \"U\":\n\t\tgomos[0].y--\n\tcase \"D\":\n\t\tgomos[0].y++\n\tcase \"R\":\n\t\tgomos[0].x++\n\tcase \"L\":\n\t\tgomos[0].x--\n\t}\n\n\tfor i := 0; i < quantidadeDeGomos; i++ {\n\t\tfmt.Printf(\"%d %d\\n\", gomos[i].x, gomos[i].y)\n\t}\n\n}\n",
+            "lines": "42"
+        }
+    ]
+}

@@ -1,0 +1,174 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-02_15-23-38",
+            "content": "@@ -10,28 +10,21 @@\n ain%0A\n-%0A\n import \n-(%0A%09\n %22fmt%22%0A\n-)%0A%0A\n func\n@@ -38,177 +38,38 @@\n  %7B%0A \n-%0A    var l, c int%0A    fmt.Scan(&l, &c)%0A%0A    mat := make(%5B%5D%5B%5Dint, l) %0A%0A%09for i := 0; i %3C l; i++ %7B%0A%09%09for j := 0; j %3C c; j++%7B%0A            fmt.Scan(&mat%5Bi%5D%5Bj%5D)%0A        %7D%0A%09%7D%0A%0A%0A\n+   fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-06-02_16-46-32",
+            "content": "@@ -30,148 +30,28 @@\n %0A)%0A%0A\n-type Pos struct %7B%0A%09l, c int%0A%7D%0A%0A\n func \n-sla\n+main\n () %7B%0A\n-%0A%7D%0A%0Afunc apodrecedor(grid %5B%5D%5B%5Dint, visitados map%5BPos%5Dbool) int %7B%0A%0A%09return -1%0A%7D%0A%0Afunc main() %7B%0A%0A%09\n+ %0A    \n var \n@@ -59,17 +59,20 @@\n , c int%0A\n-%09\n+    \n fmt.Scan\n@@ -81,17 +81,20 @@\n l, &c)%0A%0A\n-%09\n+    \n mat := m\n@@ -108,16 +108,17 @@\n %5Dint, l)\n+ \n %0A%0A%09for i\n@@ -157,30 +157,38 @@\n ; j %3C c; j++\n- \n %7B%0A\n-%09%09%09\n+            \n fmt.Scan(&ma\n@@ -200,204 +200,22 @@\n j%5D)%0A\n-%09%09%7D%0A%09%7D%0A%0A%09for i := 0; i %3C l; i++ %7B%0A%09%09for j := 0; j %3C c; j++ %7B%0A%09%09%09fmt.Printf(%22%25d %22, mat%5Bi%5D%5Bj%5D)%0A%09%09%7D%0A%09%09println()%0A%09%7D%0A%0A%09// visitados := make(map%5BPos%5Dbool, 0)%0A%09// fmt.Println(apodrecedor(mat, visitados))\n+        %7D%0A%09%7D%0A%0A\n %0A%0A%7D%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-06-02_16-54-42",
+            "content": "@@ -256,31 +256,90 @@\n %7B%0A%09%09\n-mat%5Bi%5D = make(%5B%5Dint, c)\n+for j := 0; j %3C c; j++ %7B%0A%09%09%09fmt.Scan(&mat%5Bi%5D%5Bj%5D)%0A%09%09%7D%0A%09%7D%0A%0A%09for i := 0; i %3C l; i++ %7B\n %0A%09%09f\n@@ -361,38 +361,46 @@\n c; j++ %7B%0A%09%09%09fmt.\n-Scan(&\n+Printf(%22%25d %22, \n mat%5Bi%5D%5Bj%5D)%0A%09%09%7D%0A%09\n@@ -398,21 +398,36 @@\n j%5D)%0A%09%09%7D%0A\n+%09%09println()%0A\n %09%7D%0A%0A%09\n+// \n visitado\n@@ -454,16 +454,19 @@\n ol, 0)%0A%09\n+// \n fmt.Prin\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-06-02_17-02-41",
+            "content": "@@ -66,278 +66,81 @@\n unc \n-contagemMinutos(grid %5B%5D%5B%5Dint,l, c int, visitados map%5BPos%5Dbool) int%7B%0A%0A    if %60%7B%7D%60%0A%7D%0A%0Afunc apodrecedor(grid %5B%5D%5B%5Dint) int %7B%0A%0A    visitados := make(map%5BPos%5Dbool, 0)%0A%0A    for i := 0; i %3C len(grid); i++%7B%0A        for j := 0; j %3C len(grid%5B0%5D); j++%7B%0A%0A            %0A        %7D%0A    %7D\n+sla() %7B%0A%0A%7D%0A%0Afunc apodrecedor(grid %5B%5D%5B%5Dint, visitados map%5BPos%5Dbool) int %7B%0A\n %0A%09re\n@@ -335,16 +335,52 @@\n %09%09%7D%0A%09%7D%0A%0A\n+%09visitados := make(map%5BPos%5Dbool, 0)%0A\n %09fmt.Pri\n@@ -399,14 +399,25 @@\n edor(mat\n+, visitados\n ))%0A%0A%7D%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-06-02_17-06-41",
+            "content": "@@ -91,17 +91,16 @@\n %5B%5D%5B%5Dint,\n- \n l, c int\n@@ -127,467 +127,27 @@\n bool\n-, cont\n+)\n  int\n-) \n %7B%0A%0A\n-%09if l %3C 0 %7C%7C l %3E= len(grid) %7C%7C c %3C 0 %7C%7C c %3E= len(grid%5B0%5D) %7B%0A%09%09return%0A%09%7D%0A%0A%09cont++%0A%0A%09pos := Pos%7Bl, c%7D%0A%09if visitados%5Bpos%5D %7C%7C grid%5Bpos.l%5D%5Bpos.c%5D == 0 %7B%0A%09%09return%0A%09%7D%0A%0A%09visitados%5Bpos%5D = true%0A%0A%09if grid%5Bpos.l%5D%5Bpos.c%5D == 1 %7B%0A%09%09grid%5Bpos.l%5D%5Bpos.c%5D = 2%0A%09%7D%0A%0A%09contagemMinutos(grid, l, c+1, visitados, cont)%0A%09contagemMinutos(grid, l, c-1, visitados, cont)%0A%09contagemMinutos(grid, l+1, c, visitados, cont)%0A%09contagemMinutos(grid, l-1, c, visitados, cont)%0A%0A%09return\n+    if %60%7B%7D%60\n %0A%7D%0A%0A\n@@ -184,17 +184,20 @@\n  int %7B%0A%0A\n-%09\n+    \n visitado\n@@ -227,19 +227,13 @@\n  0)%0A\n-%09min := 0%0A%09\n+%0A    \n for \n@@ -258,21 +258,26 @@\n id); i++\n- \n %7B%0A\n-%09%09\n+        \n for j :=\n@@ -305,79 +305,38 @@\n  j++\n- \n %7B%0A%0A\n-%09%09%09contagemMinutos(grid, i, j, visitados, min)%0A%09%09%09return min%0A%0A%09%09%7D%0A%09\n+            %0A        %7D%0A    \n %7D%0A%09r\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-06-02_17-16-03",
+            "content": "@@ -798,11 +798,8 @@\n %0A%09%09%09\n-// \n retu\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-06-02_17-16-21",
+            "content": "@@ -629,50 +629,8 @@\n  %7B%0A%0A\n-%09numL := len(grid)%0A%09numC := len(grid%5B0%5D)%0A%0A\n %09vis\n@@ -692,12 +692,17 @@\n i %3C \n-numL\n+len(grid)\n ; i+\n@@ -727,12 +727,20 @@\n j %3C \n-numC\n+len(grid%5B0%5D)\n ; j+\n",
+            "lines": "69"
+        },
+        {
+            "label": "2026-06-02_17-17-18",
+            "content": "@@ -66,35 +66,31 @@\n unc contagem\n-m\n+M\n inutos\n-utos\n (grid %5B%5D%5B%5Din\n@@ -141,16 +141,8 @@\n t) %7B\n-%0A%09cont++\n %0A%0A%09i\n@@ -212,16 +212,25 @@\n urn%0A%09%7D%0A%0A\n+%09cont++%0A%0A\n %09pos := \n@@ -388,35 +388,31 @@\n %7D%0A%0A%09contagem\n-m\n+M\n inutos\n-utos\n (grid, l, c+\n@@ -436,35 +436,31 @@\n t)%0A%09contagem\n-m\n+M\n inutos\n-utos\n (grid, l, c-\n@@ -484,35 +484,31 @@\n t)%0A%09contagem\n-m\n+M\n inutos\n-utos\n (grid, l+1, \n@@ -532,35 +532,31 @@\n t)%0A%09contagem\n-m\n+M\n inutos\n-utos\n (grid, l-1, \n@@ -707,20 +707,16 @@\n  0)%0A%09min\n-utos\n  := 0%0A%09f\n@@ -788,19 +788,15 @@\n agem\n-m\n+M\n inutos\n-utos\n (gri\n@@ -822,17 +822,16 @@\n  min\n-utos\n )%0A%09%09%09\n+// \n retu\n@@ -840,22 +840,17 @@\n  min\n-utos\n %0A%0A%09%09%7D%0A\n+\n %09%7D%0A\n-%0A\n %09ret\n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-06-02_17-18-29",
+            "content": "@@ -595,16 +595,24 @@\n  cont)%0A%0A\n+%09return%0A\n %7D%0A%0Afunc \n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-06-02_17-19-01",
+            "content": "@@ -139,23 +139,19 @@\n ont int)\n- int\n  %7B%0A\n+\n %09cont++%0A\n@@ -215,27 +215,24 @@\n ) %7B%0A%09%09return\n- -1\n %0A%09%7D%0A%0A%09pos :=\n@@ -290,24 +290,24 @@\n  == 0 %7B%0A\n+\n %09%09return\n  -1%0A%09%7D%0A%0A\n@@ -298,19 +298,16 @@\n %09%09return\n- -1\n %0A%09%7D%0A%0A%09vi\n@@ -728,17 +728,16 @@\n os := 0%0A\n-%0A\n %09for i :\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-06-02_17-21-22",
+            "content": "@@ -139,19 +139,23 @@\n ont int)\n+ int\n  %7B%0A\n-\n %09cont++%0A\n@@ -219,24 +219,27 @@\n ) %7B%0A%09%09return\n+ -1\n %0A%09%7D%0A%0A%09pos :=\n@@ -305,16 +305,19 @@\n %09%09return\n+ -1\n %0A%09%7D%0A%0A%09vi\n@@ -609,16 +609,8 @@\n t)%0A%0A\n-%09return%0A\n %7D%0A%0Af\n@@ -724,16 +724,16 @@\n ool, 0)%0A\n-\n %09minutos\n@@ -738,16 +738,17 @@\n os := 0%0A\n+%0A\n %09for i :\n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-06-02_17-21-29",
+            "content": "@@ -593,16 +593,25 @@\n s, cont)\n+%0A%0A%09return\n %0A%7D%0A%0Afunc\n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-06-02_17-21-37",
+            "content": "@@ -139,23 +139,19 @@\n ont int)\n- int\n  %7B%0A\n+\n %09cont++%0A\n@@ -215,26 +215,24 @@\n ) %7B%0A%09%09return\n- 0\n %0A%09%7D%0A%0A%09pos :=\n@@ -290,24 +290,24 @@\n  == 0 %7B%0A\n+\n %09%09return\n  0%0A%09%7D%0A%0A%09\n@@ -298,18 +298,16 @@\n %09%09return\n- 0\n %0A%09%7D%0A%0A%09vi\n@@ -597,22 +597,8 @@\n ont)\n-%0A%0A%09return cont\n %0A%7D%0A%0A\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-06-02_17-22-51",
+            "content": "@@ -128,23 +128,41 @@\n Pos%5Dbool\n-) int %7B\n+, cont int) int %7B%0A%09cont++\n %0A%0A%09if l \n@@ -430,32 +430,38 @@\n , c+1, visitados\n+, cont\n )%0A%09contagemminut\n@@ -482,32 +482,38 @@\n , c-1, visitados\n+, cont\n )%0A%09contagemminut\n@@ -542,16 +542,22 @@\n isitados\n+, cont\n )%0A%09conta\n@@ -594,16 +594,22 @@\n isitados\n+, cont\n )%0A%0A%09retu\n@@ -611,17 +611,20 @@\n %09return \n-1\n+cont\n %0A%7D%0A%0Afunc\n@@ -816,19 +816,8 @@\n %0A%09%09%09\n-minutos += \n cont\n@@ -853,16 +853,25 @@\n isitados\n+, minutos\n )%0A%09%09%09ret\n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-06-02_17-23-47",
+            "content": "@@ -820,16 +820,34 @@\n sitados)\n+%0A%09%09%09return minutos\n %0A%0A%09%09%7D%0A%09%7D\n@@ -856,23 +856,18 @@\n %09return \n-minutos\n+-1\n %0A%7D%0A%0Afunc\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-06-02_17-25-21",
+            "content": "@@ -132,34 +132,15 @@\n bool\n-, cont int) int %7B%0A%0A%09cont++\n+) int %7B\n %0A%0A%09i\n@@ -412,38 +412,32 @@\n , c+1, visitados\n-, cont\n )%0A%09contagemminut\n@@ -458,38 +458,32 @@\n , c-1, visitados\n-, cont\n )%0A%09contagemminut\n@@ -512,22 +512,16 @@\n isitados\n-, cont\n )%0A%09conta\n@@ -562,14 +562,8 @@\n ados\n-, cont\n )%0A%0A%09\n@@ -573,13 +573,9 @@\n urn \n-cont%0A\n+1\n %0A%7D%0A%0A\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-06-02_17-26-40",
+            "content": "@@ -617,16 +617,17 @@\n rn cont%0A\n+%0A\n %7D%0A%0Afunc \n@@ -870,17 +870,8 @@\n ados\n-, minutos\n )%0A%0A%09\n",
+            "lines": "73"
+        },
+        {
+            "label": "2026-06-02_17-26-59",
+            "content": "@@ -139,19 +139,23 @@\n ont int)\n+ int\n  %7B%0A\n-\n %0A%09cont++\n@@ -220,24 +220,26 @@\n ) %7B%0A%09%09return\n+ 0\n %0A%09%7D%0A%0A%09pos :=\n@@ -305,16 +305,18 @@\n %09%09return\n+ 0\n %0A%09%7D%0A%0A%09vi\n@@ -602,16 +602,30 @@\n s, cont)\n+%0A%0A%09return cont\n %0A%7D%0A%0Afunc\n@@ -810,19 +810,30 @@\n  j++ %7B%0A%0A\n-\n %09%09%09\n+minutos += \n contagem\n",
+            "lines": "72"
+        },
+        {
+            "label": "2026-06-02_17-28-18",
+            "content": "@@ -66,31 +66,35 @@\n unc contagem\n-M\n+m\n inutos\n+utos\n (grid %5B%5D%5B%5Din\n@@ -100,647 +100,639 @@\n nt, \n-podres %5B%5DPos, quantFrescas int, minutos *i\n+l, c int, visitados map%5BPos%5Dbool, co\n nt\n-)\n  int\n+) \n %7B%0A%0A\n-    if quantFrescas == 0%7B%0A        return 0%0A    %7D%0A%0A    direcoe\n+%09cont++%0A%0A%09if l %3C 0 %7C%7C l %3E= len(grid) %7C%7C c %3C 0 %7C%7C c %3E= len(grid%5B0%5D) %7B%0A%09%09return%0A%09%7D%0A%0A%09po\n s := \n-%5B%5D\n Pos%7B\n-%7B-1, 0%7D, %7B1, 0%7D, %7B0, -1%7D, %7B0, 1%7D%7D%0A%0A    for len(podres) %3E 0 && quantFrescas %3E\n+l, c%7D%0A%09if visitados%5Bpos%5D %7C%7C grid%5Bpos.l%5D%5Bpos.c%5D ==\n  0\n+ \n %7B%0A\n-        %0A        *minutos++%0A%0A        for _, podreAtual := range podres%7B%0A            podres = podres%5B1:%5D      %0A            %0A            for _, vizinhos := range direcoes%7B%0A%0A                %0A                if pode%7B%0A                    %0A                    quantFrescas--%0A                %7D%0A            %7D%0A        %7D%0A%0A    %7D%0A%0A    return quantFrescas%0A%7D%0A%0Afunc apodrecedor(grid %5B%5D%5B%5Dint) int %7B%0A%0A    %0A    frescas := 0%0A    var filaPodre\n+%09%09return%0A%09%7D%0A%0A%09visitados%5Bpos%5D = true%0A%0A%09if grid%5Bpos.l%5D%5Bpos.c%5D == 1 %7B%0A%09%09grid%5Bpos.l%5D%5Bpos.c%5D = 2%0A%09%7D%0A%0A%09contagemminutosutos(grid, l, c+1, visitados, cont)%0A%09contagemminutosutos(grid, l, c-1, visitados, cont)%0A%09contagemminutosutos(grid, l+1, c, visitados, cont)%0A%09contagemminutosutos(grid, l-1, c, visitados, cont)%0A%7D%0A%0Afunc apodrecedor(grid %5B%5D%5B%5Dint) int %7B%0A%0A%09numL := len(grid)%0A%09numC := len(grid%5B0%5D)%0A%0A%09visitado\n s \n+:\n = \n-%5B%5DPos%7B%7D%0A\n+make(map%5BPos%5Dbool, 0)%0A%09minutos := 0\n %0A%09fo\n@@ -745,25 +745,20 @@\n  0; i %3C \n-len(grid)\n+numL\n ; i++ %7B%0A\n@@ -779,243 +779,32 @@\n j %3C \n-len(grid%5B0%5D); j++ %7B%0A            if grid%5Bi%5D%5Bj%5D == 1%7B%0A                frescas++%0A            %7Delse if grid%5Bi%5D%5Bj%5D == 2%7B%0A                filaPodres = append(filaPodres, Pos%7Bi,j%7D)%0A            %7D%0A%09%09%7D%0A%09%7D%0A%0A    minutos := 0%0A    frescas = \n+numC; j++ %7B%0A%0A%09%09%09\n contagem\n Minu\n@@ -803,52 +803,51 @@\n agem\n-M\n+m\n inutos\n+utos\n (grid, \n-filaPodres, fresca\n+i, j, visitado\n s, \n-&\n minutos)\n  %0A  \n@@ -846,57 +846,15 @@\n tos)\n- %0A   %0A    if frescas %3E 0 %7B%0A        return -1%0A    \n+%0A%0A%09%09%7D%0A%09\n %7D%0A%0A%09\n",
+            "lines": "70"
+        },
+        {
+            "label": "2026-06-02_18-31-55",
+            "content": "@@ -141,21 +141,23 @@\n int) int\n- \n %7B%0A%0A\n-%09\n+    \n if quant\n@@ -168,21 +168,26 @@\n cas == 0\n- \n %7B%0A\n-%09%09\n+        \n return 0\n@@ -187,21 +187,27 @@\n eturn 0%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A    \n direcoes\n@@ -251,17 +251,20 @@\n 0, 1%7D%7D%0A%0A\n-%09\n+    \n for len(\n@@ -294,22 +294,35 @@\n scas %3E 0\n- \n %7B%0A\n-%0A%09%09\n+        %0A        \n *minutos\n@@ -325,18 +325,24 @@\n utos++%0A%0A\n-%09%09\n+        \n for _, p\n@@ -366,22 +366,30 @@\n e podres\n- \n %7B%0A\n-%09%09%09\n+            \n podres =\n@@ -399,21 +399,48 @@\n dres%5B1:%5D\n-%0A%0A%09%09%09\n+      %0A            %0A            \n for _, v\n@@ -468,279 +468,163 @@\n coes\n- \n %7B%0A%0A\n-%09%09%09%09nl := podreAtual.l + vizinhos.l%0A%09%09%09%09nc := podreAtual.c + vizinhos.c%0A%0A%09%09%09%09if nl %3C len(grid) && nl %3E= 0 && nc %3C len(grid%5B0%5D) && nc %3E= 0 && grid%5Bnl%5D%5Bnc%5D == 1 %7B%0A%0A%09%09%09%09%09grid%5Bnl%5D%5Bnc%5D = 2%0A%09%09%09%09%09quantFrescas--%0A%09%09%09%09%09podres = append(podres, Pos%7Bnl, nc%7D)%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%7D%0A%0A%09\n+                %0A                if pode%7B%0A                    %0A                    quantFrescas--%0A                %7D%0A            %7D%0A        %7D%0A%0A    %7D%0A%0A    \n retu\n@@ -680,17 +680,25 @@\n  int %7B%0A%0A\n-%09\n+    %0A    \n frescas \n@@ -702,17 +702,20 @@\n as := 0%0A\n-%09\n+    \n var fila\n@@ -804,19 +804,28 @@\n ; j++ %7B%0A\n-%09%09%09\n+            \n if grid%5B\n@@ -838,30 +838,49 @@\n == 1\n- \n %7B%0A\n-%09%09%09%09frescas++%0A%09%09%09%7D \n+                frescas++%0A            %7D\n else\n@@ -902,15 +902,26 @@\n == 2\n- \n %7B%0A\n-%09%09%09%09\n+                \n fila\n@@ -958,16 +958,24 @@\n s%7Bi,\n- \n j%7D)%0A\n-%09%09%09\n+            \n %7D%0A%09%09\n@@ -980,17 +980,20 @@\n %09%09%7D%0A%09%7D%0A%0A\n-%09\n+    \n minutos \n@@ -997,17 +997,20 @@\n os := 0%0A\n-%09\n+    \n frescas \n@@ -1063,19 +1063,26 @@\n minutos)\n-%0A%0A%09\n+ %0A   %0A    \n if fresc\n@@ -1090,18 +1090,24 @@\n s %3E 0 %7B%0A\n-%09%09\n+        \n return -\n@@ -1108,17 +1108,20 @@\n turn -1%0A\n-%09\n+    \n %7D%0A%0A%09retu\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-06-02_18-42-36",
+            "content": "@@ -611,11 +611,8 @@\n %09%09%09%09\n-// \n podr\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-06-02_18-42-56",
+            "content": "@@ -602,16 +602,61 @@\n escas--%0A\n+%09%09%09%09%09// podres = append(podres, Pos%7Bnl, nc%7D)%0A\n %09%09%09%09%7D%0A%09%09\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-07-02_17-15-15",
+            "content": "@@ -797,17 +797,16 @@\n ; j++ %7B%0A\n-%0A\n %09%09%09if gr\n@@ -839,21 +839,22 @@\n s++%0A%09%09%09%7D\n-%0A%0A%09%09%09\n+ else \n if grid%5B\n@@ -1047,22 +1047,22 @@\n %09return \n-fresca\n+minuto\n s%0A%7D%0A%0Afun\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-07-04_14-22-22",
+            "content": "@@ -1047,22 +1047,22 @@\n %09return \n-minuto\n+fresca\n s%0A%7D%0A%0Afun\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-04_14-22-51",
+            "content": "@@ -685,19 +685,16 @@\n int %7B%0A%0A%09\n-qtd\n frescas \n@@ -826,19 +826,16 @@\n 1 %7B%0A%09%09%09%09\n-qtd\n frescas+\n@@ -941,19 +941,16 @@\n s := 0%0A%09\n-qtd\n frescas \n@@ -985,19 +985,16 @@\n Podres, \n-qtd\n frescas,\n@@ -1013,11 +1013,8 @@\n %09if \n-qtd\n fres\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-04_14-25-23",
+            "content": "@@ -951,15 +951,19 @@\n  0%0A%09\n-nv\n qtd\n+frescas\n  \n-:\n = co\n@@ -1021,29 +1021,8 @@\n s)%0A%0A\n-%09qtdfrescas = nvqtd%0A%0A\n %09if \n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-04_14-28-02",
+            "content": "@@ -136,23 +136,17 @@\n tos \n+*\n int) \n-(\n int\n-, int)\n  %7B%0A%0A\n@@ -179,19 +179,16 @@\n return 0\n-, 0\n %0A%09%7D%0A%0A%09di\n@@ -284,16 +284,17 @@\n  0 %7B%0A%0A%09%09\n+*\n minutos+\n@@ -642,25 +642,16 @@\n tFrescas\n-, minutos\n %0A%7D%0A%0Afunc\n@@ -951,28 +951,15 @@\n  0%0A%09\n+nv\n qtd\n-frescas, minutos\n  \n+:\n = co\n@@ -1002,16 +1002,17 @@\n rescas, \n+&\n minutos)\n@@ -1013,16 +1013,37 @@\n nutos)%0A%0A\n+%09qtdfrescas = nvqtd%0A%0A\n %09if qtdf\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-07-04_14-33-16",
+            "content": "@@ -1047,27 +1047,8 @@\n )%0A%0A%09\n-return minutos%0A%09// \n if q\n@@ -1064,19 +1064,16 @@\n  %3E 0 %7B%0A%09\n-// \n %09return \n@@ -1080,13 +1080,26 @@\n -1%0A%09\n-// %7D%0A\n+%7D%0A%0A%09return minutos\n %0A%7D%0A%0A\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-04_14-33-59",
+            "content": "@@ -293,16 +293,26 @@\n  0 %7B%0A%0A%09%09\n+minutos++%0A\n %0A%09%09for _\n@@ -368,23 +368,8 @@\n %5B1:%5D\n-%0A%09%09%09minutos++%09s\n %0A%0A%09%09\n@@ -1043,16 +1043,35 @@\n utos)%0A%0A%09\n+return minutos%0A%09// \n if qtdfr\n@@ -1079,24 +1079,27 @@\n scas %3E 0 %7B%0A%09\n+// \n %09return -1%0A%09\n@@ -1102,26 +1102,13 @@\n -1%0A%09\n-%7D%0A%0A%09return minutos\n+// %7D%0A\n %0A%7D%0A%0A\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-04_14-34-49",
+            "content": "@@ -358,16 +358,28 @@\n %5B1:%5D%0A%09%09%09\n+minutos++%09s%0A\n %0A%09%09%09for \n@@ -413,24 +413,8 @@\n es %7B\n-%0A%09%09%09%09minutos++%09%09\n %0A%0A%09%09\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-04_14-35-05",
+            "content": "@@ -272,11 +272,10 @@\n %3E 0 \n-%7C%7Cc\n+&&\n  qua\n@@ -295,22 +295,8 @@\n  %7B%0A%0A\n-%09%09minutos++%09%09%0A\n %09%09%0A%09\n@@ -397,16 +397,32 @@\n recoes %7B\n+%0A%09%09%09%09minutos++%09%09\n %0A%0A%09%09%09%09nl\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-04_14-35-28",
+            "content": "@@ -268,18 +268,19 @@\n es) %3E 0 \n-&&\n+%7C%7Cc\n  quantFr\n@@ -303,17 +303,21 @@\n inutos++\n-%0A\n+%09%09%0A%09%09\n %0A%09%09for _\n@@ -370,16 +370,19 @@\n res%5B1:%5D%0A\n+%09%09%09\n %0A%09%09%09for \n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-04_14-37-48",
+            "content": "@@ -594,50 +594,8 @@\n = 2%0A\n-%09%09%09%09%09podres = append(podres, Pos%7Bnl, nc%7D)%0A\n %09%09%09%09\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-07-04_14-39-41",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc contagemMinutos(grid [][]int, podres []Pos, quantFrescas int, minutos int) (int, int) {\n\n\tif quantFrescas == 0 {\n\t\treturn 0, 0\n\t}\n\n\tdirecoes := []Pos{{-1, 0}, {1, 0}, {0, -1}, {0, 1}}\n\n\tfor len(podres) > 0 && quantFrescas > 0 {\n\n\t\tminutos++\n\n\t\tfor _, podreAtual := range podres {\n\t\t\tpodres = podres[1:]\n\n\t\t\tfor _, vizinhos := range direcoes {\n\n\t\t\t\tnl := podreAtual.l + vizinhos.l\n\t\t\t\tnc := podreAtual.c + vizinhos.c\n\n\t\t\t\tif nl < len(grid) && nl >= 0 && nc < len(grid[0]) && nc >= 0 && grid[nl][nc] == 1 {\n\n\t\t\t\t\tgrid[nl][nc] = 2\n\t\t\t\t\tpodres = append(podres, Pos{nl, nc})\n\t\t\t\t\tquantFrescas--\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t}\n\n\treturn quantFrescas, minutos\n}\n\nfunc apodrecedor(grid [][]int) int {\n\n\tqtdfrescas := 0\n\tvar filaPodres = []Pos{}\n\n\tfor i := 0; i < len(grid); i++ {\n\t\tfor j := 0; j < len(grid[0]); j++ {\n\n\t\t\tif grid[i][j] == 1 {\n\t\t\t\tqtdfrescas++\n\t\t\t}\n\n\t\t\tif grid[i][j] == 2 {\n\t\t\t\tfilaPodres = append(filaPodres, Pos{i, j})\n\t\t\t}\n\t\t}\n\t}\n\n\tminutos := 0\n\tqtdfrescas, minutos = contagemMinutos(grid, filaPodres, qtdfrescas, minutos)\n\n\tif qtdfrescas > 0 {\n\t\treturn -1\n\t}\n\n\treturn minutos\n}\n\nfunc main() {\n\n\tvar l, c int\n\tfmt.Scan(&l, &c)\n\n\tmat := make([][]int, l)\n\n\tfor i := 0; i < l; i++ {\n\t\tmat[i] = make([]int, c)\n\t\tfor j := 0; j < c; j++ {\n\t\t\tfmt.Scan(&mat[i][j])\n\t\t}\n\t}\n\n\tfmt.Println(apodrecedor(mat))\n\n}\n",
+            "lines": "89"
+        }
+    ]
+}

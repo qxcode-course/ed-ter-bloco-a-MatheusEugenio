@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-09_08-55-10",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\tnums := make([]int, n)\n\tfor i := range nums {\n\t\tfmt.Scan(&nums[i])\n\t}\n\n\tvar min, max int = nums[0], nums[0]\n\tvar soma int\n\t// TODO: Encontre min/max e some o resto\n\t// Loop para min/max\n\t// Outro loop ou soma total - min - max\n\tfmt.Println(\"COMPLETE AQUI\")\n}\n\n",
+            "lines": "20"
+        }
+    ]
+}

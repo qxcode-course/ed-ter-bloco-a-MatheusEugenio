@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_11-22-36",
+            "content": "@@ -419,19 +419,17 @@\n  %7B%0A%09%09if \n-val\n+i\n  == posi\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-14_11-25-15",
+            "content": "@@ -386,23 +386,23 @@\n or i\n- := 0; i %3C len(\n+, val := range \n valo\n@@ -415,14 +415,8 @@\n soas\n-); i++\n  %7B%0A%09\n@@ -422,30 +422,16 @@\n %09%09if val\n-oresPessoas%5Bi%5D\n  == posi\n@@ -521,30 +521,16 @@\n oas, val\n-oresPessoas%5Bi%5D\n )%0A%09%09%7D%0A%09%7D\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-14_11-29-46",
+            "content": "@@ -63,17 +63,24 @@\n n(&n)%0A%0A%09\n-p\n+valoresP\n essoas :\n@@ -135,17 +135,24 @@\n t.Scan(&\n-p\n+valoresP\n essoas%5Bi\n@@ -242,20 +242,30 @@\n ake(\n-map%5Bint%5Dbool\n+%5B%5Dint, qtdDeixaramFila\n )%0A%0A%09\n@@ -307,23 +307,8 @@\n + %7B%0A\n-%09%09var saiu int%0A\n %09%09fm\n@@ -319,16 +319,8 @@\n an(&\n-saiu)%0A%09%09\n posi\n@@ -336,20 +336,11 @@\n das%5B\n-saiu%5D = true\n+i%5D)\n %0A%09%7D%0A\n@@ -385,67 +385,115 @@\n for \n-_, pessoa := range pessoas %7B%0A%09%09if !posicoesDeixadas%5Bpessoa%5D\n+i := 0; i %3C len(valoresPessoas); i++ %7B%0A%09%09if valoresPessoas%5Bi%5D == posicoesDeixadas%5Bi%5D %7B%0A%09%09%09continue%0A%09%09%7D else\n  %7B%0A%09\n@@ -542,14 +542,25 @@\n as, \n-p\n+valoresP\n essoa\n+s%5Bi%5D\n )%0A%09%09\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-14_16-12-08",
+            "content": "@@ -519,17 +519,17 @@\n %7D%0A%0A%09for \n-_\n+i\n , val :=\n@@ -554,16 +554,52 @@\n ssoas %7B%0A\n+%09%09if i == len(novoArrayPessoas)-1 %7B%0A\n %09%09%09fmt.P\n@@ -607,17 +607,16 @@\n intf(%22%25d\n- \n %22, val)%0A\n@@ -616,18 +616,17 @@\n , val)%0A%09\n-%7D%0A\n+%09\n %09fmt.Pri\n@@ -631,12 +631,56 @@\n rintln()\n+%0A%09%09%7D else %7B%0A%09%09%09fmt.Printf(%22%25d %22, val)%0A%09%09%7D%0A%09%7D\n %0A%0A%7D%0A\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-04-14_16-12-46",
+            "content": "@@ -552,24 +552,25 @@\n Pessoas %7B%0A%09%09\n+%09\n fmt.Printf(%22\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-04-14_16-12-58",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\n\tvar n int\n\tfmt.Scan(&n)\n\n\tpessoas := make([]int, n)\n\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&pessoas[i])\n\t}\n\n\tvar qtdDeixaramFila int\n\tfmt.Scan(&qtdDeixaramFila)\n\n\tposicoesDeixadas := make(map[int]bool)\n\n\tfor i := 0; i < qtdDeixaramFila; i++ {\n\t\tvar saiu int\n\t\tfmt.Scan(&saiu)\n\t\tposicoesDeixadas[saiu] = true\n\t}\n\n\tnovoArrayPessoas := make([]int, 0)\n\tfor _, pessoa := range pessoas {\n\t\tif !posicoesDeixadas[pessoa] {\n\t\t\tnovoArrayPessoas = append(novoArrayPessoas, pessoa)\n\t\t}\n\t}\n\n\tfor _, val := range novoArrayPessoas {\n\t\tfmt.Printf(\"%d \", val)\n\t}\n\tfmt.Println()\n\n}\n",
+            "lines": "39"
+        }
+    ]
+}

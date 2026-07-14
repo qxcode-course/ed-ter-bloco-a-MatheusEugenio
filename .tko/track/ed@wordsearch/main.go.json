@@ -1,0 +1,59 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-25_14-51-46",
+            "content": "@@ -38,16 +38,27 @@\n %22%0A%09%22os%22%0A\n+%09%22structs%22%0A\n )%0A%0Atype \n@@ -67,17 +67,16 @@\n s struct\n- \n %7B%0A%09l, c \n@@ -91,17 +91,24 @@\n unc \n-dfs\n+exist_letra\n (grid\n- \n %5B%5D%5B%5D\n@@ -138,694 +138,309 @@\n  int\n-, visited map%5BPos%5Dbool, index int) bool %7B%0A%0A%09if index == len(word) %7B%0A%09%09return true%0A%09%7D%0A%0A%09if l %3C 0 %7C%7C l %3E= len(grid) %7C%7C c %3C 0 %7C%7C c %3E= len(grid%5B0%5D) %7B%0A%09%09return false%0A%09%7D%0A%0A%09posAtual := Pos%7Bl, c%7D%0A%0A%09if visited%5BposAtual%5D %7B%0A%09%09return false%0A%09%7D%0A%0A%09if grid%5Bl%5D%5Bc%5D != word%5Bindex%5D %7B%0A%09%09return false%0A%09%7D%0A%0A%09visited%5BposAtual%5D = true%0A%0A%09if dfs(grid, word, l, c+1, visited, index+1) %7C%7C%0A%09%09dfs(grid, word, l, c-1, visited, index+1) %7C%7C%0A%09%09dfs(grid, word, l-1, c, visited, index+1) %7C%7C%0A%09%09dfs(grid, word, l+1, c, visited, index+1) %7B%0A%09%09return true%0A%09%7D%0A%0A%09delete(visited, posAtual)%0A%0A%09return false%0A%7D%0A%0A// N%C3%A3o mude a assinatura desta fun%C3%A7%C3%A3o, ela %C3%A9 a fun%C3%A7%C3%A3o chamada pelo LeetCode%0Afunc exist(grid %5B%5D%5B%5Dbyte, word string) bool %7B%0A%0A%09\n+) bool%7B%0A%09%0A%0A%7D%0A%0A// N%C3%A3o mude a assinatura desta fun%C3%A7%C3%A3o, ela %C3%A9 a fun%C3%A7%C3%A3o chamada pelo LeetCode%0Afunc exist(grid %5B%5D%5B%5Dbyte, word string, visited map%5BPos%5Dbool) bool %7B%0A%0A%09if len(visited) == word%7B%0A%09%09return true%0A%09%7D%0A%0A%09num_linhas := len(grid) - 1%0A%09num_colums := len(grid%5B0%5D)%0A%0A%09if num_linhas %3C 0 %7C%7C num_colums %3C 0 %7C%7C \n num_\n@@ -438,33 +438,33 @@\n 0 %7C%7C num_linhas \n-:\n+%3E\n = len(grid) - 1%0A\n@@ -451,37 +451,35 @@\n as %3E= len(grid) \n-- 1%0A%09\n+%7C%7C \n num_colums := le\n@@ -465,33 +465,33 @@\n ) %7C%7C num_colums \n-:\n+%3E\n = len(grid%5B0%5D)%0A%0A\n@@ -488,17 +488,37 @@\n grid%5B0%5D)\n-%0A\n+%7B%0A%09%09return false%0A%09%7D%0A%09\n %0A%09for i \n@@ -542,17 +542,16 @@\n has; i++\n- \n %7B%0A%09%09for \n@@ -584,65 +584,98 @@\n + %7B%0A\n+%09%09%09\n %0A%09%09%09\n-visited := make(map%5BPos%5Dbool)%0A%0A%09%09%09if dfs(grid, word, \n+pos := Pos(i,j)%0A%09%09%09_, exist := visited%5Bpos%5D%0A%0A%09%09%09if exist && %7B%0A%0A%09%09%09%7D%0A%09%09%09%0A%09%09%09if grid%5B\n num_\n@@ -680,18 +680,18 @@\n m_linhas\n-, \n+%5D%5B\n num_colu\n@@ -692,25 +692,28 @@\n m_colums\n-,\n+%5D ==\n  visited\n , 0) %7B%0A%09\n@@ -708,45 +708,30 @@\n ited\n-, 0) \n+%5B%5D\n %7B%0A%09%09%09%09\n-return true\n %0A%09%09%09%7D%0A\n-%0A\n %09%09%7D%0A%09%7D%0A%0A\n %09ret\n@@ -726,16 +726,68 @@\n %09%09%7D%0A%09%7D%0A%0A\n+%09if grid%5Bnum_linhas%5D%5Bnum_colums%5D != %22esperado%22%7B%0A%0A%09%7D%0A\n %09return \n@@ -1017,24 +1017,56 @@\n ext()))%0A%09%7D%0A%0A\n+%09visited := make(map%5Brune%5Dbool)%0A\n %09if exist(gr\n@@ -1073,16 +1073,25 @@\n id, word\n+, visited\n ) %7B%0A%09%09fm\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-05-25_16-45-23",
+            "content": "@@ -1064,19 +1064,20 @@\n %09return \n-tru\n+fals\n e%0A%7D%0A%0Afun\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-25_16-45-33",
+            "content": "@@ -182,18 +182,16 @@\n en(word)\n--1\n  %7B%0A%09%09ret\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-25_16-47-44",
+            "content": "@@ -160,16 +160,61 @@\n bool %7B%0A%0A\n+%09if index == len(word)-1 %7B%0A%09%09return true%0A%09%7D%0A%0A\n %09if l %3C \n@@ -406,53 +406,8 @@\n %09%7D%0A%0A\n-%09if index == len(word)-1 %7B%0A%09%09return true%0A%09%7D%0A%0A\n %09vis\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-25_16-48-11",
+            "content": "@@ -375,24 +375,26 @@\n == len(word)\n+-1\n  %7B%0A%09%09return \n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-25_16-48-24",
+            "content": "@@ -383,11 +383,8 @@\n ord)\n- -1\n  %7B%0A%09\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-25_16-49-20",
+            "content": "@@ -379,16 +379,17 @@\n en(word)\n+ \n -1 %7B%0A%09%09r\n@@ -995,12 +995,30 @@\n rd, \n-i, j\n+num_linhas, num_colums\n , vi\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-25_16-50-25",
+            "content": "@@ -828,16 +828,20 @@\n en(grid)\n+ - 1\n %0A%09num_co\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-25_16-51-00",
+            "content": "@@ -1040,28 +1040,27 @@\n %09%7D%0A%0A%09return \n-fals\n+tru\n e%0A%7D%0A%0Afunc ma\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-25_16-51-13",
+            "content": "@@ -152,17 +152,16 @@\n ex int) \n-%09\n bool %7B%0A%0A\n@@ -1027,16 +1027,17 @@\n ue%0A%09%09%09%7D%0A\n+%0A\n %09%09%7D%0A%09%7D%0A%0A\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-05-26_20-27-31",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc dfs(grid [][]byte, word string, l, c int, visited map[Pos]bool, index int) \tbool {\n\n\tif l < 0 || l >= len(grid) || c < 0 || c >= len(grid[0]) {\n\t\treturn false\n\t}\n\n\tposAtual := Pos{l, c}\n\n\tif visited[posAtual] {\n\t\treturn false\n\t}\n\n\tif grid[l][c] != word[index] {\n\t\treturn false\n\t}\n\n\tif index == len(word)-1 {\n\t\treturn true\n\t}\n\n\tvisited[posAtual] = true\n\n\tif dfs(grid, word, l, c+1, visited, index+1) ||\n\t\tdfs(grid, word, l, c-1, visited, index+1) ||\n\t\tdfs(grid, word, l-1, c, visited, index+1) ||\n\t\tdfs(grid, word, l+1, c, visited, index+1) {\n\t\treturn true\n\t}\n\n\tdelete(visited, posAtual)\n\n\treturn false\n}\n\n// N\u00e3o mude a assinatura desta fun\u00e7\u00e3o, ela \u00e9 a fun\u00e7\u00e3o chamada pelo LeetCode\nfunc exist(grid [][]byte, word string) bool {\n\n\tnum_linhas := len(grid)\n\tnum_colums := len(grid[0])\n\n\tfor i := 0; i < num_linhas; i++ {\n\t\tfor j := 0; j < num_colums; j++ {\n\n\t\t\tvisited := make(map[Pos]bool)\n\n\t\t\tif dfs(grid, word, i, j, visited, 0) {\n\t\t\t\treturn true\n\t\t\t}\n\t\t}\n\t}\n\n\treturn false\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tvar word string\n\tfmt.Sscanf(scanner.Text(), \"%s\", &word)\n\tgrid := make([][]byte, 0)\n\tfor scanner.Scan() {\n\t\tgrid = append(grid, []byte(scanner.Text()))\n\t}\n\n\tif exist(grid, word) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n}\n",
+            "lines": "82"
+        }
+    ]
+}

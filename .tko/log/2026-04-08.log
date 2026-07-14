@@ -1,0 +1,21 @@
+2026-04-08 10:51:11, MOVE, v:1, k:ed@vetequals, mode:PICK
+2026-04-08 10:51:16, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:100
+2026-04-08 10:51:16, MOVE, v:1, k:ed@vetequals, mode:BACK
+2026-04-08 10:51:21, SELF, v:1, k:ed@vetequals, self:1, rate:100
+2026-04-08 10:51:26, SELF, v:1, k:ed@enesimo, self:1
+2026-04-08 10:51:35, SELF, v:1, k:ed@resto, self:1, rate:100
+2026-04-08 10:51:42, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-04-08 10:52:05, MOVE, v:1, k:ed@fractais_png, mode:BACK
+2026-04-08 10:56:25, SELF, v:1, k:ed@fractais_png, self:1, rate:60, friend:au, guided:1, concept:1, problem:1, code:1, debug:1
+2026-04-08 10:58:14, MOVE, v:1, k:ed@santo, mode:DOWN
+2026-04-08 10:58:17, MOVE, v:1, k:ed@santo, mode:PICK
+2026-04-08 10:58:21, EXEC, v:1, k:ed@santo, mode:FULL, rate:0, size:5
+2026-04-08 10:58:25, MOVE, v:1, k:ed@santo, mode:BACK
+2026-04-08 10:59:09, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-04-08 10:58:14, MOVE, v:1, k:ed@santo, mode:EDIT
+2026-04-08 10:58:14, MOVE, v:1, k:ed@santo, mode:EDIT
+2026-04-08 10:58:14, MOVE, v:1, k:ed@santo, mode:EDIT
+2026-04-08 10:58:21, MOVE, v:1, k:ed@santo, mode:EDIT
+2026-04-08 11:00:02, MOVE, v:1, k:ed@fractais_png, mode:EDIT
+2026-04-08 11:05:24, EXEC, v:1, k:ed@fractais_png, mode:LOCK, rate:0, size:110
+2026-04-08 11:05:25, MOVE, v:1, k:ed@fractais_png, mode:BACK

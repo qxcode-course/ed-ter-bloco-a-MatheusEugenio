@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-17_10-27-32",
+            "content": "@@ -42,19 +42,8 @@\n os%22%0A\n-%09%22strconv%22%0A\n %09%22st\n@@ -511,252 +511,30 @@\n e %7B%0A\n-%0A%09if len(*parts) == 0 %7B%0A%09%09return nil%0A%09%7D%0A%0A%09element := (*parts)%5B0%5D%0A%09*parts\n+%09_\n  = \n-(*\n parts\n-)%5B1:%5D%0A%0A%09if element == %22#%22 %7B%0A%09%09return nil%0A%09%7D%0A%0A%09value, _ := strconv.Atoi(element)%0A%0A%09return &Node%7B%0A%09%09Value: value,%0A%09%09Left:  create(parts),%0A%09%09Right: create(parts),%0A%09%7D\n+%0A%09return nil\n %0A%7D%0A%0A\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-07-05_23-06-38",
+            "content": "@@ -653,19 +653,17 @@\n %09value, \n-err\n+_\n  := strc\n@@ -683,25 +683,8 @@\n ent)\n-%0A%09if err != %7B%0A%0A%09%7D\n %0A%0A%09r\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-07-05_23-10-29",
+            "content": "@@ -697,26 +697,10 @@\n  != \n-nil %7B%0A%09%09return nil\n+%7B%0A\n %0A%09%7D%0A\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-07-05_23-10-36",
+            "content": "@@ -520,19 +520,16 @@\n ode %7B%0A%0A%09\n-// \n if len(*\n@@ -543,19 +543,16 @@\n == 0 %7B%0A%09\n-// \n %09return \n@@ -556,19 +556,16 @@\n rn nil%0A%09\n-// \n %7D%0A%0A%09elem\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-07-05_23-19-45",
+            "content": "@@ -520,16 +520,19 @@\n ode %7B%0A%0A%09\n+// \n if len(*\n@@ -542,24 +542,27 @@\n ts) == 0 %7B%0A%09\n+// \n %09return nil%0A\n@@ -558,24 +558,27 @@\n return nil%0A%09\n+// \n %7D%0A%0A%09element \n@@ -662,17 +662,19 @@\n %09value, \n-_\n+err\n  := strc\n@@ -695,24 +695,59 @@\n nt)%0A\n-%0A%09node :=\n+%09if err != nil %7B%0A%09%09return nil%0A%09%7D%0A%0A%09return\n  &Node%7B\n+%0A%09%09\n Valu\n@@ -759,45 +759,17 @@\n lue,\n- Left: nil, Right: nil%7D%0A%0A%09node.\n+%0A%09%09\n Left\n+:\n  \n-=\n  cre\n@@ -782,22 +782,18 @@\n rts)\n+,\n %0A%09\n-node.\n+%09\n Right\n- =\n+:\n  cre\n@@ -806,21 +806,12 @@\n rts)\n+,\n %0A%09\n-return node\n+%7D\n %0A%7D%0A%0A\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-07-05_23-22-12",
+            "content": "@@ -686,24 +686,22 @@\n )%0A%0A%09\n-return\n+node :=\n  &Node%7B\n-%0A%09%09\n Valu\n@@ -713,17 +713,45 @@\n lue,\n-%0A%09%09\n+ Left: nil, Right: nil%7D%0A%0A%09node.\n Left\n-:\n  \n+=\n  cre\n@@ -764,18 +764,22 @@\n rts)\n-,\n %0A%09\n-%09\n+node.\n Right\n-:\n+ =\n  cre\n@@ -792,12 +792,21 @@\n rts)\n-,\n %0A%09\n-%7D\n+return node\n %0A%7D%0A%0A\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-07-05_23-22-32",
+            "content": "@@ -1240,12 +1240,12 @@\n nt(%22\n-L---\n+%E2%95%AD%E2%94%80%E2%94%80%E2%94%80\n %22)%0A%09\n@@ -1272,13 +1272,12 @@\n nt(%22\n-R---%09\n+%E2%95%B0%E2%94%80%E2%94%80%E2%94%80\n %22)%0A%09\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-07-05_23-38-42",
+            "content": "@@ -1240,12 +1240,12 @@\n nt(%22\n-%E2%95%AD%E2%94%80%E2%94%80%E2%94%80\n+L---\n %22)%0A%09\n@@ -1272,12 +1272,13 @@\n nt(%22\n-%E2%95%B0%E2%94%80%E2%94%80%E2%94%80\n+R---%09\n %22)%0A%09\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-07-05_23-39-28",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\n// Node representa um n\u00f3 na \u00e1rvore bin\u00e1ria.\ntype Node struct {\n\tValue int\n\tLeft  *Node\n\tRight *Node\n}\n\n// create constr\u00f3i uma \u00e1rvore bin\u00e1ria a partir de uma lista de strings.\n// Consuma os elementos da lista sempre do in\u00edcio.\n// Voc\u00ea pode obter o primeiro elemento com 'elem := (*parts)[0]'\n// Voc\u00ea pode fazer um \"push_front\" no array usando '*parts = (*parts)[1:]\n// Se o elemento for \"#\", significa que o n\u00f3 \u00e9 nulo.\nfunc create(parts *[]string) *Node {\n\n\tif len(*parts) == 0 {\n\t\treturn nil\n\t}\n\n\telement := (*parts)[0]\n\t*parts = (*parts)[1:]\n\n\tif element == \"#\" {\n\t\treturn nil\n\t}\n\n\tvalue, _ := strconv.Atoi(element)\n\n\treturn &Node{\n\t\tValue: value,\n\t\tLeft:  create(parts),\n\t\tRight: create(parts),\n\t}\n}\n\n// BShow \u00e9 uma fun\u00e7\u00e3o auxiliar para imprimir a \u00e1rvore bin\u00e1ria.\n// Primeira invoca\u00e7\u00e3o de ser com history como uma string vazia.\nfunc BShow(node *Node, history string) {\n\tif node != nil && (node.Left != nil || node.Right != nil) {\n\t\tBShow(node.Left, history+\"l\")\n\t}\n\n\tfor i := 0; i < len(history)-1; i++ {\n\t\tif history[i] != history[i+1] {\n\t\t\tfmt.Print(\"\u2502   \")\n\t\t} else {\n\t\t\tfmt.Print(\"    \")\n\t\t}\n\t}\n\tif history != \"\" {\n\t\tif history[len(history)-1] == 'l' {\n\t\t\tfmt.Print(\"\u256d\u2500\u2500\u2500\")\n\t\t} else {\n\t\t\tfmt.Print(\"\u2570\u2500\u2500\u2500\")\n\t\t}\n\t}\n\tif node == nil {\n\t\tfmt.Println(\"#\")\n\t\treturn\n\t}\n\tfmt.Println(node.Value)\n\tif node.Left != nil || node.Right != nil {\n\t\tBShow(node.Right, history+\"r\")\n\t}\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tparts := strings.Split(line, \" \")\n\troot := create(&parts)\n\tBShow(root, \"\")\n}\n",
+            "lines": "83"
+        }
+    ]
+}

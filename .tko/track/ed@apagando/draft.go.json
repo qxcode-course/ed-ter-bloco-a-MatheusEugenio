@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-18_10-59-11",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strings\"\n)\n\nfunc main() {\n\n\tvar n, quantDeixaramFila int\n\tfmt.Scan(&n)\n\n\tidPessoasDafila := make([]int, n)\n\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&idPessoasDafila[i])\n\t}\n\n\tfmt.Scan(&quantDeixaramFila)\n\n\tidPessoasDeixaramFila := make(map[int]int) // K: [int]; V: int\n\n\tfor i := 0; i < quantDeixaramFila; i++ {\n\t\tvar id int\n\t\tfmt.Scan(&id)\n\t\tidPessoasDeixaramFila[id] = 1\n\t}\n\n\tpessoasQueFicaramNaFila := make([]int, 0)\n\n\tfor _, id := range idPessoasDafila {\n\t\t_, existe := idPessoasDeixaramFila[id]\n\n\t\tif !existe {\n\t\t\tpessoasQueFicaramNaFila = append(pessoasQueFicaramNaFila, id)\n\t\t}\n\t}\n\n\tfmt.Print(strings.Trim(fmt.Sprint(pessoasQueFicaramNaFila), \"[]\"), \" \\n\")\n\n}\n",
+            "lines": "41"
+        }
+    ]
+}

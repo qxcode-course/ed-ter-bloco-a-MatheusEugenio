@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-09_08-55-10",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n, k int\n\tfmt.Scan(&n, &k)\n\tnums := make([]int, n)\n\tfor i := range nums {\n\t\tfmt.Scan(&nums[i])\n\t}\n\n\tvar count int\n\t// TODO: Conte ocorr\u00eancias de k no array\n\tfmt.Println(count)\n}\n\n",
+            "lines": "17"
+        }
+    ]
+}

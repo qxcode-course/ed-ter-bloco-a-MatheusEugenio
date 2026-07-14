@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-09_08-55-10",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math/rand\"\n)\n\nfunc randInt(min, max int) int {\n\treturn min + rand.Intn(max-min+1)\n}\n\nfunc tree(p *Pen, tam float64) {\n\tfator := 0.75\n\tang := 35.0\n\n\tif tam < 10 {\n\t\tif randInt(0, 10) < 1 {\n\t\t\tp.SetColor(255, 0, 0)\n\t\t\tp.DrawCircle(tam)\n\t\t}\n\t\treturn\n\t}\n\tp.SetColor(randInt(0, 255), randInt(0, 255), randInt(0, 255))\n\tp.SetStrokeWidth(int(tam / 10))\n\tp.Walk(tam)\n\tp.Rotate(-ang)\n\ttree(p, tam*fator)\n\tp.Rotate(2 * ang)\n\ttree(p, tam*fator)\n\tp.Rotate(-ang)\n\tp.Walk(-tam)\n}\n\nfunc main() {\n\tpen := NewPen(500, 500)\n\tpen.SetColor(255, 0, 0)\n\tpen.SetPosition(250, 500)\n\tpen.SetHeading(90)\n\ttree(pen, 100)\n\tpen.SaveToFile(\"tree.svg\")\n\tfmt.Println(\"SVG file created successfully.\")\n}\n",
+            "lines": "42"
+        }
+    ]
+}

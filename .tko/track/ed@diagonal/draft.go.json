@@ -1,0 +1,39 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-27_20-10-52",
+            "content": "@@ -61,17 +61,18 @@\n rune) %7B%0A\n-%09\n+  \n if len(s\n@@ -84,21 +84,25 @@\n 0 %7B%0A\n-%09%09\n+    \n return%0A\n-%09%7D%0A%09\n+  %7D%0A  \n // i\n@@ -122,17 +122,18 @@\n cteres%0A%0A\n-%09\n+  \n // impri\n@@ -176,17 +176,18 @@\n a linha%0A\n-%09\n+  \n // fa%C3%A7a \n@@ -195,18 +195,20 @@\n  chamada\n-%0A%09\n+ %0A  \n diagonal\n@@ -238,17 +238,20 @@\n in() %7B%0A%0A\n-%09\n+    \n var pala\n@@ -261,17 +261,20 @@\n  string%0A\n-%09\n+    \n fmt.Scan\n@@ -285,17 +285,20 @@\n lavra)%0A%0A\n-%09\n+    \n tam := l\n@@ -309,17 +309,20 @@\n alavra)%0A\n-%09\n+    \n mat := m\n@@ -345,9 +345,12 @@\n m)%0A%0A\n-%09\n+    \n diag\n@@ -363,15 +363,15 @@\n alavra, \n-mat\n+tam\n )%0A%7D%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-06-27_20-11-03",
+            "content": "@@ -39,27 +39,30 @@\n nal(\n-runes \n+s string, mat %5B%5D\n %5B%5Drune\n-, i int\n ) %7B%0A\n@@ -69,20 +69,16 @@\n %09if len(\n-rune\n s) == 0 \n@@ -120,30 +120,8 @@\n res%0A\n-%09fmt.Println(runes%5Bi%5D)\n %0A%09//\n@@ -203,18 +203,18 @@\n nal(\n-runes, i+1\n+s%5B1:%5D, mat\n )%0A%7D%0A\n@@ -271,19 +271,16 @@\n avra)%0A%0A%09\n-// \n tam := l\n@@ -296,19 +296,8 @@\n a)%0A%09\n-i := 0%0A%09// \n mat \n@@ -321,37 +321,8 @@\n  tam\n-, i)%0A%09runes := %5B%5Drune(palavra\n )%0A%0A%09\n@@ -334,16 +334,20 @@\n nal(\n-runes, i\n+palavra, mat\n )%0A%7D%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-06-27_20-17-13",
+            "content": "@@ -39,19 +39,23 @@\n nal(\n-s string, k\n+runes %5B%5Drune, i\n  int\n@@ -66,16 +66,20 @@\n %09if len(\n+rune\n s) == 0 \n@@ -92,17 +92,16 @@\n turn%0A%09%7D%0A\n-%0A\n %09// impr\n@@ -123,51 +123,28 @@\n s%0A%09f\n-or i := 0; i %3C k; i++ %7B%0A%09%09fmt.Print(%22 %22)%0A%09%7D\n+mt.Println(runes%5Bi%5D)\n %0A%09//\n@@ -197,27 +197,8 @@\n nha%0A\n-%09fmt.Println(s%5B0%5D)%0A\n %09// \n@@ -226,16 +226,16 @@\n nal(\n-s%5B1:%5D, k\n+runes, i\n +1)%0A\n@@ -298,32 +298,115 @@\n )%0A%0A%09\n-i := 0%0A%09diagonal(palavra\n+// tam := len(palavra)%0A%09i := 0%0A%09// mat := make(%5B%5D%5B%5Drune, tam, i)%0A%09runes := %5B%5Drune(palavra)%0A%0A%09diagonal(runes\n , i)\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-06-27_20-20-51",
+            "content": "@@ -226,19 +226,13 @@\n tln(\n-rune(\n s%5B0%5D)\n-)\n %0A%09//\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-06-27_20-21-08",
+            "content": "@@ -347,56 +347,24 @@\n  0%0A%09\n-runes := %5B%5Drune(palavra)%0A%09diagonal(string(runes)\n+diagonal(palavra\n , i)\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-06-27_20-21-46",
+            "content": "@@ -152,25 +152,24 @@\n int(%22 %22)%0A%09%7D%0A\n-%0A\n %09// imprima \n@@ -222,22 +222,20 @@\n Println(\n-string\n+rune\n (s%5B0%5D))%0A\n@@ -347,24 +347,56 @@\n  0%0A%09\n-diagonal(palavra\n+runes := %5B%5Drune(palavra)%0A%09diagonal(string(runes)\n , i)\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-06-27_20-23-17",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc diagonal(s string, k int) {\n\tif len(s) == 0 {\n\t\treturn\n\t}\n\n\t// imprima k caracteres\n\tfor i := 0; i < k; i++ {\n\t\tfmt.Print(\" \")\n\t}\n\n\t// imprima o primeiro caractere de s e pule a linha\n\tfmt.Println(string(s[0]))\n\t// fa\u00e7a a chamada\n\tdiagonal(s[1:], k+1)\n}\n\nfunc main() {\n\n\tvar palavra string\n\tfmt.Scan(&palavra)\n\n\ti := 0\n\tdiagonal(palavra, i)\n}\n",
+            "lines": "28"
+        }
+    ]
+}

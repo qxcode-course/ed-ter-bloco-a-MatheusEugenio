@@ -1,0 +1,27 @@
+2026-06-17 10:21:27, MOVE, v:1, k:ed@subset_sum, mode:PICK
+2026-06-17 10:21:31, EXEC, v:1, k:ed@subset_sum, mode:FULL, rate:100
+2026-06-17 10:21:34, MOVE, v:1, k:ed@subset_sum, mode:BACK
+2026-06-17 10:21:36, MOVE, v:1, k:ed@distancia, mode:PICK
+2026-06-17 10:21:38, EXEC, v:1, k:ed@distancia, mode:FULL, size:133, fail:COMP
+2026-06-17 10:24:14, EXEC, v:1, k:ed@distancia, mode:FULL, rate:28, size:134
+2026-06-17 10:25:26, MOVE, v:1, k:ed@distancia, mode:BACK
+2026-06-17 10:25:38, MOVE, v:1, k:ed@serial, mode:PICK
+2026-06-17 10:27:32, EXEC, v:1, k:ed@serial, mode:FULL, rate:0, size:65
+2026-06-17 10:25:38, MOVE, v:1, k:ed@serial, mode:EDIT
+2026-06-17 10:25:43, MOVE, v:1, k:ed@serial, mode:EDIT
+2026-06-17 10:27:31, MOVE, v:1, k:ed@serial, mode:EDIT
+2026-06-17 10:31:24, MOVE, v:1, k:ed@serial, mode:BACK
+2026-06-17 10:31:35, MOVE, v:1, k:ed@serial, mode:PICK
+2026-06-17 10:37:39, MOVE, v:1, k:ed@serial, mode:BACK
+2026-06-17 10:37:54, MOVE, v:1, k:ed@bst_insert, mode:DOWN
+2026-06-17 10:38:04, MOVE, v:1, k:ed@bst_insert, mode:PICK
+2026-06-17 10:37:54, MOVE, v:1, k:ed@bst_insert, mode:EDIT
+2026-06-17 10:38:06, MOVE, v:1, k:ed@bst_insert, mode:EDIT
+2026-06-17 10:42:27, MOVE, v:1, k:ed@bst_insert, mode:EDIT
+2026-06-17 10:48:51, MOVE, v:1, k:ed@bst_insert, mode:BACK
+2026-06-17 10:49:14, MOVE, v:1, k:ed@serial, mode:PICK
+2026-06-17 10:49:17, EXEC, v:1, k:ed@serial, mode:FULL, rate:0
+2026-06-17 10:49:16, MOVE, v:1, k:ed@serial, mode:EDIT
+2026-06-17 11:00:33, MOVE, v:1, k:ed@bst_insert, mode:EDIT
+2026-06-17 11:05:14, MOVE, v:1, k:ed@bst_insert, mode:EDIT
+2026-06-17 11:09:22, MOVE, v:1, k:ed@serial, mode:BACK

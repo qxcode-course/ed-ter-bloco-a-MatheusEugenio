@@ -1,0 +1,54 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-26_19-34-49",
+            "content": "@@ -27,24 +27,18 @@\n %0A%0Afunc s\n-omatorio\n+la\n (vetNumb\n@@ -52,398 +52,36 @@\n nt, \n-valSoma int, somaTemp int, index int) bool%7B%0A%0A    if somaTemp == valSoma%7B%0A        return true%0A    %7D%0A%0A    if somaTemp %3E valSoma%7B%0A        return false%0A    %7D%0A%0A%0A    if somaTemp %3C= valSoma%7B%0A        somaTemp += vetNumbers%5Bindex%5D%0A    %7D%0A        %0A    if index %3E= len(vetNumbers)%7B%0A        return false%0A    %7D%0A    %0A    if somatorio(vetNumbers, valSoma, somaTemp, index+1)%7B%0A        return true%0A    %7D%0A    \n+somados map%5Bint%5Dbool) bool%7B%0A\n %0A   \n@@ -292,60 +292,58 @@\n soma\n-temp := 0%0A    if somatorio(vet, valSoma, somatemp, 0\n+dos := make(map%5Bint%5Dbool)%0A%0A    if sla(vet, somados\n )%7B%0A \n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-05-26_20-04-44",
+            "content": "@@ -96,21 +96,23 @@\n nt) bool\n- \n %7B%0A%0A\n-%09\n+    \n if somaT\n@@ -117,37 +117,42 @@\n aTemp == valSoma\n- \n %7B%0A\n-%09%09\n+        \n return true%0A%09%7D%0A%0A\n@@ -143,29 +143,35 @@\n return true%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A    \n if somaTemp \n@@ -183,41 +183,18 @@\n Soma\n- %7C%7C index %3E= len(vetNumbers) %7B%0A%09%09\n+%7B%0A        \n retu\n@@ -202,21 +202,28 @@\n n false%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A%0A    \n if somaT\n@@ -236,38 +236,140 @@\n  valSoma\n- \n %7B%0A\n-%09%09return true%0A%09%7D%0A%0A%09\n+        somaTemp += vetNumbers%5Bindex%5D%0A    %7D%0A        %0A    if index %3E= len(vetNumbers)%7B%0A        return false%0A    %7D%0A    %0A    \n if somat\n@@ -406,26 +406,8 @@\n Temp\n-+vetNumbers%5Bindex%5D\n , in\n@@ -412,21 +412,26 @@\n index+1)\n- \n %7B%0A\n-%09%09\n+        \n return t\n@@ -434,21 +434,31 @@\n rn true%0A\n-%09%7D%0A%0A%09\n+    %7D%0A    %0A    \n return f\n@@ -465,16 +465,17 @@\n alse%0A%7D%0A%0A\n+%0A\n func mai\n@@ -480,18 +480,25 @@\n ain() %7B%0A\n-%0A%09\n+    %0A    \n var n in\n@@ -495,25 +495,28 @@\n   var n int%0A\n-%09\n+    \n fmt.Scan(&n)\n@@ -517,17 +517,20 @@\n an(&n)%0A%0A\n-%09\n+    \n var valS\n@@ -537,17 +537,20 @@\n oma int%0A\n-%09\n+    \n fmt.Scan\n@@ -561,17 +561,20 @@\n lSoma)%0A%0A\n-%09\n+    \n vet := m\n@@ -587,17 +587,20 @@\n int, 0)%0A\n-%09\n+    \n for i :=\n@@ -613,21 +613,26 @@\n %3C n; i++\n- \n %7B%0A\n-%09%09\n+        \n fmt.Scan\n@@ -645,13 +645,19 @@\n i%5D)%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A    \n soma\n@@ -666,17 +666,20 @@\n mp := 0%0A\n-%09\n+    \n if somat\n@@ -709,21 +709,26 @@\n temp, 0)\n- \n %7B%0A\n-%09%09\n+        \n fmt.Prin\n@@ -743,20 +743,28 @@\n e%22)%0A\n-%09%7D \n+    %7D\n else %7B%0A\n-%09%09\n+        \n fmt.\n@@ -784,9 +784,12 @@\n e%22)%0A\n-%09\n+    \n %7D%0A%0A%7D\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-05-26_20-06-48",
+            "content": "@@ -356,82 +356,8 @@\n %09%7D%0A%0A\n-%09if somatorio(vetNumbers, valSoma, somaTemp, index+1) %7B%0A%09%09return true%0A%09%7D%0A%0A\n %09ret\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-05-26_20-07-38",
+            "content": "@@ -348,28 +348,20 @@\n rn true%0A\n-%0A\n %09%7D\n- else %7B%0A%09\n+%0A%0A\n %09if soma\n@@ -410,17 +410,16 @@\n +1) %7B%0A%09%09\n-%09\n return t\n@@ -426,12 +426,8 @@\n rue%0A\n-%09%09%7D%0A\n %09%7D%0A%0A\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-05-26_20-08-46",
+            "content": "@@ -217,19 +217,16 @@\n se%0A%09%7D%0A%0A%09\n-// \n if somaT\n@@ -243,19 +243,16 @@\n Soma %7B%0A%09\n-// \n %09return \n@@ -261,11 +261,8 @@\n ue%0A%09\n-// \n %7D%0A%0A%09\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-05-26_20-10-48",
+            "content": "@@ -213,24 +213,27 @@\n  false%0A%09%7D%0A%0A%09\n+// \n if somaTemp \n@@ -246,17 +246,43 @@\n Soma %7B%0A%09\n-%09\n+// %09return true%0A%09// %7D%0A%0A%09if \n somatori\n@@ -340,16 +340,18 @@\n index+1)\n+ %7B\n %0A%09%09retur\n@@ -349,36 +349,44 @@\n %7B%0A%09%09return true%0A\n+%0A\n %09%7D\n-%0A%0A\n+ else %7B%0A%09\n %09if somatorio(ve\n@@ -419,32 +419,33 @@\n p, index+1) %7B%0A%09%09\n+%09\n return true%0A%09%7D%0A%0A\n@@ -436,24 +436,28 @@\n return true%0A\n+%09%09%7D%0A\n %09%7D%0A%0A%09return \n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-05-26_20-13-03",
+            "content": "@@ -520,17 +520,17 @@\n (%5B%5Dint, \n-n\n+0\n )%0A%09for i\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-05-26_20-14-59",
+            "content": "@@ -212,32 +212,56 @@\n n false%0A%09%7D%0A%0A%09if \n+somaTemp %3C= valSoma %7B%0A%09%09\n somatorio(vetNum\n@@ -303,34 +303,32 @@\n index%5D, index+1)\n- %7B\n %0A%09%09return true%0A%09\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-05-26_20-16-16",
+            "content": "@@ -547,24 +547,39 @@\n vet%5Bi%5D)%0A%09%7D%0A%0A\n+%09somatemp := 0%0A\n %09if somatori\n@@ -594,17 +594,24 @@\n alSoma, \n-0\n+somatemp\n , 0) %7B%0A%09\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-05-27_12-04-59",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc somatorio(vetNumbers []int, valSoma int, somaTemp int, index int) bool {\n\n\tif somaTemp == valSoma {\n\t\treturn true\n\t}\n\n\tif somaTemp > valSoma || index >= len(vetNumbers) {\n\t\treturn false\n\t}\n\n\tif somatorio(vetNumbers, valSoma, somaTemp+vetNumbers[index], index+1) {\n\t\treturn true\n\t}\n\n\tif somatorio(vetNumbers, valSoma, somaTemp, index+1) {\n\t\treturn true\n\t}\n\n\treturn false\n}\n\nfunc main() {\n\n\tvar n int\n\tfmt.Scan(&n)\n\n\tvar valSoma int\n\tfmt.Scan(&valSoma)\n\n\tvet := make([]int, n)\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&vet[i])\n\t}\n\n\tif somatorio(vet, valSoma, 0, 0) {\n\t\tfmt.Println(\"true\")\n\t} else {\n\t\tfmt.Println(\"false\")\n\t}\n\n}\n",
+            "lines": "45"
+        }
+    ]
+}

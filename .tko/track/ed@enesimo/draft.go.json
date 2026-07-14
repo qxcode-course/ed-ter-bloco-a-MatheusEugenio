@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-18_11-05-20",
+            "content": "@@ -31,329 +31,42 @@\n nc e\n-hPrimoAux(n int, divisor int) bool %7B%0A%0A%09if divisor == 1 %7B%0A%09%09return true%0A%09%7D%0A%0A%09if n%25divisor == 0 %7B%0A%09%09return false%0A%09%7D%0A%09return ehPrimoAux(n, divisor-1)%0A%7D%0A%0Afunc ehPrimo(n int) bool %7B%0A%0A%09if n %3C= 1 %7B%0A%09%09return false%0A%09%7D%0A%0A%09return ehPrimoAux(n, n-1)%0A%7D%0A%0Afunc encontrarPrimo(n int, atual int) int %7B%0A%0A%09if ehPrimo(atual) %7B%0A%09\n+nesimo(n int) int %7B%0A%0A\n %09if n \n-== 1\n+%3C= 0\n  %7B%0A\n-%09\n %09%09re\n@@ -74,94 +74,15 @@\n urn \n-atual%0A%09%09%7D%0A%09%09return encontrarPrimo(n-1, atual+1)%0A%09%7D%0A%0A%09return encontrarPrimo(n, atual+1)\n+0%0A%09%7D%0A%0A%0A\n %0A%7D%0A%0A\n@@ -95,16 +95,17 @@\n ain() %7B%0A\n+%0A\n %09var n i\n@@ -122,16 +122,26 @@\n an(&n)%0A%09\n+%0A    %0A    \n fmt.Prin\n@@ -150,25 +150,15 @@\n n(en\n-contrarPr\n+es\n imo(n\n-, 2\n ))%0A%7D\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-05-18_11-08-49",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc ehPrimoAux(n int, divisor int) bool {\n\n\tif divisor == 1 {\n\t\treturn true\n\t}\n\n\tif n%divisor == 0 {\n\t\treturn false\n\t}\n\treturn ehPrimoAux(n, divisor-1)\n}\n\nfunc ehPrimo(n int) bool {\n\n\tif n <= 1 {\n\t\treturn false\n\t}\n\n\treturn ehPrimoAux(n, n-1)\n}\n\nfunc encontrarPrimo(n int, atual int) int {\n\n\tif ehPrimo(atual) {\n\t\tif n == 1 {\n\t\t\treturn atual\n\t\t}\n\t\treturn encontrarPrimo(n-1, atual+1)\n\t}\n\n\treturn encontrarPrimo(n, atual+1)\n}\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\tfmt.Println(encontrarPrimo(n, 2))\n}\n",
+            "lines": "42"
+        }
+    ]
+}

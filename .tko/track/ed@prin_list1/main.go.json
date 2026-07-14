@@ -1,0 +1,99 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-02_11-21-26",
+            "content": "@@ -24,19 +24,16 @@\n %09%22fmt%22%0A%09\n-// \n %22strings\n@@ -348,17 +348,16 @@\n chosen)%0A\n-%0A\n %09l := Ne\n@@ -370,17 +370,16 @@\n %5Bint%5D()%0A\n-%0A\n %09for i :\n@@ -418,17 +418,16 @@\n k(i)%0A%09%7D%0A\n-%0A\n %09sword :\n@@ -490,17 +490,16 @@\n ord)%0A%09%7D%0A\n-%0A\n %09for ran\n@@ -597,12 +597,11 @@\n rd)%0A\n+\n %09%7D%0A\n-%0A\n %09fmt\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-05-02_12-08-53",
+            "content": "@@ -326,19 +326,16 @@\n hosen)%0A%09\n-// \n fmt.Prin\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-05-02_12-10-19",
+            "content": "@@ -250,17 +250,16 @@\n %5Bint%5D %7B%0A\n-%0A\n %09return \n@@ -325,17 +325,16 @@\n chosen)%0A\n-%0A\n %09// fmt.\n@@ -475,39 +475,8 @@\n 1 %7B%0A\n-%09%09fmt.Println(ToStr(l, sword))%0A\n %09%09sw\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-05-02_12-13-26",
+            "content": "@@ -477,33 +477,8 @@\n 1 %7B%0A\n-%09%09sword = Next(l, sword)%0A\n %09%09fm\n@@ -504,16 +504,41 @@\n sword))%0A\n+%09%09sword = Next(l, sword)%0A\n %09%7D%0A%0A%09for\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-05-02_12-13-36",
+            "content": "@@ -23,16 +23,30 @@\n %0A%09%22fmt%22%0A\n+%09// %22strings%22%0A\n )%0A%0A// mo\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-05-02_12-15-32",
+            "content": "@@ -141,18 +141,10 @@\n urn \n-l.String()\n+%22%22\n %0A%7D%0A%0A\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-05-02_12-16-14",
+            "content": "@@ -27,19 +27,8 @@\n mt%22%0A\n-%09%22strconv%22%0A\n )%0A%0A/\n@@ -133,258 +133,26 @@\n g %7B%0A\n-%0A%09saida := %22%5B %22%0A%0A%09nodeAtual := l.root.next%0A%09for nodeAtual != l.root %7B%0A%0A%09%09if nodeAtual == sword %7B%0A%09%09%09saida += strconv.Itoa(nodeAtual.Value) + %22%3E %22%0A%09%09%7D%0A%0A%09%09saida += strconv.Itoa(nodeAtual.Value) + %22 %22%0A%09%09nodeAtual = nodeAtual.next%0A%09%7D%0A%0A%09return saida + %22%5D%22\n+%09return l.String()\n %0A%7D%0A%0A\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-05-02_12-22-35",
+            "content": "@@ -293,17 +293,10 @@\n %0A%09%09%7D\n- else %7B%0A%09\n+%0A%0A\n %09%09sa\n@@ -338,21 +338,16 @@\n ) + %22 %22%0A\n-%09%09%7D%0A%0A\n %09%09nodeAt\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-05-02_12-22-52",
+            "content": "@@ -749,19 +749,16 @@\n word)%0A%09%09\n-// \n fmt.Prin\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-05-02_12-23-30",
+            "content": "@@ -182,18 +182,46 @@\n oot.next\n+%0A%09for nodeAtual != l.root %7B\n %0A%0A\n+%09\n %09if node\n@@ -237,16 +237,17 @@\n sword %7B%0A\n+%09\n %09%09saida \n@@ -286,16 +286,17 @@\n  + %22%3E %22%0A\n+%09\n %09%7D else \n@@ -299,16 +299,17 @@\n lse %7B%0A%09%09\n+%09\n saida +=\n@@ -345,20 +345,22 @@\n ) + %22 %22%0A\n+%09\n %09%7D%0A%0A\n+%09\n %09nodeAtu\n@@ -378,16 +378,19 @@\n ual.next\n+%0A%09%7D\n %0A%0A%09retur\n@@ -743,24 +743,58 @@\n t(l, sword)%0A\n+%09%09// fmt.Println(ToStr(l, sword))%0A\n %09%7D%0A%0A%09for ran\n",
+            "lines": "59"
+        },
+        {
+            "label": "2026-05-02_12-24-53",
+            "content": "@@ -186,38 +186,10 @@\n next\n-%0A%09for nodeAtual != l.root %7B\n %0A%0A\n-%09\n %09if \n@@ -209,17 +209,16 @@\n sword %7B%0A\n-%09\n %09%09saida \n@@ -257,17 +257,16 @@\n  + %22%3E %22%0A\n-%09\n %09%7D else \n@@ -269,17 +269,16 @@\n lse %7B%0A%09%09\n-%09\n saida +=\n@@ -318,14 +318,12 @@\n %22 %22%0A\n-%09\n %09%7D%0A%0A\n-%09\n %09nod\n@@ -345,19 +345,16 @@\n ual.next\n-%0A%09%7D\n %0A%0A%09retur\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-05-02_12-25-12",
+            "content": "@@ -504,98 +504,8 @@\n  %7B%0A%0A\n-%09if it.Next() != it.root %7B%0A%09%09l.Erase(it.Next())%0A%09%09return it.next%0A%09%7D else %7B%0A%09%09return it%0A%09%7D%0A\n %09ret\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-05-02_12-34-41",
+            "content": "@@ -548,16 +548,33 @@\n Next())%0A\n+%09%09return it.next%0A\n %09%7D else \n@@ -590,25 +590,24 @@\n n it%0A%09%7D%0A\n-%0A\n %09return \n it.next%0A\n@@ -598,23 +598,19 @@\n %09return \n-it.next\n+nil\n %0A%7D%0A%0Afunc\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-05-02_12-35-31",
+            "content": "@@ -500,17 +500,16 @@\n int%5D %7B%0A%0A\n-%0A\n %09if it.N\n@@ -776,17 +776,16 @@\n Front()%0A\n-%0A\n %09for ran\n@@ -883,19 +883,16 @@\n ord))%0A%09%09\n-// \n l.Erase(\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-05-02_15-04-42",
+            "content": "@@ -500,16 +500,17 @@\n int%5D %7B%0A%0A\n+%0A\n %09if it.N\n@@ -553,92 +553,8 @@\n ())%0A\n-%09%7D else if it.Next() == it.root && it.Next().next != l.root %7B%0A%09%09return it.next.next%0A\n %09%7D e\n@@ -883,16 +883,45 @@\n sword))%0A\n+%09%09// l.Erase(Next(l, sword))%0A\n %09%09sword \n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-05-02_15-07-28",
+            "content": "@@ -500,17 +500,16 @@\n int%5D %7B%0A%0A\n-%0A\n %09if it.N\n@@ -548,16 +548,100 @@\n Next())%0A\n+%09%7D else if it.Next() == it.root && it.Next().next != l.root %7B%0A%09%09return it.next.next%0A\n %09%7D else \n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-05-02_15-07-51",
+            "content": "@@ -500,16 +500,17 @@\n int%5D %7B%0A%0A\n+%0A\n %09if it.N\n@@ -553,57 +553,8 @@\n ())%0A\n-%09%7D else if it == l.Back() %7B%0A%09%09l.Erase(l.Front())%0A\n %09%7D e\n",
+            "lines": "65"
+        },
+        {
+            "label": "2026-05-02_15-09-57",
+            "content": "@@ -597,28 +597,16 @@\n ront())%0A\n-%09%09return it%0A\n %09%7D else \n",
+            "lines": "66"
+        },
+        {
+            "label": "2026-05-02_15-10-30",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"strconv\"\n)\n\n// mostra a lista com o elemento sword destacado\nfunc ToStr(l *DList[int], sword *DNode[int]) string {\n\n\tsaida := \"[ \"\n\n\tnodeAtual := l.root.next\n\tfor nodeAtual != l.root {\n\n\t\tif nodeAtual == sword {\n\t\t\tsaida += strconv.Itoa(nodeAtual.Value) + \"> \"\n\t\t} else {\n\t\t\tsaida += strconv.Itoa(nodeAtual.Value) + \" \"\n\t\t}\n\n\t\tnodeAtual = nodeAtual.next\n\t}\n\n\treturn saida + \"]\"\n}\n\n// move para frente na lista circular\nfunc Next(l *DList[int], it *DNode[int]) *DNode[int] {\n\n\tif it.Next() != it.root {\n\t\tl.Erase(it.Next())\n\t} else if it == l.Back() {\n\t\tl.Erase(l.Front())\n\t\treturn it\n\t} else {\n\t\treturn it\n\t}\n\n\treturn it.next\n}\n\nfunc main() {\n\tvar qtd, chosen int\n\tfmt.Scan(&qtd, &chosen)\n\n\t// fmt.Println(qtd, chosen)\n\n\tl := NewDList[int]()\n\n\tfor i := 1; i <= qtd; i++ {\n\t\tl.PushBack(i)\n\t}\n\n\tsword := l.Front()\n\n\tfor range chosen - 1 {\n\t\tsword = Next(l, sword)\n\t}\n\n\tfor range qtd - 1 {\n\t\tfmt.Println(ToStr(l, sword))\n\t\tsword = Next(l, sword)\n\t}\n\n\tfmt.Println(ToStr(l, sword))\n}\n",
+            "lines": "67"
+        }
+    ]
+}

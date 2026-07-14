@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-09_08-55-10",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc fatorial(n int) int {\n\t// TODO: Implemente recurs\u00e3o\n\t// Base: n <= 1 -> 1\n\t// Recursivo: n * fatorial(n-1)\n\treturn 0 // Stub\n}\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\tfmt.Println(fatorial(n))\n}\n\n",
+            "lines": "17"
+        }
+    ]
+}

@@ -7,4 +7,3 @@ package-lock.json
 .vscode
 *.tar.gz
 cache
-.tko

@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-27_22-15-24",
+            "content": "@@ -65,38 +65,8 @@\n s%22%0A)\n-%0Atype Pos struct %7B%0A%09l, c int%0A%7D\n %0A%0A//\n@@ -185,30 +185,10 @@\n  %7B%0A%09\n-%0A%09pos := Pos%7Bsr, sc%7D%0A%09\n+//\n %0A%09_ \n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-06-22_16-00-29",
+            "content": "@@ -62,17 +62,16 @@\n ings%22%0A)%0A\n-%0A\n type Pos\n@@ -97,581 +97,8 @@\n %0A%7D%0A%0A\n-func pintar(image %5B%5D%5B%5Dint, i, j int, color int, visitados map%5BPos%5Dbool, colorAtual int) bool %7B%0A%0A%09if i %3C 0 %7C%7C j %3C 0 %7C%7C i %3E= len(image) %7C%7C j %3E= len(image%5B0%5D) %7B%0A%09%09return false%0A%09%7D%0A%0A%09pos := Pos%7Bi, j%7D%0A%09if visitados%5Bpos%5D %7C%7C image%5Bi%5D%5Bj%5D != colorAtual %7B%0A%09%09return false%0A%09%7D%0A%0A%09visitados%5Bpos%5D = true%0A%09image%5Bi%5D%5Bj%5D = color%0A%0A%09if pintar(image, i, j+1, color, visitados, colorAtual) %7C%7C%0A%09%09pintar(image, i, j-1, color, visitados, colorAtual) %7C%7C%0A%09%09pintar(image, i-1, j, color, visitados, colorAtual) %7C%7C%0A%09%09pintar(image, i+1, j, color, visitados, colorAtual) %7B%0A%09%09return true%0A%09%7D%0A%0A%09return false%0A%7D%0A%0A\n // N\n@@ -210,17 +210,18 @@\n %5B%5Dint %7B%0A\n+%09\n %0A\n-\n %09pos := \n@@ -237,207 +237,20 @@\n c%7D%0A%09\n-corAtual := image%5Bpos.l%5D%5Bpos.c%5D%0A%09visitados := make(map%5BPos%5Dbool)%0A%0A%09for i := 0; i %3C len(image); i++ %7B%0A%09%09for j := 0; j %3C len(image%5B0%5D); j++ %7B%0A%0A%09%09%09pintar(image, i, j, color, visitados, corAtual)%0A%09%09%7D%0A%09%7D%0A\n+%0A%09_ := image\n %0A%09re\n@@ -254,21 +254,17 @@\n %09return \n-image\n+0\n %0A%7D%0A%0A// N\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-06-22_16-24-56",
+            "content": "@@ -872,16 +872,93 @@\n %5Dbool)%0A%0A\n+%09for i := 0; i %3C len(image); i++ %7B%0A%09%09for j := 0; j %3C len(image%5B0%5D); j++ %7B%0A%0A%09%09\n %09pintar(\n@@ -968,12 +968,12 @@\n ge, \n-0, 0\n+i, j\n , co\n@@ -998,16 +998,24 @@\n rAtual)%0A\n+%09%09%7D%0A%09%7D%0A%0A\n %09return \n",
+            "lines": "95"
+        },
+        {
+            "label": "2026-06-22_16-25-32",
+            "content": "@@ -891,20 +891,12 @@\n ge, \n-pos.l, pos.c\n+0, 0\n , co\n",
+            "lines": "89"
+        },
+        {
+            "label": "2026-06-22_16-26-04",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc pintar(image [][]int, i, j int, color int, visitados map[Pos]bool, colorAtual int) bool {\n\n\tif i < 0 || j < 0 || i >= len(image) || j >= len(image[0]) {\n\t\treturn false\n\t}\n\n\tpos := Pos{i, j}\n\tif visitados[pos] || image[i][j] != colorAtual {\n\t\treturn false\n\t}\n\n\tvisitados[pos] = true\n\timage[i][j] = color\n\n\tif pintar(image, i, j+1, color, visitados, colorAtual) ||\n\t\tpintar(image, i, j-1, color, visitados, colorAtual) ||\n\t\tpintar(image, i-1, j, color, visitados, colorAtual) ||\n\t\tpintar(image, i+1, j, color, visitados, colorAtual) {\n\t\treturn true\n\t}\n\n\treturn false\n}\n\n// N\u00e3o modifique a assinatura da fun\u00e7\u00e3o floodFill\nfunc floodFill(image [][]int, sr int, sc int, color int) [][]int {\n\n\tpos := Pos{sr, sc}\n\tcorAtual := image[pos.l][pos.c]\n\tvisitados := make(map[Pos]bool)\n\n\tpintar(image, pos.l, pos.c, color, visitados, corAtual)\n\treturn image\n}\n\n// N\u00e3o modifique a fun\u00e7\u00e3o main\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tline := scanner.Text()\n\tparts := strings.Fields(line)\n\tnl, _ := strconv.Atoi(parts[0])\n\tnc, _ := strconv.Atoi(parts[1])\n\n\timage := make([][]int, nl)\n\tfor i := 0; i < nl; i++ {\n\t\tscanner.Scan()\n\t\trowStr := strings.Fields(scanner.Text())\n\t\trow := make([]int, nc)\n\t\tfor j := 0; j < nc; j++ {\n\t\t\trow[j], _ = strconv.Atoi(rowStr[j])\n\t\t}\n\t\timage[i] = row\n\t}\n\n\t// L\u00ea sr, sc e color\n\tscanner.Scan()\n\tparams := strings.Fields(scanner.Text())\n\tsr, _ := strconv.Atoi(params[0])\n\tsc, _ := strconv.Atoi(params[1])\n\tcolor, _ := strconv.Atoi(params[2])\n\n\tresult := floodFill(image, sr, sc, color)\n\n\t// Imprime a matriz resultante\n\tfor _, row := range result {\n\t\tfor j, val := range row {\n\t\t\tif j > 0 {\n\t\t\t\tfmt.Print(\" \")\n\t\t\t}\n\t\t\tfmt.Print(val)\n\t\t}\n\t\tfmt.Println()\n\t}\n}\n",
+            "lines": "89"
+        }
+    ]
+}

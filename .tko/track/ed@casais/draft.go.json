@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-18_10-56-56",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n\n\tvar n int\n\n\tfmt.Scan(&n)\n\n\tanimais := make([]int, n)\n\tvar quantDePares int\n\n\t// semPares := make([]int, n)\n\n\tmacho := 0\n\tfemea := 0\n\n\tfor i := 0; i < n; i++ {\n\n\t\tfmt.Scan(&animais[i])\n\n\t\tif animais[i] > 0 {\n\t\t\tmacho = animais[i]\n\t\t} else {\n\t\t\tfemea = animais[i]\n\t\t}\n\n\t\tif macho != 0 && femea != 0 {\n\t\t\tquantDePares++\n\t\t\tfemea = 0\n\t\t}\n\n\t}\n\n\tfmt.Printf(\"%d\\n\", quantDePares)\n\n}\n",
+            "lines": "40"
+        }
+    ]
+}

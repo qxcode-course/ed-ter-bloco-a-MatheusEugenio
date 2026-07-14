@@ -1,0 +1,204 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-27_17-54-00",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -23,174 +23,53 @@\n mt%22%0A\n-%0A\n func \n-permute(runes %5B%5Drune\n+main(\n ) %7B%0A\n-%0A\n     f\n-or _, r := range runes%7B%0A%0A        %0A    %7D%0A%0A%7D%0A%0Afunc main() %7B%0A%0A%09var s string%0A%09fmt.Scan(&s)%0A%0A%09runes := %5B%5Drune(s)%0A    %0A    permute(runes\n+mt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-07-02_15-08-45",
+            "content": "@@ -28,25 +28,25 @@\n %0Afunc permut\n-a\n+e\n (runes %5B%5Drun\n@@ -50,299 +50,56 @@\n rune\n-, pos_inicial int) %7B%0A%0A%09if pos_inicial != len(runes) %7B%0A%09%09fmt.Println(string(runes))%0A%09%09return%0A%09%7D%0A%0A%09for i := 0; i %3C len(runes); i++ %7B%0A%0A%09%09runes%5Bpos_inicial%5D, runes%5Bi%5D = runes%5Bi%5D, runes%5Bpos_inicial%5D%0A%0A%09%09permuta(runes, pos_inicial+1)%0A%0A%09%09runes%5Bpos_inicial%5D, runes%5Bi%5D = runes%5Bpos_inicial%5D, runes%5Bi%5D%0A%09\n+) %7B%0A%0A    for _, r := range runes%7B%0A%0A        %0A    \n %7D%0A%0A%7D\n@@ -168,25 +168,30 @@\n (s)%0A\n-%09\n+    %0A    \n permut\n-a\n+e\n (runes\n-, 0\n )%0A%7D%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-07-02_16-31-22",
+            "content": "@@ -84,17 +84,18 @@\n inicial \n-%3C\n+!=\n  len(run\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-31-52",
+            "content": "@@ -88,10 +88,9 @@\n ial \n-==\n+%3C\n  len\n@@ -99,16 +99,45 @@\n unes) %7B%0A\n+%09%09fmt.Println(string(runes))%0A\n %09%09return\n@@ -140,18 +140,17 @@\n turn%0A%09%7D%0A\n-%09\n %0A\n+\n %09for i :\n@@ -176,19 +176,17 @@\n ; i++ %7B%0A\n-%09%09\n %0A\n+\n %09%09runes%5B\n@@ -243,39 +243,8 @@\n al%5D%0A\n-%09%09%0A%09%09fmt.Println(string(runes))\n %0A%09%09p\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-33-06",
+            "content": "@@ -88,9 +88,9 @@\n ial \n-!\n+=\n = le\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-33-47",
+            "content": "@@ -84,17 +84,17 @@\n inicial \n-=\n+!\n = len(ru\n@@ -112,17 +112,18 @@\n turn%0A%09%7D%0A\n+%09\n %0A\n-\n %09for i :\n@@ -149,17 +149,19 @@\n ; i++ %7B%0A\n+%09%09\n %0A\n-\n %09%09runes%5B\n@@ -214,17 +214,19 @@\n nicial%5D%0A\n+%09%09\n %0A\n-\n %09%09fmt.Pr\n@@ -307,34 +307,24 @@\n , runes%5Bi%5D =\n- runes%5Bi%5D,\n  runes%5Bpos_i\n@@ -330,16 +330,26 @@\n inicial%5D\n+, runes%5Bi%5D\n %0A%09%7D%0A%0A%7D%0A%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-34-33",
+            "content": "@@ -72,36 +72,8 @@\n  %7B%0A%0A\n-%09fmt.Println(string(runes))%0A\n %09if \n@@ -212,16 +212,45 @@\n icial%5D%0A%0A\n+%09%09fmt.Println(string(runes))%0A\n %09%09permut\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-35-06",
+            "content": "@@ -68,16 +68,44 @@\n int) %7B%0A%0A\n+%09fmt.Println(string(runes))%0A\n %09if pos_\n@@ -143,36 +143,8 @@\n n%0A%09%7D\n-%0A%09fmt.Println(string(runes))\n %0A%0A%09f\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-35-13",
+            "content": "@@ -84,17 +84,18 @@\n inicial \n-%3C\n+==\n  len(run\n@@ -101,16 +101,27 @@\n nes) %7B%0A%09\n+%09return%0A%09%7D%0A\n %09fmt.Pri\n@@ -139,28 +139,16 @@\n (runes))\n-%0A%09%09return%0A%09%7D\n %0A%0A%09for i\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-35-51",
+            "content": "@@ -88,10 +88,9 @@\n ial \n-==\n+%3C\n  len\n@@ -100,10 +100,8 @@\n nes)\n--1\n  %7B%0A%09\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-37-37",
+            "content": "@@ -97,16 +97,18 @@\n n(runes)\n+-1\n  %7B%0A%09%09fmt\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-37-41",
+            "content": "@@ -173,10 +173,8 @@\n nes)\n--1\n ; i+\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-39-08",
+            "content": "@@ -158,17 +158,16 @@\n = 0; i %3C\n-=\n  len(run\n@@ -169,16 +169,18 @@\n n(runes)\n+-1\n ; i++ %7B%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-39-22",
+            "content": "@@ -156,14 +156,15 @@\n  := \n-1\n+0\n ; i %3C\n+=\n  len\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-40-21",
+            "content": "@@ -152,27 +152,17 @@\n or i := \n-pos_inicial\n+1\n ; i %3C le\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-40-40",
+            "content": "@@ -167,12 +167,8 @@\n cial\n- + 1\n ; i \n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-41-37",
+            "content": "@@ -163,16 +163,20 @@\n _inicial\n+ + 1\n ; i %3C le\n@@ -283,16 +283,18 @@\n _inicial\n++1\n )%0A%0A%09%09run\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-42-00",
+            "content": "@@ -283,10 +283,8 @@\n cial\n-+1\n )%0A%0A%09\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-42-08",
+            "content": "@@ -167,12 +167,8 @@\n cial\n- + 2\n ; i \n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-42-22",
+            "content": "@@ -163,16 +163,20 @@\n _inicial\n+ + 2\n ; i %3C le\n@@ -307,18 +307,16 @@\n _inicial\n-+1\n %5D, runes\n@@ -348,18 +348,16 @@\n _inicial\n-+1\n %5D%0A%09%7D%0A%0A%7D%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-42-44",
+            "content": "@@ -295,32 +295,34 @@\n unes%5Bpos_inicial\n++1\n %5D, runes%5Bi%5D = ru\n@@ -346,16 +346,18 @@\n _inicial\n++1\n %5D%0A%09%7D%0A%0A%7D%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-42-53",
+            "content": "@@ -433,13 +433,13 @@\n (runes, \n-1\n+0\n )%0A%7D%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-44-57",
+            "content": "@@ -87,17 +87,26 @@\n cial == \n-0\n+len(runes)\n  %7B%0A%09%09fmt\n@@ -437,9 +437,9 @@\n es, \n-0\n+1\n )%0A%7D%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-45-13",
+            "content": "@@ -88,9 +88,9 @@\n ial \n-!\n+=\n = 0 \n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-45-32",
+            "content": "@@ -88,21 +88,12 @@\n ial \n-== len(runes)\n+!= 0\n  %7B%0A%09\n@@ -341,24 +341,16 @@\n al%5D%0A%09%7D%0A%0A\n-%09return%0A\n %7D%0A%0Afunc \n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-48-09",
+            "content": "@@ -347,24 +347,27 @@\n icial%5D%0A%09\n+%7D%0A%0A\n %09return%0A\n %09%7D%0A%0A%7D%0A%0Af\n@@ -358,20 +358,16 @@\n %09return%0A\n-%09%7D%0A%0A\n %7D%0A%0Afunc \n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-07-02_16-48-29",
+            "content": "@@ -351,17 +351,18 @@\n l%5D%0A%09\n-%7D%0A\n %09return\n+%0A%09%7D\n %0A%0A%7D%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-07-02_16-48-33",
+            "content": "@@ -348,16 +348,24 @@\n cial%5D%0A%09%7D\n+%0A%09return\n %0A%0A%7D%0A%0Afun\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-07-02_16-49-37",
+            "content": "@@ -68,13 +68,8 @@\n int)\n- bool\n  %7B%0A%0A\n@@ -133,30 +133,24 @@\n s))%0A%09%09return\n- false\n %0A%09%7D%0A%0A%09for i \n@@ -253,19 +253,16 @@\n ial%5D%0A%0A%09%09\n-if \n permuta(\n@@ -286,29 +286,8 @@\n l+1)\n- %7B%0A%09%09%09return true%0A%09%09%7D\n %0A%0A%09%09\n@@ -350,23 +350,8 @@\n al%5D%0A\n-%09%09return false%0A\n %09%7D%0A%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-07-02_16-50-22",
+            "content": "@@ -382,19 +382,16 @@\n icial%5D%0A%09\n-%7D%0A%0A\n %09return \n@@ -396,16 +396,20 @@\n n false%0A\n+%09%7D%0A%0A\n %7D%0A%0Afunc \n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-07-02_16-50-32",
+            "content": "@@ -67,33 +67,14 @@\n  int\n-, listaOrdenada %5B%5Dstring)\n+) bool\n  %7B%0A%0A\n@@ -111,46 +111,20 @@\n %7B%0A%09%09\n-listaOrdenada = append(listaOrdenada, \n+fmt.Println(\n stri\n@@ -142,16 +142,22 @@\n %09%09return\n+ false\n %0A%09%7D%0A%0A%09fo\n@@ -264,16 +264,19 @@\n ial%5D%0A%0A%09%09\n+if \n permuta(\n@@ -295,32 +295,38 @@\n nicial+1\n-, listaOrdenada)\n+) %7B%0A%09%09%09return true%0A%09%09%7D\n %0A%0A%09%09rune\n@@ -385,16 +385,30 @@\n al%5D%0A%09%7D%0A%0A\n+%09return false%0A\n %7D%0A%0Afunc \n@@ -471,104 +471,24 @@\n s)%0A%09\n-listaOrdenada := make(%5B%5Dstring, 0)%0A%09permuta(runes, 0, listaOrdenada)%0A%0A%09fmt.Println(listaOrdenada\n+permuta(runes, 0\n )%0A%7D%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-07-02_16-56-31",
+            "content": "@@ -18,28 +18,13 @@\n ort \n-(%0A%09\n %22fmt%22\n-%0A%09%22slices%22%0A)\n %0A%0Afu\n@@ -557,36 +557,8 @@\n a)%0A%0A\n-%09slices.Sort(listaOrdenada)%0A\n %09fmt\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-07-02_17-00-42",
+            "content": "@@ -103,25 +103,16 @@\n %5Dstring)\n- %5B%5Dstring\n  %7B%0A%0A%09if \n@@ -202,30 +202,16 @@\n %09%09return\n- listaOrdenada\n %0A%09%7D%0A%0A%09fo\n@@ -534,32 +534,16 @@\n ng, 0)%0A%09\n-listaOrdenada = \n permuta(\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-07-02_17-00-56",
+            "content": "@@ -457,20 +457,8 @@\n %09%7D%0A%0A\n-%09return nil%0A\n %7D%0A%0Af\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-07-02_17-01-05",
+            "content": "@@ -341,23 +341,16 @@\n ial%5D%0A%0A%09%09\n-return \n permuta(\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-07-02_17-02-39",
+            "content": "@@ -341,31 +341,22 @@\n ial%5D%0A%0A%09%09\n-listaOrdenada =\n+return\n  permuta\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-07-02_17-02-48",
+            "content": "@@ -477,29 +477,19 @@\n %09return \n-listaOrdenada\n+nil\n %0A%7D%0A%0Afunc\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-07-02_17-03-55",
+            "content": "@@ -677,174 +677,34 @@\n da)%0A\n-%0A\n %09f\n-orEach := func(lista %5B%5Dstring, funcao func(string)) %7B%0A%09%09for _, s := range lista %7B%0A%09%09%09funcao(s)%0A%09%09%7D%0A%09%7D%0A%0A%09forEach(listaOrdenada, func(s string) %7B%0A%09%09fmt.Println(s)%0A%09%7D\n+mt.Println(listaOrdenada\n )%0A%7D%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-07-02_17-14-17",
+            "content": "@@ -845,42 +845,6 @@\n %09%7D)%0A\n-%09// que lambda maluca, prefiro java%0A\n %7D%0A\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-07-02_17-14-41",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"slices\"\n)\n\nfunc permuta(runes []rune, pos_inicial int, listaOrdenada []string) []string {\n\n\tif pos_inicial == len(runes) {\n\t\tlistaOrdenada = append(listaOrdenada, string(runes))\n\t\treturn listaOrdenada\n\t}\n\n\tfor i := pos_inicial; i < len(runes); i++ {\n\n\t\trunes[pos_inicial], runes[i] = runes[i], runes[pos_inicial]\n\n\t\tlistaOrdenada = permuta(runes, pos_inicial+1, listaOrdenada)\n\n\t\trunes[pos_inicial], runes[i] = runes[i], runes[pos_inicial]\n\t}\n\n\treturn listaOrdenada\n}\n\nfunc main() {\n\n\tvar s string\n\tfmt.Scan(&s)\n\n\trunes := []rune(s)\n\tlistaOrdenada := make([]string, 0)\n\tlistaOrdenada = permuta(runes, 0, listaOrdenada)\n\n\tslices.Sort(listaOrdenada)\n\n\tforEach := func(lista []string, funcao func(string)) {\n\t\tfor _, s := range lista {\n\t\t\tfuncao(s)\n\t\t}\n\t}\n\n\tforEach(listaOrdenada, func(s string) {\n\t\tfmt.Println(s)\n\t})\n\t// que lambda maluca, prefiro java\n}\n",
+            "lines": "48"
+        }
+    ]
+}

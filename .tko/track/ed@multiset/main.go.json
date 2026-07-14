@@ -1,0 +1,134 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-27_15-21-19",
+            "content": "@@ -57,219 +57,8 @@\n %0A)%0A%0A\n-type MultiSet struct %7B%0A%09data     %5B%5Dint %0A%09size     int%0A%09capacity int%0A%7D%0A%0Afunc NewMultiSet(newCapacity int) *MultiSet%7B%0A%09return &MultiSet%7B%0A%09%09data: make(%5B%5Dint, newCapacity),%0A%09%09size: 0,%0A%09%09capacity: newCapacity,%0A%09%7D%0A%7D%0A%0A\n func\n@@ -348,16 +348,19 @@\n Stdin)%0A%09\n+// \n ms := Ne\n@@ -767,16 +767,16 @@\n %09%09%09// %7D%0A\n+\n %09%09case %22\n@@ -785,28 +785,8 @@\n ow%22:\n-%0A%0A%09%09%09fmt.Println(ms)\n %0A%09%09c\n",
+            "lines": "60"
+        },
+        {
+            "label": "2026-04-27_15-29-24",
+            "content": "@@ -1,8 +1,9 @@\n+%0A\n package \n@@ -91,16 +91,17 @@\n    %5B%5Dint\n+ \n %0A%09size  \n@@ -167,17 +167,16 @@\n MultiSet\n- \n %7B%0A%09retur\n@@ -195,20 +195,16 @@\n %0A%09%09data:\n-    \n  make(%5B%5D\n@@ -229,20 +229,16 @@\n %0A%09%09size:\n-    \n  0,%0A%09%09ca\n@@ -268,89 +268,8 @@\n %0A%7D%0A%0A\n-func (ms *MultiSet) String() string %7B%0A%09return %22%5B%22 + Join(ms.data, %22, %22) + %22%5D%22%0A%7D%0A%0A\n func\n",
+            "lines": "76"
+        },
+        {
+            "label": "2026-04-27_15-30-48",
+            "content": "@@ -42,19 +42,8 @@\n os%22%0A\n-%09%22strconv%22%0A\n %09%22st\n@@ -49,16 +49,16 @@\n trings%22%0A\n+\n )%0A%0Atype \n@@ -275,420 +275,8 @@\n %0A%7D%0A%0A\n-func (ms *MultiSet) Search(value int) (bool, int) %7B%0A%0A%09low, high := 0, ms.size-1%0A%0A%09for low %3C= high %7B%0A%0A%09%09meio := (low + high) / 2%0A%0A%09%09if ms.data%5Bmeio%5D %3C value %7B%0A%09%09%09low = meio + 1%0A%09%09%7D else if ms.data%5Bmeio%5D %3E value %7B%0A%09%09%09high = meio - 1%0A%09%09%7D else %7B%0A%09%09%09return true, meio%0A%09%09%7D%0A%09%7D%0A%0A%09return false, low%0A%7D%0A%0Afunc (ms *MultiSet) insert(value int, index int) error %7B%0A%0A%09return nil%0A%7D%0A%0Afunc (ms *MultiSet) Clear() %7B%0A%09ms.size = 0%0A%7D%0A%0A\n func\n@@ -575,201 +575,8 @@\n %0A%7D%0A%0A\n-func (ms *MultiSet) aumentaCapacidade() %7B%0A%0A%09newCapacity := ms.capacity * 2%0A%09dataRef := make(%5B%5Dint, newCapacity)%0A%0A%09for i, value := range ms.data %7B%0A%09%09dataRef%5Bi%5D = value%0A%09%7D%0A%0A%09ms.data = dataRef%0A%7D%0A%0A\n func\n@@ -895,16 +895,19 @@\n it%22:%0A%09%09%09\n+// \n value, _\n@@ -935,16 +935,19 @@\n %5B1%5D)%0A%09%09%09\n+// \n ms = New\n@@ -1286,17 +1286,16 @@\n nique%22:%0A\n-%0A\n %09%09case %22\n@@ -1306,22 +1306,8 @@\n r%22:%0A\n-%09%09%09ms.Clear()%0A\n %09%09de\n",
+            "lines": "79"
+        },
+        {
+            "label": "2026-04-27_15-45-51",
+            "content": "@@ -652,108 +652,8 @@\n %0A%7D%0A%0A\n-func (ms*MultiSet) Insert() %7B%0A%09%0A%7D%0A%0Afunc (ms*MultiSet) Count(value int) int%7B%0A%09return 0%0A%7D%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A\n func\n@@ -1688,16 +1688,17 @@\n %22show%22:%0A\n+%0A\n %09%09%09fmt.P\n",
+            "lines": "123"
+        },
+        {
+            "label": "2026-04-27_15-51-24",
+            "content": "@@ -29,18 +29,8 @@\n io%22%0A\n-%09%22errors%22%0A\n %09%22fm\n@@ -637,252 +637,8 @@\n  %7B%0A%0A\n-%09if ms.size == ms.capacity%7B%0A%09%09ms.aumentaCapacidade()%0A%09%7D%0A%0A%09if index %3C 0 %7C%7C index %3E ms.capacity%7B%0A%09%09return errors.New(%22index not found%22)%0A%09%7D %0A%0A%09for i := ms.size-1; i %3E= index; i-- %7B%0A%09%09ms.data%5Bi+1%5D = ms.data%5Bi%5D%0A%09%7D%0A%09ms.size++%0A%09ms.data%5Bindex%5D = value%0A\n %09ret\n@@ -678,22 +678,12 @@\n ert(\n-value int\n ) %7B%0A\n-%0A\n %09%0A%7D%0A\n@@ -1142,23 +1142,20 @@\n %7B%0A%0A%09\n-if ms.c\n+newC\n apacity \n == 0\n@@ -1154,43 +1154,11 @@\n ity \n-=\n+:\n = \n-0%7B%0A%09%09ms.capacity = 1%0A%09%7Delse %7B%0A%09%09\n ms.c\n@@ -1170,17 +1170,11 @@\n ty *\n-=\n  2%0A\n-%09%7D%0A %0A\n %09dat\n@@ -1193,20 +1193,20 @@\n (%5B%5Dint, \n-ms.c\n+newC\n apacity)\n",
+            "lines": "141"
+        },
+        {
+            "label": "2026-04-27_16-13-07",
+            "content": "@@ -947,139 +947,8 @@\n %7B%0A%0A%09\n-existe, index := ms.Search(value)%0A%09if existe%7B%0A%09%09//logica de adicionar mais 1 na qtd do n%C3%BAmero%0A%09%7Delse %7B%0A%09%09ms.insert(value, index)%0A%09%7D\n %0A%7D%0A%0A\n",
+            "lines": "161"
+        },
+        {
+            "label": "2026-04-27_16-21-32",
+            "content": "@@ -46,28 +46,14 @@\n mt%22%0A\n-%09%22go/printer%22%0A\n %09%22os%22%0A\n+\n %09%22st\n@@ -676,22 +676,33 @@\n y%7B%0A%09%09ms.\n-expand\n+aumentaCapacidade\n ()%0A%09%7D%0A%0A%09\n@@ -1082,131 +1082,8 @@\n %0A%7D%0A%0A\n-func (ms*MultiSet) Contains(value int) bool%7B%0A%0A%09existe, _ := ms.Search(value)%0A%09if existe%7B%0A%09%09return true%0A%09%7D%0A%09return false%0A%7D%0A%0A\n func\n@@ -1513,14 +1513,25 @@\n et) \n-expand\n+aumentaCapacidade\n () %7B\n@@ -2128,16 +2128,19 @@\n rt%22:%0A%09%09%09\n+// \n for _, p\n@@ -2166,16 +2166,19 @@\n :%5D %7B%0A%09%09%09\n+// \n %09value, \n@@ -2208,29 +2208,11 @@\n %0A%09%09%09\n-%09ms.Insert(value)%0A%09%09%09\n+// \n %7D%0A%09%09\n@@ -2317,24 +2317,27 @@\n ntains%22:%0A%09%09%09\n+// \n value, _ := \n@@ -2362,100 +2362,8 @@\n 1%5D)%0A\n-%09%09%09if ms.Contains(value) %7B%0A%09%09%09%09fmt.Println(%22true%22)%0A%09%09%09%7Delse %7B%0A%09%09%09%09fmt.Println(%22false%22)%0A%09%09%09%7D%0A\n %09%09ca\n@@ -2435,12 +2435,8 @@\n e%22:%0A\n-%09%09%09%09\n %0A%09%09c\n",
+            "lines": "166"
+        },
+        {
+            "label": "2026-04-27_16-34-29",
+            "content": "@@ -42,16 +42,30 @@\n %0A%09%22fmt%22%0A\n+%09%22go/printer%22%0A\n %09%22os%22%0A%09%22\n@@ -2647,16 +2647,20 @@\n nique%22:%0A\n+%09%09%09%09\n %0A%09%09case \n",
+            "lines": "182"
+        },
+        {
+            "label": "2026-04-27_16-35-55",
+            "content": "@@ -665,25 +665,24 @@\n  ms.capacity\n- \n %7B%0A%09%09ms.expan\n@@ -725,17 +725,16 @@\n capacity\n- \n %7B%0A%09%09retu\n@@ -768,16 +768,17 @@\n und%22)%0A%09%7D\n+ \n %0A%0A%09for i\n@@ -788,19 +788,17 @@\n  ms.size\n- - \n+-\n 1; i %3E= \n@@ -891,33 +891,32 @@\n  nil%0A%7D%0A%0Afunc (ms\n- \n *MultiSet) Inser\n@@ -972,25 +972,24 @@\n )%0A%09if existe\n- \n %7B%0A%09%09//logica\n@@ -1031,38 +1031,9 @@\n ro%0A%09\n-%09ms.insert(value, index+1)%0A%09%7D \n+%7D\n else\n@@ -1067,33 +1067,32 @@\n )%0A%09%7D%0A%7D%0A%0Afunc (ms\n- \n *MultiSet) Conta\n@@ -1110,17 +1110,16 @@\n nt) bool\n- \n %7B%0A%0A%09exis\n@@ -1154,17 +1154,16 @@\n f existe\n- \n %7B%0A%09%09retu\n@@ -1190,33 +1190,32 @@\n alse%0A%7D%0A%0Afunc (ms\n- \n *MultiSet) Count\n@@ -1229,17 +1229,16 @@\n int) int\n- \n %7B%0A%09retur\n@@ -1240,24 +1240,35 @@\n return 0%0A%7D%0A%0A\n+%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A\n func (ms *Mu\n@@ -1649,25 +1649,24 @@\n apacity == 0\n- \n %7B%0A%09%09ms.capac\n@@ -1675,17 +1675,16 @@\n y = 1%0A%09%7D\n- \n else %7B%0A%09\n@@ -1704,16 +1704,17 @@\n *= 2%0A%09%7D%0A\n+ \n %0A%09dataRe\n@@ -2523,17 +2523,16 @@\n e%22)%0A%09%09%09%7D\n- \n else %7B%0A%09\n",
+            "lines": "181"
+        },
+        {
+            "label": "2026-04-27_16-36-32",
+            "content": "@@ -665,24 +665,25 @@\n  ms.capacity\n+ \n %7B%0A%09%09ms.expan\n@@ -726,16 +726,17 @@\n capacity\n+ \n %7B%0A%09%09retu\n@@ -770,17 +770,16 @@\n und%22)%0A%09%7D\n- \n %0A%0A%09for i\n@@ -789,17 +789,19 @@\n  ms.size\n--\n+ - \n 1; i %3E= \n@@ -894,32 +894,33 @@\n  nil%0A%7D%0A%0Afunc (ms\n+ \n *MultiSet) Inser\n@@ -976,24 +976,25 @@\n )%0A%09if existe\n+ \n %7B%0A%09%09//logica\n@@ -1049,25 +1049,29 @@\n t(value,\n+ \n index\n++1\n )%0A%09%7D\n+ \n else %7B%0A%09\n@@ -1101,32 +1101,33 @@\n )%0A%09%7D%0A%7D%0A%0Afunc (ms\n+ \n *MultiSet) Conta\n@@ -1145,16 +1145,17 @@\n nt) bool\n+ \n %7B%0A%0A%09exis\n@@ -1190,16 +1190,17 @@\n f existe\n+ \n %7B%0A%09%09retu\n@@ -1235,16 +1235,17 @@\n func (ms\n+ \n *MultiSe\n@@ -1267,16 +1267,17 @@\n int) int\n+ \n %7B%0A%09retur\n@@ -1283,27 +1283,16 @@\n rn 0%0A%7D%0A%0A\n-%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A\n func (ms\n@@ -1681,16 +1681,17 @@\n ity == 0\n+ \n %7B%0A%09%09ms.c\n@@ -1704,16 +1704,17 @@\n y = 1%0A%09%7D\n+ \n else %7B%0A%09\n@@ -1734,17 +1734,16 @@\n *= 2%0A%09%7D%0A\n- \n %0A%09dataRe\n@@ -2552,16 +2552,17 @@\n e%22)%0A%09%09%09%7D\n+ \n else %7B%0A%09\n",
+            "lines": "171"
+        },
+        {
+            "label": "2026-04-27_16-36-54",
+            "content": "@@ -665,25 +665,24 @@\n  ms.capacity\n- \n %7B%0A%09%09ms.expan\n@@ -725,17 +725,16 @@\n capacity\n- \n %7B%0A%09%09retu\n@@ -768,16 +768,17 @@\n und%22)%0A%09%7D\n+ \n %0A%0A%09for i\n@@ -788,19 +788,17 @@\n  ms.size\n- - \n+-\n 1; i %3E= \n@@ -891,33 +891,32 @@\n  nil%0A%7D%0A%0Afunc (ms\n- \n *MultiSet) Inser\n@@ -972,25 +972,24 @@\n )%0A%09if existe\n- \n %7B%0A%09%09//logica\n@@ -1036,33 +1036,32 @@\n ms.insert(value,\n- \n index)%0A%09%7D else %7B\n@@ -1053,17 +1053,16 @@\n ndex)%0A%09%7D\n- \n else %7B%0A%09\n@@ -1092,33 +1092,32 @@\n )%0A%09%7D%0A%7D%0A%0Afunc (ms\n- \n *MultiSet) Conta\n@@ -1135,17 +1135,16 @@\n nt) bool\n- \n %7B%0A%0A%09exis\n@@ -1179,17 +1179,16 @@\n f existe\n- \n %7B%0A%09%09retu\n@@ -1215,33 +1215,32 @@\n alse%0A%7D%0A%0Afunc (ms\n- \n *MultiSet) Count\n@@ -1254,17 +1254,16 @@\n int) int\n- \n %7B%0A%09retur\n@@ -1265,24 +1265,35 @@\n return 0%0A%7D%0A%0A\n+%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A\n func (ms *Mu\n@@ -1394,20 +1394,8 @@\n data\n-%5B:ms.size-1%5D\n , %22,\n@@ -1674,25 +1674,24 @@\n apacity == 0\n- \n %7B%0A%09%09ms.capac\n@@ -1700,17 +1700,16 @@\n y = 1%0A%09%7D\n- \n else %7B%0A%09\n@@ -1729,16 +1729,17 @@\n *= 2%0A%09%7D%0A\n+ \n %0A%09dataRe\n@@ -2548,17 +2548,16 @@\n e%22)%0A%09%09%09%7D\n- \n else %7B%0A%09\n",
+            "lines": "182"
+        },
+        {
+            "label": "2026-04-27_16-37-33",
+            "content": "@@ -1400,16 +1400,18 @@\n :ms.size\n+-1\n %5D, %22, %22)\n",
+            "lines": "171"
+        },
+        {
+            "label": "2026-04-27_16-37-41",
+            "content": "@@ -742,37 +742,37 @@\n urn errors.New(%22\n-value\n+index\n  not found%22)%0A%09%7D%0A\n@@ -1103,480 +1103,8 @@\n %0A%7D%0A%0A\n-func (ms *MultiSet) erase(index int) error %7B%0A%0A%09if index %3C 0 %7C%7C index %3E ms.capacity %7B%0A%09%09return errors.New(%22value not found%22)%0A%09%7D%0A%0A%09for i := index; i %3C ms.size; i++ %7B%0A%09%09ms.data%5Bi%5D = ms.data%5Bi+1%5D%0A%09%09ms.size--%0A%09%7D%0A%09return nil%0A%7D%0A%0Afunc (ms *MultiSet) Erase(value int) error %7B%0A%0A%09existe, index := ms.Search(value)%0A%09if existe %7B%0A%09%09err := ms.erase(index)%0A%09%09if err != nil %7B%0A%09%09%09return errors.New(%22value not found%22)%0A%09%09%7D else %7B%0A%09%09%09return nil%0A%09%09%7D%0A%09%7D%0A%09return errors.New(%22value not found%22)%0A%7D%0A%0A\n func\n@@ -1221,24 +1221,24 @@\n rn false%0A%7D%0A%0A\n+\n func (ms *Mu\n@@ -1268,17 +1268,16 @@\n ) int %7B%0A\n-%0A\n %09return \n",
+            "lines": "171"
+        },
+        {
+            "label": "2026-04-27_17-14-16",
+            "content": "@@ -1255,18 +1255,16 @@\n  ms.size\n--1\n ; i++ %7B%0A\n",
+            "lines": "199"
+        },
+        {
+            "label": "2026-04-27_17-14-48",
+            "content": "@@ -1247,25 +1247,24 @@\n dex; i %3C\n-=\n  ms.size\n ; i++ %7B%0A\n@@ -1255,16 +1255,18 @@\n  ms.size\n+-1\n ; i++ %7B%0A\n",
+            "lines": "199"
+        },
+        {
+            "label": "2026-04-27_17-15-05",
+            "content": "@@ -1247,16 +1247,17 @@\n dex; i %3C\n+=\n  ms.size\n",
+            "lines": "199"
+        },
+        {
+            "label": "2026-04-27_17-17-15",
+            "content": "@@ -1292,18 +1292,16 @@\n a%5Bi+1%5D%0A%09\n-%7D%0A\n %09ms.size\n@@ -1303,16 +1303,19 @@\n .size--%0A\n+%09%7D%0A\n %09return \n",
+            "lines": "199"
+        },
+        {
+            "label": "2026-04-27_17-17-33",
+            "content": "@@ -2880,24 +2880,27 @@\n %22erase%22:%0A%09%09%09\n+// \n value, _ := \n@@ -2925,78 +2925,8 @@\n 1%5D)%0A\n-%09%09%09err := ms.Erase(value)%0A%09%09%09if err != nil%7B%0A%09%09%09%09fmt.Println(err)%0A%09%09%09%7D%0A\n %09%09ca\n",
+            "lines": "199"
+        },
+        {
+            "label": "2026-04-27_17-19-36",
+            "content": "@@ -1777,33 +1777,30 @@\n et) \n-Unique() int %7B%0A%09return -1\n+Clear() %7B%0A%09ms.size = 0\n %0A%7D%0A%0A\n@@ -2337,54 +2337,8 @@\n %0A%7D%0A%0A\n-func (ms *MultiSet) Clear() %7B%0A%09ms.size = 0%0A%7D%0A%0A\n func\n@@ -2956,25 +2956,24 @@\n f err != nil\n- \n %7B%0A%09%09%09%09fmt.Pr\n@@ -3152,24 +3152,27 @@\n %22count%22:%0A%09%09%09\n+// \n value, _ := \n@@ -3199,82 +3199,23 @@\n )%0A%09%09\n-%09fmt.Println(ms.Count(value))%0A%09%09case %22unique%22:%0A%09%09%09fmt.Println(ms.Unique())\n+case %22unique%22:%0A\n %0A%09%09c\n",
+            "lines": "203"
+        },
+        {
+            "label": "2026-04-27_17-22-16",
+            "content": "@@ -1788,33 +1788,34 @@\n ) int %7B%0A%09return \n-0\n+-1\n %0A%7D%0A%0Afunc (ms *Mu\n",
+            "lines": "208"
+        },
+        {
+            "label": "2026-04-27_17-22-38",
+            "content": "@@ -1745,175 +1745,16 @@\n %7B%0A%0A%09\n-count := 0%0A%09existe, _ := ms.Search(value)%0A%09if existe %7B%0A%09%09for _, val := range ms.data %7B%0A%09%09%09if val == value %7B%0A%09%09%09%09count++%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D else %7B%0A%09%09return 0%0A%09%7D%0A%0A%09return count\n+return 0\n %0A%7D%0A%0A\n@@ -1780,33 +1780,32 @@\n  Unique() int %7B%0A\n-%0A\n %09return 0%0A%7D%0A%0Afun\n",
+            "lines": "208"
+        },
+        {
+            "label": "2026-04-27_17-50-47",
+            "content": "@@ -1953,205 +1953,16 @@\n %7B%0A%0A%09\n-if ms.size == 0 %7B%0A%09%09return 0%0A%09%7D%0A%0A%09countDif := 0%0A%09element := 0%0A%09for _, val := range ms.data %7B%0A%09%09if element != val %7B%0A%09%09%09countDif++%0A%09%09%7D%0A%09%7D%0A%09if countDif == 0 %7B%0A%09%09return 0%0A%09%7D else %7B%0A%09%09return countDif%0A%09%7D\n+return 0\n %0A%7D%0A%0A\n",
+            "lines": "221"
+        },
+        {
+            "label": "2026-04-27_18-05-19",
+            "content": "@@ -2068,25 +2068,8 @@\n l %7B%0A\n-%09%09%09element = val%0A\n %09%09%09c\n",
+            "lines": "236"
+        },
+        {
+            "label": "2026-04-27_18-05-41",
+            "content": "@@ -2013,18 +2013,9 @@\n  := \n-ms.data%5B0%5D\n+0\n %0A%09fo\n",
+            "lines": "237"
+        },
+        {
+            "label": "2026-04-27_18-07-39",
+            "content": "@@ -2013,41 +2013,47 @@\n  := \n-0%0A%09for i := 0; i %3C ms.size-1; i++\n+ms.data%5B0%5D%0A%09for _, val := range ms.data\n  %7B%0A%09\n@@ -2067,26 +2067,19 @@\n ment != \n-ms.data%5Bi%5D\n+val\n  %7B%0A%09%09%09el\n@@ -2086,26 +2086,19 @@\n ement = \n-ms.data%5Bi%5D\n+val\n %0A%09%09%09coun\n",
+            "lines": "237"
+        },
+        {
+            "label": "2026-04-27_18-08-52",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"errors\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype MultiSet struct {\n\tdata     []int\n\tsize     int\n\tcapacity int\n}\n\nfunc NewMultiSet(newCapacity int) *MultiSet {\n\treturn &MultiSet{\n\t\tdata:     make([]int, newCapacity),\n\t\tsize:     0,\n\t\tcapacity: newCapacity,\n\t}\n}\n\nfunc (ms *MultiSet) Search(value int) (bool, int) {\n\n\tlow, high := 0, ms.size-1\n\n\tfor low <= high {\n\n\t\tmeio := (low + high) / 2\n\n\t\tif ms.data[meio] < value {\n\t\t\tlow = meio + 1\n\t\t} else if ms.data[meio] > value {\n\t\t\thigh = meio - 1\n\t\t} else {\n\t\t\treturn true, meio\n\t\t}\n\t}\n\n\treturn false, low\n}\n\nfunc (ms *MultiSet) insert(value int, index int) error {\n\n\tif ms.size == ms.capacity {\n\t\tms.expand()\n\t}\n\n\tif index < 0 || index > ms.capacity {\n\t\treturn errors.New(\"value not found\")\n\t}\n\n\tfor i := ms.size - 1; i >= index; i-- {\n\t\tms.data[i+1] = ms.data[i]\n\t}\n\tms.size++\n\tms.data[index] = value\n\treturn nil\n}\n\nfunc (ms *MultiSet) Insert(value int) {\n\n\texiste, index := ms.Search(value)\n\tif existe {\n\t\t//logica de adicionar mais 1 na qtd do n\u00famero\n\t\tms.insert(value, index)\n\t} else {\n\t\tms.insert(value, index)\n\t}\n}\n\nfunc (ms *MultiSet) erase(index int) error {\n\n\tif index < 0 || index > ms.capacity {\n\t\treturn errors.New(\"value not found\")\n\t}\n\n\tfor i := index; i < ms.size; i++ {\n\t\tms.data[i] = ms.data[i+1]\n\t}\n\tms.size--\n\treturn nil\n}\n\nfunc (ms *MultiSet) Erase(value int) error {\n\n\texiste, index := ms.Search(value)\n\tif existe {\n\t\terr := ms.erase(index)\n\t\tif err != nil {\n\t\t\treturn errors.New(\"value not found\")\n\t\t} else {\n\t\t\treturn nil\n\t\t}\n\t}\n\treturn errors.New(\"value not found\")\n}\n\nfunc (ms *MultiSet) Contains(value int) bool {\n\n\texiste, _ := ms.Search(value)\n\tif existe {\n\t\treturn true\n\t}\n\treturn false\n}\n\nfunc (ms *MultiSet) Count(value int) int {\n\n\tcount := 0\n\texiste, _ := ms.Search(value)\n\tif existe {\n\t\tfor _, val := range ms.data {\n\t\t\tif val == value {\n\t\t\t\tcount++\n\t\t\t}\n\t\t}\n\t} else {\n\t\treturn 0\n\t}\n\n\treturn count\n}\n\nfunc (ms *MultiSet) Unique() int {\n\n\tif ms.size == 0 {\n\t\treturn 0\n\t}\n\n\tcountDif := 0\n\telement := 0\n\tfor i := 0; i < ms.size-1; i++ {\n\t\tif element != ms.data[i] {\n\t\t\telement = ms.data[i]\n\t\t\tcountDif++\n\t\t}\n\t}\n\tif countDif == 0 {\n\t\treturn 0\n\t} else {\n\t\treturn countDif\n\t}\n}\n\nfunc (ms *MultiSet) String() string {\n\treturn \"[\" + Join(ms.data[:ms.size], \", \") + \"]\"\n}\n\nfunc Join(slice []int, sep string) string {\n\tif len(slice) == 0 {\n\t\treturn \"\"\n\t}\n\tresult := fmt.Sprintf(\"%d\", slice[0])\n\tfor _, value := range slice[1:] {\n\t\tresult += sep + fmt.Sprintf(\"%d\", value)\n\t}\n\treturn result\n}\n\nfunc (ms *MultiSet) expand() {\n\n\tif ms.capacity == 0 {\n\t\tms.capacity = 1\n\t} else {\n\t\tms.capacity *= 2\n\t}\n\n\tdataRef := make([]int, ms.capacity)\n\n\tfor i, value := range ms.data {\n\t\tdataRef[i] = value\n\t}\n\n\tms.data = dataRef\n}\n\nfunc (ms *MultiSet) Clear() {\n\tms.size = 0\n}\n\nfunc main() {\n\tvar line, cmd string\n\tscanner := bufio.NewScanner(os.Stdin)\n\tms := NewMultiSet(0)\n\n\tfor scanner.Scan() {\n\t\tfmt.Print(\"$\")\n\t\tline = scanner.Text()\n\t\targs := strings.Fields(line)\n\t\tfmt.Println(line)\n\t\tif len(args) == 0 {\n\t\t\tcontinue\n\t\t}\n\t\tcmd = args[0]\n\n\t\tswitch cmd {\n\t\tcase \"end\":\n\t\t\treturn\n\t\tcase \"init\":\n\t\t\tvalue, _ := strconv.Atoi(args[1])\n\t\t\tms = NewMultiSet(value)\n\t\tcase \"insert\":\n\t\t\tfor _, part := range args[1:] {\n\t\t\t\tvalue, _ := strconv.Atoi(part)\n\t\t\t\tms.Insert(value)\n\t\t\t}\n\t\tcase \"show\":\n\t\t\tfmt.Println(ms)\n\t\tcase \"erase\":\n\t\t\tvalue, _ := strconv.Atoi(args[1])\n\t\t\terr := ms.Erase(value)\n\t\t\tif err != nil {\n\t\t\t\tfmt.Println(err)\n\t\t\t}\n\t\tcase \"contains\":\n\t\t\tvalue, _ := strconv.Atoi(args[1])\n\t\t\tif ms.Contains(value) {\n\t\t\t\tfmt.Println(\"true\")\n\t\t\t} else {\n\t\t\t\tfmt.Println(\"false\")\n\t\t\t}\n\t\tcase \"count\":\n\t\t\tvalue, _ := strconv.Atoi(args[1])\n\t\t\tfmt.Println(ms.Count(value))\n\t\tcase \"unique\":\n\t\t\tfmt.Println(ms.Unique())\n\t\tcase \"clear\":\n\t\t\tms.Clear()\n\t\tdefault:\n\t\t\tfmt.Println(\"fail: comando invalido\")\n\t\t}\n\t}\n}\n",
+            "lines": "237"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-09_08-55-10",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\n\tfor i := 1; i <= n; i++ {\n\t\t// TODO: Complete a l\u00f3gica FizzBuzz\n\t\t// Se i % 3 == 0 e i % 5 == 0: \"FizzBuzz\"\n\t\t// Se i % 3 == 0: \"Fizz\"\n\t\t// Se i % 5 == 0: \"Buzz\"\n\t\t// Sen\u00e3o: fmt.Print(i)\n\t\t// Separe por espa\u00e7o, nova linha no final\n\t\tfmt.Println(\"COMPLETE AQUI\")\n\t}\n}\n\n",
+            "lines": "19"
+        }
+    ]
+}

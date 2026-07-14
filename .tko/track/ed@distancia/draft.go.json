@@ -1,0 +1,159 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-26_20-29-50",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -23,719 +23,53 @@\n mt%22%0A\n-%0A\n func \n-temProximo(str string, indexAtual int, numAlvo int, limite int) bool%7B%0A%0A    if str%5BindexAtual%5D == byte(numAlvo)%7B%0A        return true%0A    %7D%0A%0A    if temProximo(str, indexAtual+1, numAlvo, limite) %7C%7C%0A       temProximo(str, indexAtual-1, numAlvo, limite) %7B%0A%0A    %7D%0A%0A    return false%0A%7D%0A%0Afunc formatStr (str string, limite int)%7B%0A%0A    numAlvo := 0%0A    for i, r := range str%7B%0A%0A        if r != '.'%7B%0A            continue%0A        %7D%0A%0A        if !temProximo(str, i, numAlvo+1, limite)%7B%0A            str = str%5B:i%5D + fmt.Sprintf(%22%25d%22, numAlvo) + str%5Bi+1:%5D%0A        %7D%0A%0A    %7D%0A%7D%0A%0A%0Afunc main() %7B%0A%0A    var str string%0A    fmt.Scan(&str)%0A    %0A    var limite int%0A    fmt.Scan(&limite)%0A%0A    formatStr(str, limite)%0A    fmt.Println(str\n+main() %7B%0A    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-05-27_16-51-03",
+            "content": "@@ -18,18 +18,13 @@\n ort \n-(%0A%09\n %22fmt%22\n-%0A)\n %0A%0Afu\n@@ -94,21 +94,23 @@\n nt) bool\n- \n %7B%0A%0A\n-%09\n+    \n if str%5Bi\n@@ -136,21 +136,26 @@\n numAlvo)\n- \n %7B%0A\n-%09%09\n+        \n return t\n@@ -158,21 +158,27 @@\n rn true%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A    \n if temPr\n@@ -222,18 +222,23 @@\n ite) %7C%7C%0A\n-%09%09\n+       \n temProxi\n@@ -283,812 +283,35 @@\n  %7B%0A%0A\n-%09%7D%0A%0A%09return false%0A%7D%0A%0Afunc ocorrenciaEsquerda(indexPonto int, valoresL %5B%5Dint, str string) bool %7B%0A%0A%09if indexPonto == 0%7B%0A%09%09//OU FAZ ALGUMA A%C3%87%C3%83O%0A%09%09return %0A%09%7D%0A%0A%0A%0A%7D%0A%0Afunc olharDireita(indexAtual int, str string, limite int) bool %7B%0A%0A%09i := indexAtual%0A%09for i %3C= limite && limite %3C len(str)%7B%0A%0A%09%09i++%0A%09%7D%09%0A%0A%0A%7D%0A%0Afunc inserirValor(valorDaVez int, pos int, str string, limi) %7B%0A%0A%09if pos == 0 %7B%0A%09%09olharDireita()%0A%09%7Delse if pos == %7B%0A%0A%09%7D%0A%0A%7D%0A%0Afunc preencher(valoresL %5B%5Dint, str string, l int) %7B%0A%09%0A%09for i, r := range str%7B%0A%0A%09%09if r == '.'%7B%0A%09%09%09if i == 0 %7B%0A%0A%09%09%09%7D%0A%09%09%09//inserir um valor%0A%09%09%7D%0A%09%7D%0A%7D%0A%0Afunc main() %7B%0A%0A%09var str string%0A%09fmt.Scan(&str)%0A%0A%09var limite int%0A%09fmt.Scan(&limite)%0A%0A%09var valoresL %5B%5Dint%0A%0A%09for i := 0; i %3C= len(valoresL); i++ %7B%0A%09%09valoresL = append(valoresL, i)%0A%09%7D%0A%0A%0A%09// formatStr(str, limite)%0A%09// fmt.Println(str)%0A%7D%0A%0A// \n+    %7D%0A%0A    return false%0A%7D%0A%0A\n func\n@@ -348,23 +348,20 @@\n  int)%7B%0A%0A\n-//\n     \n- \n numAlvo \n@@ -365,19 +365,16 @@\n vo := 0%0A\n-// \n     for \n@@ -393,19 +393,16 @@\n e str%7B%0A%0A\n-// \n         \n@@ -414,19 +414,16 @@\n != '.'%7B%0A\n-// \n         \n@@ -435,19 +435,16 @@\n ontinue%0A\n-// \n         \n@@ -442,27 +442,24 @@\n %0A        %7D%0A%0A\n-// \n         if !\n@@ -476,32 +476,34 @@\n (str, i, numAlvo\n++1\n , limite)%7B%0A//   \n@@ -497,19 +497,16 @@\n imite)%7B%0A\n-// \n         \n@@ -568,18 +568,16 @@\n 1:%5D%0A\n-//\n         \n  %7D%0A%0A\n@@ -576,22 +576,167 @@\n     \n- %7D%0A%0A//     %7D%0A// \n+%7D%0A%0A    %7D%0A%7D%0A%0A%0Afunc main() %7B%0A%0A    var str string%0A    fmt.Scan(&str)%0A    %0A    var limite int%0A    fmt.Scan(&limite)%0A%0A    formatStr(str, limite)%0A    fmt.Println(str)%0A\n %7D%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-06-16_14-27-20",
+            "content": "@@ -35,154 +35,247 @@\n unc \n-buscaParaEsquerda(limite, value int, runes %5B%5Drune, indexAtual int) bool %7B%0A%0A%09cont := 1%0A%09for i := indexAtual; i %3E= 0; i-- %7B%0A%0A%09%09if cont %3E\n+temProximo(str string, indexAtual int, numAlvo int, limite int) bool %7B%0A%0A%09if str%5BindexAtual%5D == byte(numAlvo) %7B%0A%09%09return true%0A%09%7D%0A%0A%09if temProximo(str, indexAtual+1, numAlvo, limite) %7C%7C%0A%09%09temProximo(str, indexAtual-1, numAlvo,\n  limite\n+)\n  %7B%0A\n-%09%09\n+%0A%09%7D%0A%0A\n %09ret\n@@ -288,76 +288,140 @@\n lse%0A\n-%09%09\n %7D%0A%0A\n-%09%09if runes%5Bi%5D == rune(value) %7B%0A%09%09%09return true%0A%09%09%7D%0A%0A%09%7D%0A%0A\n+func ocorrenciaEsquerda(indexPonto int, valoresL %5B%5Dint, str string) bool %7B%0A%0A%09if indexPonto == 0%7B%0A%09%09//OU FAZ ALGUMA A%C3%87%C3%83O%0A%09\n %09return \n fals\n@@ -408,37 +408,38 @@\n A A%C3%87%C3%83O%0A%09%09return \n-false\n+%0A%09%7D%0A%0A%0A\n %0A%7D%0A%0Afunc buscaPa\n@@ -431,33 +431,29 @@\n %7D%0A%0Afunc \n-buscaP\n+olh\n ar\n-a\n Direita(\n limite, \n@@ -448,83 +448,80 @@\n ita(\n-limite, value int, runes %5B%5Drune, indexAtual int) bool %7B%0A%0A%09cont := 1\n+indexAtual int, str string, limite int) bool %7B%0A%0A%09i := indexAtual\n %0A%09for i \n := i\n@@ -520,156 +520,175 @@\n r i \n-:= indexAtual; i %3C len(runes); i++ %7B%0A%0A%09%09if cont %3E limite %7B%0A%09%09%09return false%0A%09%09%7D%0A%0A%09%09if runes%5Bi%5D == rune(value) %7B%0A%09%09%09return true%0A%09%09%7D%0A%0A%09%7D%0A%0A%09return false\n+%3C= limite && limite %3C len(str)%7B%0A%0A%09%09i++%0A%09%7D%09%0A%0A%0A%7D%0A%0Afunc inserirValor(valorDaVez int, pos int, str string, limi) %7B%0A%0A%09if pos == 0 %7B%0A%09%09olharDireita()%0A%09%7Delse if pos == %7B%0A%0A%09%7D%0A\n %0A%7D%0A%0A\n@@ -735,58 +735,27 @@\n g, l\n-imite\n  int) \n-string %7B%0A%0A%09runes := %5B%5Drune(str)%0A\n+%7B%0A%09\n %0A%09for i\n+, r\n  := \n@@ -764,14 +764,11 @@\n nge \n-runes \n+str\n %7B%0A%0A%09\n@@ -776,238 +776,66 @@\n if r\n-unes%5Bi%5D\n  == '.'\n- \n %7B%0A\n-%0A\n %09%09%09\n-j := 0%0A%09%09%09for j %3C len(valoresL) %7B%0A%0A%09%09%09%09if !buscaParaDireita(limite, j, runes, i) && !buscaParaEsquerda(limite, j, runes, i) %7B%0A%09%09%09%09%09runes%5Bi%5D = rune(j)%0A%09%09%09%09%09break%0A%09%09%09%09%7D%0A%09%09%09%09j++%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09return string(runes)\n+if i == 0 %7B%0A%0A%09%09%09%7D%0A%09%09%09//inserir um valor%0A%09%09%7D%0A%09%7D\n %0A%7D%0A%0A\n@@ -958,21 +958,28 @@\n ; i %3C= l\n-imite\n+en(valoresL)\n ; i++ %7B%0A\n@@ -1019,53 +1019,364 @@\n %09%7D%0A%0A\n-%09fmt.Println(preencher(valoresL, str, limite))%0A\n+%0A%09// formatStr(str, limite)%0A%09// fmt.Println(str)%0A%7D%0A%0A// func formatStr (str string, limite int)%7B%0A%0A//     numAlvo := 0%0A//     for i, r := range str%7B%0A%0A//         if r != '.'%7B%0A//             continue%0A//         %7D%0A%0A//         if !temProximo(str, i, numAlvo, limite)%7B%0A//             str = str%5B:i%5D + fmt.Sprintf(%22%25d%22, numAlvo) + str%5Bi+1:%5D%0A//         %7D%0A%0A//     %7D%0A// \n %7D%0A\n",
+            "lines": "99"
+        },
+        {
+            "label": "2026-06-16_15-47-44",
+            "content": "@@ -808,12 +808,8 @@\n une(\n-'0'+\n j)%0A%09\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-06-16_15-49-49",
+            "content": "@@ -243,33 +243,24 @@\n n true%0A%09%09%7D%0A%0A\n-%09%09cont++%0A\n %09%7D%0A%0A%09return \n@@ -500,17 +500,8 @@\n %09%7D%0A%0A\n-%09%09cont++%0A\n %09%7D%0A%0A\n@@ -811,11 +811,9 @@\n ('0'\n- + \n++\n j)%0A%09\n",
+            "lines": "81"
+        },
+        {
+            "label": "2026-06-16_15-53-10",
+            "content": "@@ -739,35 +739,25 @@\n ita(limite, \n-valoresL%5Bj%5D\n+j\n , runes, i) \n@@ -790,19 +790,9 @@\n te, \n-valoresL%5Bj%5D\n+j\n , ru\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-06-16_15-55-03",
+            "content": "@@ -842,16 +842,22 @@\n  = rune(\n+'0' + \n j)%0A%09%09%09%09%09\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-06-16_15-55-39",
+            "content": "@@ -846,14 +846,8 @@\n une(\n-' ' + \n j)%0A%09\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-06-16_15-55-51",
+            "content": "@@ -848,27 +848,17 @@\n e(' ' + \n-valoresL%5Bj%5D\n+j\n )%0A%09%09%09%09%09b\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-06-16_15-57-59",
+            "content": "@@ -843,17 +843,17 @@\n = rune('\n-0\n+ \n ' + valo\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-06-16_15-58-07",
+            "content": "@@ -210,36 +210,32 @@\n unes%5Bi%5D == rune(\n-'0'+\n value) %7B%0A%09%09%09retu\n@@ -480,12 +480,8 @@\n une(\n-'0'+\n valu\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-06-16_15-58-52",
+            "content": "@@ -543,17 +543,16 @@\n alse%0A%7D%0A%0A\n-%0A\n func pre\n@@ -655,16 +655,17 @@\n runes %7B%0A\n+%0A\n %09%09if run\n@@ -833,14 +833,8 @@\n ) %7B%0A\n-%09%09%09%09%09%0A\n %09%09%09%09\n@@ -869,17 +869,26 @@\n esL%5Bj%5D)%0A\n-%0A\n+%09%09%09%09%09break\n %0A%09%09%09%09%7D%0A%09\n@@ -898,46 +898,13 @@\n j++%0A\n+\n %09%09%09%7D%0A\n-%09%09%09//volta e tenta outro caminho%0A\n %09%09%7D%0A\n",
+            "lines": "83"
+        },
+        {
+            "label": "2026-06-16_18-42-36",
+            "content": "@@ -539,24 +539,25 @@\n rn false%0A%7D%0A%0A\n+%0A\n func preench\n@@ -879,18 +879,8 @@\n j%5D)%0A\n-%09%09%09%09%09break\n %0A%0A%09%09\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-06-16_18-42-56",
+            "content": "@@ -547,444 +547,8 @@\n %0A%7D%0A%0A\n-func ehValido(runes %5B%5Drune, pos, limite int, valores %5B%5Dint) bool %7B%0A%0A%09if pos == len(runes) %7B%0A%09%09return false%0A%09%7D%0A%0A%09if runes%5Bpos%5D != '.' %7B%0A%09%09return ehValido(runes, pos+1, limite, valores)%0A%09%7D%0A%0A%09if !buscaParaDireita(limite, valores%5Bi%5D, runes, pos) && !buscaParaEsquerda(limite, valores%5Bi%5D, runes, pos) %7B%0A%09%09runes%5Bpos%5D = rune('0' + valores%5Bi%5D)%0A%09%7D%0A%0A%09i := 0%0A%09for i %3C len(valores) %7B%0A%0A%09%09if ehValido(runes, pos, limite, valores) %7B%0A%0A%09%09%7D%0A%0A%09%09i++%0A%09%7D%0A%7D%0A%0A\n func\n@@ -607,16 +607,16 @@\n tring %7B%0A\n+\n %0A%09runes \n@@ -824,25 +824,30 @@\n runes, i) %7B%0A\n+%09%09%09%09%09\n %0A\n-\n %09%09%09%09%09runes%5Bi\n@@ -885,16 +885,17 @@\n %09%09break%0A\n+%0A\n %09%09%09%09%7D%0A%09%09\n@@ -975,481 +975,8 @@\n %0A%7D%0A%0A\n-// func preencher(valoresL %5B%5Dint, str string, limite int) string %7B%0A%0A// %09runes := %5B%5Drune(str)%0A%0A// %09for i := range runes %7B%0A// %09%09if runes%5Bi%5D == '.' %7B%0A%0A// %09%09%09j := 0%0A// %09%09%09for j %3C len(valoresL) %7B%0A%0A// %09%09%09%09if !buscaParaDireita(limite, valoresL%5Bj%5D, runes, i) && !buscaParaEsquerda(limite, valoresL%5Bj%5D, runes, i) %7B%0A%0A// %09%09%09%09%09runes%5Bi%5D = rune('0' + valoresL%5Bj%5D)%0A// %09%09%09%09%09break%0A// %09%09%09%09%7D%0A// %09%09%09%09j++%0A// %09%09%09%7D%0A// %09%09%09//volta e tenta outro caminho%0A// %09%09%7D%0A// %09%7D%0A%0A// %09return string(runes)%0A// %7D%0A%0A\n func\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-06-17_10-21-38",
+            "content": "@@ -539,27 +539,24 @@\n rn false%0A%7D%0A%0A\n-// \n func ehValid\n@@ -611,19 +611,16 @@\n bool %7B%0A%0A\n-// \n %09if pos \n@@ -635,19 +635,16 @@\n unes) %7B%0A\n-// \n %09%09return\n@@ -650,26 +650,20 @@\n n false%0A\n-// \n %09%7D%0A%0A\n-// \n %09if rune\n@@ -678,19 +678,16 @@\n = '.' %7B%0A\n-// \n %09%09return\n@@ -727,26 +727,20 @@\n alores)%0A\n-// \n %09%7D%0A%0A\n-// \n %09if !bus\n@@ -841,19 +841,16 @@\n  pos) %7B%0A\n-// \n %09%09runes%5B\n@@ -883,26 +883,20 @@\n i%5D)%0A\n-// \n %09%7D%0A%0A\n-// \n %09i := 0%0A\n // %09\n@@ -891,19 +891,16 @@\n %09i := 0%0A\n-// \n %09for i %3C\n@@ -916,19 +916,16 @@\n res) %7B%0A%0A\n-// \n %09%09if ehV\n@@ -966,35 +966,22 @@\n  %7B%0A%0A\n-// \n %09%09%7D%0A%0A\n-// \n %09%09i++%0A\n-// %09%7D%0A%0A// \n+%09%7D%0A\n %7D%0A%0Af\n",
+            "lines": "133"
+        },
+        {
+            "label": "2026-06-17_10-24-14",
+            "content": "@@ -539,24 +539,27 @@\n rn false%0A%7D%0A%0A\n+// \n func ehValid\n@@ -614,16 +614,19 @@\n bool %7B%0A%0A\n+// \n %09if pos \n@@ -641,16 +641,19 @@\n unes) %7B%0A\n+// \n %09%09return\n@@ -659,20 +659,26 @@\n n false%0A\n+// \n %09%7D%0A%0A\n+// \n %09if rune\n@@ -693,16 +693,19 @@\n = '.' %7B%0A\n+// \n %09%09return\n@@ -745,20 +745,26 @@\n alores)%0A\n+// \n %09%7D%0A%0A\n+// \n %09if !bus\n@@ -865,16 +865,19 @@\n  pos) %7B%0A\n+// \n %09%09runes%5B\n@@ -910,20 +910,26 @@\n i%5D)%0A\n+// \n %09%7D%0A%0A\n+// \n %09i := 0%0A\n %09for\n@@ -924,16 +924,19 @@\n %09i := 0%0A\n+// \n %09for i %3C\n@@ -948,24 +948,27 @@\n valores) %7B%0A%0A\n+// \n %09%09if ehValid\n@@ -1005,23 +1005,35 @@\n  %7B%0A%0A\n+// \n %09%09%7D%0A%0A\n+// \n %09%09i++%0A\n+// \n %09%7D%0A%0A\n+// \n %7D%0A%0Af\n",
+            "lines": "134"
+        },
+        {
+            "label": "2026-06-22_16-46-35",
+            "content": "@@ -543,19 +543,16 @@\n alse%0A%7D%0A%0A\n-// \n func ehV\n@@ -611,19 +611,16 @@\n bool %7B%0A%0A\n-// \n %09if pos \n@@ -635,19 +635,16 @@\n unes) %7B%0A\n-// \n %09%09return\n@@ -650,26 +650,20 @@\n n false%0A\n-// \n %09%7D%0A%0A\n-// \n %09if rune\n@@ -678,19 +678,16 @@\n = '.' %7B%0A\n-// \n %09%09return\n@@ -727,26 +727,20 @@\n alores)%0A\n-// \n %09%7D%0A%0A\n-// \n %09if !bus\n@@ -841,19 +841,16 @@\n  pos) %7B%0A\n-// \n %09%09runes%5B\n@@ -883,26 +883,20 @@\n i%5D)%0A\n-// \n %09%7D%0A%0A\n-// \n %09i := 0%0A\n // %09\n@@ -891,19 +891,16 @@\n %09i := 0%0A\n-// \n %09for i %3C\n@@ -916,19 +916,16 @@\n res) %7B%0A%0A\n-// \n %09%09if ehV\n@@ -966,38 +966,451 @@\n  %7B%0A%0A\n-// %09%09%7D%0A%0A// %09%09i++%0A// %09%7D%0A%0A// %7D%0A%0A\n+%09%09%7D%0A%0A%09%09i++%0A%09%7D%0A%0A%7D%0A%0Afunc preencher(valoresL %5B%5Dint, str string, limite int) string %7B%0A%0A%09runes := %5B%5Drune(str)%0A%0A%09for i := range runes %7B%0A%09%09if runes%5Bi%5D == '.' %7B%0A%0A%09%09%09j := 0%0A%09%09%09for j %3C len(valoresL) %7B%0A%0A%09%09%09%09if !buscaParaDireita(limite, valoresL%5Bj%5D, runes, i) && !buscaParaEsquerda(limite, valoresL%5Bj%5D, runes, i) %7B%0A%0A%09%09%09%09%09runes%5Bi%5D = rune('0' + valoresL%5Bj%5D)%0A%09%09%09%09%09break%0A%09%09%09%09%7D%0A%09%09%09%09j++%0A%09%09%09%7D%0A%09%09%09//volta e tenta outro caminho%0A%09%09%7D%0A%09%7D%0A%0A%09return string(runes)%0A%7D%0A%0A// \n func\n@@ -1462,32 +1462,35 @@\n  int) string %7B%0A%0A\n+// \n %09runes := %5B%5Drune\n@@ -1488,32 +1488,35 @@\n := %5B%5Drune(str)%0A%0A\n+// \n %09for i := range \n@@ -1515,32 +1515,35 @@\n = range runes %7B%0A\n+// \n %09%09if runes%5Bi%5D ==\n@@ -1542,32 +1542,35 @@\n es%5Bi%5D == '.' %7B%0A%0A\n+// \n %09%09%09j := 0%0A%09%09%09for\n@@ -1555,32 +1555,35 @@\n %7B%0A%0A// %09%09%09j := 0%0A\n+// \n %09%09%09for j %3C len(v\n@@ -1586,32 +1586,35 @@\n en(valoresL) %7B%0A%0A\n+// \n %09%09%09%09if !buscaPar\n@@ -1701,32 +1701,35 @@\n %5D, runes, i) %7B%0A%0A\n+// \n %09%09%09%09%09runes%5Bi%5D = \n@@ -1744,32 +1744,35 @@\n  + valoresL%5Bj%5D)%0A\n+// \n %09%09%09%09%09break%0A%09%09%09%09%7D\n@@ -1762,38 +1762,44 @@\n  %09%09%09%09%09break%0A\n+// \n %09%09%09%09%7D%0A\n+// \n %09%09%09%09j++%0A\n %09%09%09%7D%0A%09%09%09//vo\n@@ -1778,37 +1778,43 @@\n %09%09%09%7D%0A// %09%09%09%09j++%0A\n+// \n %09%09%09%7D%0A\n+// \n %09%09%09//volta e ten\n@@ -1826,32 +1826,41 @@\n tro caminho%0A\n+// \n %09%09%7D%0A\n+// \n %09%7D%0A%0A\n+// \n %09return stri\n@@ -1869,16 +1869,19 @@\n (runes)%0A\n+// \n %7D%0A%0Afunc \n",
+            "lines": "134"
+        },
+        {
+            "label": "2026-06-27_16-15-49",
+            "content": "@@ -48,27 +48,18 @@\n Esquerda\n-Rec(indiceL\n+(l\n imite, v\n@@ -111,113 +111,76 @@\n %7B%0A%0A%09\n-// %7C%7C indiceLimite %3E= len(runes)%0A%09if indexAtual %3C 0 %7B%0A%09%09return false%0A%09%7D%0A%0A%09if indexAtual %3C indiceL\n+cont := 1%0A%09for i := indexAtual; i %3E= 0; i-- %7B%0A%0A%09%09if cont %3E l\n imite %7B%0A\n %09%09re\n@@ -167,32 +167,33 @@\n cont %3E limite %7B%0A\n+%09\n %09%09return false%0A%09\n@@ -183,36 +183,38 @@\n %09%09%09return false%0A\n+%09\n %09%7D%0A%0A\n+%09\n %09if runes%5BindexA\n@@ -204,33 +204,24 @@\n %09%09if runes%5Bi\n-ndexAtual\n %5D == rune('0\n@@ -225,32 +225,33 @@\n ('0'+value) %7B%0A%09%09\n+%09\n return true%0A%09%7D%0A%0A\n@@ -250,218 +250,42 @@\n rue%0A\n+%09\n %09%7D%0A%0A%09\n-if buscaParaDireitaRec(indiceLimite, value, runes, indexAtual-1) %7B%0A%09%09return true%0A%09%7D%0A%0A%09runes%5BindexAtual%5D = '.'%0A%09return false%0A%7D%0A%0A// se retornar true %C3%A9 pq achou um valor igual ao valor passado em um raio de L\n+%09cont++%0A%09%7D%0A%0A%09return false%0A%7D%0A\n %0Afun\n@@ -298,35 +298,26 @@\n aParaDireita\n-Rec(indiceL\n+(l\n imite, value\n@@ -365,44 +365,27 @@\n %7B%0A%0A%09\n-// %7C%7C indiceLimite %3E= len(runes)%0A%09if\n+cont := 1%0A%09for i :=\n  ind\n@@ -391,19 +391,21 @@\n dexAtual\n- %3E=\n+; i %3C\n  len(run\n@@ -411,62 +411,38 @@\n nes)\n- %7B%0A%09%09return false%0A%09%7D%0A%0A%09if indexAtual %3E indiceL\n+; i++ %7B%0A%0A%09%09if cont %3E l\n imite %7B%0A\n %09%09re\n@@ -437,16 +437,17 @@\n imite %7B%0A\n+%09\n %09%09return\n@@ -453,20 +453,22 @@\n n false%0A\n+%09\n %09%7D%0A%0A\n+%09\n %09if rune\n@@ -470,25 +470,16 @@\n  runes%5Bi\n-ndexAtual\n %5D == run\n@@ -491,24 +491,25 @@\n +value) %7B%0A%09%09\n+%09\n return true%0A\n@@ -512,138 +512,528 @@\n rue%0A\n+%09\n %09%7D%0A%0A%09\n-if buscaParaDireitaRec(indiceLimite, value, runes, indexAtual+1) %7B%0A%09%09return true%0A%09%7D%0A%0A%09runes%5BindexAtual%5D = '.'%0A%09return false%0A%0A\n+%09cont++%0A%09%7D%0A%0A%09return false%0A%7D%0A%0A// func ehValido(runes %5B%5Drune, pos, limite int, valores %5B%5Dint) bool %7B%0A%0A// %09if pos == len(runes) %7B%0A// %09%09return false%0A// %09%7D%0A%0A// %09if runes%5Bpos%5D != '.' %7B%0A// %09%09return ehValido(runes, pos+1, limite, valores)%0A// %09%7D%0A%0A// %09if !buscaParaDireita(limite, valores%5Bi%5D, runes, pos) && !buscaParaEsquerda(limite, valores%5Bi%5D, runes, pos) %7B%0A// %09%09runes%5Bpos%5D = rune('0' + valores%5Bi%5D)%0A// %09%7D%0A%0A// %09i := 0%0A// %09for i %3C len(valores) %7B%0A%0A// %09%09if ehValido(runes, pos, limite, valores) %7B%0A%0A// %09%09%7D%0A%0A// %09%09i++%0A// %09%7D%0A%0A// \n %7D%0A%0Af\n@@ -1208,63 +1208,8 @@\n ) %7B%0A\n-%09%09%09%09limiteDir := i + limite%0A%09%09%09%09limiteEsq := i - limite\n %0A%09%09%09\n@@ -1233,21 +1233,15 @@\n eita\n-Rec\n (limite\n-Dir\n , va\n@@ -1286,21 +1286,15 @@\n erda\n-Rec\n (limite\n-Esq\n , va\n@@ -1680,495 +1680,4 @@\n )%0A%7D%0A\n-%0A// func ehValido(runes %5B%5Drune, pos, limite int, valores %5B%5Dint) bool %7B%0A%0A// %09if pos == len(runes) %7B%0A// %09%09return false%0A// %09%7D%0A%0A// %09if runes%5Bpos%5D != '.' %7B%0A// %09%09return ehValido(runes, pos+1, limite, valores)%0A// %09%7D%0A%0A// %09if !buscaParaDireita(limite, valores%5Bi%5D, runes, pos) && !buscaParaEsquerdaRec(limite, valores%5Bi%5D, runes, pos) %7B%0A// %09%09runes%5Bpos%5D = rune('0' + valores%5Bi%5D)%0A// %09%7D%0A%0A// %09i := 0%0A// %09for i %3C len(valores) %7B%0A%0A// %09%09if ehValido(runes, pos, limite, valores) %7B%0A%0A// %09%09%7D%0A%0A// %09%09i++%0A// %09%7D%0A%0A// %7D%0A\n",
+            "lines": "110"
+        },
+        {
+            "label": "2026-06-27_16-49-11",
+            "content": "@@ -1319,19 +1319,16 @@\n %5D)%0A%09%09%09%09%09\n-// \n break%0A%09%09\n",
+            "lines": "121"
+        },
+        {
+            "label": "2026-06-27_16-50-42",
+            "content": "@@ -1319,16 +1319,19 @@\n %5D)%0A%09%09%09%09%09\n+// \n break%0A%09%09\n",
+            "lines": "121"
+        },
+        {
+            "label": "2026-06-27_16-51-21",
+            "content": "@@ -1011,43 +1011,8 @@\n str)\n-%0A%09tamValoreslimite := len(valoresL)\n %0A%0A%09f\n@@ -1081,97 +1081,24 @@\n  j %3C\n-= tamValoreslimite %7B%0A%0A%09%09%09%09if j == tamValoreslimite %7B%0A%09%09%09%09%09j = j %25 tamValoreslimite%0A%09%09%09%09%7D%0A\n+ len(valoresL) %7B\n %0A%09%09%09\n",
+            "lines": "121"
+        },
+        {
+            "label": "2026-06-27_17-00-32",
+            "content": "@@ -956,34 +956,65 @@\n nt, \n-runes %5B%5Drune, limite int, \n+str string, limite int) string %7B%0A%0A%09runes := %5B%5Drune(str)%0A%09\n tamV\n@@ -1026,29 +1026,32 @@\n slimite \n-int) string %7B\n+:= len(valoresL)\n %0A%0A%09for i\n@@ -1130,24 +1130,92 @@\n eslimite %7B%0A%0A\n+%09%09%09%09if j == tamValoreslimite %7B%0A%09%09%09%09%09j = j %25 tamValoreslimite%0A%09%09%09%09%7D%0A%0A\n %09%09%09%09limiteDi\n@@ -1430,29 +1430,20 @@\n %09%09%09%09\n-%7D%0A%0A%09%09%09%09runes%5Bi%5D = '.'\n+%09break%0A%09%09%09%09%7D\n %0A%09%09%09\n@@ -1696,66 +1696,8 @@\n %09%7D%0A%0A\n-%09runes := %5B%5Drune(str)%0A%09tamValoreslimite := len(valoresL)%0A%0A\n %09fmt\n@@ -1729,33 +1729,13 @@\n sL, \n-runes, limite, tamValores\n+str, \n limi\n",
+            "lines": "127"
+        },
+        {
+            "label": "2026-06-27_17-07-09",
+            "content": "@@ -925,278 +925,8 @@\n %0A%7D%0A%0A\n-func achouIgual(indexLimiteDir, indexLimiteEsq int, runes %5B%5Drune, indexAtual int, value int) bool %7B%0A%0A%09if buscaParaDireitaRec(indexLimiteDir, value, runes, indexAtual) && buscaParaEsquerdaRec(indexLimiteEsq, value, runes, indexAtual) %7B%0A%09%09return true%0A%09%7D%0A%0A%09return false%0A%7D%0A%0A\n func\n@@ -1003,23 +1003,15 @@\n int)\n- (bool,\n  string\n-)\n  %7B%0A%0A\n@@ -1136,192 +1136,141 @@\n %09%09%09%09\n-if limiteDir == len(runes) %7B%0A%09%09%09%09%09limiteDir = len(runes) - 1%0A%09%09%09%09%7D%0A%0A%09%09%09%09limiteEsq := i - limite%0A%09%09%09%09if limiteEsq %3C 0 %7B%0A%09%09%09%09%09limiteEsq = 0%0A%09%09%09%09%7D%0A%0A%09%09%09%09if !achouIgual(limiteDir, limiteEsq\n+limiteEsq := i - limite%0A%09%09%09%09if !buscaParaDireitaRec(limiteDir, valoresL%5Bj%5D, runes, i) && !buscaParaEsquerdaRec(limiteEsq, valoresL%5Bj%5D\n , ru\n@@ -1279,15 +1279,13 @@\n s, i\n-, j\n ) %7B%0A\n+%0A\n %09%09%09%09\n@@ -1327,16 +1327,35 @@\n %0A%09%09%09%09%7D%0A%0A\n+%09%09%09%09runes%5Bi%5D = '.'%0A\n %09%09%09%09j++%0A\n@@ -1359,17 +1359,16 @@\n ++%0A%09%09%09%7D%0A\n-%0A\n %09%09%09//vol\n@@ -1411,15 +1411,8 @@\n turn\n- false,\n  str\n@@ -1662,26 +1662,20 @@\n )%0A%0A%09\n-_, stringFinal := \n+fmt.Println(\n pree\n@@ -1726,33 +1726,8 @@\n ite)\n-%0A%09fmt.Println(stringFinal\n )%0A%7D%0A\n",
+            "lines": "124"
+        },
+        {
+            "label": "2026-06-27_17-26-49",
+            "content": "@@ -1356,16 +1356,17 @@\n %09for j %3C\n+=\n  tamValo\n@@ -1606,27 +1606,17 @@\n nes, i, \n-valoresL%5Bj%5D\n+j\n ) %7B%0A%09%09%09%09\n@@ -1670,16 +1670,50 @@\n j++%0A%09%09%09%7D\n+%0A%0A%09%09%09//volta e tenta outro caminho\n %0A%09%09%7D%0A%09%7D%0A\n",
+            "lines": "141"
+        },
+        {
+            "label": "2026-06-27_17-29-56",
+            "content": "@@ -1088,18 +1088,18 @@\n xAtual) \n-%7C%7C\n+&&\n  buscaPa\n",
+            "lines": "139"
+        },
+        {
+            "label": "2026-06-27_17-30-22",
+            "content": "@@ -1243,16 +1243,38 @@\n  limite \n+int, tamValoreslimite \n int) (bo\n@@ -1336,16 +1336,58 @@\n  '.' %7B%0A%0A\n+%09%09%09j := 0%0A%09%09%09for j %3C tamValoreslimite %7B%0A%0A%09\n %09%09%09limit\n@@ -1400,32 +1400,33 @@\n = i + limite%0A%09%09%09\n+%09\n if limiteDir == \n@@ -1434,24 +1434,25 @@\n en(runes) %7B%0A\n+%09\n %09%09%09%09limiteDi\n@@ -1473,19 +1473,21 @@\n  - 1%0A%09%09%09\n+%09\n %7D%0A%0A\n+%09\n %09%09%09limit\n@@ -1508,16 +1508,17 @@\n mite%0A%09%09%09\n+%09\n if limit\n@@ -1528,24 +1528,25 @@\n q %3C 0 %7B%0A%09%09%09%09\n+%09\n limiteEsq = \n@@ -1554,44 +1554,10 @@\n %0A%09%09%09\n+%09\n %7D\n-%0A%0A%09%09%09for _, val := range valoresL %7B\n %0A%0A%09%09\n@@ -1608,16 +1608,24 @@\n , i, val\n+oresL%5Bj%5D\n ) %7B%0A%09%09%09%09\n@@ -1654,151 +1654,32 @@\n  val\n-)%0A%0A%09%09%09%09%09caminhos, _ := preencher(valoresL, runes, limite)%0A%09%09%09%09%09if caminhos %7B%0A%09%09%09%09%09%09return true, string(runes)%0A%09%09%09%09%09%7D%0A%0A%09%09%09%09%09runes%5Bi%5D = '.'%0A%09%09%09%09%7D\n+oresL%5Bj%5D)%0A%09%09%09%09%7D%0A%0A%09%09%09%09j++\n %0A%09%09%09\n@@ -1916,16 +1916,52 @@\n ne(str)%0A\n+%09tamValoreslimite := len(valoresL)%0A%0A\n %09_, stri\n@@ -2004,18 +2004,35 @@\n , limite\n+, tamValoreslimite\n )\n-%0A\n %0A%09fmt.Pr\n",
+            "lines": "139"
+        },
+        {
+            "label": "2026-06-27_17-40-05",
+            "content": "@@ -1270,26 +1270,8 @@\n  %7B%0A%0A\n-%09indexPonto := -1%0A\n %09for\n@@ -1317,90 +1317,11 @@\n ' %7B%0A\n+%0A\n %09%09\n-%09indexPonto = i%0A%09%09%7D%0A%09%7D%0A%0A%09if indexPonto == -1 %7B%0A%09%09return true, string(runes)%0A%09%7D%0A%0A\n %09lim\n@@ -1331,25 +1331,16 @@\n Dir := i\n-ndexPonto\n  + limit\n@@ -1333,32 +1333,34 @@\n r := i + limite%0A\n+%09%09\n %09if limiteDir ==\n@@ -1371,24 +1371,26 @@\n (runes) %7B%0A%09%09\n+%09\n+%09\n limiteDir = \n@@ -1404,20 +1404,24 @@\n es) - 1%0A\n+%09%09\n %09%7D%0A%0A\n+%09%09\n %09limiteE\n@@ -1427,25 +1427,16 @@\n Esq := i\n-ndexPonto\n  - limit\n@@ -1437,16 +1437,18 @@\n  limite%0A\n+%09%09\n %09if limi\n@@ -1459,16 +1459,18 @@\n q %3C 0 %7B%0A\n+%09%09\n %09%09limite\n@@ -1477,20 +1477,24 @@\n Esq = 0%0A\n+%09%09\n %09%7D%0A%0A\n+%09%09\n %09for _, \n@@ -1518,16 +1518,18 @@\n resL %7B%0A%0A\n+%09%09\n %09%09if !ac\n@@ -1567,25 +1567,16 @@\n runes, i\n-ndexPonto\n , val) %7B\n@@ -1579,32 +1579,25 @@\n l) %7B%0A%09%09%09\n+%09\n+%09\n runes%5Bi\n-ndexPonto\n %5D = rune\n@@ -1609,16 +1609,18 @@\n + val)%0A%0A\n+%09%09\n %09%09%09camin\n@@ -1667,16 +1667,18 @@\n ite)%0A%09%09%09\n+%09%09\n if camin\n@@ -1683,16 +1683,18 @@\n inhos %7B%0A\n+%09%09\n %09%09%09%09retu\n@@ -1719,19 +1719,23 @@\n nes)%0A%09%09%09\n+%09%09\n %7D%0A%0A\n+%09%09\n %09%09%09runes\n@@ -1740,24 +1740,26 @@\n es%5Bi\n-ndexPonto%5D = '.'\n+%5D = '.'%0A%09%09%09%09%7D%0A%09%09%09%7D\n %0A%09%09%7D\n@@ -2070,12 +2070,503 @@\n ingFinal)%0A%7D%0A\n+%0A// func ehValido(runes %5B%5Drune, pos, limite int, valores %5B%5Dint) bool %7B%0A%0A// %09if pos == len(runes) %7B%0A// %09%09return false%0A// %09%7D%0A%0A// %09if runes%5Bpos%5D != '.' %7B%0A// %09%09return ehValido(runes, pos+1, limite, valores)%0A// %09%7D%0A%0A// %09if !buscaParaDireita(limite, valores%5Bi%5D, runes, pos) && !buscaParaEsquerdaRec(limite, valores%5Bi%5D, runes, pos) %7B%0A// %09%09runes%5Bpos%5D = rune('0' + valores%5Bi%5D)%0A// %09%7D%0A%0A// %09i := 0%0A// %09for i %3C len(valores) %7B%0A%0A// %09%09if ehValido(runes, pos, limite, valores) %7B%0A%0A// %09%09%7D%0A%0A// %09%09i++%0A// %09%7D%0A%0A// %7D%0A\n",
+            "lines": "142"
+        },
+        {
+            "label": "2026-06-27_17-44-25",
+            "content": "@@ -107,32 +107,66 @@\n al int) bool %7B%0A%0A\n+%09// %7C%7C indiceLimite %3E= len(runes)%0A\n %09if indexAtual %3C\n@@ -170,16 +170,16 @@\n l %3C 0 %7B%0A\n-\n %09%09return\n@@ -379,32 +379,57 @@\n return true%0A%09%7D%0A%0A\n+%09runes%5BindexAtual%5D = '.'%0A\n %09return false%0A%7D%0A\n@@ -592,24 +592,58 @@\n nt) bool %7B%0A%0A\n+%09// %7C%7C indiceLimite %3E= len(runes)%0A\n %09if indexAtu\n@@ -870,32 +870,57 @@\n return true%0A%09%7D%0A%0A\n+%09runes%5BindexAtual%5D = '.'%0A\n %09return false%0A%0A%7D\n@@ -1617,16 +1617,16 @@\n resL %7B%0A%0A\n+\n %09%09if !ac\n@@ -1682,17 +1682,16 @@\n  val) %7B%0A\n-%0A\n %09%09%09runes\n",
+            "lines": "122"
+        },
+        {
+            "label": "2026-06-27_17-49-34",
+            "content": "@@ -272,39 +272,38 @@\n %7D%0A%0A%09if buscaPara\n-Esquerd\n+Direit\n aRec(indiceLimit\n",
+            "lines": "119"
+        },
+        {
+            "label": "2026-06-27_17-50-15",
+            "content": "@@ -367,24 +367,103 @@\n rn false%0A%7D%0A%0A\n+// se retornar true %C3%A9 pq achou um valor igual ao valor passado em um raio de L%0A\n func buscaPa\n@@ -808,87 +808,8 @@\n %0A%7D%0A%0A\n-// se retornar true %C3%A9 pq achou um valor igual ao valor passado em um raio de L%0A\n func\n",
+            "lines": "119"
+        },
+        {
+            "label": "2026-06-27_17-51-53",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc buscaParaEsquerdaRec(indiceLimite, value int, runes []rune, indexAtual int) bool {\n\n\tif indexAtual < 0 {\n\t\treturn false\n\t}\n\n\tif indexAtual < indiceLimite {\n\t\treturn false\n\t}\n\n\tif runes[indexAtual] == rune('0'+value) {\n\t\treturn true\n\t}\n\n\tif buscaParaEsquerdaRec(indiceLimite, value, runes, indexAtual-1) {\n\t\treturn true\n\t}\n\n\treturn false\n}\n\nfunc buscaParaDireitaRec(indiceLimite, value int, runes []rune, indexAtual int) bool {\n\n\tif indexAtual >= len(runes) {\n\t\treturn false\n\t}\n\n\tif indexAtual > indiceLimite {\n\t\treturn false\n\t}\n\n\tif runes[indexAtual] == rune('0'+value) {\n\t\treturn true\n\t}\n\n\tif buscaParaDireitaRec(indiceLimite, value, runes, indexAtual+1) {\n\t\treturn true\n\t}\n\n\treturn false\n\n}\n\n// se retornar true \u00e9 pq achou um valor igual ao valor passado em um raio de L\nfunc achouIgual(indexLimiteDir, indexLimiteEsq int, runes []rune, indexAtual int, value int) bool {\n\n\tif buscaParaDireitaRec(indexLimiteDir, value, runes, indexAtual) || buscaParaEsquerdaRec(indexLimiteEsq, value, runes, indexAtual) {\n\t\treturn true\n\t}\n\n\treturn false\n}\n\nfunc preencher(valoresL []int, runes []rune, limite int) (bool, string) {\n\n\tindexPonto := -1\n\tfor i := range runes {\n\t\tif runes[i] == '.' {\n\t\t\tindexPonto = i\n\t\t}\n\t}\n\n\tif indexPonto == -1 {\n\t\treturn true, string(runes)\n\t}\n\n\tlimiteDir := indexPonto + limite\n\tif limiteDir == len(runes) {\n\t\tlimiteDir = len(runes) - 1\n\t}\n\n\tlimiteEsq := indexPonto - limite\n\tif limiteEsq < 0 {\n\t\tlimiteEsq = 0\n\t}\n\n\tfor _, val := range valoresL {\n\n\t\tif !achouIgual(limiteDir, limiteEsq, runes, indexPonto, val) {\n\n\t\t\trunes[indexPonto] = rune('0' + val)\n\n\t\t\tcaminhos, _ := preencher(valoresL, runes, limite)\n\t\t\tif caminhos {\n\t\t\t\treturn true, string(runes)\n\t\t\t}\n\n\t\t\trunes[indexPonto] = '.'\n\t\t}\n\t}\n\n\treturn false, string(runes)\n}\n\nfunc main() {\n\n\tvar str string\n\tfmt.Scan(&str)\n\n\tvar limite int\n\tfmt.Scan(&limite)\n\n\tvar valoresL []int\n\n\tfor i := 0; i <= limite; i++ {\n\t\tvaloresL = append(valoresL, i)\n\t}\n\n\trunes := []rune(str)\n\t_, stringFinal := preencher(valoresL, runes, limite)\n\n\tfmt.Println(stringFinal)\n}\n",
+            "lines": "119"
+        }
+    ]
+}
